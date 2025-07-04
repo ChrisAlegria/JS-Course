@@ -1,0 +1,27 @@
+<!-- ~Formas de aplicar JavaScript en HTML: Existen tres maneras de integrar JavaScript a una página web: -->
+<!-- Todo - 1. Usando la etiqueta "script": Se coloca dentro del archivo HTML, usualmente en el "head" o antes de cerrar el "body". Permite escribir código JavaScript directamente dentro de la misma etiqueta. -->
+<!-- Todo - 2. Inline: Se escribe directamente en un atributo HTML usando "onclick", "onchange", etc. Se recomienda evitarlo porque mezcla estructura y comportamiento. -->
+<!-- Todo - 3. Mediante un archivo JavaScript externo: Se crea un archivo aparte con extensión .js, que se enlaza al HTML usando la etiqueta <script src="archivo.js">. Al igual que en la manera 1, se usa la etiqueta <script>, solo que aquí se emplea el atributo "src" para enlazar el archivo. Comúnmente se coloca en el "head" o justo antes de cerrar la etiqueta "body". Es la forma más organizada y reutilizable de trabajar con JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <title>Curso JavaScript</title>
+
+    <!-- !Forma 3 - Archivo JavaScript externo: Se crea un archivo JavaScript separado con extensión .js y se vincula al HTML usando la etiqueta <script src="archivo.js">. Esto permite que el HTML ejecute el código definido en el archivo externo, manteniendo el código más limpio y organizado. -->
+    <script src="scripts/app.js"></script> <!-- *Se abre la etiqueta <script> con el atributo "src" para especificar la ruta del archivo JavaScript externo, el cual será ejecutado por el navegador al cargar el HTML. -->
+
+    <!-- !Forma 1 - Uso de la etiqueta <script>: Se escribe código JavaScript directamente dentro del archivo HTML, generalmente dentro de la sección <head> o justo antes de cerrar el <body>. Este método permite ejecutar funciones o manipulaciones de DOM sin usar archivos externos. -->
+    <script> /**Se abre la etiqueta <script> y dentro de ella se escribe directamente el código JavaScript. Por ejemplo, modificar el contenido de un elemento mediante su ID.**/
+        document.getElementById('test').innerHTML = 'Texto de ejemplo';
+    </script>
+</head>
+<body>
+    <!-- !Forma 2 - Atributos inline como onclick="": Este método ejecuta código JavaScript directamente dentro de una etiqueta HTML, afectando solo a ese elemento. Aunque funciona, no se recomienda para proyectos grandes, ya que mezcla contenido y comportamiento, lo cual dificulta el mantenimiento del código. -->
+    <button onclick="document.getElementById('test').innerHTML = 'Texto de ejemplo'"></button> <!-- *Se declara un botón HTML que ejecuta una función JavaScript directamente mediante el atributo "onclick", el cual modifica el contenido de otro elemento identificado con "test". -->
+    
+</body>
+</html>
