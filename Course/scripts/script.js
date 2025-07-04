@@ -13,7 +13,7 @@ nombreDeLaVariable //* Nombre de la variable
 'Valor'//* Valor de la variable
 
 // &Var
-// &Las variables tipo 'Var', 
+// &Las variables tipo 'Var' admiten declaraciones sin valor, lo que significa que estas pueden ser declaradas sin valor, para lo cual unicamente se declara la palabra clave mas el nombre de la variable haciendo asi que esta no tenga ningun valor. Ademas estas pueden ser reasignadas lo que significa que. Por ultimo las variables 'Var' admiten la redeclaracion
 var variableTipoVar = 'Esta es una variable de tipo var.'
 
 //&Let
