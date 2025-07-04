@@ -12,7 +12,7 @@
     <title>Curso JavaScript</title>
 
     <!-- !Forma 3 - Archivo JavaScript externo: Se crea un archivo JavaScript separado con extensión .js y se vincula al HTML usando la etiqueta <script src="archivo.js">. Esto permite que el HTML ejecute el código definido en el archivo externo, manteniendo el código más limpio y organizado. -->
-    <script src="scripts/app.js"></script> <!-- *Se abre la etiqueta <script> con el atributo "src" para especificar la ruta del archivo JavaScript externo, el cual será ejecutado por el navegador al cargar el HTML. -->
+    <script src="scripts/script.js"></script> <!-- *Se abre la etiqueta <script> con el atributo "src" para especificar la ruta del archivo JavaScript externo, el cual será ejecutado por el navegador al cargar el HTML. -->
 
     <!-- !Forma 1 - Uso de la etiqueta <script>: Se escribe código JavaScript directamente dentro del archivo HTML, generalmente dentro de la sección <head> o justo antes de cerrar el <body>. Este método permite ejecutar funciones o manipulaciones de DOM sin usar archivos externos. -->
     <script> /**Se abre la etiqueta <script> y dentro de ella se escribe directamente el código JavaScript. Por ejemplo, modificar el contenido de un elemento mediante su ID.**/
@@ -21,7 +21,9 @@
 </head>
 <body>
     <!-- !Forma 2 - Atributos inline como onclick="": Este método ejecuta código JavaScript directamente dentro de una etiqueta HTML, afectando solo a ese elemento. Aunque funciona, no se recomienda para proyectos grandes, ya que mezcla contenido y comportamiento, lo cual dificulta el mantenimiento del código. -->
-    <button onclick="document.getElementById('test').innerHTML = 'Texto de ejemplo'"></button> <!-- *Se declara un botón HTML que ejecuta una función JavaScript directamente mediante el atributo "onclick", el cual modifica el contenido de otro elemento identificado con "test". -->
+    <button onclick="document.getElementById('test').innerHTML = 'Texto de ejemplo'" style="display: none;"></button> <!-- *Se declara un botón HTML que ejecuta una función JavaScript directamente mediante el atributo "onclick", el cual modifica el contenido de otro elemento identificado con "test". -->
     
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->    
+    <!-- ~Declaraciones y asignaciones -->
 </body>
 </html>
