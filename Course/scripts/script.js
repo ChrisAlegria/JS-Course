@@ -126,44 +126,49 @@ let variableTipoStringBackSticks = `Variable tipo string que almacena una cadena
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Operadores en JavaScript
-// Todo - Operdores de asginacion (=): Solamente existe un operador de asignación el cual es del '=', este lo que permite es..........  
-const variableConOperadorAsignacion = 'Variable que mediante el operador de asignació, hace que dicha variable almacene un valor';
+// ~En JavaScript, los operadores son símbolos que permiten realizar diferentes tipos de operaciones entre variables o valores. Estas operaciones pueden ser de **asignación**, **aritméticas**, **lógicas**, **comparación**, entre otras. 
+// ~Los operadores son fundamentales para manipular datos, realizar cálculos, construir condiciones y ejecutar tareas dentro del código. A continuación, se explican los operadores **de asignación** y **aritméticos**, que son los más utilizados al comenzar a programar.
+// Todo - Operador de asignación (=)
+// Todo - El operador de asignación (`=`) es utilizado para **asignar un valor** a una variable. A diferencia de las matemáticas, donde el símbolo `=` representa igualdad, en JavaScript significa que el valor a la derecha del signo será **asignado a la variable de la izquierda**. Este es el operador que más se usa al declarar y definir variables.
+const variableConOperadorAsignacion = 'Variable que mediante el operador de asignación, hace que dicha variable almacene un valor'; //* El valor de texto es asignado a la constante usando el operador `=`.
 
-// Todo - Operadores Aritmeticos: 
+// Todo - Operadores aritméticos
+// Todo - Los operadores aritméticos se utilizan para realizar operaciones matemáticas. Estos operadores permiten hacer sumas, restas, multiplicaciones, divisiones, y también obtener restos, potencias, entre otros.
 // &Suma (+)
-// &
-const variableConOperadorAritmeticoSuma = 5 + 3;
-console.log (variableConOperadorAritmeticoSuma);
+// &El operador de suma (`+`) se utiliza para **sumar dos valores numéricos**. Si ambos operandos son números, el resultado será la suma matemática. También se puede usar para concatenar cadenas de texto (strings).
+const variableConOperadorAritmeticoSumaNumeros = 5 + 3; //* Se declara una variable que almacena el resultado de sumar 5 + 3. Resultado: 8.
+const variableConOperadorAritmeticoSumaTexto = 'Variable con ' + 'valor de 2 cadenas de texto.'; //* Se declara una variable que almacena el resultado de sumar (concatenar) dos cadenas de texto. Resultado: 'Variable con valor de 2 cadenas de texto.'
 
-//&Resta (-)
-//&
-const variableConOperadorAritmeticoResta = 3 - 15;
+// &Resta (-)
+// &El operador de resta (`-`) permite **restar un valor de otro**. El resultado es la diferencia entre ambos valores.
+const variableConOperadorAritmeticoResta = 3 - 15; //* Se declara una variable que almacena el resultado de restar 15 a 3. Resultado: -12.
 
 // &Multiplicación (*)
-// &
-const variableConOperadorAritmeticoMultiplicacion = 5 * 7;
+// &El operador de multiplicación (`*`) se usa para **multiplicar dos valores numéricos**. Es útil para operaciones matemáticas comunes como obtener productos o escalas.
+const variableConOperadorAritmeticoMultiplicacion = 5 * 7; //* Se declara una variable que almacena el resultado de multiplicar 5 por 7. Resultado: 35.
 
-// &Division (/)
-// &
-const vairableconOperadorAritmeticoDivision = 7 / 52;
+// &División (/)
+// &El operador de división (`/`) permite **dividir un número entre otro**. El resultado será el cociente decimal o entero, dependiendo de los valores.
+const vairableconOperadorAritmeticoDivision = 7 / 52; //* Se declara una variable que almacena el resultado de dividir 7 entre 52. Resultado aproximado: 0.1346.
 
-//&Resto (%)
-// &
-const variableConOperadorAritmeticoResto = 5 % 2;
+// &Resto (%)
+// &El operador de resto (`%`), también llamado **módulo**, se utiliza para **obtener el residuo de una división**. Por ejemplo, si tienes 5 dulces y los repartes entre 2 personas, cada una recibe 2 y sobra 1. Ese **1 que sobra es el resto**. Este operador es útil para determinar si un número es par o impar (`n % 2 === 0`), o para hacer repeticiones controladas.
+const variableConOperadorAritmeticoResto = 5 % 2; //* Se declara una variable que almacena el residuo de dividir 5 entre 2. Resultado: 1 (sobra uno).
 
 // &Exponente (**)
-// &
-const variableConOperadorAritmeticoExponente = 2 ** 3;
+// &El operador de exponente (`**`) sirve para **elevar un número a una potencia**. Por ejemplo, `2 ** 3` significa "2 elevado a la 3" o 2 × 2 × 2. Este operador reemplaza a la función tradicional `Math.pow(base, exponente)`, ofreciendo una sintaxis más simple.
+const variableConOperadorAritmeticoExponente = 2 ** 3; //* Se declara una variable que almacena el resultado de 2 elevado a la 3. Resultado: 8.
 
-// &Aumentador
-// &
-let variableConOperadorAritmeticoAumentador = 3;
-variableConOperadorAritmeticoAumentador++;
+// &Aumentador (++): 
+// &El operador de incremento (`++`) se utiliza para **sumar 1 al valor actual de una variable**. Es una forma rápida de hacer: `variable = variable + 1`. Este operador modifica el valor original de la variable, por lo que **solo se puede usar con `let` o `var`, pero no con `const`**, ya que `const` no permite cambios en su valor después de declarada.
+let variableConOperadorAritmeticoAumentador = 3; //* Valor inicial: 3.
+variableConOperadorAritmeticoAumentador++; //* Se incrementa en 1. Resultado final: 4.
 
-// &Disminuidor
-// &
-let variableConOperadorAritmeticoDisminuidor = 7;
-variableConOperadorAritmeticoDisminuidor--;
+// &Disminuidor (--): 
+// &El operador de decremento (`--`) funciona de manera similar al incremento, pero **restando 1** al valor actual de la variable. También equivale a: `variable = variable - 1`. Al igual que el operador `++`, **no debe utilizarse con `const`**.
+let variableConOperadorAritmeticoDisminuidor = 7; //* Valor inicial: 7.
+variableConOperadorAritmeticoDisminuidor--; //* Se disminuye en 1. Resultado final: 6.
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
