@@ -101,6 +101,22 @@ var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'V
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Datos Number y String
+// ~Como se vio anteriormente, las variables pueden tener un valor, por lo que existen diferentes tipos de valores que estas pueden almacena, en este caso estas los valores numericos o de texto, 
+// &Numeros enteros (Number):
+let variableTipoNumber = 4; 
+
+// &Numeros con decimales (Float): 
+let variableTipoFloat = 5.34;
+
+// &Cadena de caracteres (String)
+// ^Comillas simples
+let variableTipoStringComillas = 'Varaible tipo string que almacena unicamente una cadena de caracteres, por las comillas.' 
+
+// ^Comillas dobles
+let variableTipoStringComillasDobles = "Varaible tipo string que almacena unicamente una cadena de caracteres, por las comillas dobles."
+
+// ^BackTicks
+let variableTipoStringBackSticks = `Varaible tipo string que almacena una cadena de texto y ademas permiten agregar otras variables como: ${variableTipoFloat}.`    
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
