@@ -102,13 +102,16 @@ var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'V
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Datos Number y String
 // ~Como se explicó anteriormente, una variable puede almacenar distintos tipos de valores, y en JavaScript existen varios tipos de datos básicos. Entre los más utilizados están los **numéricos** (como `number` o `float`) y los **de texto** (llamados `string`). Estos datos son esenciales en cualquier lenguaje de programación, ya que con ellos se realizan cálculos, se muestran mensajes, se toman decisiones, etc. Cada tipo tiene una forma específica de declararse y comportarse en el código.
-// &Números enteros (Number): Las variables tipo `number` se utilizan para almacenar **valores numéricos enteros**, es decir, números sin decimales. Estos pueden ser positivos, negativos o incluso el cero. No se requiere ningún símbolo especial para declarar un número entero; simplemente se escribe el número directamente después del signo `=`. Esto es útil cuando se necesita hacer operaciones matemáticas básicas como suma, resta, multiplicación, etc.
+// &Números enteros (Number)
+// &Las variables tipo `number` se utilizan para almacenar **valores numéricos enteros**, es decir, números sin decimales. Estos pueden ser positivos, negativos o incluso el cero. No se requiere ningún símbolo especial para declarar un número entero; simplemente se escribe el número directamente después del signo `=`. Esto es útil cuando se necesita hacer operaciones matemáticas básicas como suma, resta, multiplicación, etc.
 let variableTipoNumber = 4; //* Variable tipo 'number' que almacena un número entero sin decimales.
 
-// &Números con decimales (Float): Las variables tipo `float` también almacenan números, pero a diferencia de los enteros, estos **incluyen decimales**. En JavaScript no se usa una palabra clave diferente para flotantes, pero internamente se maneja como número decimal. Para declarar un `float`, basta con incluir un punto (`.`) entre la parte entera y decimal. Este tipo es muy útil en cálculos que requieren mayor precisión, como porcentajes, precios, promedios, etc.
+// &Números con decimales (Float)
+// &Las variables tipo `float` también almacenan números, pero a diferencia de los enteros, estos **incluyen decimales**. En JavaScript no se usa una palabra clave diferente para flotantes, pero internamente se maneja como número decimal. Para declarar un `float`, basta con incluir un punto (`.`) entre la parte entera y decimal. Este tipo es muy útil en cálculos que requieren mayor precisión, como porcentajes, precios, promedios, etc.
 let variableTipoFloat = 5.34; //* Variable tipo 'float' que almacena un número con decimales (número no entero).
 
-// &Cadenas de caracteres (String): Las variables tipo `string` se utilizan para almacenar **texto**, también conocido como una cadena de caracteres. Este puede ser una sola letra, una palabra, una oración o incluso párrafos completos. A diferencia de los números, los strings **deben ir entre comillas**, ya que de lo contrario el programa los interpretaría como variables o instrucciones. En JavaScript existen tres formas de declarar un string: usando comillas simples (`'...'`), dobles (`"..."`) o backticks (`` `...` ``). Cada una tiene sus ventajas y se usa según la situación.
+// &Cadenas de caracteres (String) 
+// &Las variables tipo `string` se utilizan para almacenar **texto**, también conocido como una cadena de caracteres. Este puede ser una sola letra, una palabra, una oración o incluso párrafos completos. A diferencia de los números, los strings **deben ir entre comillas**, ya que de lo contrario el programa los interpretaría como variables o instrucciones. En JavaScript existen tres formas de declarar un string: usando comillas simples (`'...'`), dobles (`"..."`) o backticks (`` `...` ``). Cada una tiene sus ventajas y se usa según la situación.
 // ^Comillas simples
 // ^Usar comillas simples (`'texto'`) es una de las formas más comunes de declarar strings. Estas comillas permiten escribir texto plano. Son especialmente útiles cuando se necesita anidar comillas dobles dentro del texto, por ejemplo, al trabajar con atributos HTML como `onclick="funcion('dato')"`. Esto ayuda a evitar errores por conflicto entre comillas, ya que una puede contener a la otra sin interferencias.
 let variableTipoStringComillas = 'Variable tipo string que almacena únicamente una cadena de texto, gracias al uso de comillas simples.';
@@ -123,6 +126,44 @@ let variableTipoStringBackSticks = `Variable tipo string que almacena una cadena
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Operadores en JavaScript
+// Todo - Operdores de asginacion (=): Solamente existe un operador de asignación el cual es del '=', este lo que permite es..........  
+const variableConOperadorAsignacion = 'Variable que mediante el operador de asignació, hace que dicha variable almacene un valor';
+
+// Todo - Operadores Aritmeticos: 
+// &Suma (+)
+// &
+const variableConOperadorAritmeticoSuma = 5 + 3;
+console.log (variableConOperadorAritmeticoSuma);
+
+//&Resta (-)
+//&
+const variableConOperadorAritmeticoResta = 3 - 15;
+
+// &Multiplicación (*)
+// &
+const variableConOperadorAritmeticoMultiplicacion = 5 * 7;
+
+// &Division (/)
+// &
+const vairableconOperadorAritmeticoDivision = 7 / 52;
+
+//&Resto (%)
+// &
+const variableConOperadorAritmeticoResto = 5 % 2;
+
+// &Exponente (**)
+// &
+const variableConOperadorAritmeticoExponente = 2 ** 3;
+
+// &Aumentador
+// &
+let variableConOperadorAritmeticoAumentador = 3;
+variableConOperadorAritmeticoAumentador++;
+
+// &Disminuidor
+// &
+let variableConOperadorAritmeticoDisminuidor = 7;
+variableConOperadorAritmeticoDisminuidor--;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
