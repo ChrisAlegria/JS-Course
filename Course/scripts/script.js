@@ -19,6 +19,12 @@ z = 'Valor de la variable Z'; //* Se asigna el valor de texto a la variable 'z' 
 // Todo - Suma (+): En JavaScript, el símbolo de suma (+) se utiliza como **operador aritmético** para sumar valores numéricos. También puede funcionar como **operador de concatenación** cuando se usa con cadenas de texto, uniendo los valores como una sola cadena. Se usa en estructuras como: resultado = valor1 + valor2;
 z = x + y; //* Se suman los valores de las variables 'x' y 'y', y el resultado se asigna a la variable 'z'.
 
+// Todo - Scope ({}): En JavaScript, las llaves `{}` definen un bloque de código o scope (ámbito). Este scope actúa como una especie de “célula aislada”: puede acceder a variables externas, pero las variables declaradas dentro no estarán disponibles fuera del bloque. Esto permite organizar el código y limitar el alcance de las variables para evitar conflictos o interferencias. Las llaves se utilizan en estructuras como condicionales, funciones, bucles y objetos. Ademas cabe mencionar que la llave de apertura es `{` y la de cierre es `}`.
+
+function scope() { // *Se declara una función llamada 'scope'. Todo lo que esté dentro de estas llaves será su scope local.
+    var x; // *Variable declarada con 'var', la cual pertenece únicamente al scope de esta función.
+} // *Cierre de la funcion y por ende del scope de la variable.
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Variables en JS
 // ~Las variables dentro de JS son contenedores donde se puede almacenar valores, como texto, numeros, objetos, arreglos, etc.. Ademas que existen 3 maneras de diferentes para declararlas.
@@ -92,6 +98,10 @@ var elementoDeclaracionMultipleConValor1 = 'Variable 1 de la declaración múlti
 
 // &Declaración múltiple mixta
 var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'Variable 2 de la declaración múltiple mixta, la cual contiene un valor.'; //* Se declara una variable sin valor y otra con valor asignado en una sola línea.
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Datos Number y String
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
