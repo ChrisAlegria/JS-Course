@@ -213,6 +213,37 @@ const VariableConConvencionNomenclaturaPascalCase = 'Esta es una variable cuyo n
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Scope (disponibilidad)
+// ~En JavaScript, el *scope* (alcance o disponibilidad) se refiere al contexto en el que una variable puede ser accedida o usada. Para visualizarlo, podemos imaginar que el código tiene jerarquías parecidas a una familia: el bloque principal (fuera de las llaves `{}`) es como un "padre", y cada bloque encerrado entre llaves `{}` (por ejemplo, dentro de funciones, condicionales o bucles) es un "hijo". Las variables declaradas **fuera** de las llaves (en el padre) pueden ser accedidas **dentro** del bloque (por los hijos), pero las variables creadas **dentro** de las llaves solo existen en ese bloque y **no pueden ser accedidas por el padre**. Esto se conoce como *scope local* (dentro del bloque) y *scope global* (fuera del bloque). Además, si se declara una variable con el mismo nombre tanto fuera como dentro del bloque, JavaScript las trata como variables completamente **independientes**, incluso si son del mismo tipo (`const`, `let`). En ese caso, dentro del bloque se utilizará únicamente la versión local (la que esté más cerca).
+console.log('=========== Scope (disponibilidad). ===========')
+
+// &Variable dentro y fuera del scope.
+// &En este ejemplo se declara una variable `const` llamada `variableParaScopeDentroFuera` en la raíz (fuera del bloque) con un valor de 5, y luego **se vuelve a declarar otra variable con el mismo nombre dentro de un bloque**, pero con un valor distinto (2). Ambas variables son válidas y no provocan error, ya que pertenecen a diferentes *scopes*. Dentro del bloque se usará la versión local (la variable declarada dentro del scope), mientras que fuera se usará la versión global (la vairable declarada fuera del scope).
+console.log('--- Variable dentro y fuera del scope. ---')
+const variableParaScopeDentroFuera = 5; //* Declaración en el scope global (raíz), valor: 5.
+{
+    const variableParaScopeDentroFuera = 2; //* Declaración en el scope local (bloque), valor: 2.
+    console.log(variableParaScopeDentroFuera); //* Se imprime 2, ya que estamos dentro del bloque.
+}
+console.log(variableParaScopeDentroFuera); //* Se imprime 5, ya que estamos fuera del bloque.
+
+// &Variable dentro pero no fuera del scope.
+// &Aquí se declara una variable solo dentro de un bloque (entre llaves `{}`), por lo que su alcance está limitado únicamente a ese bloque. Al intentar acceder a ella fuera del bloque, se generará un error porque **la variable no existe en el scope global**.
+console.log('--- Variable dentro pero no fuera del scope. ---')
+{
+    const variableDentroNoFuera = 3; //* Declaración en el scope local (bloque), valor: 3.
+    console.log(variableDentroNoFuera); //* Se imprime 3, ya que estamos dentro del bloque.
+}
+//console.log(variableDentroNoFuera); //* ❌ Error: Si se trata de hacer un console log de la variableDentroNoFuera, nos arrojara un error indicando que la vairable no esta definida, por lo que fuera del bloque o del scope esta no existe.
+
+// &Variable fuera pero no dentro del scope.
+// &En este caso, se declara una variable fuera del bloque (en el scope global) y luego se intenta acceder a ella tanto fuera como dentro del bloque. Como las variables globales **sí pueden ser leídas desde dentro de bloques**, este ejemplo funcionará correctamente. La variable estará disponible en ambos lugares.
+console.log('--- Variable fuera pero no dentro del scope. ---')
+const variableFueraNoDentro = 7; //* Declaración en el scope global (raíz), valor: 7.
+{
+    console.log(variableFueraNoDentro); //* Se imprime 7, ya que el bloque puede acceder a variables globales.
+}
+console.log(variableFueraNoDentro); //* Se imprime 7 nuevamente, accediendo desde el mismo scope global.
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
