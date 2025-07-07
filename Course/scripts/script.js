@@ -100,31 +100,52 @@ var elementoDeclaracionMultipleConValor1 = 'Variable 1 de la declaración múlti
 var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'Variable 2 de la declaración múltiple mixta, la cual contiene un valor.'; //* Se declara una variable sin valor y otra con valor asignado en una sola línea.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ~Datos Number y String
-// ~Como se explicó anteriormente, una variable puede almacenar distintos tipos de valores, y en JavaScript existen varios tipos de datos básicos. Entre los más utilizados están los **numéricos** (como `number` o `float`) y los **de texto** (llamados `string`). Estos datos son esenciales en cualquier lenguaje de programación, ya que con ellos se realizan cálculos, se muestran mensajes, se toman decisiones, etc. Cada tipo tiene una forma específica de declararse y comportarse en el código.
+// ~Tipos de datos
+// ~En JavaScript, las variables pueden almacenar distintos tipos de datos, y estos son fundamentales para realizar operaciones, representar información y controlar el flujo del programa. Existen varios tipos de datos básicos, como los **números**, **cadenas de texto**, **booleanos**, **objetos**, **arreglos**, entre otros. Cada tipo de dato tiene su propia sintaxis y comportamiento. Comprender bien estos tipos es clave para escribir código eficiente y evitar errores, ya que determinan cómo se procesan, comparan y manipulan los valores dentro del programa.
 // &Números enteros (Number)
 // &Las variables tipo `number` se utilizan para almacenar **valores numéricos enteros**, es decir, números sin decimales. Estos pueden ser positivos, negativos o incluso el cero. No se requiere ningún símbolo especial para declarar un número entero; simplemente se escribe el número directamente después del signo `=`. Esto es útil cuando se necesita hacer operaciones matemáticas básicas como suma, resta, multiplicación, etc.
-let variableTipoNumber = 4; //* Variable tipo 'number' que almacena un número entero sin decimales.
+const variableTipoNumber = 4; //* Variable tipo 'number' que almacena un número entero sin decimales.
 
 // &Números con decimales (Float)
 // &Las variables tipo `float` también almacenan números, pero a diferencia de los enteros, estos **incluyen decimales**. En JavaScript no se usa una palabra clave diferente para flotantes, pero internamente se maneja como número decimal. Para declarar un `float`, basta con incluir un punto (`.`) entre la parte entera y decimal. Este tipo es muy útil en cálculos que requieren mayor precisión, como porcentajes, precios, promedios, etc.
-let variableTipoFloat = 5.34; //* Variable tipo 'float' que almacena un número con decimales (número no entero).
+const variableTipoFloat = 5.34; //* Variable tipo 'float' que almacena un número con decimales (número no entero).
 
 // &Cadenas de caracteres (String) 
 // &Las variables tipo `string` se utilizan para almacenar **texto**, también conocido como una cadena de caracteres. Este puede ser una sola letra, una palabra, una oración o incluso párrafos completos. A diferencia de los números, los strings **deben ir entre comillas**, ya que de lo contrario el programa los interpretaría como variables o instrucciones. En JavaScript existen tres formas de declarar un string: usando comillas simples (`'...'`), dobles (`"..."`) o backticks (`` `...` ``). Cada una tiene sus ventajas y se usa según la situación.
 // ^Comillas simples
 // ^Usar comillas simples (`'texto'`) es una de las formas más comunes de declarar strings. Estas comillas permiten escribir texto plano. Son especialmente útiles cuando se necesita anidar comillas dobles dentro del texto, por ejemplo, al trabajar con atributos HTML como `onclick="funcion('dato')"`. Esto ayuda a evitar errores por conflicto entre comillas, ya que una puede contener a la otra sin interferencias.
-let variableTipoStringComillas = 'Variable tipo string que almacena únicamente una cadena de texto, gracias al uso de comillas simples.'; 
+const variableTipoStringComillas = 'Variable tipo string que almacena únicamente una cadena de texto, gracias al uso de comillas simples.'; 
 //* Variable tipo string que utiliza comillas simples ('') para almacenar una cadena de texto. Este tipo de comillas es útil cuando dentro del texto se desea incluir comillas dobles, evitando así conflictos de sintaxis.
 
 // ^Comillas dobles
 // ^Funcionan igual que las comillas simples, pero a la inversa. Es decir, se pueden usar comillas dobles (`"texto"`) para almacenar texto y permitir que dentro del string se usen comillas simples sin romper la sintaxis. Por ejemplo: `onclick='funcion("dato")'`. En general, puedes usar simples o dobles indistintamente, pero siempre se recomienda ser consistente en todo el proyecto.
-let variableTipoStringComillasDobles = "Variable tipo string que almacena únicamente una cadena de texto, gracias al uso de comillas dobles.";
+const variableTipoStringComillasDobles = "Variable tipo string que almacena únicamente una cadena de texto, gracias al uso de comillas dobles.";
 //* Variable tipo string que utiliza comillas dobles ("") para almacenar una cadena de texto. Este formato permite incluir comillas simples dentro del contenido del string sin interferir con la sintaxis del lenguaje.
 
 // ^Backticks (comillas invertidas)
 // ^Las backticks (`` `texto` ``) permiten algo muy poderoso: **la interpolación de variables**. Esto significa que se pueden insertar variables directamente dentro del texto. Para insertar una variable, se usa la estructura `${nombreVariable}` la cual es llamada como expreción de JavaScript. El valor de la variable será insertado automáticamente dentro del string. Esta forma es ideal para construir mensajes dinámicos y legibles.
-let variableTipoStringBackSticks = `Variable tipo string que almacena una cadena de texto y permite insertar otras variables como: ${variableTipoFloat}.`; //* Se muestra el valor de la variable 'variableTipoFloat' dentro del texto.
+const variableTipoStringBackSticks = `Variable tipo string que almacena una cadena de texto y permite insertar otras variables como: ${variableTipoFloat}.`; //* Se muestra el valor de la variable 'variableTipoFloat' dentro del texto.
+
+// &Booleano (Boolean)
+// &
+// ^Verdadero (True)
+// ^
+const variableTipoBooleanTrue = true;
+
+// ^Falso (False)
+// ^
+const variableTipoBooleanFalse = false;
+
+// &Indenfinido (Undefined)
+// & Aqui chat ponle algo tipo que indefinido es cuando no se a asginado un valor a dicha variable o algo asi va?
+let variableTipoUndefined 
+
+// &Nulo (Null)
+// &Aqui le pones algo tipo que a comparacion de undefined null significa que...
+let variableTipoNull = null;
+
+// 
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Operadores en JavaScript
@@ -273,9 +294,6 @@ const variableFueraNoDentro = 7; //* Declaración en el scope global (raíz), va
     console.log(variableFueraNoDentro); //* Se imprime 7, ya que el bloque puede acceder a variables globales.
 }
 console.log(variableFueraNoDentro); //* Se imprime 7 nuevamente, accediendo desde el mismo scope global.
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ~Tipos de datos
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
