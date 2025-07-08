@@ -239,6 +239,13 @@ variableConOperadorAritmeticoDisminuidor--; //* Se disminuye en 1. Resultado fin
 
 // Todo - Operadores logicos
 // Todo - 
+// &Comparacion de igualdad relajada (==)
+// & aqui chat menciina tambien que siempre dara una valor volleano ya sea true or false va? (igual si no estoy en lo correcto chat pon lo que es), ademas que aparte si comparas numeros con texto igualmente si son iguales dara true,, por lo que con el operador logico de comparacion de igualdad relaja no importa que sean diferentes tipos de variables, siempre y cuando sea igual su contenido pese a ser uno strgin y otro number o float.
+const variableConOperadorLogicoComparacionIgualdadRelajada = 3 == '3';
+
+// &Comparacion de igualdad estrcita (===)
+// &Aqui le pones que a comparacion de la comparacion igualdad relajada pese a que sean el mismo resultado siendo un valor string y otro int dara error, ya que este tambien compara el tipo de vairable o algo asi va? 
+const variableConOperadorLogicoComparacionIgualdadEstrcita = 5 === '5'
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Sintaxis de las variables
@@ -269,7 +276,6 @@ const variableconcasesensitive = 'Esta es otra variable distinta llamada variabl
 
 // Todo - Convenciones de nomenclatura
 // Todo - En JavaScript, existen varias convenciones de nomenclatura que se utilizan para nombrar variables, y aunque ninguna es una regla obligatoria del lenguaje, seguir una convención ayuda a mantener el código más legible y organizado. Entre las más comunes están camelCase, snake_case y PascalCase. Cada una tiene un formato distinto para unir palabras dentro del nombre, facilitando así la lectura y comprensión del código, especialmente cuando se trabaja en equipo o proyectos grandes.
-
 // &CamelCase
 // &El estilo camelCase es el más utilizado y recomendado en JavaScript para nombrar variables. Consiste en escribir varias palabras juntas sin espacios, donde la primera palabra inicia con minúscula y cada palabra subsiguiente comienza con mayúscula. Esto ayuda a distinguir visualmente las palabras y hace que el nombre sea más fácil de leer y entender.
 const variableConConvencionNomenclaturaCamelCase = 'Esta es una variable cuyo nombre está definido usando la convención camelCase.'; //* Nombre compuesto por palabras unidas, comenzando con minúscula y con mayúscula en cada palabra interna.
