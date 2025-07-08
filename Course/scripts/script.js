@@ -325,7 +325,7 @@ const vairableParaParseoTipoFloat = '2.5'; //* Esta variable contiene un número
 let variableParaAlmacenarParseo; //* Variable utilizada para almacenar el resultado del parseo y posterior operación.
 
 // &Parseo de tipo string a número entero 'int' (parseInt)
-// &La función `parseInt()` convierte una cadena de texto que representa un número entero en un valor numérico real. Si la cadena contiene decimales, estos son descartados. Es útil cuando se desea trabajar solo con valores enteros.
+// &La función `parseInt()` convierte una cadena de texto que representa un número entero en un valor numérico real. Si la cadena contiene decimales, estos son descartados o redondeados. Es útil cuando se desea trabajar solo con valores enteros.
 console.log('--- Parseo de string a número entero (parseInt). ---') //* Subtítulo explicativo que marca el inicio de la conversión con `parseInt`.
 variableParaAlmacenarParseo = 5 + parseInt(variableParaParseoTipoInt); //* El string '5' se convierte en número 5, luego se suma a 5. Resultado final: 10.
 console.log(variableParaAlmacenarParseo); //* Se imprime el resultado: 10.
