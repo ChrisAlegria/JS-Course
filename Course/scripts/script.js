@@ -102,7 +102,7 @@ var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'V
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Tipos de datos
 // ~En JavaScript, las variables pueden almacenar distintos tipos de datos, y estos son fundamentales para realizar operaciones, representar información y controlar el flujo del programa. Existen varios tipos de datos básicos, como los **números**, **cadenas de texto**, **booleanos**, **objetos**, **arreglos**, entre otros. Cada tipo de dato tiene su propia sintaxis y comportamiento. Comprender bien estos tipos es clave para escribir código eficiente y evitar errores, ya que determinan cómo se procesan, comparan y manipulan los valores dentro del programa.
-// &Números enteros (Number)
+// &Números enteros (Int)
 // &Las variables tipo `number` se utilizan para almacenar **valores numéricos enteros**, es decir, números sin decimales. Estos pueden ser positivos, negativos o incluso el cero. No se requiere ningún símbolo especial para declarar un número entero; simplemente se escribe el número directamente después del signo `=`. Esto es útil cuando se necesita hacer operaciones matemáticas básicas como suma, resta, multiplicación, etc.
 const variableTipoNumber = 4; //* Variable tipo 'number' que almacena un número entero sin decimales.
 
@@ -136,11 +136,9 @@ const variableTipoBooleanTrue = true; //* Variable booleana con valor `true`, qu
 // ^El valor booleano `false` representa una condición falsa. Se usa para señalar que algo está desactivado, rechazado o no disponible.
 const variableTipoBooleanFalse = false; //* Variable booleana con valor `false`, que representa una condición falsa.
 
-
 // &Indefinido (Undefined)
 // &El valor `undefined` en JavaScript indica que una variable ha sido declarada pero **aún no se le ha asignado ningún valor**. Esto sucede automáticamente cuando solo se declara la variable sin inicializarla. Es un estado que representa ausencia de valor de manera implícita.
 let variableTipoUndefined; //* Variable declarada sin valor asignado. Su valor predeterminado es `undefined`.
-
 
 // &Nulo (Null)
 // &El valor `null` representa la **ausencia intencional de valor**. A diferencia de `undefined`, que es asignado automáticamente por JavaScript, `null` se asigna manualmente para indicar que una variable no tiene valor a propósito. Es decir, mientras `undefined` implica que aún no se asignó nada, `null` señala que el valor fue vaciado o reseteado intencionalmente.
@@ -317,6 +315,26 @@ const variableFueraNoDentro = 7; //* Declaración en el scope global (raíz), va
     console.log(variableFueraNoDentro); //* Se imprime 7, ya que el bloque puede acceder a variables globales.
 }
 console.log(variableFueraNoDentro); //* Se imprime 7 nuevamente, accediendo desde el mismo scope global.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Parseo
+// ~El parseo (también conocido como **conversión de tipo**) es el proceso mediante el cual se transforma un dato de un tipo a otro. En JavaScript, una de las conversiones más comunes es la de un **string (texto)** a un **número**, ya sea entero (`int`) o decimal (`float`). Esto es muy útil, por ejemplo, cuando los valores numéricos se reciben desde formularios o bases de datos en forma de texto y se desea realizar operaciones matemáticas con ellos. JavaScript ofrece funciones como `parseInt()` y `parseFloat()` para realizar este tipo de conversiones de forma explícita.
+console.log('=========== Parseo. ===========') //* Título principal que indica que inicia la sección de parseo o conversión de tipos.
+const variableParaParseoTipoInt = '5'; //* Esta variable contiene un valor numérico, pero en forma de texto (string).
+const vairableParaParseoTipoFloat = '2.5'; //* Esta variable contiene un número decimal, pero también como texto (string).
+let variableParaAlmacenarParseo; //* Variable utilizada para almacenar el resultado del parseo y posterior operación.
+
+// &Parseo de tipo string a número entero 'int' (parseInt)
+// &La función `parseInt()` convierte una cadena de texto que representa un número entero en un valor numérico real. Si la cadena contiene decimales, estos son descartados. Es útil cuando se desea trabajar solo con valores enteros.
+console.log('--- Parseo de string a número entero (parseInt). ---') //* Subtítulo explicativo que marca el inicio de la conversión con `parseInt`.
+variableParaAlmacenarParseo = 5 + parseInt(variableParaParseoTipoInt); //* El string '5' se convierte en número 5, luego se suma a 5. Resultado final: 10.
+console.log(variableParaAlmacenarParseo); //* Se imprime el resultado: 10.
+
+// &Parseo de tipo string a número decimal 'float' (parseFloat)
+// &La función `parseFloat()` convierte una cadena de texto que representa un número decimal en un valor `float`. A diferencia de `parseInt()`, conserva los decimales.
+console.log('--- Parseo de string a número con decimales (parseFloat). ---') //* Subtítulo explicativo para `parseFloat`.
+variableParaAlmacenarParseo = 2.5 + parseFloat(vairableParaParseoTipoFloat); //* El string '2.5' se convierte en número 2.5, luego se suma a 2.5. Resultado final: 5.
+console.log(variableParaAlmacenarParseo); //* Se imprime el resultado: 5.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
