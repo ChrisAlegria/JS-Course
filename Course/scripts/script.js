@@ -237,6 +237,9 @@ variableConOperadorAritmeticoAumentador++; //* Se incrementa en 1. Resultado fin
 let variableConOperadorAritmeticoDisminuidor = 7; //* Valor inicial: 7.
 variableConOperadorAritmeticoDisminuidor--; //* Se disminuye en 1. Resultado final: 6.
 
+// Todo - Operadores logicos
+// Todo - 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Sintaxis de las variables
 // ~En JavaScript, para declarar una variable es necesario seguir una estructura básica: primero se escribe la palabra clave (`var`, `let` o `const`), luego el nombre de la variable, y opcionalmente un valor que se le asignará usando el operador `=`. Pero más allá de esta estructura, es muy importante que el nombre de la variable cumpla con ciertas reglas que dicta el lenguaje. Por ejemplo, los nombres deben comenzar con una letra, un guion bajo (`_`) o un signo de pesos (`$`), pero **no pueden comenzar con un número** ni contener símbolos especiales como `!`, `@`, `-`, etc. Además, **no se permiten espacios** en los nombres. También es importante saber que JavaScript es un lenguaje **case-sensitive**, es decir, distingue entre mayúsculas y minúsculas, por lo que `nombre`, `Nombre` y `NOMBRE` son variables distintas. Aunque se pueden usar varios estilos para escribir nombres de variables, estos estilos son conocidos como **convenciones de nomenclatura** (por ejemplo: `camelCase`, `snake_case`, `PascalCase`, `kebab-case`, etc.). En JavaScript se recomienda utilizar **camelCase** como estándar, ya que mejora la legibilidad del código y es ampliamente aceptado por la comunidad.
