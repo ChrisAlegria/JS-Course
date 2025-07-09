@@ -387,7 +387,96 @@ console.log(variableParaAlmacenarParseo); //* Se imprime el resultado: 5.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Funciones
+// ~Una función en JavaScript es un bloque de código **reutilizable** que sirve para ejecutar una tarea específica. Se puede pensar en una función como un conjunto de instrucciones que se agrupan bajo un **nombre especial**, y ese nombre permite invocar o ejecutar ese bloque de instrucciones cada vez que sea necesario. Las funciones pueden ser llamadas desde cualquier parte del código, lo cual resulta útil para **evitar la repetición** de instrucciones y hacer que el código sea más **organizado, legible y eficiente**.
+console.log('=========== Funciones. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre funciones.
+
+
+// Todo - Sintaxis de una función
+// Todo - Una función está conformada por una estructura específica que le indica a JavaScript que se va a definir un nuevo bloque funcional. Aunque existen varias formas de declarar funciones, esta es la forma **tradicional o inicial** conocida como declaración de función. Su estructura se compone de varios elementos: primero, la palabra clave `function` que le indica al lenguaje que se va a definir una función; después, se especifica el **nombre de la función**, que será utilizado para invocarla en el futuro; a continuación, se colocan **paréntesis `()`**, que pueden contener uno o más **parámetros** (opcionales) separados por comas; y finalmente se agregan las **llaves `{}`**, que son el cuerpo de la función y contienen las instrucciones que se ejecutarán cada vez que se llame. La estructura completa sería: `function + nombreFuncion + () + {}`. Es importante mencionar que los **parámetros no son obligatorios**, pero si se usan, permiten pasar valores externos que la función puede utilizar dentro de su bloque de código.
+function nombreFuncion(parametro1, parametro2) { //* Se declara una función llamada `nombreFuncion` que recibe dos parámetros (`parametro1` y `parametro2`). 
+    lineaDeCodigoQueEjecutaraLaFuncion; //* Dentro del cuerpo de la función se encuentra una o varias instrucciones que serán ejecutadas cuando se invoque la función.
+} //* Cierre del bloque de la función.
+
+//* Estructura base de una función declarativa:
+//* - `function`: palabra reservada que indica que estamos definiendo una función.
+//* - `nombreFuncion`: nombre personalizado que permitirá identificar y llamar a la función.
+//* - `(parametro1, parametro2)`: espacio donde pueden declararse variables internas llamadas parámetros, separados por comas si hay más de uno.
+//* - `{ ... }`: bloque de instrucciones que ejecutará la función cuando sea invocada.
+
+// Todo - Parámetros en las funciones
+// Todo - En JavaScript, las funciones pueden recibir uno o más **parámetros**, que son variables locales que sirven como entradas para que la función realice su tarea. Si una función está definida con parámetros pero no se le pasan valores al ejecutarse, dichos parámetros serán `undefined`. Esto puede causar errores lógicos o resultados inesperados como `NaN` en operaciones matemáticas. Es buena práctica asegurarse de que, si una función requiere datos, estos se pasen correctamente al invocarla para garantizar su correcto funcionamiento.
+// &Función sin paso de parámetros
+// &Cuando se llama a una función sin pasarle los argumentos requeridos, los parámetros internos (`x`, `y`) serán `undefined`, lo que puede llevar a resultados inválidos si se usan en operaciones matemáticas. Aquí se demuestra cómo el no pasar valores a una función puede afectar su comportamiento.
+console.log('--- Función sin paso de parámetros ---'); //* Muestra en consola un mensaje que indica el ejemplo de una función que puede no recibir argumentos.
+
+function funcionSinPasoDeParametros(x, y) { //* Se declara una función llamada `funcionSinPasoDeParametros` que espera dos parámetros.
+    return x + y; //* Se retorna la suma. Si no se pasan argumentos al llamarla, estos serán `undefined` y la operación dará de resultado `NaN`.
+} //* Fin del bloque de la función.
+
+var valorQueAlmacenaValorDeFuncion = funcionSinPasoDeParametros(); //* No se pasan parámetros. `x` y `y` son `undefined`.
+console.log(valorQueAlmacenaValorDeFuncion); //* Resultado: NaN (Not a Number). No se puede sumar `undefined + undefined`.
+
+// &Función con paso de parámetros 
+// &En este ejemplo sí se pasan los valores esperados a la función. Los parámetros `x` y `y` reciben los números `3` y `4`, respectivamente, y se ejecuta la suma correctamente. Este es el uso correcto de funciones con parámetros.
+function funcionConPasoDeParametros(x, y) { //* Se declara una función llamada `funcionConPasoDeParametros` que espera recibir dos parámetros.
+    return x + y; //* Retorna la suma de los valores que se pasen como argumento al momento de invocar la función.
+} //* Cierre de la función.
+
+valorQueAlmacenaValorDeFuncion = funcionConPasoDeParametros(3, 4); //* Se pasan los valores 3 y 4 como argumentos.
+console.log(valorQueAlmacenaValorDeFuncion); //* Resultado: 7. La función suma correctamente los dos valores pasados.
+
+// Todo - Retorno dentro de funciones (return)
+// Todo - En JavaScript, las funciones no solo pueden ejecutar tareas, sino también **devolver un resultado** utilizando la palabra clave `return`. Cuando una función utiliza `return`, esta "envía de vuelta" un valor al lugar donde fue llamada, lo cual permite almacenar ese valor en una variable, utilizarlo en cálculos u operaciones, o imprimirlo en consola. Además, las funciones pueden recibir **parámetros**, que son variables que se pasan a la función en el momento de invocarla. Estos parámetros se escriben dentro de los paréntesis de la función al declararla, y en el momento de llamar a la función, se pueden pasar valores directos (como números o strings) o variables ya existentes. Cuando la función es llamada, esos valores **se asignan en orden** a los parámetros definidos, y luego pueden ser utilizados dentro del cuerpo de la función como cualquier otra variable. Esta combinación de parámetros y `return` permite que las funciones sean **flexibles, reutilizables y dinámicas**, ya que pueden operar con distintos datos de entrada y devolver distintos resultados según el caso.
+// &Funcion sin retorno
+// &Una función sin retorno es aquella que **no utiliza la palabra `return`** dentro de su cuerpo, lo que significa que no devuelve ningún valor al lugar desde donde fue llamada. Aunque no retorne un valor, sí puede ejecutar cualquier operación o instrucción dentro de sus llaves, como mostrar mensajes en consola, realizar cálculos internos o modificar variables globales. El resultado de esas operaciones **solo estará disponible dentro del alcance de la función** y no podrá ser reutilizado fuera de ella. Al invocar una función sin `return`, si se intenta almacenar su resultado en una variable, esta contendrá el valor `undefined`, ya que la función no devuelve nada explícitamente.
+console.log('--- Funcion con return. ---'); //* Imprime en consola un mensaje que indica un ejemplo de función que sí retorna un valor.
+
+function funcionQueNoRetornaUnValor(x, y) {
+    const z = x + y;
+    console.log(`Este console log se ejecuta dentro de la función. Se pasan dos parámetros y se realiza una suma, pero como no hay 'return', el resultado (z = ${z}) está disponible solo dentro de esta función.`);
+}
+
+const variableConValorDeLaFuncionSinReturn = funcionQueNoRetornaUnValor(5, 6);
+//* Se llama a la función y se le pasan los valores 5 y 6 como parámetros.
+//* Dentro de la función se calcula la suma y se muestra en consola, pero como no hay 'return', la función no devuelve ningún valor.
+//* Por eso, la variable 'variableConValorDeLaFuncionSinReturn' tendrá como valor 'undefined'.
+
+console.log(`Este console log muestra el contenido de la variable que intenta almacenar el resultado de la función. Pero como no hay 'return', el valor es:`, variableConValorDeLaFuncionSinReturn); //* Resultado: undefined
+
+// &Funcion con retorno
+// &Una función con retorno es aquella que **devuelve un valor específico** al lugar donde fue llamada usando la palabra clave `return`. Al definir parámetros en la función, podemos pasarle datos externos en el momento de invocarla. Estos valores se usan dentro del bloque de código, y el `return` se encarga de enviar el resultado de las operaciones al exterior. Este valor retornado puede ser almacenado en una variable, mostrado por consola o utilizado directamente en cálculos. Gracias a esto, las funciones con `return` son más flexibles y reutilizables, ya que permiten trabajar con datos dinámicos y generar respuestas útiles fuera del bloque funcional.
+console.log('--- Funcion con return. ---');
+function funcionQueRetornaUnValor(x, y) {
+    return x + y;
+    //* Se recibe como parámetros 'x' y 'y', y se retorna el resultado de sumarlos.
+    //* La palabra `return` finaliza la ejecución de la función y devuelve el valor calculado (en este caso, la suma de x + y).
+}
+
+const variableConValorDelRetornoDeFuncion = funcionQueRetornaUnValor(3, 6);
+//* Se llama a la función y se le pasan dos valores: 3 y 6.
+//* Estos valores se asignan a los parámetros 'x' y 'y'.
+//* La función ejecuta la suma y retorna el valor 9.
+//* Ese valor retornado se almacena en la variable 'variableConValorDelRetornoDeFuncion'.
+
+console.log(variableConValorDelRetornoDeFuncion); //* Resultado: 9
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
+console.log('=========== Consejos. ===========');
+
 // !Variables que apuntan a otra variable con valor: No se recomienda asignar directamente una variable al valor de otra, sin importar si se trata de un tipo primitivo o complejo. En el caso de **tipos de datos complejos** (como objetos o arreglos), ambas variables apuntarán al **mismo espacio en memoria**, lo que significa que un cambio en una variable también afectará a la otra, generando posibles errores difíciles de rastrear. En el caso de **tipos de datos primitivos** (como números o cadenas), el valor sí se copia y no hay referencia compartida, pero aún así es preferible **evitar este tipo de asignación directa** si no es realmente necesario, ya que puede dificultar la lectura, ocacionar errores y mantenimiento del código. Siempre es más seguro y claro trabajar con copias independientes cuando se desea evitar comportamientos inesperados.
+
+// !Igualar una variable a una función: En JavaScript, es común asignar una función a una variable. Esto significa que la variable ahora **actúa como un nuevo nombre o alias para esa función**. Por ejemplo, si hacemos `const nombreVariable = nombreFuncion;`, lo que sucede es que la variable guarda la función completa como valor, y por lo tanto, podemos llamar a la función usando el nombre de la variable como si fuera el nombre original de la función. Es importante entender que en este punto la función **no se ejecuta**; solo se guarda su referencia. Para ejecutarla y obtener un resultado, es necesario usar paréntesis `()` después del nombre de la variable, por ejemplo: `nombreVariable()`. Si omitimos los paréntesis, simplemente estamos pasando la función sin ejecutarla, lo cual es útil en situaciones como callbacks, eventos o funciones de orden superior. En resumen, la variable se convierte en una nueva forma de llamar a la función, manteniendo toda su funcionalidad, pero con un nombre diferente.
+console.log( '--- Igualar una variable a una funcion. ---')
+function funcionSumaConsejo(a, b) {
+    return a + b; //* Retorna la suma de a y b
+}
+
+const funcionComoVariable = funcionSumaConsejo; //* 'funcionComoVariable' es ahora un alias para 'funcionSumaConsejo'
+
+const resultadoEjecucion = funcionComoVariable(4, 5); //* Se ejecuta la función usando la variable-alias, pasando 4 y 5 como argumentos
+
+console.log(funcionComoVariable); //* Muestra el código fuente de la función, porque es la referencia a la función
+console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9
