@@ -272,10 +272,24 @@ const variableConOperadorLogicoComparacionDeValorMenorIgual = 3 <= 2; //* Result
 // &El operador lógico `&&` (AND) se utiliza para validar si **todas las condiciones** conectadas son verdaderas. Solo devuelve `true` si **cada una** de las comparaciones es verdadera; si al menos una es falsa, el resultado será `false`. Es útil cuando se requiere que múltiples requisitos se cumplan al mismo tiempo, como validar que un usuario tenga cierta edad **y** haya aceptado los términos.
 const variableConOperadorLogicoAnd = 23 == 1 && 13 == 35; //* Resultado: false. Ambas comparaciones son falsas, por lo tanto, el resultado es false.
 
-// &Dsiyuncion OR (||)
+// &Disyuncion OR (||)
 // &El operador lógico `||` (OR) evalúa si **al menos una** de las condiciones conectadas es verdadera. Si **una o más** lo son, devuelve `true`; solo devuelve `false` si **todas** son falsas. Es útil cuando basta con que se cumpla alguna de varias condiciones posibles para ejecutar algo.
 const variableConOperadorLogicoOr = 34 == 34 || 23 == 64; //* Resultado: true. Aunque la segunda condición es falsa, la primera es verdadera, por lo tanto el resultado total es true.
 
+// Todo - Orden de prioridad de operadores lógicos
+// Todo - En JavaScript, cuando se combinan múltiples operadores lógicos en una misma expresión, como `&&` (AND) y `||` (OR), es importante conocer el **orden de prioridad** o **precedencia** con el que se evalúan. 
+// ~El operador `&&` tiene **mayor prioridad** que el operador `||`, por lo tanto, las expresiones que usan `&&` se evaluarán primero, antes de considerar el `||`. 
+// ~Esto puede afectar completamente el resultado de una operación lógica compuesta. 
+// ~Además, si la expresión incluye comparaciones como `==` o `!=`, estas se evaluarán antes que los operadores lógicos.
+// ~El siguiente ejemplo muestra cómo una expresión con varios operadores se resuelve internamente paso a paso:
+const resultadoConPrioridadOperadores = 4 == 2 && 3 == 3 || 4 == 4 != 4;
+//* Paso 1: 4 == 2 → false (comparación de igualdad relajada)
+//* Paso 2: 3 == 3 → true
+//* Paso 3: 4 == 4 → true
+//* Paso 4: true != 4 → true (porque `true` se convierte internamente en 1, y 1 != 4)
+//* Paso 5: false && true → false (se resuelve primero el AND)
+//* Paso 6: false || true → true (luego se evalúa el OR)
+//* Resultado final: true
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Sintaxis de las variables
