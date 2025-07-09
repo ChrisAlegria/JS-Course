@@ -5,7 +5,7 @@
 // CamelCase: El camelCase es una convención de escritura que se utiliza en programación para nombrar variables, funciones, clases, etc. Se escribe en minúsculas y cada palabra adicional comienza con mayúscula. Por ejemplo, "miVariable", "miFuncion", "miClasePersonalizada".
 
 // ^JavaScript
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Simbologia en JS
 // Todo - Separador (,): En JavaScript, la coma se utiliza para separar múltiples declaraciones o elementos dentro de una misma línea. Por ejemplo, permite declarar varias variables al mismo tiempo usando una sola instrucción, separando cada variable con una coma.
 var x, y, z; //* Declaración de tres variables 'var' en una sola línea. La coma indica que 'x', 'y' y 'z' son variables independientes.
@@ -16,16 +16,13 @@ x = 5; y = 6; z = 3; //* Declaración y asignación de tres variables. Cada punt
 // Todo - Asignador (=): En JavaScript, el símbolo igual (=) se utiliza como **asignador**, lo que significa que se emplea para asignar un valor a una variable. A diferencia de las matemáticas, donde el igual indica igualdad, en JavaScript se interpreta como una operación de asignación: el valor del lado derecho se asigna a la variable del lado izquierdo.
 z = 'Valor de la variable Z'; //* Se asigna el valor de texto a la variable 'z' usando el símbolo de asignación (=).
 
-// Todo - Suma (+): En JavaScript, el símbolo de suma (+) se utiliza como **operador aritmético** para sumar valores numéricos. También puede funcionar como **operador de concatenación** cuando se usa con cadenas de texto, uniendo los valores como una sola cadena. Se usa en estructuras como: resultado = valor1 + valor2;
-z = x + y; //* Se suman los valores de las variables 'x' y 'y', y el resultado se asigna a la variable 'z'.
-
 // Todo - Scope ({}): En JavaScript, las llaves `{}` definen un bloque de código o scope (ámbito). Este scope actúa como una especie de “célula aislada”: puede acceder a variables externas, pero las variables declaradas dentro no estarán disponibles fuera del bloque. Esto permite organizar el código y limitar el alcance de las variables para evitar conflictos o interferencias. Las llaves se utilizan en estructuras como condicionales, funciones, bucles y objetos. Ademas cabe mencionar que la llave de apertura es `{` y la de cierre es `}`.
 
 function scope() { // *Se declara una función llamada 'scope'. Todo lo que esté dentro de estas llaves será su scope local.
     var x; // *Variable declarada con 'var', la cual pertenece únicamente al scope de esta función.
 } // *Cierre de la funcion y por ende del scope de la variable.
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Variables en JS
 // ~Las variables dentro de JS son contenedores donde se puede almacenar valores, como texto, numeros, objetos, arreglos, etc.. Ademas que existen 3 maneras de diferentes para declararlas.
 // Todo - Declaración de Variables en JavaScript: En JavaScript existen tres formas principales de declarar una variable: `var`, `let` y `const`. Aunque cada una tiene diferencias clave en su comportamiento (como el alcance o si permite reasignación), todas siguen una estructura básica común:  **palabraClave + nombreVariable + asignador + valor**. Primero se escribe la palabra clave (`let`, `const` o `var`), seguida del nombre de la variable, después el signo igual `=` que funciona como asignador, y finalmente el valor que se desea almacenar. Por ejemplo: `let nombre = "Juan";`. Esta sintaxis permite crear variables claras y organizadas que se pueden usar a lo largo del código según las necesidades del programa. */
@@ -99,12 +96,12 @@ var elementoDeclaracionMultipleConValor1 = 'Variable 1 de la declaración múlti
 // &Declaración múltiple mixta
 var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'Variable 2 de la declaración múltiple mixta, la cual contiene un valor.'; //* Se declara una variable sin valor y otra con valor asignado en una sola línea.
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Tipos de datos
 // ~En JavaScript, las variables pueden almacenar distintos tipos de datos, y estos son fundamentales para realizar operaciones, representar información y controlar el flujo del programa. Existen varios tipos de datos básicos, como los **números**, **cadenas de texto**, **booleanos**, **objetos**, **arreglos**, entre otros. Cada tipo de dato tiene su propia sintaxis y comportamiento. Comprender bien estos tipos es clave para escribir código eficiente y evitar errores, ya que determinan cómo se procesan, comparan y manipulan los valores dentro del programa.
 // &Números enteros (Int)
 // &Las variables tipo `number` se utilizan para almacenar **valores numéricos enteros**, es decir, números sin decimales. Estos pueden ser positivos, negativos o incluso el cero. No se requiere ningún símbolo especial para declarar un número entero; simplemente se escribe el número directamente después del signo `=`. Esto es útil cuando se necesita hacer operaciones matemáticas básicas como suma, resta, multiplicación, etc.
-const variableTipoNumber = 4; //* Variable tipo 'number' que almacena un número entero sin decimales.
+const variableTipoNumber = 4;
 
 // &Números con decimales (Float)
 // &Las variables tipo `float` también almacenan números, pero a diferencia de los enteros, estos **incluyen decimales**. En JavaScript no se usa una palabra clave diferente para flotantes, pero internamente se maneja como número decimal. Para declarar un `float`, basta con incluir un punto (`.`) entre la parte entera y decimal. Este tipo es muy útil en cálculos que requieren mayor precisión, como porcentajes, precios, promedios, etc.
@@ -168,7 +165,7 @@ const variableTipoArrayMixto = [1, 'Texto1', 2, ['Texto2']]; //* Array que mezcl
 // &El tipo de dato `Date` permite trabajar con fechas y horas. Para crear una nueva fecha, se puede utilizar el constructor `new Date()`, pasando como argumento una cadena en formato válido. En JavaScript, el formato más comúnmente aceptado para fechas es el estilo **estadounidense (MM/DD/YYYY)**, donde primero se indica el **mes**, luego el **día** y por último el **año**. Este tipo de dato es útil para manejar cronologías, agendas, cálculos de tiempo, etc.
 const variableTipoDate = new Date('07/25/2025'); //* Fecha creada en formato MM/DD/YYYY. Representa el 25 de julio de 2025.
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Operadores en JavaScript
 // ~En JavaScript, los operadores son símbolos que permiten realizar diferentes tipos de operaciones entre variables o valores. Estas operaciones pueden ser de **asignación**, **aritméticas**, **lógicas**, **comparación**, entre otras. 
 // ~Los operadores son fundamentales para manipular datos, realizar cálculos, construir condiciones y ejecutar tareas dentro del código. A continuación, se explican los operadores **de asignación** y **aritméticos**, que son los más utilizados al comenzar a programar.
@@ -237,17 +234,50 @@ variableConOperadorAritmeticoAumentador++; //* Se incrementa en 1. Resultado fin
 let variableConOperadorAritmeticoDisminuidor = 7; //* Valor inicial: 7.
 variableConOperadorAritmeticoDisminuidor--; //* Se disminuye en 1. Resultado final: 6.
 
-// Todo - Operadores logicos
-// Todo - 
-// &Comparacion de igualdad relajada (==)
-// & aqui chat menciina tambien que siempre dara una valor volleano ya sea true or false va? (igual si no estoy en lo correcto chat pon lo que es), ademas que aparte si comparas numeros con texto igualmente si son iguales dara true,, por lo que con el operador logico de comparacion de igualdad relaja no importa que sean diferentes tipos de variables, siempre y cuando sea igual su contenido pese a ser uno strgin y otro number o float.
-const variableConOperadorLogicoComparacionIgualdadRelajada = 3 == '3';
+// Todo - Operadores lógicos
+// Todo - Los operadores lógicos de comparación permiten evaluar si dos valores (ya sean variables o literales) son iguales o diferentes entre sí. Estas comparaciones siempre devuelven un **valor booleano**, es decir, `true` (verdadero) o `false` (falso), dependiendo del resultado de la evaluación. En JavaScript, existen dos formas principales de comparar: una comparación **relajada** (que no considera el tipo de dato) y una comparación **estricta** (que sí lo considera). Comprender estas diferencias es clave para evitar errores inesperados en el código.
+// &Comparación de igualdad relajada (==)
+// &El operador `==` compara si dos valores **son iguales en su contenido**, sin importar si tienen tipos de datos diferentes. Por ejemplo, compara un número (`3`) con un string (`'3'`) y los considera iguales porque su valor es el mismo. Esta comparación realiza una conversión implícita de tipo para hacer coincidir los valores. Siempre retorna `true` o `false` según el resultado de la comparación. Sin embargo, este tipo de comparación puede llevar a resultados confusos, por lo que se recomienda tener cuidado al usarlo.
+const variableConOperadorLogicoComparacionIgualdadRelajada = 3 == '3'; //* Resultado: true. Aunque uno es número y el otro string, los valores son iguales y se consideran equivalentes.
 
-// &Comparacion de igualdad estrcita (===)
-// &Aqui le pones que a comparacion de la comparacion igualdad relajada pese a que sean el mismo resultado siendo un valor string y otro int dara error, ya que este tambien compara el tipo de vairable o algo asi va? 
-const variableConOperadorLogicoComparacionIgualdadEstrcita = 5 === '5'
+// &Comparación de igualdad estricta (===)
+// &El operador `===` realiza una comparación **más estricta**: no solo verifica que los valores sean iguales, sino que también **los tipos de datos deben coincidir**. Si se comparan un número (`5`) con un string (`'5'`), el resultado será `false`, incluso si sus contenidos parecen iguales. Esto evita errores por comparación de valores de tipos distintos. Es el método de comparación más recomendado en JavaScript.
+const variableConOperadorLogicoComparacionIgualdadEstrcita = 5 === '5'; //* Resultado: false. Aunque los valores coinciden, el tipo (number vs string) es diferente.
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// &Negación/Desigualdad relajada (!=)
+// &El operador `!=` compara si dos valores **son diferentes en su contenido**, sin importar el tipo de dato. Si el contenido no coincide, retorna `true`; si coincide, retorna `false`. Al igual que `==`, realiza una conversión implícita de tipo antes de comparar. Este operador es útil, pero puede llevar a confusión si se trabaja con diferentes tipos de datos sin saberlo.
+const variableConOperadorLogicoComparacionDesigualdadRelajada = 4 != '4'; //* Resultado: false. Los valores son iguales (4 y '4'), por lo tanto, no son diferentes. Retorna false.
+
+// &Negación/Desigualdad estricta (!==)
+// &El operador `!==` compara si dos valores **son diferentes**, considerando tanto su valor como su tipo de dato. Si alguno de estos no coincide, el resultado será `true`. Es una forma segura de validar que dos valores realmente no son iguales en ningún aspecto. Este operador es preferido cuando se quiere evitar ambigüedad en las comparaciones.
+const variableConOperadorLogicoComparacionDesigualdadEstricta = 2 !== '2'; //* Resultado: true. Aunque ambos tienen valor 2, uno es número y el otro string. El tipo es diferente, así que son considerados distintos.
+
+// &Comparación de valor mayor (>)
+// &El operador `>` se utiliza para comparar si el valor a la izquierda es **mayor** que el de la derecha. Si efectivamente lo es, devuelve `true`; de lo contrario, devuelve `false`. Este operador solo compara valores numéricos o que puedan convertirse a números. Es útil en condiciones que evalúan si un valor supera a otro, como edades, precios, puntuaciones, etc.
+const variableConOperadorLogicoComparacionValorMayor = 3 > 2; //* Resultado: true. El número 3 es mayor que 2, por lo tanto la comparación es verdadera.
+
+// &Comparación de valor menor (<)
+// &El operador `<` verifica si el valor a la izquierda es **menor** que el valor a la derecha. Si es así, retorna `true`; de lo contrario, `false`. Funciona igual que `>`, pero en sentido opuesto. Es útil cuando se desea saber si un valor está por debajo de cierto límite.
+const variableConOperadorLogicoComparacionValorMenor = 3 < 3; //* Resultado: false. El número 3 no es menor que 3, por lo tanto la comparación es falsa.
+
+// &Comparación de valor mayor o igual (>=)
+// &El operador `>=` compara si el valor a la izquierda es **mayor o igual** al valor a la derecha. Si cumple cualquiera de las dos condiciones (mayor o igual), devuelve `true`; solo devuelve `false` si es estrictamente menor. Es comúnmente utilizado cuando se necesita establecer un rango mínimo incluido.
+const variableConOperadorLogicoComparacionDeValorMayorIgual = 2 >= 2; //* Resultado: true. Ambos valores son iguales, por lo que cumple la condición de "mayor o igual".
+
+// &Comparación de valor menor o igual (<=)
+// &El operador `<=` funciona de manera similar, pero verifica si el valor de la izquierda es **menor o igual** al de la derecha. También devuelve `true` si los valores son iguales o si el de la izquierda es más pequeño. Es útil para establecer un rango máximo incluido.
+const variableConOperadorLogicoComparacionDeValorMenorIgual = 3 <= 2; //* Resultado: false. El número 3 no es menor ni igual a 2, por lo tanto la comparación es falsa.
+
+// &Conjuncion AND (&&)
+// &El operador lógico `&&` (AND) se utiliza para validar si **todas las condiciones** conectadas son verdaderas. Solo devuelve `true` si **cada una** de las comparaciones es verdadera; si al menos una es falsa, el resultado será `false`. Es útil cuando se requiere que múltiples requisitos se cumplan al mismo tiempo, como validar que un usuario tenga cierta edad **y** haya aceptado los términos.
+const variableConOperadorLogicoAnd = 23 == 1 && 13 == 35; //* Resultado: false. Ambas comparaciones son falsas, por lo tanto, el resultado es false.
+
+// &Dsiyuncion OR (||)
+// &El operador lógico `||` (OR) evalúa si **al menos una** de las condiciones conectadas es verdadera. Si **una o más** lo son, devuelve `true`; solo devuelve `false` si **todas** son falsas. Es útil cuando basta con que se cumpla alguna de varias condiciones posibles para ejecutar algo.
+const variableConOperadorLogicoOr = 34 == 34 || 23 == 64; //* Resultado: true. Aunque la segunda condición es falsa, la primera es verdadera, por lo tanto el resultado total es true.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Sintaxis de las variables
 // ~En JavaScript, para declarar una variable es necesario seguir una estructura básica: primero se escribe la palabra clave (`var`, `let` o `const`), luego el nombre de la variable, y opcionalmente un valor que se le asignará usando el operador `=`. Pero más allá de esta estructura, es muy importante que el nombre de la variable cumpla con ciertas reglas que dicta el lenguaje. Por ejemplo, los nombres deben comenzar con una letra, un guion bajo (`_`) o un signo de pesos (`$`), pero **no pueden comenzar con un número** ni contener símbolos especiales como `!`, `@`, `-`, etc. Además, **no se permiten espacios** en los nombres. También es importante saber que JavaScript es un lenguaje **case-sensitive**, es decir, distingue entre mayúsculas y minúsculas, por lo que `nombre`, `Nombre` y `NOMBRE` son variables distintas. Aunque se pueden usar varios estilos para escribir nombres de variables, estos estilos son conocidos como **convenciones de nomenclatura** (por ejemplo: `camelCase`, `snake_case`, `PascalCase`, `kebab-case`, etc.). En JavaScript se recomienda utilizar **camelCase** como estándar, ya que mejora la legibilidad del código y es ampliamente aceptado por la comunidad.
 // Todo - Nombres válidos para variables
@@ -288,16 +318,14 @@ const variable_con_convencion_nomenclatura_snakecase = 'Esta es una variable cuy
 // &La convención PascalCase es similar a camelCase, pero aquí la primera palabra también inicia con mayúscula. Este estilo es comúnmente usado para nombrar clases o constructores en JavaScript, y ayuda a distinguirlas de variables o funciones regulares.
 const VariableConConvencionNomenclaturaPascalCase = 'Esta es una variable cuyo nombre está definido usando la convención PascalCase.'; //* Nombre compuesto por palabras unidas, empezando con mayúscula en cada palabra, incluyendo la primera.
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Scope (disponibilidad)
 // ~En JavaScript, el *scope* (alcance o disponibilidad) se refiere al contexto en el que una variable puede ser accedida o usada. Para visualizarlo, podemos imaginar que el código tiene jerarquías parecidas a una familia: el bloque principal (fuera de las llaves `{}`) es como un "padre", y cada bloque encerrado entre llaves `{}` (por ejemplo, dentro de funciones, condicionales o bucles) es un "hijo". Las variables declaradas **fuera** de las llaves (en el padre) pueden ser accedidas **dentro** del bloque (por los hijos), pero las variables creadas **dentro** de las llaves solo existen en ese bloque y **no pueden ser accedidas por el padre**. Esto se conoce como *scope local* (dentro del bloque) y *scope global* (fuera del bloque). Además, si se declara una variable con el mismo nombre tanto fuera como dentro del bloque, JavaScript las trata como variables completamente **independientes**, incluso si son del mismo tipo (`const`, `let`). En ese caso, dentro del bloque se utilizará únicamente la versión local (la que esté más cerca).
-console.log('=========== Scope (disponibilidad). ===========') 
-//* Título visual que se imprime en consola para señalar el inicio de la sección dedicada a explicar el concepto de scope (disponibilidad de variables según el contexto donde son declaradas).
+console.log('=========== Scope (disponibilidad). ==========='); //* Título visual que se imprime en consola para señalar el inicio de la sección dedicada a explicar el concepto de scope (disponibilidad de variables según el contexto donde son declaradas).
 
 // &Variable dentro y fuera del scope.
 // &En este ejemplo se declara una variable `const` llamada `variableParaScopeDentroFuera` en la raíz (fuera del bloque) con un valor de 5, y luego **se vuelve a declarar otra variable con el mismo nombre dentro de un bloque**, pero con un valor distinto (2). Ambas variables son válidas y no provocan error, ya que pertenecen a diferentes *scopes*. Dentro del bloque se usará la versión local (la variable declarada dentro del scope), mientras que fuera se usará la versión global (la vairable declarada fuera del scope).
-console.log('--- Variable dentro y fuera del scope. ---')
-//* Subtítulo visual en consola que identifica un ejemplo donde una variable se declara tanto dentro como fuera de un bloque. Sirve para diferenciar y observar cómo cada instancia actúa dentro de su propio scope.
+console.log('--- Variable dentro y fuera del scope. ---'); //* Subtítulo visual en consola que identifica un ejemplo donde una variable se declara tanto dentro como fuera de un bloque. Sirve para diferenciar y observar cómo cada instancia actúa dentro de su propio scope.
 const variableParaScopeDentroFuera = 5; //* Declaración en el scope global (raíz), valor: 5.
 {
     const variableParaScopeDentroFuera = 2; //* Declaración en el scope local (bloque), valor: 2.
@@ -307,8 +335,7 @@ console.log(variableParaScopeDentroFuera); //* Se imprime 5, ya que estamos fuer
 
 // &Variable dentro pero no fuera del scope.
 // &Aquí se declara una variable solo dentro de un bloque (entre llaves `{}`), por lo que su alcance está limitado únicamente a ese bloque. Al intentar acceder a ella fuera del bloque, se generará un error porque **la variable no existe en el scope global**.
-console.log('--- Variable dentro pero no fuera del scope. ---')
-//* Subtítulo visual en consola que señala el inicio del ejemplo donde una variable es declarada dentro de un bloque y luego se intenta acceder a ella fuera del mismo, generando un error por estar fuera de su scope.
+console.log('--- Variable dentro pero no fuera del scope. ---'); //* Subtítulo visual en consola que señala el inicio del ejemplo donde una variable es declarada dentro de un bloque y luego se intenta acceder a ella fuera del mismo, generando un error por estar fuera de su scope.
 {
     const variableDentroNoFuera = 3; //* Declaración en el scope local (bloque), valor: 3.
     console.log(variableDentroNoFuera); //* Se imprime 3, ya que estamos dentro del bloque.
@@ -317,8 +344,7 @@ console.log('--- Variable dentro pero no fuera del scope. ---')
 
 // &Variable fuera pero no dentro del scope.
 // &En este caso, se declara una variable fuera del bloque (en el scope global) y luego se intenta acceder a ella tanto fuera como dentro del bloque. Como las variables globales **sí pueden ser leídas desde dentro de bloques**, este ejemplo funcionará correctamente. La variable estará disponible en ambos lugares.
-console.log('--- Variable fuera pero no dentro del scope. ---')
-//* Subtítulo visual que marca un ejemplo en el que una variable es declarada fuera de un bloque (en el scope global) y luego es utilizada tanto dentro como fuera del mismo. Esto permite ver que las variables globales son accesibles desde scopes internos.
+console.log('--- Variable fuera pero no dentro del scope. ---'); //* Subtítulo visual que marca un ejemplo en el que una variable es declarada fuera de un bloque (en el scope global) y luego es utilizada tanto dentro como fuera del mismo. Esto permite ver que las variables globales son accesibles desde scopes internos.
 const variableFueraNoDentro = 7; //* Declaración en el scope global (raíz), valor: 7.
 {
     console.log(variableFueraNoDentro); //* Se imprime 7, ya que el bloque puede acceder a variables globales.
@@ -328,23 +354,23 @@ console.log(variableFueraNoDentro); //* Se imprime 7 nuevamente, accediendo desd
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Parseo
 // ~El parseo (también conocido como **conversión de tipo**) es el proceso mediante el cual se transforma un dato de un tipo a otro. En JavaScript, una de las conversiones más comunes es la de un **string (texto)** a un **número**, ya sea entero (`int`) o decimal (`float`). Esto es muy útil, por ejemplo, cuando los valores numéricos se reciben desde formularios o bases de datos en forma de texto y se desea realizar operaciones matemáticas con ellos. JavaScript ofrece funciones como `parseInt()` y `parseFloat()` para realizar este tipo de conversiones de forma explícita.
-console.log('=========== Parseo. ===========') //* Título principal que indica que inicia la sección de parseo o conversión de tipos.
+console.log('=========== Parseo. ==========='); //* Título principal que indica que inicia la sección de parseo o conversión de tipos.
 const variableParaParseoTipoInt = '5'; //* Esta variable contiene un valor numérico, pero en forma de texto (string).
 const vairableParaParseoTipoFloat = '2.5'; //* Esta variable contiene un número decimal, pero también como texto (string).
 let variableParaAlmacenarParseo; //* Variable utilizada para almacenar el resultado del parseo y posterior operación.
 
 // &Parseo de tipo string a número entero 'int' (parseInt)
 // &La función `parseInt()` convierte una cadena de texto que representa un número entero en un valor numérico real. Si la cadena contiene decimales, estos son descartados o redondeados. Es útil cuando se desea trabajar solo con valores enteros.
-console.log('--- Parseo de string a número entero (parseInt). ---') //* Subtítulo explicativo que marca el inicio de la conversión con `parseInt`.
+console.log('--- Parseo de string a número entero (parseInt). ---'); //* Subtítulo explicativo que marca el inicio de la conversión con `parseInt`.
 variableParaAlmacenarParseo = 5 + parseInt(variableParaParseoTipoInt); //* El string '5' se convierte en número 5, luego se suma a 5. Resultado final: 10.
 console.log(variableParaAlmacenarParseo); //* Se imprime el resultado: 10.
 
 // &Parseo de tipo string a número decimal 'float' (parseFloat)
 // &La función `parseFloat()` convierte una cadena de texto que representa un número decimal en un valor `float`. A diferencia de `parseInt()`, conserva los decimales.
-console.log('--- Parseo de string a número con decimales (parseFloat). ---') //* Subtítulo explicativo para `parseFloat`.
+console.log('--- Parseo de string a número con decimales (parseFloat). ---'); //* Subtítulo explicativo para `parseFloat`.
 variableParaAlmacenarParseo = 2.5 + parseFloat(vairableParaParseoTipoFloat); //* El string '2.5' se convierte en número 2.5, luego se suma a 2.5. Resultado final: 5.
 console.log(variableParaAlmacenarParseo); //* Se imprime el resultado: 5.
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
 // !Variables que apuntan a otra variable con valor: No se recomienda asignar directamente una variable al valor de otra, sin importar si se trata de un tipo primitivo o complejo. En el caso de **tipos de datos complejos** (como objetos o arreglos), ambas variables apuntarán al **mismo espacio en memoria**, lo que significa que un cambio en una variable también afectará a la otra, generando posibles errores difíciles de rastrear. En el caso de **tipos de datos primitivos** (como números o cadenas), el valor sí se copia y no hay referencia compartida, pero aún así es preferible **evitar este tipo de asignación directa** si no es realmente necesario, ya que puede dificultar la lectura, ocacionar errores y mantenimiento del código. Siempre es más seguro y claro trabajar con copias independientes cuando se desea evitar comportamientos inesperados.
