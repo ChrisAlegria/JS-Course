@@ -460,8 +460,6 @@ const variableConValorDelRetornoDeFuncion = funcionQueRetornaUnValor(3, 6);
 
 console.log(variableConValorDelRetornoDeFuncion); //* Resultado: 9
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
 console.log('=========== Consejos. ===========');
