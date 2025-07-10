@@ -545,6 +545,7 @@ console.log(consolaVideojuegos["color"]); //* Se accede a la propiedad 'color' u
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Eventos (Del DOM)
+// ~Los evento del DOM son mas orientados para web, pero un evento en JavaScrip es una accion o suceso que pasa dentro de la pagina web, puede ser desencadenado por el usuario al hacer click, arrastrar algo o por el mismo navegador al terminar de cargar un recurso o de cargar la pagina si se cierra la misma etc.. Por lo que esto puede ser capturado por JavaScript y se pueden hacer distintas intstrucciones para darle interactividad a la pagfina y que sea mucho mas atractiva
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
