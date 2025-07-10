@@ -493,7 +493,7 @@ console.log(variableConValorDelRetornoDeFuncion); //* Resultado: 9
 console.log('=========== Funciones. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre objetos.
 
 // Todo - Sintaxis de un objeto
-// Todo - La sintaxis básica de un objeto en JavaScript consiste en declarar una variable usando `var`, `let` o `const`, seguida del nombre del objeto y el signo `=`. Luego se abren llaves `{}` donde se escriben las **propiedades** del objeto en pares de clave-valor, separados por comas. Cada par se compone de un **identificador (clave)** seguido de dos puntos `:` y un **valor asociado**. Los valores pueden ser de cualquier tipo de dato: `string`, `number`, `boolean`, `array`, `function`, `otro objeto`, etc. La estructura general es: `nombreObjeto = { clave1: valor1, clave2: valor2, ... }`. Es importante recordar que el último par **no debe llevar coma final**, aunque JavaScript lo tolera en versiones modernas.
+// Todo - La sintaxis básica de un objeto en JavaScript consiste en declarar una variable usando `var`, `let` o `const`, seguida del nombre del objeto y el signo `=`. Luego se abren llaves `{}` donde se escriben las **propiedades** del objeto en pares de clave-valor, separados por comas. Cada par se compone de un **identificador (clave)** seguido de dos puntos `:` y un **valor asociado**. Los valores pueden ser de cualquier tipo de dato: `string`, `number`, `boolean`, `array`, `function`, `otro objeto`, etc. La estructura general es: `nombreObjeto = { clave1: valor1, clave2: valor2, ... }`. Es importante recordar que el último par **no debe llevar coma final**, aunque JavaScript lo tolera en versiones modernas. Además, aunque un objeto se declare con `const`, **sí es posible modificar sus propiedades internas** (agregar, cambiar o eliminar claves). Lo que no se permite es **reasignar completamente** el objeto a otra estructura (por ejemplo, `objeto = nuevoObjeto` generaría un error). Esta es una distinción clave entre la inmutabilidad de la **referencia** y la mutabilidad de su **contenido interno**.
 var auto = { //* Se declara una variable con la palabra clave `var` y el nombre `auto`. Luego se utiliza el operador de asignación `=` y se abren llaves `{}`, lo cual indica que se está creando un objeto.
     marca: 'Nissan',   //* Clave 'marca' con valor tipo string. Representa la marca del automóvil.
     modelo: 'Tsuru',   //* Clave 'modelo' con valor tipo string. Indica el modelo del auto.
@@ -501,19 +501,48 @@ var auto = { //* Se declara una variable con la palabra clave `var` y el nombre 
     color: 'blanco',   //* Clave 'color' con valor tipo string. Representa el color del vehículo.
 } //* El objeto `auto` contiene 4 propiedades distintas. Cada clave está separada por comas dentro del bloque `{}`.
 
+// Todo - Tipo de claves y sus valores
+// Todo - En JavaScript, los objetos están formados por pares clave:valor, y **las claves pueden almacenar prácticamente cualquier tipo de dato**. Esto incluye tipos primitivos como `string`, `number`, `boolean`, `null` o `undefined`, pero también estructuras más complejas como `arrays`, `funciones` y otros `objetos`. Esta versatilidad permite representar datos muy completos y estructurados dentro de un solo objeto. Por ejemplo, una clave puede contener otra función que será ejecutada como parte del objeto, o un objeto dentro de otro, formando así **objetos anidados**. Cuando una clave almacena un objeto, se usa esta sintaxis: `nombreClave: { ... }`, lo que permite construir jerarquías o subniveles de información dentro del objeto principal.
+const objetoConDiversosTiposDeClabes = {
+    claveTipoStrin: 'Clave que almacena una cadena de texto.', //* Clave que guarda un valor tipo string.
+    claveTipoInt: 3, //* Clave que guarda un número entero.
+    claveTipoFloar: 4.6, //* Clave que guarda un número con decimales (float).
+    claveTipoNull: null, //* Clave que guarda el valor `null`, lo que indica ausencia intencional de valor.
+    claveTipoArray: ['Elemento1', 2, 'Elemento3', 4], //* Clave que almacena un arreglo con elementos mixtos (string y number).
+    claveTipoFuncion: function funcionDentroDeObjeto() { codigoQueEjecutaraLaFuncion }, //* Clave que almacena una función. Esta función puede ser llamada como parte del objeto.
+    claveTipoObjeto: { //* Clave que guarda otro objeto como valor. Esto crea un objeto anidado.
+        claveDentroDeClaveQueSeVuelveObjeto: 'clave dentro de una clave como objeto.' //* Clave interna dentro del objeto anidado.
+    } //* Cierre del objeto anidado.
+}; //* Cierre del objeto principal.
+
+
 // Todo - Llamamiento de un objeto y sus claves
-// Todo - En JavaScript, un objeto es una estructura que almacena datos en forma de pares clave:valor. Una vez que el objeto ha sido declarado, podemos acceder a sus datos usando el nombre del objeto seguido de un punto (`.`) y el nombre de la **clave** o **propiedad** que queremos consultar. Este proceso se llama **llamamiento de una propiedad** o **acceso a una clave del objeto**. Este tipo de acceso se conoce como **notación de punto** (`objeto.propiedad`) y es la forma más común y legible de obtener valores almacenados en objetos. Al acceder a la clave, el programa devolverá su **valor asociado**. Si se intenta acceder a una clave que no existe, el resultado será `undefined`, lo que indica que dicha propiedad no está presente en el objeto.
-console.log('--- Llamamiento objeto con clave. ---'); //* Imprime en consola un mensaje que indica un ejemplo de llamamiento de un objeto con una clave.
+// Todo - En JavaScript, un objeto es una estructura que almacena datos en forma de pares clave:valor. Una vez que el objeto ha sido declarado, podemos acceder a sus datos usando el nombre del objeto seguido de un punto (`.`) o mediante corchetes `["clave"]`. Este proceso se llama **llamamiento de una propiedad** o **acceso a una clave del objeto**. La forma más común y legible de hacerlo es mediante la **notación de punto** (`objeto.propiedad`). Sin embargo, también existe la **notación de corchetes** (`objeto["propiedad"]`), la cual es útil cuando el nombre de la clave contiene caracteres especiales, espacios o es dinámico. Ambas formas devuelven el **valor asociado** a la clave. Si la propiedad no existe, el resultado será `undefined`, indicando que dicha clave no está presente en el objeto.
+// &Llamamiento de objeto mediante (.)
+// &Esta forma de acceso utiliza la notación de punto (`objeto.propiedad`) y es la manera más directa, clara y habitual de llamar una propiedad de un objeto en JavaScript. Solo puede usarse si el nombre de la propiedad es una palabra válida como identificador (sin espacios, guiones ni símbolos). Es ideal cuando se conoce la clave de antemano y se quiere mantener el código más limpio y legible.
+console.log('--- Llamamiento objeto con clave mediante punto (.). ---'); //* Imprime en consola un mensaje que indica un ejemplo de llamamiento de un objeto con una clave mediante (notación punto).
 
-var consolaVideojuegos = { //* Se declara un objeto llamado `consolaVideojuegos` que contiene cuatro propiedades: 'marca', 'modelo', 'color' y 'espacio'.
-    marca: 'Nintendo', //* Clave 'marca' con valor tipo string.
-    modelo: 'Switch', //* Clave 'modelo' con valor tipo string.
-    color: 'Rojo y azul', //* Clave 'color' con valor tipo string.
-    espacio: 245, //* Clave 'espacio' con valor tipo number.
-}
+var consolaVideojuegos = { //* Se declara un objeto llamado `consolaVideojuegos` que contiene cuatro propiedades distintas.
+    marca: 'Nintendo', //* Propiedad 'marca' con valor tipo string.
+    modelo: 'Switch', //* Propiedad 'modelo' con valor tipo string.
+    color: 'Rojo y azul', //* Propiedad 'color' con valor tipo string.
+    espacio: 245 //* Propiedad 'espacio' con valor tipo number (sin coma final, ya que es la última).
+}; //* Cierre del objeto
 
-console.log(consolaVideojuegos.marca); //* Se accede a la clave 'marca' del objeto usando notación de punto. Resultado: 'Nintendo'.
+console.log(consolaVideojuegos.marca); //* Se accede a la propiedad 'marca' usando notación de punto. Resultado: 'Nintendo'.
 
+// &Llamamiento de objeto mediante ([])
+// &Esta forma de acceso usa corchetes (`objeto["clave"]`) y es especialmente útil cuando el nombre de la propiedad no es un identificador válido (por ejemplo, contiene espacios o caracteres especiales), o si la propiedad que se desea acceder está almacenada en una variable. Aunque es un poco más extensa visualmente, ofrece más flexibilidad y se vuelve indispensable en casos dinámicos.
+console.log('--- Llamamiento objeto con clave mediante corchetes ([]). ---'); //* Imprime en consola un mensaje que indica un ejemplo de llamamiento de un objeto con una clave mediante (notación corchetes).
+
+var consolaVideojuegos = { //* Se vuelve a declarar el objeto `consolaVideojuegos` con las mismas propiedades.
+    marca: 'Nintendo', //* Propiedad 'marca' con valor tipo string.
+    modelo: 'Switch', //* Propiedad 'modelo' con valor tipo string.
+    color: 'Rojo y azul', //* Propiedad 'color' con valor tipo string.
+    espacio: 245 //* Propiedad 'espacio' con valor tipo number.
+}; //* Cierre del objeto
+
+console.log(consolaVideojuegos["color"]); //* Se accede a la propiedad 'color' usando notación de corchetes. Resultado: 'Rojo y azul'.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
