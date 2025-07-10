@@ -503,7 +503,7 @@ var auto = { //* Se declara una variable con la palabra clave `var` y el nombre 
 
 // Todo - Tipo de claves y sus valores
 // Todo - En JavaScript, los objetos están formados por pares clave:valor, y **las claves pueden almacenar prácticamente cualquier tipo de dato**. Esto incluye tipos primitivos como `string`, `number`, `boolean`, `null` o `undefined`, pero también estructuras más complejas como `arrays`, `funciones` y otros `objetos`. Esta versatilidad permite representar datos muy completos y estructurados dentro de un solo objeto. Por ejemplo, una clave puede contener otra función que será ejecutada como parte del objeto, o un objeto dentro de otro, formando así **objetos anidados**. Cuando una clave almacena un objeto, se usa esta sintaxis: `nombreClave: { ... }`, lo que permite construir jerarquías o subniveles de información dentro del objeto principal.
-const objetoConDiversosTiposDeClabes = {
+const objetoConDiversosTiposDeClabes = { //*Se abre un objeto con el nombre de objetoConDiversosTiposDeClabes.
     claveTipoStrin: 'Clave que almacena una cadena de texto.', //* Clave que guarda un valor tipo string.
     claveTipoInt: 3, //* Clave que guarda un número entero.
     claveTipoFloar: 4.6, //* Clave que guarda un número con decimales (float).
@@ -514,7 +514,6 @@ const objetoConDiversosTiposDeClabes = {
         claveDentroDeClaveQueSeVuelveObjeto: 'clave dentro de una clave como objeto.' //* Clave interna dentro del objeto anidado.
     } //* Cierre del objeto anidado.
 }; //* Cierre del objeto principal.
-
 
 // Todo - Llamamiento de un objeto y sus claves
 // Todo - En JavaScript, un objeto es una estructura que almacena datos en forma de pares clave:valor. Una vez que el objeto ha sido declarado, podemos acceder a sus datos usando el nombre del objeto seguido de un punto (`.`) o mediante corchetes `["clave"]`. Este proceso se llama **llamamiento de una propiedad** o **acceso a una clave del objeto**. La forma más común y legible de hacerlo es mediante la **notación de punto** (`objeto.propiedad`). Sin embargo, también existe la **notación de corchetes** (`objeto["propiedad"]`), la cual es útil cuando el nombre de la clave contiene caracteres especiales, espacios o es dinámico. Ambas formas devuelven el **valor asociado** a la clave. Si la propiedad no existe, el resultado será `undefined`, indicando que dicha clave no está presente en el objeto.
