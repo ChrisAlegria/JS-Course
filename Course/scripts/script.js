@@ -429,7 +429,7 @@ console.log(valorQueAlmacenaValorDeFuncion); //* Resultado: 7. La función suma 
 // Todo - En JavaScript, las funciones no solo pueden ejecutar tareas, sino también **devolver un resultado** utilizando la palabra clave `return`. Cuando una función utiliza `return`, esta "envía de vuelta" un valor al lugar donde fue llamada, lo cual permite almacenar ese valor en una variable, utilizarlo en cálculos u operaciones, o imprimirlo en consola. Además, las funciones pueden recibir **parámetros**, que son variables que se pasan a la función en el momento de invocarla. Estos parámetros se escriben dentro de los paréntesis de la función al declararla, y en el momento de llamar a la función, se pueden pasar valores directos (como números o strings) o variables ya existentes. Cuando la función es llamada, esos valores **se asignan en orden** a los parámetros definidos, y luego pueden ser utilizados dentro del cuerpo de la función como cualquier otra variable. Esta combinación de parámetros y `return` permite que las funciones sean **flexibles, reutilizables y dinámicas**, ya que pueden operar con distintos datos de entrada y devolver distintos resultados según el caso.
 // &Funcion sin retorno
 // &Una función sin retorno es aquella que **no utiliza la palabra `return`** dentro de su cuerpo, lo que significa que no devuelve ningún valor al lugar desde donde fue llamada. Aunque no retorne un valor, sí puede ejecutar cualquier operación o instrucción dentro de sus llaves, como mostrar mensajes en consola, realizar cálculos internos o modificar variables globales. El resultado de esas operaciones **solo estará disponible dentro del alcance de la función** y no podrá ser reutilizado fuera de ella. Al invocar una función sin `return`, si se intenta almacenar su resultado en una variable, esta contendrá el valor `undefined`, ya que la función no devuelve nada explícitamente.
-console.log('--- Funcion con return. ---'); //* Imprime en consola un mensaje que indica un ejemplo de función que sí retorna un valor.
+console.log('--- Funcion sin return. ---'); //* Imprime en consola un mensaje que indica un ejemplo de función que sí retorna un valor.
 
 function funcionQueNoRetornaUnValor(x, y) {
     const z = x + y;
@@ -437,22 +437,22 @@ function funcionQueNoRetornaUnValor(x, y) {
 }
 
 const variableConValorDeLaFuncionSinReturn = funcionQueNoRetornaUnValor(5, 6);
+console.log(`Este console log muestra el contenido de la variable que intenta almacenar el resultado de la función. Pero como no hay 'return', el valor es:`, variableConValorDeLaFuncionSinReturn); //* Resultado: undefined
 //* Se llama a la función y se le pasan los valores 5 y 6 como parámetros.
 //* Dentro de la función se calcula la suma y se muestra en consola, pero como no hay 'return', la función no devuelve ningún valor.
 //* Por eso, la variable 'variableConValorDeLaFuncionSinReturn' tendrá como valor 'undefined'.
 
-console.log(`Este console log muestra el contenido de la variable que intenta almacenar el resultado de la función. Pero como no hay 'return', el valor es:`, variableConValorDeLaFuncionSinReturn); //* Resultado: undefined
 
 // &Funcion con retorno
 // &Una función con retorno es aquella que **devuelve un valor específico** al lugar donde fue llamada usando la palabra clave `return`. Al definir parámetros en la función, podemos pasarle datos externos en el momento de invocarla. Estos valores se usan dentro del bloque de código, y el `return` se encarga de enviar el resultado de las operaciones al exterior. Este valor retornado puede ser almacenado en una variable, mostrado por consola o utilizado directamente en cálculos. Gracias a esto, las funciones con `return` son más flexibles y reutilizables, ya que permiten trabajar con datos dinámicos y generar respuestas útiles fuera del bloque funcional.
-console.log('--- Funcion con return. ---');
+console.log('--- Funcion con return. ---'); //* Imprime en consola un mensaje que indica un ejemplo de función que no retorna un valor
 function funcionQueRetornaUnValor(x, y) {
     return x + y;
-    //* Se recibe como parámetros 'x' y 'y', y se retorna el resultado de sumarlos.
-    //* La palabra `return` finaliza la ejecución de la función y devuelve el valor calculado (en este caso, la suma de x + y).
 }
+//* Se recibe como parámetros 'x' y 'y', y se retorna el resultado de sumarlos.
+//* La palabra `return` finaliza la ejecución de la función y devuelve el valor calculado (en este caso, la suma de x + y).
 
-const variableConValorDelRetornoDeFuncion = funcionQueRetornaUnValor(3, 6);
+const variableConValorDelRetornoDeFuncion = funcionQueRetornaUnValor(3,6);
 //* Se llama a la función y se le pasan dos valores: 3 y 6.
 //* Estos valores se asignan a los parámetros 'x' y 'y'.
 //* La función ejecuta la suma y retorna el valor 9.
