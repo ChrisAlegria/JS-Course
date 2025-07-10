@@ -390,7 +390,6 @@ console.log(variableParaAlmacenarParseo); //* Se imprime el resultado: 5.
 // ~Una función en JavaScript es un bloque de código **reutilizable** que sirve para ejecutar una tarea específica. Se puede pensar en una función como un conjunto de instrucciones que se agrupan bajo un **nombre especial**, y ese nombre permite invocar o ejecutar ese bloque de instrucciones cada vez que sea necesario. Las funciones pueden ser llamadas desde cualquier parte del código, lo cual resulta útil para **evitar la repetición** de instrucciones y hacer que el código sea más **organizado, legible y eficiente**.
 console.log('=========== Funciones. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre funciones.
 
-
 // Todo - Sintaxis de una función
 // Todo - Una función está conformada por una estructura específica que le indica a JavaScript que se va a definir un nuevo bloque funcional. Aunque existen varias formas de declarar funciones, esta es la forma **tradicional o inicial** conocida como declaración de función. Su estructura se compone de varios elementos: primero, la palabra clave `function` que le indica al lenguaje que se va a definir una función; después, se especifica el **nombre de la función**, que será utilizado para invocarla en el futuro; a continuación, se colocan **paréntesis `()`**, que pueden contener uno o más **parámetros** (opcionales) separados por comas; y finalmente se agregan las **llaves `{}`**, que son el cuerpo de la función y contienen las instrucciones que se ejecutarán cada vez que se llame. La estructura completa sería: `function + nombreFuncion + () + {}`. Es importante mencionar que los **parámetros no son obligatorios**, pero si se usan, permiten pasar valores externos que la función puede utilizar dentro de su bloque de código.
 function nombreFuncion(parametro1, parametro2) { //* Se declara una función llamada `nombreFuncion` que recibe dos parámetros (`parametro1` y `parametro2`). 
@@ -442,7 +441,6 @@ console.log(`Este console log muestra el contenido de la variable que intenta al
 //* Dentro de la función se calcula la suma y se muestra en consola, pero como no hay 'return', la función no devuelve ningún valor.
 //* Por eso, la variable 'variableConValorDeLaFuncionSinReturn' tendrá como valor 'undefined'.
 
-
 // &Funcion con retorno
 // &Una función con retorno es aquella que **devuelve un valor específico** al lugar donde fue llamada usando la palabra clave `return`. Al definir parámetros en la función, podemos pasarle datos externos en el momento de invocarla. Estos valores se usan dentro del bloque de código, y el `return` se encarga de enviar el resultado de las operaciones al exterior. Este valor retornado puede ser almacenado en una variable, mostrado por consola o utilizado directamente en cálculos. Gracias a esto, las funciones con `return` son más flexibles y reutilizables, ya que permiten trabajar con datos dinámicos y generar respuestas útiles fuera del bloque funcional.
 console.log('--- Funcion con return. ---'); //* Imprime en consola un mensaje que indica un ejemplo de función que no retorna un valor
@@ -461,8 +459,11 @@ const variableConValorDelRetornoDeFuncion = funcionQueRetornaUnValor(3,6);
 console.log(variableConValorDelRetornoDeFuncion); //* Resultado: 9
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Objetos
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
-console.log('=========== Consejos. ===========');
+console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
 
 // !Variables que apuntan a otra variable con valor: No se recomienda asignar directamente una variable al valor de otra, sin importar si se trata de un tipo primitivo o complejo. En el caso de **tipos de datos complejos** (como objetos o arreglos), ambas variables apuntarán al **mismo espacio en memoria**, lo que significa que un cambio en una variable también afectará a la otra, generando posibles errores difíciles de rastrear. En el caso de **tipos de datos primitivos** (como números o cadenas), el valor sí se copia y no hay referencia compartida, pero aún así es preferible **evitar este tipo de asignación directa** si no es realmente necesario, ya que puede dificultar la lectura, ocacionar errores y mantenimiento del código. Siempre es más seguro y claro trabajar con copias independientes cuando se desea evitar comportamientos inesperados.
 
