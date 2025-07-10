@@ -422,6 +422,15 @@ let nombreFuncionOriginal = (parametro1, parametro2) => { //* Se declara una fun
 // ^Cuando la función de flecha es **muy simple**, es decir, solo realiza **una única instrucción** y **no necesita escribir `return` explícitamente**, se puede usar una **sintaxis abreviada**. En esta forma se pueden **omitir las llaves `{}`** y el `return` se hace de forma implícita. Además, si la función tiene **solo un parámetro**, se pueden **omitir los paréntesis** alrededor de este. Esta versión es útil para simplificar funciones cortas, como las que se usan en métodos como `map()`, `filter()`, o `forEach()`. La estructura se forma así: `let + nombreFuncion + = + parametro + => + expresión`.
 let nombreFuncionBreve = parametro1 => parametro1 + 3; //* Forma simplificada de una función de flecha con un solo parámetro (`parametro1`). No se usan paréntesis porque solo hay un parámetro, y no se usan llaves porque el cuerpo de la función contiene solo una línea. El resultado de `parametro1 + 3` se retorna automáticamente y queda **almacenado en la variable `nombreFuncionBreve`.
 
+// Todo - Llamamiento / ejecución de una función
+// Todo - Una vez que una función ha sido declarada correctamente, esta **no se ejecutará automáticamente por sí sola**. Para que la función haga su trabajo, es necesario **"llamarla" o "invocarla" manualmente** en el código. Este proceso se llama **llamamiento** o **ejecución** de la función. Para ello, se debe escribir el **nombre de la función seguido de paréntesis** `()`, tal como fue definido en su declaración. Si la función espera parámetros, estos deben colocarse dentro de los paréntesis al momento de llamarla; si no necesita parámetros, los paréntesis van vacíos. Esta acción le dice al programa: “ahora ejecuta el bloque de instrucciones que definí dentro de esta función”. Sin el llamamiento, la función existe pero **no hará nada** por sí sola.
+console.log('--- Llamamiento / ejecucion de una funcion ---'); //* Muestra en consola un mensaje que indica el ejemplo del llamamiento de una funcion.
+function funcionConLlamamiento() { //* Se declara una función tradicional llamada `funcionConLlamamiento`. No recibe parámetros.
+    console.log('Este console.log lo ejecuta la funcion y esta misma se ejecuta porque se manda llamar'); //* Instrucción que se ejecutará cuando se llame a la función.
+} //* Cierre del bloque de la función.
+
+funcionConLlamamiento(); //* Llamamiento o invocación de la función. Aquí es cuando se ejecuta el código definido dentro de la función. Si no se llama, la función no hace nada.
+
 // Todo - Parámetros en las funciones
 // Todo - En JavaScript, las funciones pueden recibir uno o más **parámetros**, que son variables locales que sirven como entradas para que la función realice su tarea. Si una función está definida con parámetros pero no se le pasan valores al ejecutarse, dichos parámetros serán `undefined`. Esto puede causar errores lógicos o resultados inesperados como `NaN` en operaciones matemáticas. Es buena práctica asegurarse de que, si una función requiere datos, estos se pasen correctamente al invocarla para garantizar su correcto funcionamiento.
 // &Función sin paso de parámetros
@@ -480,6 +489,31 @@ console.log(variableConValorDelRetornoDeFuncion); //* Resultado: 9
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Objetos
+// ~Un objeto en JavaScript es una **estructura de datos compleja** que permite almacenar múltiples valores relacionados en una sola entidad. Está compuesto por pares clave-valor, donde cada **clave** (también llamada propiedad) actúa como el nombre que identifica un dato, y cada **valor** es la información asociada a esa clave. Los objetos pueden representar elementos del mundo real como un coche, una persona, un producto o cualquier cosa que tenga características (propiedades) y acciones (métodos). En la programación orientada a objetos, los objetos pueden construirse a partir de **clases** que definen su estructura y comportamiento. Una característica poderosa de los objetos es que **pueden contener otros objetos dentro de sí mismos**, permitiendo modelar estructuras complejas. Además, **no hay restricción en reutilizar nombres de claves** entre diferentes objetos, ya que cada objeto es independiente y sus propiedades son locales a él. Es decir, si un objeto `casa1` tiene la clave `color` y otro objeto `casa2` también tiene `color`, no hay conflicto porque pertenecen a contextos diferentes.
+console.log('=========== Funciones. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre objetos.
+
+// Todo - Sintaxis de un objeto
+// Todo - La sintaxis básica de un objeto en JavaScript consiste en declarar una variable usando `var`, `let` o `const`, seguida del nombre del objeto y el signo `=`. Luego se abren llaves `{}` donde se escriben las **propiedades** del objeto en pares de clave-valor, separados por comas. Cada par se compone de un **identificador (clave)** seguido de dos puntos `:` y un **valor asociado**. Los valores pueden ser de cualquier tipo de dato: `string`, `number`, `boolean`, `array`, `function`, `otro objeto`, etc. La estructura general es: `nombreObjeto = { clave1: valor1, clave2: valor2, ... }`. Es importante recordar que el último par **no debe llevar coma final**, aunque JavaScript lo tolera en versiones modernas.
+var auto = { //* Se declara una variable con la palabra clave `var` y el nombre `auto`. Luego se utiliza el operador de asignación `=` y se abren llaves `{}`, lo cual indica que se está creando un objeto.
+    marca: 'Nissan',   //* Clave 'marca' con valor tipo string. Representa la marca del automóvil.
+    modelo: 'Tsuru',   //* Clave 'modelo' con valor tipo string. Indica el modelo del auto.
+    peso: 1505,        //* Clave 'peso' con valor numérico. Indica el peso en kilogramos.
+    color: 'blanco',   //* Clave 'color' con valor tipo string. Representa el color del vehículo.
+} //* El objeto `auto` contiene 4 propiedades distintas. Cada clave está separada por comas dentro del bloque `{}`.
+
+// Todo - Llamamiento de un objeto y sus claves
+// Todo - En JavaScript, un objeto es una estructura que almacena datos en forma de pares clave:valor. Una vez que el objeto ha sido declarado, podemos acceder a sus datos usando el nombre del objeto seguido de un punto (`.`) y el nombre de la **clave** o **propiedad** que queremos consultar. Este proceso se llama **llamamiento de una propiedad** o **acceso a una clave del objeto**. Este tipo de acceso se conoce como **notación de punto** (`objeto.propiedad`) y es la forma más común y legible de obtener valores almacenados en objetos. Al acceder a la clave, el programa devolverá su **valor asociado**. Si se intenta acceder a una clave que no existe, el resultado será `undefined`, lo que indica que dicha propiedad no está presente en el objeto.
+console.log('--- Llamamiento objeto con clave. ---'); //* Imprime en consola un mensaje que indica un ejemplo de llamamiento de un objeto con una clave.
+
+var consolaVideojuegos = { //* Se declara un objeto llamado `consolaVideojuegos` que contiene cuatro propiedades: 'marca', 'modelo', 'color' y 'espacio'.
+    marca: 'Nintendo', //* Clave 'marca' con valor tipo string.
+    modelo: 'Switch', //* Clave 'modelo' con valor tipo string.
+    color: 'Rojo y azul', //* Clave 'color' con valor tipo string.
+    espacio: 245, //* Clave 'espacio' con valor tipo number.
+}
+
+console.log(consolaVideojuegos.marca); //* Se accede a la clave 'marca' del objeto usando notación de punto. Resultado: 'Nintendo'.
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
@@ -494,7 +528,6 @@ function funcionSumaConsejo(a, b) {
 }
 
 const funcionComoVariable = funcionSumaConsejo; //* 'funcionComoVariable' es ahora un alias para 'funcionSumaConsejo'
-
 const resultadoEjecucion = funcionComoVariable(4, 5); //* Se ejecuta la función usando la variable-alias, pasando 4 y 5 como argumentos
 
 console.log(funcionComoVariable); //* Muestra el código fuente de la función, porque es la referencia a la función
