@@ -545,12 +545,31 @@ console.log(consolaVideojuegos["color"]); //* Se accede a la propiedad 'color' u
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Eventos (Del DOM)
-// ~Los evento del DOM son mas orientados para web, pero un evento en JavaScrip es una accion o suceso que pasa dentro de la pagina web, puede ser desencadenado por el usuario al hacer click, arrastrar algo o por el mismo navegador al terminar de cargar un recurso o de cargar la pagina si se cierra la misma etc.. Por lo que esto puede ser capturado por JavaScript y se pueden hacer distintas intstrucciones para darle interactividad a la pagfina y que sea mucho mas atractiva. Los eventos de DOM pueden realizar diferentes coasas, por lo que principalmente para poder realizar algo en un html se ocupa un evento de fipo 'on' en algun elemento o parte del HTML el cual sera el que hara que cuando suceda algo ejecutara algo, por ejemplos i se tiene onclick lo que hara dicho atributo es escuchar cuando se haga click en un elemengto del hmtl, en caso de ser asi, podemps agregar por ejemplo como valor de atributo el nombre o ejecutar una funcion, por ejemplo 'onclick="mostrarEventoDOM", por lo que para que todo funcione se debera tener declarado en JAvaSscript dicha funcion, por lo que puede ser mediante vinculo al html con script o dentro de la etiqueta script'
-// Todo - Lectura de un elemento dentro del documento HTML (document.)
-// Todo - 
-function mostrarEventoDOM(){
-    document.getElementById('elementoParaEventoDOM').innerHTML = Date();
-}
+// ~En JavaScript, un **evento** es cualquier acción que ocurre dentro de una página web, como un clic, el paso del mouse, una pulsación de tecla, el envío de un formulario, la carga de la página, entre otros. Estos eventos pueden ser provocados por el usuario o por el propio navegador, y permiten que JavaScript interactúe con el contenido HTML para generar experiencias dinámicas e interactivas. 
+// ~Los eventos del DOM (Modelo de Objetos del Documento) son fundamentales para la manipulación del comportamiento del sitio. Generalmente, se capturan mediante atributos HTML como `onclick`, `onchange`, `onmouseover`, etc., o mediante JavaScript directamente. Por ejemplo, al usar `onclick="mostrarEventoDOM()"` en un botón HTML, se está indicando que cuando ese botón sea clicado, se ejecutará una función llamada `mostrarEventoDOM`. Para que esto funcione correctamente, dicha función debe estar definida en el archivo JavaScript vinculado, o dentro de una etiqueta `<script>` en el HTML. 
+// ~Gracias a los eventos del DOM, es posible crear páginas web interactivas donde el contenido cambia dinámicamente según las acciones del usuario, lo que mejora notablemente la experiencia del sitio.
+// Todo - Lectura del documento HTML (document)
+// Todo - Para que JavaScript pueda interactuar con los elementos de una página HTML, primero necesita acceder a ese documento. Esto se hace con el objeto global `document`. Cuando un archivo JavaScript está correctamente vinculado al HTML (ya sea mediante una etiqueta `<script>` o desde un archivo externo), el navegador permite acceder a todo el contenido del HTML a través del objeto `document`. Gracias a esto, se pueden buscar elementos, modificar su contenido, registrar eventos y mucho más.
+console.log(document); //* Se imprime el objeto `document`, que representa el contenido HTML de la página. Esto incluye todas las etiquetas, atributos, estilos, scripts, etc. Sirve para inspeccionar la estructura del DOM desde la consola del navegador.
+
+// Todo - Referencia a elementos (get)
+// Todo - En JavaScript, los métodos que comienzan con `get` permiten **acceder a elementos del HTML** desde el documento DOM. Estos métodos son fundamentales para poder manipular el contenido, estilos o comportamiento de una página web mediante JavaScript. 
+// Todo - Cada uno de estos métodos permite seleccionar elementos de distintas formas: por su ID, clase, nombre, tipo de etiqueta, etc. La sintaxis general suele ser: `document.tipoDeGet('valor')`, donde el tipo define cómo se quiere localizar el elemento, y el valor representa el identificador correspondiente (como un ID, clase, nombre, etc.).
+// &getAnimations()
+// &Este método devuelve una lista con todas las animaciones activas que se están ejecutando actualmente en el documento. No se usa para seleccionar un elemento específico, sino para obtener las animaciones en curso que afectan a cualquier parte del DOM.
+document.getAnimations(); //* Devuelve un array con todas las animaciones que están en ejecución dentro del documento actual.
+
+// &getElementById()
+// &Este método busca y devuelve un **único elemento HTML** que tenga el atributo `id` especificado. Como los IDs deben ser únicos en un documento HTML, este método siempre retornará un solo elemento (o `null` si no existe ninguno con ese ID).
+document.getElementById('nombreDelIdDelElemento'); //* Se obtiene el elemento cuyo `id` sea igual a 'nombreDelIdDelElemento'.
+
+// &getElementsByClassName()
+// &Este método permite obtener **una colección de elementos** que comparten la misma clase (`class`). A diferencia de `getElementById`, aquí se puede retornar más de un elemento, ya que múltiples elementos pueden compartir la misma clase. El resultado es una colección tipo `HTMLCollection`.
+document.getElementsByClassName('nombreDeClaseDelElemento'); //* Se obtienen todos los elementos que tienen como clase 'nombreDeClaseDelElemento'.
+
+// &getElementsByName()
+// &Este método devuelve todos los elementos del documento que tengan el atributo `name` con el valor especificado. El atributo `name` es comúnmente utilizado en formularios para identificar campos como inputs, radios, selects, etc. Al igual que el anterior, el resultado será una colección de elementos.
+document.getElementsByName('nombreDelNameDeLaEtiqueta'); //* Se obtienen todos los elementos con el atributo `name="nombreDelNameDeLaEtiqueta"`.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
