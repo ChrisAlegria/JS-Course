@@ -571,7 +571,32 @@ document.getElementsByClassName('nombreDeClaseDelElemento'); //* Se obtienen tod
 // &Este método devuelve todos los elementos del documento que tengan el atributo `name` con el valor especificado. El atributo `name` es comúnmente utilizado en formularios para identificar campos como inputs, radios, selects, etc. Al igual que el anterior, el resultado será una colección de elementos.
 document.getElementsByName('nombreDelNameDeLaEtiqueta'); //* Se obtienen todos los elementos con el atributo `name="nombreDelNameDeLaEtiqueta"`.
 
-// Todo - 
+// Todo - Modificación de características en un elemento
+// Todo - Una vez que hemos accedido a un elemento del HTML mediante JavaScript (por ejemplo usando `getElementById`, `querySelector`, etc.), es posible **modificar sus características** directamente desde el código. Estas modificaciones pueden afectar su contenido, estilo, atributos, clases, valor, entre otros. Por lo que JavaScript nos ofrece distintas propiedades y métodos para realizar estas modificaciones. A continuación se muestran algunas de las más utilizadas en desarrollo web.
+// &Modificar el contenido interno (innerHTML)
+// &La propiedad `innerHTML` permite acceder o modificar el **contenido HTML** que se encuentra dentro de un elemento. Si se asigna un nuevo valor, este reemplazará completamente el contenido anterior, permitiendo insertar texto, etiquetas, o cualquier estructura HTML.
+innerHTML = 'Nuevo título desde JavaScript'; //* El contenido dentro del elemento con ID 'titulo' será reemplazado por el nuevo texto.
+
+// &Modificar el estilo (style)
+// &Mediante la propiedad `style`, se pueden cambiar directamente los **estilos CSS en línea** de un elemento. Cada propiedad CSS puede ser accedida usando la notación de punto, transformando los guiones en camelCase (por ejemplo `background-color` se convierte en `backgroundColor`).
+style.color = 'red'; //* Se cambia el color del texto del elemento con ID 'titulo' a rojo.
+style.fontSize = '24px'; //* Se cambia el tamaño de fuente a 24 píxeles.
+
+// &Modificar clases CSS (classList)
+// &La propiedad `classList` permite manipular fácilmente las clases CSS que tiene un elemento. Con métodos como `.add()`, `.remove()`, `.toggle()` o `.contains()`, se puede agregar, quitar, alternar o verificar clases sin necesidad de reemplazar toda la cadena de clases.
+classList.add('clase-destacada'); //* Se agrega la clase 'clase-destacada' al elemento.
+classList.remove('clase-secundaria'); //* Se elimina la clase 'clase-secundaria'.
+classList.toggle('activo'); //* Si tiene la clase 'activo', la quita. Si no la tiene, la agrega.
+
+// &Modificar el valor de un input (value)
+// &La propiedad `value` se utiliza especialmente en elementos de formulario como `input`, `textarea` y `select`. Permite obtener o modificar el **valor que el usuario ha ingresado** o que se mostrará por defecto.
+value = 'Juan Pérez'; //* El campo de texto mostrará por defecto el valor 'Juan Pérez'.
+
+// &Modificar atributos (setAttribute)
+// &El método `setAttribute()` permite modificar o crear un **atributo HTML** dentro de un elemento. Es útil cuando se quiere cambiar atributos como `src`, `href`, `alt`, `title`, etc.
+setAttribute('src', 'nueva-imagen.jpg'); //* Cambia la ruta de la imagen que se mostrará.
+setAttribute('href', 'https://openai.com'); //* Cambia el destino del enlace.
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    

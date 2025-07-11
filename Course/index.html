@@ -46,14 +46,45 @@
     <div class="tiposEventosDOM">
         <div>
             <h3>Tipos de eventos</h3>
-            <p>aqui le pones que existen variaos tipos de eventos que leen  sierta accion y todos empeizan con 'on' seguido del tipo de evento o escuhador, el cual cuando se cumple o ejecuta la accion segun el tipo ejecuta lo que esta dentro de dicho atribut</p>
-            <div>
+            <p>
+                En JavaScript existen distintos tipos de eventos que permiten **escuchar y reaccionar a acciones específicas** dentro de una página web. Todos los eventos comienzan con el prefijo <b>`on`</b> seguido del tipo de acción que se desea detectar. Estos eventos se colocan como **atributos en las etiquetas HTML**, y cuando ocurre la acción correspondiente, se ejecuta el código que se haya indicado dentro del atributo, por lo que los siguientes son ejemplos de los tipos de eventos.
+            </p>
+            <div style="background-color: rgb(148, 255, 86);">
                 <p>
-                    <b>onclick="": </b>Aqui vas a poner chat lo que hace por jeemplo este lo que hace es escichar si se hace un click en el elemento
+                    <b>onclick="": </b>Este evento **detecta cuando se hace clic** sobre un elemento. Es uno de los eventos más comunes y sirve para ejecutar una función al presionar botones, enlaces, imágenes, etc.
                 </p>
             </div>
-            <div></div>
-        </div>  
+            <div style="background-color: rgb(249, 255, 86);">
+                <p>
+                    <b>onscroll="": </b>
+                    Se ejecuta cuando el usuario **desplaza (hace scroll)** dentro de una sección o sobre todo el documento. Es útil para detectar si el usuario llegó al final de la página, activar animaciones durante el desplazamiento, entre otros usos.
+                </p>
+            </div>
+            <div style="background-color: rgb(255, 159, 86);">
+                <p>
+                    <b>onmouseover="": </b>
+                    Este evento se activa cuando el usuario **coloca el cursor del mouse encima** del elemento. Es común en efectos visuales, menús desplegables, y para mostrar información adicional (como tooltips).
+                </p>
+            </div>
+            <div style="background-color: rgb(255, 86, 86);"> 
+                <p>
+                    <b>onmouseout="": </b>
+                    Contrario al anterior, este evento se dispara cuando el cursor **sale del área del elemento**. Se usa para revertir efectos que comenzaron con `onmouseover`, como ocultar un menú o eliminar un efecto de iluminación.
+                </p>
+            </div>
+            <div style="background-color: rgb(255, 86, 196);">
+                <p>
+                    <b>onchange="": </b>
+                    Se utiliza en formularios y se activa cuando el **valor de un campo cambia**, como un input, un select o un checkbox. Es útil para validar datos mientras el usuario interactúa con el formulario.
+                </p>
+            </div>
+            <div style="background-color: rgb(134, 86, 255);">
+                <p>
+                    <b>onkeydown="": </b>
+                    Detecta cuando el usuario **presiona una tecla** mientras está enfocado en un campo de texto o en el documento. Es ideal para accesos rápidos, validaciones o juegos con teclado.
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
