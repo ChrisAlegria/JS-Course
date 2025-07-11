@@ -545,7 +545,12 @@ console.log(consolaVideojuegos["color"]); //* Se accede a la propiedad 'color' u
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Eventos (Del DOM)
-// ~Los evento del DOM son mas orientados para web, pero un evento en JavaScrip es una accion o suceso que pasa dentro de la pagina web, puede ser desencadenado por el usuario al hacer click, arrastrar algo o por el mismo navegador al terminar de cargar un recurso o de cargar la pagina si se cierra la misma etc.. Por lo que esto puede ser capturado por JavaScript y se pueden hacer distintas intstrucciones para darle interactividad a la pagfina y que sea mucho mas atractiva
+// ~Los evento del DOM son mas orientados para web, pero un evento en JavaScrip es una accion o suceso que pasa dentro de la pagina web, puede ser desencadenado por el usuario al hacer click, arrastrar algo o por el mismo navegador al terminar de cargar un recurso o de cargar la pagina si se cierra la misma etc.. Por lo que esto puede ser capturado por JavaScript y se pueden hacer distintas intstrucciones para darle interactividad a la pagfina y que sea mucho mas atractiva. Los eventos de DOM pueden realizar diferentes coasas, por lo que principalmente para poder realizar algo en un html se ocupa un evento de fipo 'on' en algun elemento o parte del HTML el cual sera el que hara que cuando suceda algo ejecutara algo, por ejemplos i se tiene onclick lo que hara dicho atributo es escuchar cuando se haga click en un elemengto del hmtl, en caso de ser asi, podemps agregar por ejemplo como valor de atributo el nombre o ejecutar una funcion, por ejemplo 'onclick="mostrarEventoDOM", por lo que para que todo funcione se debera tener declarado en JAvaSscript dicha funcion, por lo que puede ser mediante vinculo al html con script o dentro de la etiqueta script'
+// Todo - Lectura de un elemento dentro del documento HTML (document.)
+// Todo - 
+function mostrarEventoDOM(){
+    document.getElementById('elementoParaEventoDOM').innerHTML = Date();
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos
