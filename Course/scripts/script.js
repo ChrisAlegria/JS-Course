@@ -571,8 +571,10 @@ document.getElementsByClassName('nombreDeClaseDelElemento'); //* Se obtienen tod
 // &Este método devuelve todos los elementos del documento que tengan el atributo `name` con el valor especificado. El atributo `name` es comúnmente utilizado en formularios para identificar campos como inputs, radios, selects, etc. Al igual que el anterior, el resultado será una colección de elementos.
 document.getElementsByName('nombreDelNameDeLaEtiqueta'); //* Se obtienen todos los elementos con el atributo `name="nombreDelNameDeLaEtiqueta"`.
 
+// Todo - 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ~Consejos
+// ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
 
 // !Variables que apuntan a otra variable con valor: No se recomienda asignar directamente una variable al valor de otra, sin importar si se trata de un tipo primitivo o complejo. En el caso de **tipos de datos complejos** (como objetos o arreglos), ambas variables apuntarán al **mismo espacio en memoria**, lo que significa que un cambio en una variable también afectará a la otra, generando posibles errores difíciles de rastrear. En el caso de **tipos de datos primitivos** (como números o cadenas), el valor sí se copia y no hay referencia compartida, pero aún así es preferible **evitar este tipo de asignación directa** si no es realmente necesario, ya que puede dificultar la lectura, ocacionar errores y mantenimiento del código. Siempre es más seguro y claro trabajar con copias independientes cuando se desea evitar comportamientos inesperados.

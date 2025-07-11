@@ -1,0 +1,23 @@
+body div {
+    justify-items: center;
+}
+
+.tiposEventosDOM{
+    text-align: justify;
+}
+
+.tiposEventosDOM>div{
+    width: 98%;
+    border: 1px solid black;
+    box-shadow: 4px 4px rgb(107, 107, 107);
+}
+
+.tiposEventosDOM>div>div{
+    width: 95%;
+    border: 1px solid black;
+    margin-bottom: 2%;
+}
+
+.tiposEventosDOM p{
+    width: 95%;
+}
