@@ -606,25 +606,29 @@ console.log('=========== Strings. ==========='); //* Muestra un mensaje en la co
 
 // Todo - Uso de símbolos especiales (\)
 // Todo - Uno de los problemas más frecuentes al trabajar con strings es el manejo de las comillas que delimitan el texto. Por ejemplo, si declaramos un string usando comillas simples y dentro del texto incluimos un apóstrofe (que es también una comilla simple), JavaScript puede interpretar erróneamente el final del string, causando un error de sintaxis. Esto sucede porque el apóstrofe interno se confunde con el delimitador de cierre del string. Una forma sencilla de evitar este problema es cambiar el tipo de comillas que se usan para delimitar el string, por ejemplo, usar comillas dobles para rodear un texto que contiene apóstrofes simples, así: `"Let's do it"`. Sin embargo, cuando no es posible o deseable cambiar las comillas, JavaScript ofrece un mecanismo llamado **carácter de escape**, representado por la **barra invertida** (`\`). Este carácter indica que el símbolo que sigue debe tratarse literalmente, sin su función especial en la sintaxis. Por ejemplo, escribiendo `'Let\'s do it'` el apóstrofe después de la barra invertida no se interpreta como el fin del string, sino como parte del texto. De esta forma, se puede incluir cualquier comilla dentro de un string sin romper el código. Además de escapar comillas, la barra invertida también permite insertar otros caracteres especiales dentro de un string, como saltos de línea (`\n`), tabulaciones (`\t`), barras invertidas literales (`\\`), entre otros.
-// &Omicion de simbolos especiales (\)
-//&
-console.log('--- Uso de barra invertida en simbolos especiales. ---'); //* Imprime en consola un mensaje que indica un ejemplo de omicion simbolos con \.
-const variableUsandoCaracterBarraInvertidaOmicionSimbolos = 'It\'s time to do the homework'; //* Se usa la barra invertida para escapar el apóstrofe y evitar que JavaScript interprete incorrectamente el final del string.
-console.log(variableUsandoCaracterBarraInvertidaOmicionSimbolos)
+// &Omisión de símbolos especiales (\)
+// &Cuando se necesita incluir símbolos especiales dentro de una cadena de texto, como comillas simples o dobles, JavaScript puede interpretarlos erróneamente como parte de la sintaxis del lenguaje. Para evitar esto, se utiliza el carácter de escape (`\`), el cual **indica al intérprete que el símbolo que le sigue debe tomarse literalmente** y no como parte de la estructura del código.
+console.log('--- Uso de barra invertida para omitir símbolos especiales. ---'); //* Imprime en consola un mensaje que indica un ejemplo de omisión de símbolos con `\`.
+const variableUsandoCaracterBarraInvertidaOmicionSimbolos = 'It\'s time to do the homework'; //* Se usa la barra invertida para escapar el apóstrofe y evitar que JavaScript lo interprete como el final del string.
+console.log(variableUsandoCaracterBarraInvertidaOmicionSimbolos);
 
-// &Insercion de barra laterar dentro de la cadena de caracteres (\\)
-// &
-console.log('--- Uso de barra invertida para agregarse asi misma o dicho simbolo en variable. ---'); //* Imprime en consola un mensaje que indica un ejemplo de agregacion de tabulacion  o de la barra invertida.
-const variabelUsandoCaracterBarraInvertidaAgregacionDeSiMisma = 'Esta variable agregara dentro del texto la barra invertida \\.';
-console.log(variabelUsandoCaracterBarraInvertidaAgregacionDeSiMisma);
+// &Inserción de barra invertida dentro de la cadena (\\)
+// &Si se desea incluir una **barra invertida real (`\`)** como parte del texto, se debe escribir dos veces (`\\`). Esto se debe a que la primera barra invertida funciona como carácter de escape, y la segunda es el símbolo literal que se insertará en la cadena.
+console.log('--- Uso de barra invertida para agregarse a sí misma dentro del texto. ---'); //* Imprime en consola un mensaje que indica un ejemplo de inserción literal de la barra invertida.
+const variableUsandoCaracterBarraInvertidaAgregacionDeSiMisma = 'Esta variable agregará dentro del texto la barra invertida \\.'; //* Aparecerá: Esta variable agregará dentro del texto la barra invertida \.
+console.log(variableUsandoCaracterBarraInvertidaAgregacionDeSiMisma);
 
-// &Agregacion de salto de linea (\n)
-// &
-console.log('--- Uso de barra invertida para agregacion de salto de linea. ---'); //* Imprime en consola un mensaje que indica un ejemplo de agregacion de salto de linea con el simbolo \.
-const variableUsandoCaracterBarraInvertidaAgregarSaltoLinea = 'Esta variable usa \\ para agregar\nun salto de linea.';
+// &Agregación de salto de línea (\n)
+// &El carácter especial `\n` dentro de una cadena representa un **salto de línea**, lo que significa que el texto que aparece después de este símbolo será mostrado en la siguiente línea. Es muy útil para mostrar mensajes multilínea en consola o en interfaces de usuario.
+console.log('--- Uso de barra invertida para agregar un salto de línea. ---'); //* Imprime en consola un mensaje que indica un ejemplo de uso de `\n` para salto de línea.
+const variableUsandoCaracterBarraInvertidaAgregarSaltoLinea = 'Esta variable usa \\n para agregar\nun salto de línea.'; //* El texto luego de `\n` aparecerá en una nueva línea.
 console.log(variableUsandoCaracterBarraInvertidaAgregarSaltoLinea);
 
-//&
+// &Agregación de tabulación (\t)
+// &El carácter especial `\t` sirve para insertar una **tabulación horizontal** dentro de la cadena, es decir, un espacio equivalente a pulsar la tecla de tabulación. Esto puede utilizarse para alinear texto en columnas o mejorar la presentación visual del contenido.
+console.log('--- Uso de barra invertida para agregar una tabulación. ---'); //* Imprime en consola un mensaje que indica un ejemplo de uso de `\t` para tabulaciones.
+const variableUsandoCaracterBarraInvertidaAgregacionTabulacion = 'Esta variable usa \\t para \tagregar una tabulación.'; //* El texto tendrá una tabulación antes de "agregar".
+console.log(variableUsandoCaracterBarraInvertidaAgregacionTabulacion);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
