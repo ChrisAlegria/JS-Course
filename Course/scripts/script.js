@@ -548,6 +548,10 @@ console.log(consolaVideojuegos["color"]); //* Se accede a la propiedad 'color' u
 // ~En JavaScript, un **evento** es cualquier acción que ocurre dentro de una página web, como un clic, el paso del mouse, una pulsación de tecla, el envío de un formulario, la carga de la página, entre otros. Estos eventos pueden ser provocados por el usuario o por el propio navegador, y permiten que JavaScript interactúe con el contenido HTML para generar experiencias dinámicas e interactivas. 
 // ~Los eventos del DOM (Modelo de Objetos del Documento) son fundamentales para la manipulación del comportamiento del sitio. Generalmente, se capturan mediante atributos HTML como `onclick`, `onchange`, `onmouseover`, etc., o mediante JavaScript directamente. Por ejemplo, al usar `onclick="mostrarEventoDOM()"` en un botón HTML, se está indicando que cuando ese botón sea clicado, se ejecutará una función llamada `mostrarEventoDOM`. Para que esto funcione correctamente, dicha función debe estar definida en el archivo JavaScript vinculado, o dentro de una etiqueta `<script>` en el HTML. 
 // ~Gracias a los eventos del DOM, es posible crear páginas web interactivas donde el contenido cambia dinámicamente según las acciones del usuario, lo que mejora notablemente la experiencia del sitio.
+// Todo - Estrcutura de un evento en JavaScript
+// Todo - Para poder **modificar elementos del HTML desde JavaScript**, es necesario acceder a ellos usando el objeto `document`, que representa todo el documento HTML. Luego, se debe utilizar un método de obtención (`getElementById`, `getElementsByClassName`, etc.) para seleccionar el elemento específico que se desea manipular. Finalmente, se puede aplicar una acción o modificación sobre ese elemento, como cambiar su estilo, contenido, clases, etc. Esta estructura siempre sigue el mismo patrón: primero se llama a `document`, luego se aplica un `.get...` para obtener el elemento, y por último se encadena un `.` seguido de la propiedad o método que se quiera usar (por ejemplo: `.style.color`, `.innerHTML`, `.classList.add()`, etc.). Mas adeltante se veran cada uno de estos apartados y sus funciones.
+document.getElementById('nombreElemento').style.color = 'purple'; //* Se especifica que del 'document' o el HTML se seleccionara el elemento con ID 'nombreElemento' y se cambia su color de texto a morado.
+
 // Todo - Lectura del documento HTML (document)
 // Todo - Para que JavaScript pueda interactuar con los elementos de una página HTML, primero necesita acceder a ese documento. Esto se hace con el objeto global `document`. Cuando un archivo JavaScript está correctamente vinculado al HTML (ya sea mediante una etiqueta `<script>` o desde un archivo externo), el navegador permite acceder a todo el contenido del HTML a través del objeto `document`. Gracias a esto, se pueden buscar elementos, modificar su contenido, registrar eventos y mucho más.
 console.log(document); //* Se imprime el objeto `document`, que representa el contenido HTML de la página. Esto incluye todas las etiquetas, atributos, estilos, scripts, etc. Sirve para inspeccionar la estructura del DOM desde la consola del navegador.
@@ -575,18 +579,18 @@ document.getElementsByName('nombreDelNameDeLaEtiqueta'); //* Se obtienen todos l
 // Todo - Una vez que hemos accedido a un elemento del HTML mediante JavaScript (por ejemplo usando `getElementById`, `querySelector`, etc.), es posible **modificar sus características** directamente desde el código. Estas modificaciones pueden afectar su contenido, estilo, atributos, clases, valor, entre otros. Por lo que JavaScript nos ofrece distintas propiedades y métodos para realizar estas modificaciones. A continuación se muestran algunas de las más utilizadas en desarrollo web.
 // &Modificar el contenido interno (innerHTML)
 // &La propiedad `innerHTML` permite acceder o modificar el **contenido HTML** que se encuentra dentro de un elemento. Si se asigna un nuevo valor, este reemplazará completamente el contenido anterior, permitiendo insertar texto, etiquetas, o cualquier estructura HTML.
-innerHTML = 'Nuevo título desde JavaScript'; //* El contenido dentro del elemento con ID 'titulo' será reemplazado por el nuevo texto.
+document.getElementById('nombreElemento').innerHTML = 'Nuevo título desde JavaScript'; //* El contenido dentro del elemento con ID 'titulo' será reemplazado por el nuevo texto.
 
 // &Modificar el estilo (style)
 // &Mediante la propiedad `style`, se pueden cambiar directamente los **estilos CSS en línea** de un elemento. Cada propiedad CSS puede ser accedida usando la notación de punto, transformando los guiones en camelCase (por ejemplo `background-color` se convierte en `backgroundColor`).
-style.color = 'red'; //* Se cambia el color del texto del elemento con ID 'titulo' a rojo.
-style.fontSize = '24px'; //* Se cambia el tamaño de fuente a 24 píxeles.
+document.getElementById('nombreElemento').style.color = 'red'; //* Se cambia el color del texto del elemento con ID 'titulo' a rojo.
+document.getElementById('nombreElemento').style.fontSize = '24px'; //* Se cambia el tamaño de fuente a 24 píxeles.
 
 // &Modificar clases CSS (classList)
 // &La propiedad `classList` permite manipular fácilmente las clases CSS que tiene un elemento. Con métodos como `.add()`, `.remove()`, `.toggle()` o `.contains()`, se puede agregar, quitar, alternar o verificar clases sin necesidad de reemplazar toda la cadena de clases.
-classList.add('clase-destacada'); //* Se agrega la clase 'clase-destacada' al elemento.
-classList.remove('clase-secundaria'); //* Se elimina la clase 'clase-secundaria'.
-classList.toggle('activo'); //* Si tiene la clase 'activo', la quita. Si no la tiene, la agrega.
+document.getElementById('nombreElemento').classList.add('clase-destacada'); //* Se agrega la clase 'clase-destacada' al elemento.
+document.getElementById('nombreElemento').classList.remove('clase-secundaria'); //* Se elimina la clase 'clase-secundaria'.
+document.getElementById('nombreElemento').classList.toggle('activo'); //* Si tiene la clase 'activo', la quita. Si no la tiene, la agrega.
 
 // &Modificar el valor de un input (value)
 // &La propiedad `value` se utiliza especialmente en elementos de formulario como `input`, `textarea` y `select`. Permite obtener o modificar el **valor que el usuario ha ingresado** o que se mostrará por defecto.
@@ -594,11 +598,15 @@ value = 'Juan Pérez'; //* El campo de texto mostrará por defecto el valor 'Jua
 
 // &Modificar atributos (setAttribute)
 // &El método `setAttribute()` permite modificar o crear un **atributo HTML** dentro de un elemento. Es útil cuando se quiere cambiar atributos como `src`, `href`, `alt`, `title`, etc.
-setAttribute('src', 'nueva-imagen.jpg'); //* Cambia la ruta de la imagen que se mostrará.
-setAttribute('href', 'https://openai.com'); //* Cambia el destino del enlace.
+document.getElementById('nombreElemento').setAttribute('src', 'nueva-imagen.jpg'); //* Cambia la ruta de la imagen que se mostrará.
+document.getElementById('nombreElemento').setAttribute('href', 'https://openai.com'); //* Cambia el destino del enlace.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ~Strings   
+// ~Strings
+// ~Los string como dsse habia visto anteriormente son variables que almacenan una cadena de caractetred (textoi) pero hay ciertos asdpectos importantess a mencionar respecto a estos  
+// Todo - Uso de simbolos especiales (\)
+// Todo - Algo que suele suceer cuando se asigna una cadena de texto a una variable es que podemos romper el codigo, esto debido a que si queremos hacer uso de ciertos simbolos reservados por JavaScrip que hacen que se rompa un ejemplo de esto es si definimos una variable con una cadena de texto que diga ('Let's do it), ya que se usa ua comilla en el let's la cual hace que se rompa el codigo, igual podriamos cambiar las comillas de la cadenma a ("Let's do it") y de esta forma no se rompera, pero es importante mencionar que existe elk simbolo (\) el cual cuando se coloa en una cadena de texto este lo que hara es especificarle a JavaSAcrip que ignore ese mismo simbolo (no paras consola si no para JS mismo)y el caracter sighuiente a este ´por ejemplo en ('Let\'s do it') como vemos el simbolo no importa que este pegado a otros carateres, al imprimirlo en consola se omitira 
+const variableUsandoCaracterBarraInvertida = 'It\'s time to do the homework'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    

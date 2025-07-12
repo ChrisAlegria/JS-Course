@@ -13,7 +13,7 @@
     <title>Curso JavaScript</title>
 
     <!-- !Forma 3 - Archivo JavaScript externo: Se crea un archivo JavaScript separado con extensión .js y se vincula al HTML usando la etiqueta <script src="archivo.js">. Esto permite que el HTML ejecute el código definido en el archivo externo, manteniendo el código más limpio y organizado. -->
-    <script src="scripts/script.js"></script> <!-- *Se abre la etiqueta <script> con el atributo "src" para especificar la ruta del archivo JavaScript externo, el cual será ejecutado por el navegador al cargar el HTML. -->
+    <script src="scripts/script.js" defer></script> <!-- *Se abre la etiqueta <script> con el atributo "src" para especificar la ruta del archivo JavaScript externo, el cual será ejecutado por el navegador al cargar el HTML. -->
 
 </head>
 <body>
@@ -26,21 +26,10 @@
     <script> /**Se abre la etiqueta <script> y dentro de ella se escribe directamente el código JavaScript. Por ejemplo, modificar el contenido de un elemento mediante su ID.**/
         document.getElementById('test').innerHTML = 'Texto de ejemplo';
     </script>
-</body>
-</html>
 
-<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <!-- ^Main HTML -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
     <!-- ~Eventos (Del DOM) -->
     <h1 style="text-align: center;">Eventos del DOM</h1>
     <div class="tiposEventosDOM">
@@ -86,5 +75,6 @@
             </div>
         </div>
     </div>
+    <div id="nombreElemento"></div>
 </body>
 </html>
