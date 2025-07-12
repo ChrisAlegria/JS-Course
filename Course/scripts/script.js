@@ -606,9 +606,25 @@ console.log('=========== Strings. ==========='); //* Muestra un mensaje en la co
 
 // Todo - Uso de símbolos especiales (\)
 // Todo - Uno de los problemas más frecuentes al trabajar con strings es el manejo de las comillas que delimitan el texto. Por ejemplo, si declaramos un string usando comillas simples y dentro del texto incluimos un apóstrofe (que es también una comilla simple), JavaScript puede interpretar erróneamente el final del string, causando un error de sintaxis. Esto sucede porque el apóstrofe interno se confunde con el delimitador de cierre del string. Una forma sencilla de evitar este problema es cambiar el tipo de comillas que se usan para delimitar el string, por ejemplo, usar comillas dobles para rodear un texto que contiene apóstrofes simples, así: `"Let's do it"`. Sin embargo, cuando no es posible o deseable cambiar las comillas, JavaScript ofrece un mecanismo llamado **carácter de escape**, representado por la **barra invertida** (`\`). Este carácter indica que el símbolo que sigue debe tratarse literalmente, sin su función especial en la sintaxis. Por ejemplo, escribiendo `'Let\'s do it'` el apóstrofe después de la barra invertida no se interpreta como el fin del string, sino como parte del texto. De esta forma, se puede incluir cualquier comilla dentro de un string sin romper el código. Además de escapar comillas, la barra invertida también permite insertar otros caracteres especiales dentro de un string, como saltos de línea (`\n`), tabulaciones (`\t`), barras invertidas literales (`\\`), entre otros.
-console.log('--- Uso de barra invertida en simbolos especiales. ---'); //* Imprime en consola un mensaje que indica un ejemplo de llamamiento de un objeto con una clave mediante (notación corchetes).
-const variableUsandoCaracterBarraInvertida = 'It\'s time to do the homework'; //* Se usa la barra invertida para escapar el apóstrofe y evitar que JavaScript interprete incorrectamente el final del string.
-console.log(variableUsandoCaracterBarraInvertida)
+// &Omicion de simbolos especiales (\)
+//&
+console.log('--- Uso de barra invertida en simbolos especiales. ---'); //* Imprime en consola un mensaje que indica un ejemplo de omicion simbolos con \.
+const variableUsandoCaracterBarraInvertidaOmicionSimbolos = 'It\'s time to do the homework'; //* Se usa la barra invertida para escapar el apóstrofe y evitar que JavaScript interprete incorrectamente el final del string.
+console.log(variableUsandoCaracterBarraInvertidaOmicionSimbolos)
+
+// &Insercion de barra laterar dentro de la cadena de caracteres (\\)
+// &
+console.log('--- Uso de barra invertida para agregarse asi misma o dicho simbolo en variable. ---'); //* Imprime en consola un mensaje que indica un ejemplo de agregacion de tabulacion  o de la barra invertida.
+const variabelUsandoCaracterBarraInvertidaAgregacionDeSiMisma = 'Esta variable agregara dentro del texto la barra invertida \\.';
+console.log(variabelUsandoCaracterBarraInvertidaAgregacionDeSiMisma);
+
+// &Agregacion de salto de linea (\n)
+// &
+console.log('--- Uso de barra invertida para agregacion de salto de linea. ---'); //* Imprime en consola un mensaje que indica un ejemplo de agregacion de salto de linea con el simbolo \.
+const variableUsandoCaracterBarraInvertidaAgregarSaltoLinea = 'Esta variable usa \\ para agregar\nun salto de linea.';
+console.log(variableUsandoCaracterBarraInvertidaAgregarSaltoLinea);
+
+//&
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
