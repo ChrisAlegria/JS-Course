@@ -630,6 +630,12 @@ console.log('--- Uso de barra invertida para agregar una tabulación. ---'); //*
 const variableUsandoCaracterBarraInvertidaAgregacionTabulacion = 'Esta variable usa \\t para \tagregar una tabulación.'; //* El texto tendrá una tabulación antes de "agregar".
 console.log(variableUsandoCaracterBarraInvertidaAgregacionTabulacion);
 
+// &Retroceso (Backspace) (\b)
+// &El carácter especial `\b` representa un **retroceso**, también llamado backspace. En teoría, este símbolo debería eliminar el carácter anterior en una cadena, simulando el efecto de pulsar la tecla de retroceso (←). Sin embargo, en la mayoría de entornos modernos como los navegadores, `\b` **no elimina visualmente** el carácter anterior cuando se imprime en consola, pero sí es interpretado como un carácter especial invisible. Puede tener efecto en terminales más antiguas o en sistemas donde el retroceso esté soportado. Aunque no es muy común ni confiable en JavaScript moderno para manipular texto en consola, es importante conocerlo porque forma parte del conjunto de caracteres escapables del lenguaje.
+console.log('--- Uso de barra invertira para eliminar un elmento anterios. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso de \b.
+const variableUsandoCaracterBarraInvertidaBackspace = 'ABC\bD'; //* El \b intenta borrar la letra 'C', pero en la mayoría de consolas simplemente lo ignora visualmente.
+console.log(variableUsandoCaracterBarraInvertidaBackspace); //* En consola probablemente se v*
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
