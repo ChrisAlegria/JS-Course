@@ -101,7 +101,7 @@ var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'V
 // ~En JavaScript, las variables pueden almacenar distintos tipos de datos, y estos son fundamentales para realizar operaciones, representar información y controlar el flujo del programa. Existen varios tipos de datos básicos, como los **números**, **cadenas de texto**, **booleanos**, **objetos**, **arreglos**, entre otros. Cada tipo de dato tiene su propia sintaxis y comportamiento. Comprender bien estos tipos es clave para escribir código eficiente y evitar errores, ya que determinan cómo se procesan, comparan y manipulan los valores dentro del programa.
 // &Números enteros (Int)
 // &Las variables tipo `number` se utilizan para almacenar **valores numéricos enteros**, es decir, números sin decimales. Estos pueden ser positivos, negativos o incluso el cero. No se requiere ningún símbolo especial para declarar un número entero; simplemente se escribe el número directamente después del signo `=`. Esto es útil cuando se necesita hacer operaciones matemáticas básicas como suma, resta, multiplicación, etc.
-const variableTipoNumber = 4;
+const variableTipoNumber = 4;  //* Variable tipo 'int' que almacena un número con decimales (número no entero).
 
 // &Números con decimales (Float)
 // &Las variables tipo `float` también almacenan números, pero a diferencia de los enteros, estos **incluyen decimales**. En JavaScript no se usa una palabra clave diferente para flotantes, pero internamente se maneja como número decimal. Para declarar un `float`, basta con incluir un punto (`.`) entre la parte entera y decimal. Este tipo es muy útil en cálculos que requieren mayor precisión, como porcentajes, precios, promedios, etc.
@@ -645,13 +645,16 @@ console.log(variableQueSeUsaraContadorCaracteres.length); //* Muestra en consola
 // Todo - Metodos de string
 // Todo -
 // &Slice
-// &El mtodo de string slice sirve para poder especificar que solamente se mestre de sierto de caracter por ejemplo la estrucrura es primeramente se pone la vairabl a la que le apligaremos el metodos por ejemoplo "nombreVariable.slice(numeroCaracterInicial, numeroCaracterFinal)" por lo que se especifica en caracter inicial desde que caracter se mostrara, por lo que si se especifica 5 se mostrara el 6 y asi con el final, por ejemplo..
-console.log('--- Metodo string slice. ---');  //* Imprime en consola un mensaje indicando que se demostrará el uso del metodo slice de string.
-const variableAlQueSeAplicaraMetodoSlice = 'Esta es una variable a la cual se le aplicara el metodo slice.';
-console.log(variableAlQueSeAplicaraMetodoSlice.slice(56,62));
+// &El mtodo de string slice sirve para poder especificar que solamente se mestre de sierto de caracter por ejemplo la estrucrura es primeramente se pone la vairabl a la que le apligaremos el metodos por ejemoplo "nombreVariable.slice(numeroCaracterInicial, numeroCaracterFinal)" por lo que se especifica en caracter inicial desde que caracter se mostrara, por lo que si se especifica 5 se mostrara el 6 y asi con el final, por ejemplo.. aunqeu hay un detalle 7ya que si se usan bumeros positivos funcionara como anteriormente se menciono, pero en caso de usar numeros negativos dentro del metodo en lugar de comenzar con el primer caracter comenzara con el ultimo hacia atras.
+// ^Numeros positivos
+console.log('--- Metodo string slice positivos. ---');  //* Imprime en consola un mensaje indicando que se demostrará el uso del metodo slice de string positivos.
+const variableAlQueSeAplicaraMetodoSlicePositivos = 'Esta es una variable a la cual se le aplicara el metodo slice.';
+console.log(variableAlQueSeAplicaraMetodoSlicePositivos.slice(56,62));
 
-
-
+// ^Numeros negativos
+console.log('--- Metodo string slice negativos. ---');  //* Imprime en consola un mensaje indicando que se demostrará el uso del metodo slice de string negativos.
+const variableAlQueSeAplicaraMetodoSliceNegativos = 'Esta es una variable a la cual se le aplicara el metodo slice.';
+console.log(variableAlQueSeAplicaraMetodoSliceNegativos.slice(-25,-12));
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
