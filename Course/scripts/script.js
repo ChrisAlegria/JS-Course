@@ -636,6 +636,12 @@ console.log('--- Uso de barra invertira para eliminar un elmento anterios. ---')
 const variableUsandoCaracterBarraInvertidaBackspace = 'ABC\bD'; //* El \b intenta borrar la letra 'C', pero en la mayoría de consolas simplemente lo ignora visualmente.
 console.log(variableUsandoCaracterBarraInvertidaBackspace); //* En consola probablemente se v*
 
+// Todo - Contador de caracteres (length)
+// Todo - En JavaScript, cuando se trabaja con cadenas de texto (strings), es muy común necesitar saber cuántos caracteres contiene una variable. Para esto se utiliza la propiedad `.length`, que devuelve un **número entero** indicando la cantidad total de caracteres de la cadena, incluyendo letras, espacios, signos de puntuación y tildes. Esta propiedad es útil para validar formularios, recortar texto, aplicar condiciones, entre muchos otros casos.
+console.log('--- Contador de caracteres. ---'); //* Imprime en consola un mensaje indicando que se demostrará el conteo de caracteres de lo que almacena una variable.
+const variableQueSeUsaraContadorCaracteres = 'Educación'; //* Cadena de texto que contiene 9 caracteres (incluye la tilde como un carácter individual).
+console.log(variableQueSeUsaraContadorCaracteres.length); //* Muestra en consola el número 9, que representa la cantidad total de caracteres del string.
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
