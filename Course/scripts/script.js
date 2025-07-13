@@ -642,19 +642,41 @@ console.log('--- Contador de caracteres. ---'); //* Imprime en consola un mensaj
 const variableQueSeUsaraContadorCaracteres = 'Educación'; //* Cadena de texto que contiene 9 caracteres (incluye la tilde como un carácter individual).
 console.log(variableQueSeUsaraContadorCaracteres.length); //* Muestra en consola el número 9, que representa la cantidad total de caracteres del string.
 
-// Todo - Metodos de string
-// Todo -
+// Todo - Métodos de string
+// Todo - En JavaScript, existen múltiples métodos integrados para manipular y transformar cadenas de texto (strings). Para aplicar un método, se escribe el nombre de la variable seguido de un punto (`.`), el nombre del método y paréntesis `()`, donde a veces se incluyen argumentos. Estos métodos permiten desde cortar, reemplazar o cambiar el formato del texto hasta realizar búsquedas o comparaciones dentro de una cadena.
 // &Slice
-// &El mtodo de string slice sirve para poder especificar que solamente se mestre de sierto de caracter por ejemplo la estrucrura es primeramente se pone la vairabl a la que le apligaremos el metodos por ejemoplo "nombreVariable.slice(numeroCaracterInicial, numeroCaracterFinal)" por lo que se especifica en caracter inicial desde que caracter se mostrara, por lo que si se especifica 5 se mostrara el 6 y asi con el final, por ejemplo.. aunqeu hay un detalle 7ya que si se usan bumeros positivos funcionara como anteriormente se menciono, pero en caso de usar numeros negativos dentro del metodo en lugar de comenzar con el primer caracter comenzara con el ultimo hacia atras.
-// ^Numeros positivos
-console.log('--- Metodo string slice positivos. ---');  //* Imprime en consola un mensaje indicando que se demostrará el uso del metodo slice de string positivos.
-const variableAlQueSeAplicaraMetodoSlicePositivos = 'Esta es una variable a la cual se le aplicara el metodo slice.';
-console.log(variableAlQueSeAplicaraMetodoSlicePositivos.slice(56,62));
+// &El método `slice()` permite extraer una parte de una cadena de texto especificando dos posiciones: la posición inicial (desde dónde empieza a cortar) y la final (hasta dónde cortará sin incluir ese carácter). Si se utilizan números positivos, el conteo empieza desde el inicio (posición 0). Si se usan números negativos, el conteo va desde el final hacia atrás, lo cual permite recortar partes finales de la cadena.
+// ^Números positivos
+console.log('--- Método string slice con números positivos. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `slice()` con índices positivos.
+const variableAlaQueSeAplicaraMetodoSlicePositivos = 'Esta es una variable a la cual se le aplicará el método slice.'; //* Cadena de texto original con 62 caracteres.
+console.log(variableAlaQueSeAplicaraMetodoSlicePositivos.slice(56, 62)); //* Extrae desde el carácter 56 al 61. Resultado: "slice."
 
-// ^Numeros negativos
-console.log('--- Metodo string slice negativos. ---');  //* Imprime en consola un mensaje indicando que se demostrará el uso del metodo slice de string negativos.
-const variableAlQueSeAplicaraMetodoSliceNegativos = 'Esta es una variable a la cual se le aplicara el metodo slice.';
-console.log(variableAlQueSeAplicaraMetodoSliceNegativos.slice(-25,-12));
+// ^Números negativos
+console.log('--- Método string slice con números negativos. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `slice()` con índices negativos.
+const variableAlaQueSeAplicaraMetodoSliceNegativos = 'Esta es una variable a la cual se le aplicará el método slice.'; //* Cadena de texto original con 62 caracteres.
+console.log(variableAlaQueSeAplicaraMetodoSliceNegativos.slice(-25, -12)); //* Extrae desde el carácter 25 desde el final al 12 desde el final. Resultado: "aplicará el".
+
+// &Replace
+// &El método `replace()` busca un fragmento específico de texto dentro de una cadena y lo reemplaza por otro. Su sintaxis es: `cadena.replace('textoAReemplazar', 'textoNuevo')`. Solo reemplaza **la primera coincidencia**, a menos que se use una expresión regular con modificadores.
+// ^Reemplazo simple
+console.log('--- Método string replace. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `replace()`.
+const variableAlaQueSeLeAplicaraMetodoReplace = 'Esta es una variable en la cual se reemplazará la palabra siguiente: Texto.'; //* Cadena original que contiene la palabra "Texto".
+console.log(variableAlaQueSeLeAplicaraMetodoReplace.replace('Texto', 'JavaScript')); //* Reemplaza la palabra "Texto" por "JavaScript".
+
+// &Cambio de tipo de texto (lowerCase / upperCase)
+// &JavaScript permite cambiar todo el contenido de un string a **mayúsculas** con `toUpperCase()` o a **minúsculas** con `toLowerCase()`. Esto es útil para normalizar datos, validar formularios, o para presentaciones consistentes. Ambos métodos no requieren argumentos y devuelven una nueva cadena con el cambio aplicado.
+// ^toUpperCase
+// ^El método `toUpperCase()` convierte toda la cadena a letras mayúsculas.
+console.log('--- Método toUpperCase. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `toUpperCase()`.
+const variableAlaQueSeLeAplicaraMetodoToUpperCase = 'Esta es una variable a la cual se le aplica el método toUpperCase.'; //* Cadena original con letras mixtas.
+console.log(variableAlaQueSeLeAplicaraMetodoToUpperCase.toUpperCase()); //* Resultado: "ESTA ES UNA VARIABLE A LA CUAL SE LE APLICA EL MÉTODO TOUPPERCASE."
+
+// ^toLowerCase
+// ^El método `toLowerCase()` convierte toda la cadena a letras minúsculas.
+console.log('--- Método toLowerCase. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `toLowerCase()`.
+const variableAlaQueSeLeAplicaraMetodoToLowerCase = 'Esta Es Una Variable A La Cual Se Le Aplica El Método ToLowerCase.'; //* Cadena con varias mayúsculas.
+console.log(variableAlaQueSeLeAplicaraMetodoToLowerCase.toLowerCase()); //* Resultado: "esta es una variable a la cual se le aplica el método tolowercase."
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
