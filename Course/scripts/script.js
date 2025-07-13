@@ -677,6 +677,19 @@ console.log('--- Método toLowerCase. ---'); //* Imprime en consola un mensaje i
 const variableAlaQueSeLeAplicaraMetodoToLowerCase = 'Esta Es Una Variable A La Cual Se Le Aplica El Método ToLowerCase.'; //* Cadena con varias mayúsculas.
 console.log(variableAlaQueSeLeAplicaraMetodoToLowerCase.toLowerCase()); //* Resultado: "esta es una variable a la cual se le aplica el método tolowercase."
 
+// &Concatenación
+// &Además del símbolo `+`, JavaScript permite unir (concatenar) cadenas de texto utilizando el método `.concat()`. Este método se aplica sobre una cadena base y se le pasa como argumento otra u otras cadenas que se desean unir. Aunque el uso de `+` es más común hoy en día, `concat()` sigue siendo una forma válida y explícita de concatenar strings.
+console.log('--- Método concat. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `concat()`.
+const variableAlaQueSeLeAplicaraUnConcat1 = 'Esta variable concatenará '; //* Primera cadena base a la que se le añadirá la segunda.
+const variableAlaQueSeLeAplicaraUnConcat2 = 'esta otra variable.'; //* Segunda cadena que se añadirá a la anterior.
+console.log(variableAlaQueSeLeAplicaraUnConcat1.concat(variableAlaQueSeLeAplicaraUnConcat2)); //* Resultado: "Esta variable concatenará esta otra variable."
+
+// &Trim
+// &El método `.trim()` elimina los espacios en blanco **al inicio y al final** de una cadena de texto. Esto es muy útil cuando se recibe texto de formularios, entradas del usuario u otras fuentes que pueden contener espacios no deseados. No afecta los espacios que estén en medio del texto, solo los que estén antes del primer carácter visible y después del último.
+console.log('--- Método trim. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `trim()`.
+const variableAlaQueSeLeAplicaraTrim = '                    Esta variable tiene espacios en blanco antes y después del primer y último carácter, los cuales serán eliminados con trim().                    '; //* Cadena con espacios al inicio y al final.
+console.log(variableAlaQueSeLeAplicaraTrim.trim()); //* Resultado: "Esta variable tiene espacios en blanco antes y después del primer y último carácter, los cuales serán eliminados con trim()."
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
