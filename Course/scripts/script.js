@@ -709,7 +709,13 @@ console.log(variableAlaQueSeLeAplicaraSplit.split('.')); //* Divide la cadena do
 // ^En este caso, al pasar una cadena vacía (`''`), el texto se divide carácter por carácter, devolviendo un array con todas las letras individuales, incluyendo espacios.
 console.log('--- Método split con cadena vacía. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `split()` con una cadena vacía.
 const variableAlaQueSeLeAplicaraSplitCaracterVacio = 'Hola JS'; //* Cadena de texto que será separada carácter por carácter.
-console.log(variableAlaQueSeLeAplicaraSplitCaracterVacio.split('')); //* Retorna: ['H', 'o', 'l', 'a', ' ', 'J', 'S']
+console.log(variableAlaQueSeLeAplicaraSplitCaracterVacio.split('')); //* Retorna: ['H', 'o', 'l', 'a', ' ', 'J', 'S'].
+
+// &Eval
+// &Aaui pones que lo que se hace es leer una cadena de texto y que por ejemplo si se tiene '5+2-5' lo que hace es tomar los caracteres y los pasa este medoto a js lo que hace que aunque sea un string todo se ejecute la operacion o algo asi, y pones que en este caso se usa el eval() y dentro de los parentesis va el nombre de la variable s
+console.log('--- Método eval con cadena. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `eval()'
+const variableAlaQueSeLeAplicaraEval = '5+-3/8';
+console.log(eval(variableAlaQueSeLeAplicaraEval));
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
