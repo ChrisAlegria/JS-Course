@@ -697,10 +697,19 @@ const variableAlaQueSeLeAplicaraCharAt = 'JavaScript'; //* Cadena de texto sobre
 console.log(variableAlaQueSeLeAplicaraCharAt.charAt(4)); //* Imprime el carácter en la posición 4 (empezando desde 0). Resultado: 'S'*
 
 // &split()
-// &El método `.split()` se utiliza para **dividir una cadena de texto en partes más pequeñas**, creando un array a partir de dichas divisiones. Dentro de los paréntesis se debe especificar el **carácter, símbolo o texto** que servirá como **punto de corte**. Cada vez que JavaScript encuentre ese carácter dentro del string, cortará la cadena en ese lugar y generará un nuevo elemento del array. Por ejemplo, si se usa `.split('.')`, el texto `"Este texto. es importante"` será dividido en dos partes: `["Este texto", " es importante"]`. Es muy útil cuando se trabaja con frases, listas, archivos CSV, o cualquier dato que contenga separadores.
-console.log('--- Método split. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `split()`.
+// &El método `.split()` se utiliza para **dividir una cadena de texto en partes más pequeñas**, creando un array a partir de dichas divisiones. Dentro de los paréntesis se debe especificar el **carácter, símbolo o texto** que servirá como **punto de corte**. Cada vez que JavaScript encuentre ese carácter dentro del string, cortará la cadena en ese lugar y generará un nuevo elemento del array. Por ejemplo, si se usa `.split('.')`, el texto `"Este texto. es importante"` será dividido en dos partes: `["Este texto", " es importante"]`. Este método es muy útil cuando se trabaja con frases, listas, archivos CSV, o cualquier dato que contenga separadores.
+// &Además, si dentro del `.split()` se especifica una **cadena vacía** (`''`), JavaScript cortará **cada carácter de forma individual**, separando letra por letra y retornando un array con todos los caracteres de la cadena.
+// ^Especificando un carácter
+// ^Este ejemplo muestra cómo dividir la cadena de texto cada vez que aparece el punto (`.`).
+console.log('--- Método split con carácter. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `split()` con un carácter.
 const variableAlaQueSeLeAplicaraSplit = 'Este texto. es importante. para el usuario'; //* Cadena de texto con puntos como separadores.
-console.log(variableAlaQueSeLeAplicaraSplit.split('.')); //* Divide la cadena donde encuentra un punto y retorna un array: ['Este texto', ' es importante']
+console.log(variableAlaQueSeLeAplicaraSplit.split('.')); //* Divide la cadena donde encuentra un punto y retorna un array: ['Este texto', ' es importante', ' para el usuario']
+
+// ^Sin especificar carácter (cadena vacía '')
+// ^En este caso, al pasar una cadena vacía (`''`), el texto se divide carácter por carácter, devolviendo un array con todas las letras individuales, incluyendo espacios.
+console.log('--- Método split con cadena vacía. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `split()` con una cadena vacía.
+const variableAlaQueSeLeAplicaraSplitCaracterVacio = 'Hola JS'; //* Cadena de texto que será separada carácter por carácter.
+console.log(variableAlaQueSeLeAplicaraSplitCaracterVacio.split('')); //* Retorna: ['H', 'o', 'l', 'a', ' ', 'J', 'S']
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
