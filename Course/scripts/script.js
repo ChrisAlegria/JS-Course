@@ -645,7 +645,7 @@ console.log(variableQueSeUsaraContadorCaracteres.length); //* Muestra en consola
 // Todo - Metodos de string
 // Todo -
 // &Slice
-// &El mtodo de string slice sirve para poder especificar que solamente se mestre de sierto de caracter por ejemplo la estrucrura es primeramente se pone la vairabl a la que le apligaremos el metodos por ejemoplo "nombreVariable.slice(numeroCaracterInicial, numeroCaracterFinal)" por lo que se especifica en caracter inicial desde que caracter se mostrara y asi con el final, por ejemplo..
+// &El mtodo de string slice sirve para poder especificar que solamente se mestre de sierto de caracter por ejemplo la estrucrura es primeramente se pone la vairabl a la que le apligaremos el metodos por ejemoplo "nombreVariable.slice(numeroCaracterInicial, numeroCaracterFinal)" por lo que se especifica en caracter inicial desde que caracter se mostrara, por lo que si se especifica 5 se mostrara el 6 y asi con el final, por ejemplo..
 console.log('--- Metodo string slice. ---');  //* Imprime en consola un mensaje indicando que se demostrará el uso del metodo slice de string.
 const variableAlQueSeAplicaraMetodoSlice = 'Esta es una variable a la cual se le aplicara el metodo slice.';
 console.log(variableAlQueSeAplicaraMetodoSlice.slice(56,62));
@@ -669,3 +669,5 @@ const resultadoEjecucion = funcionComoVariable(4, 5); //* Se ejecuta la función
 
 console.log(funcionComoVariable); //* Muestra el código fuente de la función, porque es la referencia a la función
 console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9
+
+// !Algo deprecado en JS: En el contexto de JavaScript, el termino "deprecado" se refiere a una función, método, propiedad o caracteristica de JavaScript que ha sido marcada como obsoleta o desaconsejada. Si se utiliza alguna funcion, método, propiedad o caracteristica de JavaScript que esta marcada como "deprecada", es posible que se recivan adevertencias o mensajes en la consola del navegador.
