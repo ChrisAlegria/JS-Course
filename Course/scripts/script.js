@@ -690,6 +690,12 @@ console.log('--- Método trim. ---'); //* Imprime en consola un mensaje indicand
 const variableAlaQueSeLeAplicaraTrim = '                    Esta variable tiene espacios en blanco antes y después del primer y último carácter, los cuales serán eliminados con trim().                    '; //* Cadena con espacios al inicio y al final.
 console.log(variableAlaQueSeLeAplicaraTrim.trim()); //* Resultado: "Esta variable tiene espacios en blanco antes y después del primer y último carácter, los cuales serán eliminados con trim()."
 
+// &CharAt
+// &El método `.charAt()` se utiliza para **obtener un carácter específico** de una cadena de texto, según la posición (índice) que se indique. En JavaScript, los caracteres de un string están indexados desde **0**, lo que significa que el primer carácter tiene índice 0, el segundo tiene índice 1, y así sucesivamente. Este método es útil cuando se necesita acceder a una letra en particular dentro del texto, como para validaciones, extracciones, análisis de contenido, etc.
+console.log('--- Método charAt. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `charAt()`.
+const variableAlaQueSeLeAplicaraCharAt = 'JavaScript'; //* Cadena de texto sobre la cual se aplicará el método.
+console.log(variableAlaQueSeLeAplicaraCharAt.charAt(4)); //* Imprime el carácter en la posición 4 (empezando desde 0). Resultado: 'S'*
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
