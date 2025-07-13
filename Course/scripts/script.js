@@ -642,6 +642,16 @@ console.log('--- Contador de caracteres. ---'); //* Imprime en consola un mensaj
 const variableQueSeUsaraContadorCaracteres = 'Educación'; //* Cadena de texto que contiene 9 caracteres (incluye la tilde como un carácter individual).
 console.log(variableQueSeUsaraContadorCaracteres.length); //* Muestra en consola el número 9, que representa la cantidad total de caracteres del string.
 
+// Todo - Metodos de string
+// Todo -
+// &Slice
+// &El mtodo de string slice sirve para poder especificar que solamente se mestre de sierto de caracter por ejemplo la estrucrura es primeramente se pone la vairabl a la que le apligaremos el metodos por ejemoplo "nombreVariable.slice(numeroCaracterInicial, numeroCaracterFinal)" por lo que se especifica en caracter inicial desde que caracter se mostrara y asi con el final, por ejemplo..
+console.log('--- Metodo string slice. ---');  //* Imprime en consola un mensaje indicando que se demostrará el uso del metodo slice de string.
+const variableAlQueSeAplicaraMetodoSlice = 'Esta es una variable a la cual se le aplicara el metodo slice.';
+console.log(variableAlQueSeAplicaraMetodoSlice.slice(56,62));
+
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
