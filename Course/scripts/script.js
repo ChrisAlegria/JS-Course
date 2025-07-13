@@ -712,10 +712,11 @@ const variableAlaQueSeLeAplicaraSplitCaracterVacio = 'Hola JS'; //* Cadena de te
 console.log(variableAlaQueSeLeAplicaraSplitCaracterVacio.split('')); //* Retorna: ['H', 'o', 'l', 'a', ' ', 'J', 'S'].
 
 // &Eval
-// &Aaui pones que lo que se hace es leer una cadena de texto y que por ejemplo si se tiene '5+2-5' lo que hace es tomar los caracteres y los pasa este medoto a js lo que hace que aunque sea un string todo se ejecute la operacion o algo asi, y pones que en este caso se usa el eval() y dentro de los parentesis va el nombre de la variable s
-console.log('--- Método eval con cadena. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `eval()'
-const variableAlaQueSeLeAplicaraEval = '5+-3/8';
-console.log(eval(variableAlaQueSeLeAplicaraEval));
+// &El método `eval()` en JavaScript se utiliza para **evaluar una cadena de texto como si fuera código JavaScript**. Es decir, si se tiene una variable que almacena una cadena como `'5+2-5'`, al aplicar `eval()` lo que hace JavaScript es **interpretar y ejecutar** esa expresión como si se hubiera escrito directamente como código. Aunque la cadena sea de tipo `string`, si su contenido corresponde a una expresión válida (como operaciones matemáticas), `eval()` **la transformará en una instrucción real y devolverá el resultado**. Este método puede ser útil para casos muy específicos donde se necesita ejecutar código generado dinámicamente, pero también puede ser peligroso si se utiliza con datos no confiables, ya que puede ejecutar cualquier instrucción, incluso maliciosa.
+// &Para usarlo, se coloca `eval()` y dentro de los paréntesis el nombre de la variable que contiene la cadena a evaluar.
+console.log('--- Método eval con cadena. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `eval()`.
+const variableAlaQueSeLeAplicaraEval = '5+-3/8'; //* Cadena de texto que representa una operación matemática.
+console.log(eval(variableAlaQueSeLeAplicaraEval)); //* Evalúa la cadena como una expresión matemática real y muestra el resultado.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
