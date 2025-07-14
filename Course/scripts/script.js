@@ -642,9 +642,9 @@ console.log('--- Contador de caracteres. ---'); //* Imprime en consola un mensaj
 const variableQueSeUsaraContadorCaracteres = 'Educación'; //* Cadena de texto que contiene 9 caracteres (incluye la tilde como un carácter individual).
 console.log(variableQueSeUsaraContadorCaracteres.length); //* Muestra en consola el número 9, que representa la cantidad total de caracteres del string.
 
-// Todo - Métodos de string
+// Todo - Métodos en string
 // Todo - En JavaScript, existen múltiples métodos integrados para manipular y transformar cadenas de texto (strings). Para aplicar un método, se escribe el nombre de la variable seguido de un punto (`.`), el nombre del método y paréntesis `()`, donde a veces se incluyen argumentos. Estos métodos permiten desde cortar, reemplazar o cambiar el formato del texto hasta realizar búsquedas o comparaciones dentro de una cadena.
-// &Slice
+// &Extraccion de parte de cadena de texto (slice())
 // &El método `slice()` permite extraer una parte de una cadena de texto especificando dos posiciones: la posición inicial (desde dónde empieza a cortar) y la final (hasta dónde cortará sin incluir ese carácter). Si se utilizan números positivos, el conteo empieza desde el inicio (posición 0). Si se usan números negativos, el conteo va desde el final hacia atrás, lo cual permite recortar partes finales de la cadena.
 // ^Números positivos
 console.log('--- Método string slice con números positivos. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `slice()` con índices positivos.
@@ -656,47 +656,47 @@ console.log('--- Método string slice con números negativos. ---'); //* Imprime
 const variableAlaQueSeAplicaraMetodoSliceNegativos = 'Esta es una variable a la cual se le aplicará el método slice.'; //* Cadena de texto original con 62 caracteres.
 console.log(variableAlaQueSeAplicaraMetodoSliceNegativos.slice(-25, -12)); //* Extrae desde el carácter 25 desde el final al 12 desde el final. Resultado: "aplicará el".
 
-// &Replace
+// &Remplazar (replace())
 // &El método `replace()` busca un fragmento específico de texto dentro de una cadena y lo reemplaza por otro. Su sintaxis es: `cadena.replace('textoAReemplazar', 'textoNuevo')`. Solo reemplaza **la primera coincidencia**, a menos que se use una expresión regular con modificadores.
 // ^Reemplazo simple
 console.log('--- Método string replace. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `replace()`.
 const variableAlaQueSeLeAplicaraMetodoReplace = 'Esta es una variable en la cual se reemplazará la palabra siguiente: Texto.'; //* Cadena original que contiene la palabra "Texto".
 console.log(variableAlaQueSeLeAplicaraMetodoReplace.replace('Texto', 'JavaScript')); //* Reemplaza la palabra "Texto" por "JavaScript".
 
-// &Cambio de tipo de texto (lowerCase / upperCase)
+// &Cambio de tipo de texto (lowerCase() / upperCase())
 // &JavaScript permite cambiar todo el contenido de un string a **mayúsculas** con `toUpperCase()` o a **minúsculas** con `toLowerCase()`. Esto es útil para normalizar datos, validar formularios, o para presentaciones consistentes. Ambos métodos no requieren argumentos y devuelven una nueva cadena con el cambio aplicado.
-// ^toUpperCase
+// ^Mayusculas (toUpperCase)
 // ^El método `toUpperCase()` convierte toda la cadena a letras mayúsculas.
 console.log('--- Método toUpperCase. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `toUpperCase()`.
 const variableAlaQueSeLeAplicaraMetodoToUpperCase = 'Esta es una variable a la cual se le aplica el método toUpperCase.'; //* Cadena original con letras mixtas.
 console.log(variableAlaQueSeLeAplicaraMetodoToUpperCase.toUpperCase()); //* Resultado: "ESTA ES UNA VARIABLE A LA CUAL SE LE APLICA EL MÉTODO TOUPPERCASE."
 
-// ^toLowerCase
+// ^Minusculas (toLowerCase)
 // ^El método `toLowerCase()` convierte toda la cadena a letras minúsculas.
 console.log('--- Método toLowerCase. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `toLowerCase()`.
 const variableAlaQueSeLeAplicaraMetodoToLowerCase = 'Esta Es Una Variable A La Cual Se Le Aplica El Método ToLowerCase.'; //* Cadena con varias mayúsculas.
 console.log(variableAlaQueSeLeAplicaraMetodoToLowerCase.toLowerCase()); //* Resultado: "esta es una variable a la cual se le aplica el método tolowercase."
 
-// &Concatenación
+// &Concatenación (cancat())
 // &Además del símbolo `+`, JavaScript permite unir (concatenar) cadenas de texto utilizando el método `.concat()`. Este método se aplica sobre una cadena base y se le pasa como argumento otra u otras cadenas que se desean unir. Aunque el uso de `+` es más común hoy en día, `concat()` sigue siendo una forma válida y explícita de concatenar strings.
 console.log('--- Método concat. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `concat()`.
 const variableAlaQueSeLeAplicaraUnConcat1 = 'Esta variable concatenará '; //* Primera cadena base a la que se le añadirá la segunda.
 const variableAlaQueSeLeAplicaraUnConcat2 = 'esta otra variable.'; //* Segunda cadena que se añadirá a la anterior.
 console.log(variableAlaQueSeLeAplicaraUnConcat1.concat(variableAlaQueSeLeAplicaraUnConcat2)); //* Resultado: "Esta variable concatenará esta otra variable."
 
-// &Trim
+// &Eliminacion de espacios en blanco (trim())
 // &El método `.trim()` elimina los espacios en blanco **al inicio y al final** de una cadena de texto. Esto es muy útil cuando se recibe texto de formularios, entradas del usuario u otras fuentes que pueden contener espacios no deseados. No afecta los espacios que estén en medio del texto, solo los que estén antes del primer carácter visible y después del último.
 console.log('--- Método trim. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `trim()`.
 const variableAlaQueSeLeAplicaraTrim = '                    Esta variable tiene espacios en blanco antes y después del primer y último carácter, los cuales serán eliminados con trim().                    '; //* Cadena con espacios al inicio y al final.
 console.log(variableAlaQueSeLeAplicaraTrim.trim()); //* Resultado: "Esta variable tiene espacios en blanco antes y después del primer y último carácter, los cuales serán eliminados con trim()."
 
-// &CharAt
+// &Obtencion de un caracter (charAt())
 // &El método `.charAt()` se utiliza para **obtener un carácter específico** de una cadena de texto, según la posición (índice) que se indique. En JavaScript, los caracteres de un string están indexados desde **0**, lo que significa que el primer carácter tiene índice 0, el segundo tiene índice 1, y así sucesivamente. Este método es útil cuando se necesita acceder a una letra en particular dentro del texto, como para validaciones, extracciones, análisis de contenido, etc.
 console.log('--- Método charAt. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `charAt()`.
 const variableAlaQueSeLeAplicaraCharAt = 'JavaScript'; //* Cadena de texto sobre la cual se aplicará el método.
 console.log(variableAlaQueSeLeAplicaraCharAt.charAt(4)); //* Imprime el carácter en la posición 4 (empezando desde 0). Resultado: 'S'*
 
-// &split()
+// &Divir cadena de texto en partes (split())
 // &El método `.split()` se utiliza para **dividir una cadena de texto en partes más pequeñas**, creando un array a partir de dichas divisiones. Dentro de los paréntesis se debe especificar el **carácter, símbolo o texto** que servirá como **punto de corte**. Cada vez que JavaScript encuentre ese carácter dentro del string, cortará la cadena en ese lugar y generará un nuevo elemento del array. Por ejemplo, si se usa `.split('.')`, el texto `"Este texto. es importante"` será dividido en dos partes: `["Este texto", " es importante"]`. Este método es muy útil cuando se trabaja con frases, listas, archivos CSV, o cualquier dato que contenga separadores.
 // &Además, si dentro del `.split()` se especifica una **cadena vacía** (`''`), JavaScript cortará **cada carácter de forma individual**, separando letra por letra y retornando un array con todos los caracteres de la cadena.
 // ^Especificando un carácter
@@ -723,16 +723,58 @@ console.log(eval(variableAlaQueSeLeAplicaraEval)); //* Evalúa la cadena como un
 // ~Los arrays son muy utilizados por lo que son una de las bases mas utilizados de manera general, por lo que un array o arreglo en JavaScript es una estructura de datos que nos permite almacenar varios elementos en una sola variable, asi que se puede pensar en esto como una lista ordenada de elementos, en la cual cada elemento tiene un indice que indica cual es la posicion exacta en esta lista, donde se puedne almacenar cualquier tipo de datos (string, int, float, booleano, null, etc..) y se puede acceder a ella a traves del indice, ademas que a diferencia de otros lengiajes de programacion el alrgo del array no esta definido y podemos definirlo en el momento que le vamos asignando lso valores o elenentos. 
 console.log('=========== Arrays. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre arrays.
 
-// Todo - Obtencion de elemento de array
-// Todo - Aqui ponea algo tuop: sabemos que los arrays son variables uqe puedne almcanear varios datos, por lo que si queremos consultar un valor de estos se debera unicmanerte escribir el nombre del array junto con corchetes [] donde dentro de este se especifica el elemento que queremos obtener, cabe mencionar que el primer elemento del array es el 0, por ejemplo si se tiene "nombreArray['elemento1','elemento2']", el nombreArray[0] mostrara 'elemento1'.
-console.log('--- Obtencion elemento de array. ---'); //* Imprime en consola un mensaje indicando que se demostrará la obtencion de elemento del array.
-const arrayParaObtencionElemento = ['elemento1', 'elemento2', 'elemento3'];
-console.log(arrayParaObtencionElemento[0]);
+// Todo - Sintaxis de un array
+// Todo - Un **array** en JavaScript es una estructura que permite almacenar múltiples valores dentro de una sola variable. A diferencia de los objetos que usan pares clave:valor, los arrays se componen de **elementos ordenados** a los que se accede mediante su **índice numérico**, comenzando desde 0. La sintaxis básica para declarar un array es usar `var`, `let` o `const`, seguido del nombre de la variable y luego **corchetes `[]`** que contendrán los elementos separados por comas. Los valores dentro del array pueden ser de **cualquier tipo de dato**: `string`, `number`, `boolean`, `null`, `undefined`, incluso otros `arrays`, `objetos` o `funciones`. Aunque el array se declare con `const`, **se pueden modificar sus elementos internos** (agregar, eliminar o cambiar valores), pero **no se puede reasignar completamente a otro array** (es decir, no se puede hacer `miArray = otroArray` si fue declarado con `const`). Esta es una distinción clave entre la inmutabilidad de la referencia y la mutabilidad del contenido.
+let frutas = [ //* Se declara un array llamado `frutas` usando la palabra clave `let`. Luego se abren corchetes `[]`, lo que indica que es una lista.
+    'manzana', //* Elemento 0: una cadena de texto. Representa una fruta.
+    'pera',    //* Elemento 1: otra cadena. Los elementos están separados por comas.
+    'uva'      //* Elemento 2: el último elemento no lleva coma final (aunque JS lo permite en versiones modernas).
+]; //* Cierre del array. Este array contiene 3 elementos de tipo `string`.
 
-// Todo - declarar array con una cantidad ya fija de elmentos dentro del mismo, los cuales se definen como vacios
-// Todo - aqui pones que para declarar un array asi se usa despues del asginador de variable new array() donde dentro de lois parentesis se especifica la cantidad de elementos que dicho array tendra, pero al momento de crearse estaran vacions.
-const arrayDeclaracionCantidadFija = new Array(5);
+// Todo - Tipos de elementos dentro de un array
+// Todo - Los arrays en JavaScript pueden contener **diferentes tipos de datos en una misma lista**, lo cual los hace muy versátiles. Es posible almacenar desde valores simples hasta estructuras complejas como funciones, otros arrays u objetos dentro del mismo array. Esto permite modelar datos estructurados o realizar transformaciones dinámicas fácilmente. A continuación se muestra un ejemplo con distintos tipos de valores en un solo array:
+const arrayConDiversosTiposDeDatos = [ //* Se abre un array llamado `arrayConDiversosTiposDeDatos`.
+    'Texto simple', //* Elemento tipo `string`.
+    42,             //* Elemento tipo `number`.
+    true,           //* Elemento tipo `boolean`.
+    null,           //* Elemento con valor `null`, indica ausencia de valor.
+    undefined,      //* Elemento `undefined`, significa que no se ha definido aún.
+    [1, 2, 3],      //* Elemento tipo array anidado (array dentro de otro array).
+    { nombre: 'ChatGPT' }, //* Elemento tipo objeto con clave y valor.
+    function saludar() { console.log('Hola desde el array') } //* Elemento tipo función. Puede ejecutarse con su índice.
+]; //* Cierre del array. Este array demuestra que se pueden mezclar diferentes tipos de datos en una sola lista.
 
+// Todo - Llamamiento de un array y sus valores
+// Todo - Sabemos que los arrays son variables que pueden almacenar varios valores en una sola estructura. Cada uno de estos valores se ubica en una posición específica dentro del array, la cual se conoce como "índice". Para acceder a un valor dentro del array, se debe escribir el nombre del array seguido de corchetes `[]` donde dentro se especifica el índice del valor que queremos consultar. Es importante recordar que **los arrays en JavaScript comienzan en 0**, es decir, el primer elemento está en la posición 0, el segundo en la posición 1, y así sucesivamente. Por ejemplo, si tenemos `array = ['valor1', 'valor2']`, al acceder con `array[0]` obtendremos `'valor1'`.
+console.log('--- Obtención de elemento de array. ---'); //* Imprime en consola un mensaje indicando que se demostrará la obtención de un elemento del array.
+const arrayParaObtencionElemento = ['elemento1', 'elemento2', 'elemento3']; //* Array con tres elementos de tipo string.
+console.log(arrayParaObtencionElemento[0]); //* Accede al primer elemento del array, que es 'elemento1'.
+
+// Todo - Declarar array con una cantidad ya fija de elementos dentro del mismo (vacíos)
+// Todo - También es posible crear un array indicando directamente cuántos espacios queremos reservar, aunque estos inicien sin valores. Para ello, usamos la sintaxis `new Array(n)`, donde `n` representa la cantidad de elementos vacíos que tendrá inicialmente el array. Esto puede ser útil cuando sabemos cuántos datos queremos almacenar pero aún no los tenemos disponibles.
+const arrayDeclaracionCantidadFija = new Array(5); //* Crea un array con 5 espacios vacíos (undefined).
+
+// Todo - Redefinir / definir valor en un elemento de array
+// Todo - Si queremos asignar o cambiar el valor de uno de los elementos de un array, simplemente escribimos el nombre del array seguido del índice (entre corchetes) del elemento que queremos modificar, y usamos el operador `=` para asignarle un nuevo valor. Por ejemplo, `miArray[2] = 'Nuevo valor'` asignará esa cadena de texto al tercer elemento del array (índice 2). Esta operación **puede usarse en arrays vacíos o ya definidos**.
+console.log('--- Asignar valor a elemento de array. ---'); //* Imprime en consola un mensaje indicando que se demostrará la asignación de valor a un elemento del array.
+const arrayAlQueReasignaraValorElementos = new Array(3); //* Crea un array de 3 espacios vacíos.
+arrayAlQueReasignaraValorElementos[0] = 'Este es el primer elemento del array'; //* Asigna un valor al primer índice (posición 0).
+console.log(arrayAlQueReasignaraValorElementos); //* Imprime el array con el nuevo valor en la primera posición.
+
+// Todo - Métodos en array
+// Todo - Los arrays en JavaScript cuentan con muchos métodos útiles que permiten manipular y procesar sus datos de manera eficiente. Algunos de los más comunes incluyen funciones para contar elementos, ordenar, agregar, eliminar, buscar, entre otros. Estos métodos se aplican escribiendo el nombre del array seguido de un punto (`.`) y el nombre del método, acompañado de paréntesis `()` que pueden incluir parámetros dependiendo del método que se utilice.
+
+// &Conteo de elementos (length)
+// &El método `.length` no es exactamente una función, sino una propiedad que permite saber cuántos elementos hay dentro de un array. Es muy útil para validar si un array tiene elementos, saber su tamaño o para recorrerlo con bucles. Se accede directamente como: `array.length`.
+console.log('--- Método length en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `length` en un array.
+const arrayAlQueSeLeAplicaraMetodoLength = ['elemento1', 'elemento2', 'elemento3']; //* Array con tres elementos de texto.
+console.log(arrayAlQueSeLeAplicaraMetodoLength.length); //* Retorna el número total de elementos en el array: 3.
+
+// &Ordenamiento de valores (sort())
+// &El método `.sort()` sirve para ordenar los elementos de un array. Si el array contiene textos, los ordenará **alfabéticamente** (según el orden Unicode). Si contiene números, los convertirá en texto y luego los ordenará, lo que puede causar resultados inesperados. Para ordenar correctamente números se debe usar una función de comparación personalizada. En este ejemplo, como los elementos son números, se usará `.sort()` sin personalizar, lo cual puede no ordenar numéricamente como uno esperaría.
+console.log('--- Método sort en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `sort()` en un array.
+const arrayAlQueSeLeAplicaraMetodoSort = [5, 2, 9, 4, 7, 3, 1, 0]; //* Array numérico desordenado.
+console.log(arrayAlQueSeLeAplicaraMetodoSort.sort()); //* Retorna los números ordenados como si fueran texto: [0, 1, 2, 3, 4, 5, 7, 9].
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
