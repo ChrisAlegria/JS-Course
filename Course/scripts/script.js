@@ -755,7 +755,7 @@ console.log(arrayParaObtencionElemento[0]); //* Accede al primer elemento del ar
 const arrayDeclaracionCantidadFija = new Array(5); //* Crea un array con 5 espacios vacíos (undefined).
 
 // Todo - Redefinir / definir valor en un elemento de array
-// Todo - Si queremos asignar o cambiar el valor de uno de los elementos de un array, simplemente escribimos el nombre del array seguido del índice (entre corchetes) del elemento que queremos modificar, y usamos el operador `=` para asignarle un nuevo valor. Por ejemplo, `miArray[2] = 'Nuevo valor'` asignará esa cadena de texto al tercer elemento del array (índice 2). Esta operación **puede usarse en arrays vacíos o ya definidos**.
+// Todo - Si queremos asignar o cambiar el valor de uno de los elementos de un array, simplemente escribimos el nombre del array seguido del índice (entre corchetes) del elemento que queremos modificar, y usamos el operador `=` para asignarle un nuevo valor. Por ejemplo, `miArray[2] = 'Nuevo valor'` asignará esa cadena de texto al tercer elemento del array (índice 2). Esta operación **puede usarse en arrays vacíos o ya definidos**. Además, si se asigna un valor a un índice más alto que la cantidad actual de elementos del array (por ejemplo, en un array de 3 elementos se modifica el índice 7), **JavaScript creará todos los elementos intermedios como `undefined` hasta llegar a ese índice**, y luego almacenará el valor indicado. Es decir, el array se expande automáticamente para alcanzar el índice que se quiere modificar.
 console.log('--- Asignar valor a elemento de array. ---'); //* Imprime en consola un mensaje indicando que se demostrará la asignación de valor a un elemento del array.
 const arrayAlQueReasignaraValorElementos = new Array(3); //* Crea un array de 3 espacios vacíos.
 arrayAlQueReasignaraValorElementos[0] = 'Este es el primer elemento del array'; //* Asigna un valor al primer índice (posición 0).
@@ -763,7 +763,6 @@ console.log(arrayAlQueReasignaraValorElementos); //* Imprime el array con el nue
 
 // Todo - Métodos en array
 // Todo - Los arrays en JavaScript cuentan con muchos métodos útiles que permiten manipular y procesar sus datos de manera eficiente. Algunos de los más comunes incluyen funciones para contar elementos, ordenar, agregar, eliminar, buscar, entre otros. Estos métodos se aplican escribiendo el nombre del array seguido de un punto (`.`) y el nombre del método, acompañado de paréntesis `()` que pueden incluir parámetros dependiendo del método que se utilice.
-
 // &Conteo de elementos (length)
 // &El método `.length` no es exactamente una función, sino una propiedad que permite saber cuántos elementos hay dentro de un array. Es muy útil para validar si un array tiene elementos, saber su tamaño o para recorrerlo con bucles. Se accede directamente como: `array.length`.
 console.log('--- Método length en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `length` en un array.
@@ -775,7 +774,6 @@ console.log(arrayAlQueSeLeAplicaraMetodoLength.length); //* Retorna el número t
 console.log('--- Método sort en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `sort()` en un array.
 const arrayAlQueSeLeAplicaraMetodoSort = [5, 2, 9, 4, 7, 3, 1, 0]; //* Array numérico desordenado.
 console.log(arrayAlQueSeLeAplicaraMetodoSort.sort()); //* Retorna los números ordenados como si fueran texto: [0, 1, 2, 3, 4, 5, 7, 9].
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
@@ -796,3 +794,6 @@ console.log(funcionComoVariable); //* Muestra el código fuente de la función, 
 console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9
 
 // !Algo deprecado en JS: En el contexto de JavaScript, el termino "deprecado" se refiere a una función, método, propiedad o caracteristica de JavaScript que ha sido marcada como obsoleta o desaconsejada. Si se utiliza alguna funcion, método, propiedad o caracteristica de JavaScript que esta marcada como "deprecada", es posible que se recivan adevertencias o mensajes en la consola del navegador.
+const test = ['elemento1','elemento2','elemento3'];
+test[test.length]='elemento4'
+console.log(test)
