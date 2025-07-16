@@ -15,3 +15,5 @@ function saludo(){
     const nombreUsuario = document.getElementById('nombreUsuarioSaludo').value;
     alert(`Hola ${nombreUsuario}`)
 }
+
+// *Sacar la media de 3 numeros dados por el usuario
