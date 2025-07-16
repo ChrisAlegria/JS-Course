@@ -808,7 +808,6 @@ console.log(arrayQueSeUsaraFindIndex.findIndex(x => x == 'Naranja'));
 //* Devuelve el índice del primer elemento que sea exactamente igual a 'Naranja'.
 //* En este caso el resultado es 3, porque 'Naranja' aparece por primera vez en la posición 3 del array.
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
