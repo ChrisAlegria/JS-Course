@@ -781,7 +781,15 @@ console.log('--- Método filter en array. ---'); //* Imprime en consola un mensa
 const arrayQueUsaraMetodoFilter = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 console.log(arrayQueUsaraMetodoFilter.filter(fruta => fruta === 'Naranja')); //* Retorna un nuevo array con solo los elementos 'Naranja': ['Naranja', 'Naranja'].
 
-// &
+// &Mapa (.map())
+// &El método `.map()` se utiliza para **recorrer un array y aplicar una transformación a cada uno de sus elementos**. A diferencia de `.filter()`, que selecciona ciertos elementos según una condición, `.map()` no excluye nada: **recorre todo el array completo**, elemento por elemento, y genera un **nuevo array del mismo tamaño**, pero con los elementos **modificados** según lo que se indique dentro de la función. Esa transformación puede ser lo que tú decidas: puedes **agregar texto**, **modificar valores**, **convertir números a texto**, o incluso **crear objetos a partir de los elementos**. Todo depende de la lógica que definas dentro de la función. Igual que con `.filter()`, no necesitas preocuparte por cuántos elementos hay en el array, ya que `.map()` automáticamente ejecutará la función una vez por cada elemento, pasándole uno por uno como parámetro. Este método es muy útil cuando necesitas transformar una lista sin alterar el array original, como al mostrar datos con formato personalizado en una página web, generar listas modificadas o aplicar operaciones matemáticas sobre arrays numéricos.
+console.log('--- Método map en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `map()` en un array.
+const arrayQueSeUsaraMetodoMap = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array de frutas originales.
+console.log(arrayQueSeUsaraMetodoMap.map(fruta => fruta + ' Tropical')); //* Retorna un nuevo array con cada fruta modificada: ['Manzana Tropical', 'Pera Tropical', ...]
+
+// &Remplaso de elementos en array (fill())
+// &Aqui pones solanente que hace como que remplaza el valor de absolutamente todos los elementos del array desde el elemento que especificamos por el valor que especificamos por lo que dentro de los parenteis de fill() iran primeramente el numero del elemento por el indice desde donde empezara a sustituier, seguido una coma el valor que tomaran todos los elemntos desde el especificado del indice.
+console.log('--- Método map en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `map()` en un array.
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
