@@ -787,9 +787,17 @@ console.log('--- Método map en array. ---'); //* Imprime en consola un mensaje 
 const arrayQueSeUsaraMetodoMap = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array de frutas originales.
 console.log(arrayQueSeUsaraMetodoMap.map(fruta => fruta + ' Tropical')); //* Retorna un nuevo array con cada fruta modificada: ['Manzana Tropical', 'Pera Tropical', ...]
 
-// &Remplaso de elementos en array (fill())
-// &Aqui pones solanente que hace como que remplaza el valor de absolutamente todos los elementos del array desde el elemento que especificamos por el valor que especificamos por lo que dentro de los parenteis de fill() iran primeramente el numero del elemento por el indice desde donde empezara a sustituier, seguido una coma el valor que tomaran todos los elemntos desde el especificado del indice.
-console.log('--- Método map en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `map()` en un array.
+// &Reemplazo de elementos en array (fill())
+// &El método `.fill()` permite **reemplazar el valor de todos los elementos de un array desde un índice específico en adelante**, asignándoles un valor único que tú determines. Esto significa que a partir del índice que indiques, todos los elementos siguientes tomarán ese nuevo valor La sintaxis dentro de los paréntesis es: primero el valor con el que quieres reemplazar, seguido opcionalmente del índice desde donde comenzará el reemplazo. Si no especificas el índice inicial, reemplazará todos los elementos del array. Este método modifica directamente el array original y también retorna ese mismo array modificado. Es útil cuando quieres inicializar o resetear parte o todo un array con un mismo valor.
+console.log('--- Método fill en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `fill()` en un array.
+const arrayQueSeUsaraMetodoFill = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array original con frutas variadas.
+console.log(arrayQueSeUsaraMetodoFill.fill('Fruta', 2)); //* Desde el índice 2 en adelante, todos los elementos serán reemplazados por el texto 'Fruta'. Resultado: ['Manzana', 'Pera', 'Fruta', 'Fruta', 'Fruta', 'Fruta']
+
+// &Búsqueda de elemento en array (find())
+// &El método `.find()` se utiliza para **buscar el primer elemento dentro de un array que cumpla con una condición específica**. A diferencia de `.filter()`, que devuelve **todos** los elementos que cumplen la condición en un nuevo array, `.find()` solo devuelve **el primero que encuentra** y **detiene la búsqueda inmediatamente** después de hallarlo, aunque existan más coincidencias. Este método no modifica el array original. Es útil cuando necesitas obtener solo un valor específico, por ejemplo, el primer número par, la primera coincidencia de texto, etc. La función que se pasa como argumento dentro del `.find()` funciona igual que en `.filter()`: recibe cada elemento uno por uno, lo evalúa y, si la condición se cumple, ese será el resultado final.
+console.log('--- Método find en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `find()` en un array.
+const arrayQueSeUsaraFind = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, incluyendo elementos repetidos.
+console.log(arrayQueSeUsaraFind.find(x => x == 'Manzana')); //* Devuelve únicamente la primera aparición de 'Manzana'. Resultado: 'Manzana'
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
