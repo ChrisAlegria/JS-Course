@@ -794,11 +794,13 @@ const arrayQueSeUsaraMetodoFill = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manz
 console.log(arrayQueSeUsaraMetodoFill.fill('Fruta', 2)); //* Desde el índice 2 en adelante, todos los elementos serán reemplazados por el texto 'Fruta'. Resultado: ['Manzana', 'Pera', 'Fruta', 'Fruta', 'Fruta', 'Fruta']
 
 // &Búsqueda de elemento en array (find())
-// &El método `.find()` se utiliza para **buscar el primer elemento dentro de un array que cumpla con una condición específica**. A diferencia de `.filter()`, que devuelve **todos** los elementos que cumplen la condición en un nuevo array, `.find()` solo devuelve **el primero que encuentra** y **detiene la búsqueda inmediatamente** después de hallarlo, aunque existan más coincidencias. Este método no modifica el array original. Es útil cuando necesitas obtener solo un valor específico, por ejemplo, el primer número par, la primera coincidencia de texto, etc. La función que se pasa como argumento dentro del `.find()` funciona igual que en `.filter()`: recibe cada elemento uno por uno, lo evalúa y, si la condición se cumple, ese será el resultado final.
+// &El método `.find()` se utiliza para **buscar el primer elemento dentro de un array que cumpla con una condición específica**. A diferencia de `.filter()`, que devuelve **todos** los elementos que cumplen la condición en un nuevo array, `.find()` **solo devuelve el primer valor que encuentra** y detiene la búsqueda inmediatamente, **sin importar cuántas coincidencias más existan**. Además, `.find()` **no devuelve un array**, sino **el valor directamente**. Por eso, su uso es ideal cuando se busca una sola coincidencia puntual y no una colección de resultados. También es importante saber que si **ningún elemento cumple la condición**, el resultado será `undefined`. La función que se pasa dentro del `.find()` recibe elemento por elemento del array y evalúa si cumple o no con la condición que establezcamos.
 console.log('--- Método find en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `find()` en un array.
 const arrayQueSeUsaraFind = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, incluyendo elementos repetidos.
-console.log(arrayQueSeUsaraFind.find(x => x == 'Manzana')); //* Devuelve únicamente la primera aparición de 'Manzana'. Resultado: 'Manzana'
+console.log(arrayQueSeUsaraFind.find(x => x == 'Manzana')); //* Devuelve únicamente el primer valor que cumpla la condición ('Manzana'), no un array.
 
+// &Enctrar el indice de (findIndexOf())
+// &
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
