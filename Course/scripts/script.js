@@ -775,6 +775,15 @@ console.log('--- Método sort en array. ---'); //* Imprime en consola un mensaje
 const arrayAlQueSeLeAplicaraMetodoSort = [5, 2, 9, 4, 7, 3, 1, 0]; //* Array numérico desordenado.
 console.log(arrayAlQueSeLeAplicaraMetodoSort.sort()); //* Retorna los números ordenados como si fueran texto: [0, 1, 2, 3, 4, 5, 7, 9].
 
+// &Filtro (.filter())
+// &El método `.filter()` se utiliza para **filtrar elementos dentro de un array** según una condición que definimos nosotros mismos. Este método no modifica el array original, sino que **crea un nuevo array** que contiene **solo los elementos que cumplan con la condición especificada**. Dentro del `.filter()` se coloca una función que puede ser anónima (como una arrow function) y que recibe como parámetro **cada uno de los elementos del array, uno por uno**. Aquí es importante aclarar que **no es necesario declarar muchos parámetros aunque el array tenga muchos valores**, ya que `.filter()` se encarga automáticamente de **pasar cada elemento individualmente a la función**, ejecutándola tantas veces como elementos haya en el array. A medida que la función se ejecuta, el método evalúa si ese elemento cumple o no con la condición. Si la cumple, **ese elemento será incluido en el nuevo array**. Si no, será descartado. Por ejemplo: si se quiere filtrar todos los elementos que sean `"Naranja"`, lo que se hace es comparar cada elemento con esa palabra. Si hay 2 `"Naranja"` en un array de 6 elementos, el resultado final será un array con esos 2 elementos: `['Naranja', 'Naranja']`. 
+console.log('--- Método filter en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `filter()` en un array.
+const arrayQueUsaraMetodoFilter = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
+console.log(arrayQueUsaraMetodoFilter.filter(fruta => fruta === 'Naranja')); //* Retorna un nuevo array con solo los elementos 'Naranja': ['Naranja', 'Naranja'].
+
+// &
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
@@ -791,9 +800,6 @@ const funcionComoVariable = funcionSumaConsejo; //* 'funcionComoVariable' es aho
 const resultadoEjecucion = funcionComoVariable(4, 5); //* Se ejecuta la función usando la variable-alias, pasando 4 y 5 como argumentos
 
 console.log(funcionComoVariable); //* Muestra el código fuente de la función, porque es la referencia a la función
-console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9
+console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9.
 
 // !Algo deprecado en JS: En el contexto de JavaScript, el termino "deprecado" se refiere a una función, método, propiedad o caracteristica de JavaScript que ha sido marcada como obsoleta o desaconsejada. Si se utiliza alguna funcion, método, propiedad o caracteristica de JavaScript que esta marcada como "deprecada", es posible que se recivan adevertencias o mensajes en la consola del navegador.
-const test = ['elemento1','elemento2','elemento3'];
-test[test.length]='elemento4'
-console.log(test)
