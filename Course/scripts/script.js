@@ -803,7 +803,6 @@ console.log(arrayQueSeUsaraFind.find(x => x == 'Manzana')); //* Devuelve únicam
 // &El método `.findIndex()` se utiliza para **obtener el índice (posición)** del **primer elemento** dentro de un array que cumpla con una condición determinada. A diferencia de `.find()`, que devuelve el valor encontrado, `.findIndex()` retorna **únicamente el número del índice** donde se encuentra ese elemento. Si no se encuentra ningún elemento que cumpla con la condición, el método retornará `-1`. Este método recorre el array elemento por elemento hasta encontrar el primero que cumpla con lo que se indique dentro de la función.
 console.log('--- Método findIndex en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `findIndex()` en un array.
 const arrayQueSeUsaraFindIndex = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
-
 console.log(arrayQueSeUsaraFindIndex.findIndex(x => x == 'Naranja')); 
 //* Devuelve el índice del primer elemento que sea exactamente igual a 'Naranja'.
 //* En este caso el resultado es 3, porque 'Naranja' aparece por primera vez en la posición 3 del array.
@@ -819,10 +818,8 @@ console.log( '--- Igualar una variable a una funcion. ---')
 function funcionSumaConsejo(a, b) {
     return a + b; //* Retorna la suma de a y b
 }
-
 const funcionComoVariable = funcionSumaConsejo; //* 'funcionComoVariable' es ahora un alias para 'funcionSumaConsejo'
 const resultadoEjecucion = funcionComoVariable(4, 5); //* Se ejecuta la función usando la variable-alias, pasando 4 y 5 como argumentos
-
 console.log(funcionComoVariable); //* Muestra el código fuente de la función, porque es la referencia a la función
 console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9.
 
