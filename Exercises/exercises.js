@@ -17,3 +17,7 @@ function saludo(){
 }
 
 // *Sacar la media de 3 numeros dados por el usuario
+function mediaNumeros(){
+    const numerosDados = document.getElementById('numerosDadosUsuario').value.split(',');
+    console.log(numerosDados)
+}

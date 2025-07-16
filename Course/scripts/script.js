@@ -762,7 +762,7 @@ arrayAlQueReasignaraValorElementos[0] = 'Este es el primer elemento del array'; 
 console.log(arrayAlQueReasignaraValorElementos); //* Imprime el array con el nuevo valor en la primera posición.
 
 // Todo - Métodos en array
-// Todo - Los arrays en JavaScript cuentan con muchos métodos útiles que permiten manipular y procesar sus datos de manera eficiente. Algunos de los más comunes incluyen funciones para contar elementos, ordenar, agregar, eliminar, buscar, entre otros. Estos métodos se aplican escribiendo el nombre del array seguido de un punto (`.`) y el nombre del método, acompañado de paréntesis `()` que pueden incluir parámetros dependiendo del método que se utilice.
+// Todo - Los arrays en JavaScript cuentan con muchos métodos útiles que permiten manipular y procesar sus datos de manera eficiente. Algunos de los más comunes incluyen funciones para contar elementos, ordenar, agregar, eliminar, buscar, entre otros. Estos métodos se aplican escribiendo el nombre del array seguido de un punto (`.`) y el nombre del método, acompañado de paréntesis `()` que pueden incluir parámetros dependiendo del método que se utilice. Además, **estos métodos también pueden aplicarse a arrays que contienen objetos**. En esos casos, al usar métodos como `.find()`, `.filter()`, `.map()` o `.findIndex()`, es necesario acceder a las propiedades del objeto. Para hacerlo, dentro de la función que recibe cada elemento del array (por ejemplo `x`), se utiliza la notación de punto para acceder a la clave deseada, como en `x.clave`. Esto permite realizar comparaciones o transformaciones basadas en los valores internos del objeto.
 // &Conteo de elementos (length)
 // &El método `.length` no es exactamente una función, sino una propiedad que permite saber cuántos elementos hay dentro de un array. Es muy útil para validar si un array tiene elementos, saber su tamaño o para recorrerlo con bucles. Se accede directamente como: `array.length`.
 console.log('--- Método length en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `length` en un array.
@@ -799,8 +799,15 @@ console.log('--- Método find en array. ---'); //* Imprime en consola un mensaje
 const arrayQueSeUsaraFind = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, incluyendo elementos repetidos.
 console.log(arrayQueSeUsaraFind.find(x => x == 'Manzana')); //* Devuelve únicamente el primer valor que cumpla la condición ('Manzana'), no un array.
 
-// &Enctrar el indice de (findIndexOf())
-// &
+// &Encontrar el índice de un elemento (findIndex())
+// &El método `.findIndex()` se utiliza para **obtener el índice (posición)** del **primer elemento** dentro de un array que cumpla con una condición determinada. A diferencia de `.find()`, que devuelve el valor encontrado, `.findIndex()` retorna **únicamente el número del índice** donde se encuentra ese elemento. Si no se encuentra ningún elemento que cumpla con la condición, el método retornará `-1`. Este método recorre el array elemento por elemento hasta encontrar el primero que cumpla con lo que se indique dentro de la función.
+console.log('--- Método findIndex en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `findIndex()` en un array.
+const arrayQueSeUsaraFindIndex = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
+
+console.log(arrayQueSeUsaraFindIndex.findIndex(x => x == 'Naranja')); 
+//* Devuelve el índice del primer elemento que sea exactamente igual a 'Naranja'.
+//* En este caso el resultado es 3, porque 'Naranja' aparece por primera vez en la posición 3 del array.
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
