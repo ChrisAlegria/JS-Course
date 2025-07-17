@@ -810,19 +810,19 @@ console.log(arrayQueSeUsaraFindIndex.findIndex(x => x == 'Naranja'));
 // &¿Existe algún elemento específico en el array? (some())
 // &El método `.some()` evalúa si **al menos uno de los elementos** del array cumple con la condición indicada en la función flecha. Retorna `true` si encuentra al menos un elemento que la cumpla, y `false` si ninguno la cumple. Este método **no modifica** el array original.
 console.log('--- Método some en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `some()` en un array.
-const arrayQueSeUsaraSome = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+const arrayQueSeUsaraSome = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 console.log(arrayQueSeUsaraSome.some(x => x === 'Manzana')); //* Retorna true, porque "Manzana" sí existe en el array.
 
 // &¿Todos los elementos cumplen cierta condición? (every())
 // &El método `.every()` verifica si **todos los elementos del array** cumplen con la condición proporcionada. Retorna `true` únicamente si **cada uno** cumple la condición, de lo contrario retorna `false`. También **no modifica** el array original.
 console.log('--- Método every en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `every()` en un array.
-const arrayQueSeUsaraEvery = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+const arrayQueSeUsaraEvery = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 console.log(arrayQueSeUsaraEvery.every(x => x === 'Manzana')); //* Retorna false, porque no todos los elementos son "Manzana".
 
 // &Extraer el último elemento del array y eliminarlo (pop())
 // &El método `.pop()` **extrae el último elemento del array** y lo retorna, pero además **lo elimina** del array original. Por lo tanto, modifica directamente el contenido del array.
 console.log('--- Método pop en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `pop()` en un array.
-const arrayQueSeUsaraPop = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+const arrayQueSeUsaraPop = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 const resultadoExtraccionPopArray = arrayQueSeUsaraPop.pop(); //* Extrae "Naranja", que es el último valor del array.
 console.log(resultadoExtraccionPopArray); //* Imprime el valor extraído.
 console.log(arrayQueSeUsaraPop); //* Imprime el array ya sin el último valor ("Naranja").
@@ -830,7 +830,7 @@ console.log(arrayQueSeUsaraPop); //* Imprime el array ya sin el último valor ("
 // &Extraer el primer elemento del array y eliminarlo (shift())
 // &El método `.shift()` funciona de forma similar a `.pop()`, pero en lugar de tomar el último elemento, **extrae el primero** del array. También **modifica** el array original al eliminar dicho primer elemento.
 console.log('--- Método shift en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `shift()` en un array.
-const arrayQueSeUsaraShift = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+const arrayQueSeUsaraShift = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 const resultadoExtraccionShiftArray = arrayQueSeUsaraShift.shift(); //* Extrae "Manzana", que es el primer valor del array.
 console.log(resultadoExtraccionShiftArray); //* Imprime el valor extraído.
 console.log(arrayQueSeUsaraShift); //* Imprime el array ya sin el primer valor ("Manzana").
@@ -839,7 +839,7 @@ console.log(arrayQueSeUsaraShift); //* Imprime el array ya sin el primer valor (
 // &El método `.push()` sirve para **insertar uno o más elementos al final de un array**. Al hacerlo, el array se **modifica directamente**, agregando el nuevo elemento al final de la lista.
 // &Este método además **retorna la nueva longitud (length)** del array después de insertar el/los elemento/s.
 console.log('--- Método push en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `push()` en un array.
-const arrayQueSeUsaraPush = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+const arrayQueSeUsaraPush = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 console.log(arrayQueSeUsaraPush.push('Piña')); //* Agrega el elemento "Piña" al final del array y retorna la nueva longitud.
 console.log(arrayQueSeUsaraPush); //* Muestra el array con el nuevo elemento agregado al final.
 
@@ -847,9 +847,32 @@ console.log(arrayQueSeUsaraPush); //* Muestra el array con el nuevo elemento agr
 // &El método `.unshift()` permite **agregar uno o más elementos al inicio de un array**, desplazando los elementos existentes hacia la derecha. También **modifica directamente el array**.
 // &Al igual que `.push()`, este método **retorna la nueva longitud (length)** del array tras insertar el/los nuevo/s valor/es.
 console.log('--- Método unshift en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `unshift()` en un array.
-const arrayQueSeUsaraUnshift = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+const arrayQueSeUsaraUnshift = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 console.log(arrayQueSeUsaraUnshift.unshift('Piña')); //* Agrega el elemento "Piña" al inicio del array y retorna la nueva longitud.
 console.log(arrayQueSeUsaraUnshift); //* Muestra el array con el nuevo elemento insertado al principio.
+
+// &Cortar elementos de array, sustituirlos o agregar nuevos elementos (splice())
+// &El método `splice()` es muy versátil y permite modificar un array de distintas formas: se puede **eliminar** uno o más elementos a partir de un índice específico, **reemplazar** elementos existentes por otros nuevos o **insertar** nuevos elementos sin eliminar ninguno. La sintaxis básica es `array.splice(indiceInicio, cantidadElementosAEliminar, elementosAAgregar...)`. El primer parámetro indica la posición desde donde se empezará a modificar el array; el segundo parámetro indica cuántos elementos serán eliminados a partir de ese índice (si se pone 0, no se elimina ningún elemento); y a partir del tercer parámetro, se pueden pasar uno o más elementos que serán insertados en esa posición. Así, `splice()` puede actuar para cortar, reemplazar o agregar, dependiendo de los parámetros que se le proporcionen.
+// ^Eliminar y sustituir elementos en un array
+// ^En este ejemplo se eliminarán 2 elementos a partir del índice 2 ("Banana" y "Naranja"), y en su lugar se insertarán dos nuevos elementos: "Zanahoria" y "Brócoli".
+console.log('--- Método splice para eliminar y reemplazar elementos en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso de `splice()` para cortar y sustituir elementos.
+const arrayQueUsaraSpliceCorte = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
+arrayQueUsaraSpliceCorte.splice(2, 2, 'Zanahoria', 'Brócoli'); //* Desde índice 2, elimina 2 elementos y los reemplaza por "Zanahoria" y "Brócoli".
+console.log(arrayQueUsaraSpliceCorte); //* Muestra el array modificado con el reemplazo de los elementos.
+
+// ^Agregar elementos sin eliminar ninguno
+// ^En este segundo ejemplo se agregarán elementos nuevos en el índice 2 sin eliminar ninguno, simplemente insertándolos y desplazando el resto hacia adelante.
+console.log('--- Método splice para agregar elementos sin eliminar ninguno. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso de `splice()` para agregar elementos.
+const arrayQueUsaraSpliceAgregacion = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array original con frutas.
+arrayQueUsaraSpliceAgregacion.splice(2, 0, 'Zanahoria', 'Brócoli'); //* Desde índice 2, elimina 0 elementos y agrega "Zanahoria" y "Brócoli" en esa posición.
+console.log(arrayQueUsaraSpliceAgregacion); //* Muestra el array modificado con los nuevos elementos insertados.
+
+// &Obtener elementos del array (slice())
+// &El método `slice()` permite **extraer una parte de un array** sin modificar el array original. Su sintaxis es: `array.slice(indiceInicio, indiceFinal)`. El valor de `indiceInicio` indica desde qué posición del array se comenzará a extraer (el primer índice es 0), mientras que `indiceFinal` **no se incluye**, es decir, se detiene justo antes de este índice. Si solo se proporciona un índice, `slice()` devolverá todos los elementos desde esa posición hasta el final del array. También se pueden usar índices negativos para contar desde el final hacia el inicio.
+console.log('--- Método slice para obtener elementos del array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `slice()` para obtener elementos sin modificar el array.
+const arrayQueUsaraSlice = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array original con frutas.
+console.log(arrayQueUsaraSlice.slice(2, 4)); //* Extrae los elementos en las posiciones 2 y 3, que son "Banana" y "Naranja".
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
