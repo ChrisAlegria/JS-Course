@@ -915,3 +915,5 @@ console.log(funcionComoVariable); //* Muestra el código fuente de la función, 
 console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9.
 
 // !Algo deprecado en JS: En el contexto de JavaScript, el termino "deprecado" se refiere a una función, método, propiedad o caracteristica de JavaScript que ha sido marcada como obsoleta o desaconsejada. Si se utiliza alguna funcion, método, propiedad o caracteristica de JavaScript que esta marcada como "deprecada", es posible que se recivan adevertencias o mensajes en la consola del navegador.
+
+// !Arrays tipo const: Aunque es posible declarar arrays con `const`, **no se recomienda hacerlo si se tiene la intención de reasignar el array completo más adelante**.`const` impide la **redefinición** de la variable (es decir, no se puede volver a asignar otro array completamente nuevo a esa misma variable), pero **sí permite modificar el contenido del array**, como agregar, eliminar o cambiar elementos. Por lo tanto, si se prevé que se necesitará reasignar el array por completo en algún momento, se recomienda usar `let` en lugar de `const`.
