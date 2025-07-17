@@ -697,8 +697,7 @@ const variableAlaQueSeLeAplicaraCharAt = 'JavaScript'; //* Cadena de texto sobre
 console.log(variableAlaQueSeLeAplicaraCharAt.charAt(4)); //* Imprime el carácter en la posición 4 (empezando desde 0). Resultado: 'S'*
 
 // &Divir cadena de texto en partes (split())
-// &El método `.split()` se utiliza para **dividir una cadena de texto en partes más pequeñas**, creando un array a partir de dichas divisiones. Dentro de los paréntesis se debe especificar el **carácter, símbolo o texto** que servirá como **punto de corte**. Cada vez que JavaScript encuentre ese carácter dentro del string, cortará la cadena en ese lugar y generará un nuevo elemento del array. Por ejemplo, si se usa `.split('.')`, el texto `"Este texto. es importante"` será dividido en dos partes: `["Este texto", " es importante"]`. Este método es muy útil cuando se trabaja con frases, listas, archivos CSV, o cualquier dato que contenga separadores.
-// &Además, si dentro del `.split()` se especifica una **cadena vacía** (`''`), JavaScript cortará **cada carácter de forma individual**, separando letra por letra y retornando un array con todos los caracteres de la cadena.
+// &El método `.split()` se utiliza para **dividir una cadena de texto en partes más pequeñas**, creando un array a partir de dichas divisiones. Dentro de los paréntesis se debe especificar el **carácter, símbolo o texto** que servirá como **punto de corte**. Cada vez que JavaScript encuentre ese carácter dentro del string, cortará la cadena en ese lugar y generará un nuevo elemento del array. Por ejemplo, si se usa `.split('.')`, el texto `"Este texto. es importante"` será dividido en dos partes: `["Este texto", " es importante"]`. Este método es muy útil cuando se trabaja con frases, listas, archivos CSV, o cualquier dato que contenga separadores. Además, si dentro del `.split()` se especifica una **cadena vacía** (`''`), JavaScript cortará **cada carácter de forma individual**, separando letra por letra y retornando un array con todos los caracteres de la cadena.
 // ^Especificando un carácter
 // ^Este ejemplo muestra cómo dividir la cadena de texto cada vez que aparece el punto (`.`).
 console.log('--- Método split con carácter. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `split()` con un carácter.
@@ -711,9 +710,8 @@ console.log('--- Método split con cadena vacía. ---'); //* Imprime en consola 
 const variableAlaQueSeLeAplicaraSplitCaracterVacio = 'Hola JS'; //* Cadena de texto que será separada carácter por carácter.
 console.log(variableAlaQueSeLeAplicaraSplitCaracterVacio.split('')); //* Retorna: ['H', 'o', 'l', 'a', ' ', 'J', 'S'].
 
-// &Eval
-// &El método `eval()` en JavaScript se utiliza para **evaluar una cadena de texto como si fuera código JavaScript**. Es decir, si se tiene una variable que almacena una cadena como `'5+2-5'`, al aplicar `eval()` lo que hace JavaScript es **interpretar y ejecutar** esa expresión como si se hubiera escrito directamente como código. Aunque la cadena sea de tipo `string`, si su contenido corresponde a una expresión válida (como operaciones matemáticas), `eval()` **la transformará en una instrucción real y devolverá el resultado**. Este método puede ser útil para casos muy específicos donde se necesita ejecutar código generado dinámicamente, pero también puede ser peligroso si se utiliza con datos no confiables, ya que puede ejecutar cualquier instrucción, incluso maliciosa.
-// &Para usarlo, se coloca `eval()` y dentro de los paréntesis el nombre de la variable que contiene la cadena a evaluar.
+// &Evaluar operacion de string (Eval())
+// &El método `eval()` en JavaScript se utiliza para **evaluar una cadena de texto como si fuera código JavaScript**. Es decir, si se tiene una variable que almacena una cadena como `'5+2-5'`, al aplicar `eval()` lo que hace JavaScript es **interpretar y ejecutar** esa expresión como si se hubiera escrito directamente como código. Aunque la cadena sea de tipo `string`, si su contenido corresponde a una expresión válida (como operaciones matemáticas), `eval()` **la transformará en una instrucción real y devolverá el resultado**. Este método puede ser útil para casos muy específicos donde se necesita ejecutar código generado dinámicamente, pero también puede ser peligroso si se utiliza con datos no confiables, ya que puede ejecutar cualquier instrucción, incluso maliciosa. Para usarlo, se coloca `eval()` y dentro de los paréntesis el nombre de la variable que contiene la cadena a evaluar.
 console.log('--- Método eval con cadena. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `eval()`.
 const variableAlaQueSeLeAplicaraEval = '5+-3/8'; //* Cadena de texto que representa una operación matemática.
 console.log(eval(variableAlaQueSeLeAplicaraEval)); //* Evalúa la cadena como una expresión matemática real y muestra el resultado.
@@ -878,6 +876,13 @@ console.log(arrayQueUsaraSlice.slice(2, 4)); //* Extrae los elementos en las pos
 console.log('--- Método join en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `join()` para obtener elementos sin modificar el array.
 const arrayQueUsaraJoin = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 console.log(arrayQueUsaraJoin.join(', Fruta: ')); //* Devuelve un string como: "Manzana, Fruta: Pera, Fruta: Banana, Fruta: Naranja, Fruta: Manzana, Fruta: Naranja"
+
+// &Concatenar arrays con concat()
+// &El método `.concat()` en arrays funciona de forma similar al método de strings con el mismo nombre: permite **fusionar o combinar** dos o más arrays en uno solo. Esto significa que **no se introduce un array dentro de otro**, sino que sus elementos se **unen en un nuevo array**, manteniendo el orden original. Es importante notar que `.concat()` **no modifica** los arrays originales, sino que retorna uno nuevo con la combinación resultante.
+console.log('--- Método concat en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `concat()` para unir arrays.
+const arrayQueSeraConcatenado1 = ['Manzana', 'Pera', 'Banana', 'Naranja']; //* Primer array con frutas.
+const arrayQueSeraConcatenado2 = ['Zanahoria', 'Lechuga', 'Brocoli']; //* Segundo array con verduras.
+console.log(arrayQueSeraConcatenado1.concat(arrayQueSeraConcatenado2)); //* Imprime un nuevo array que contiene los valores de ambos arrays, en orden.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
