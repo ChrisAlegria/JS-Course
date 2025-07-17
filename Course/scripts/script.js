@@ -873,6 +873,11 @@ console.log('--- Método slice para obtener elementos del array. ---'); //* Impr
 const arrayQueUsaraSlice = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array original con frutas.
 console.log(arrayQueUsaraSlice.slice(2, 4)); //* Extrae los elementos en las posiciones 2 y 3, que son "Banana" y "Naranja".
 
+// &Formato de inserción de array en HTML (join())
+// &Cuando se imprime un array directamente dentro del HTML, JavaScript lo convierte automáticamente en una cadena de texto, separando los elementos por comas. Por ejemplo, si tenemos `const frutas = ['Manzana', 'Pera']` y lo insertamos con `innerHTML = frutas`, se mostrará como: "Manzana,Pera". Para personalizar este formato y **modificar el separador entre los elementos**, se puede utilizar el método `join()`, el cual recibe como argumento una cadena que se colocará **entre cada elemento del array** al convertirlo en texto. Así, podemos insertar guiones, espacios, etiquetas HTML u otros separadores personalizados.
+console.log('--- Método join en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `join()` para obtener elementos sin modificar el array.
+const arrayQueUsaraJoin = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
+console.log(arrayQueUsaraJoin.join(', Fruta: ')); //* Devuelve un string como: "Manzana, Fruta: Pera, Fruta: Banana, Fruta: Naranja, Fruta: Manzana, Fruta: Naranja"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
