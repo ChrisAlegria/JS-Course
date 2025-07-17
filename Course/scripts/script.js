@@ -768,10 +768,24 @@ const arrayAlQueSeLeAplicaraMetodoLength = ['elemento1', 'elemento2', 'elemento3
 console.log(arrayAlQueSeLeAplicaraMetodoLength.length); //* Retorna el número total de elementos en el array: 3.
 
 // &Ordenamiento de valores (sort())
-// &El método `.sort()` sirve para ordenar los elementos de un array. Si el array contiene textos, los ordenará **alfabéticamente** (según el orden Unicode). Si contiene números, los convertirá en texto y luego los ordenará, lo que puede causar resultados inesperados. Para ordenar correctamente números se debe usar una función de comparación personalizada. En este ejemplo, como los elementos son números, se usará `.sort()` sin personalizar, lo cual puede no ordenar numéricamente como uno esperaría.
-console.log('--- Método sort en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `sort()` en un array.
-const arrayAlQueSeLeAplicaraMetodoSort = [5, 2, 9, 4, 7, 3, 1, 0]; //* Array numérico desordenado.
-console.log(arrayAlQueSeLeAplicaraMetodoSort.sort()); //* Retorna los números ordenados como si fueran texto: [0, 1, 2, 3, 4, 5, 7, 9].
+// &El método `.sort()` se utiliza para ordenar los elementos de un array. Cuando el array contiene cadenas de texto, `.sort()` ordena alfabéticamente basándose en el valor Unicode de los caracteres. Sin embargo, cuando el array contiene números, JavaScript los convierte primero a cadenas y los ordena como texto, lo que puede producir resultados inesperados. Por ejemplo, números mayores o iguales a 10 se ordenan considerando solo el primer dígito, provocando un orden incorrecto para números como 10, 11, 12, etc. Para ordenar correctamente números, es necesario proporcionar una función de comparación personalizada que defina la lógica del ordenamiento.
+// ^Ordenamiento de números menores a 10
+// ^Aquí se muestra un ejemplo donde `.sort()` se aplica sobre números todos menores a 10. En este caso, el método funciona correctamente porque la conversión a texto no afecta el orden esperado.
+console.log('--- Método sort en array con numeros menores a 10. ---'); 
+const arrayConNumerosMenoresADiezAlQueSeLeAplicaraMetodoSort = [5, 2, 9, 4, 7, 3, 1, 0];
+console.log(arrayConNumerosMenoresADiezAlQueSeLeAplicaraMetodoSort.sort()); //* Ordena y muestra el array con números del 0 al 9 ordenados ascendentemente.
+
+// ^Ordenamiento de números iguales o mayores a 10 por defecto
+// ^En este ejemplo se observa cómo `.sort()` ordena incorrectamente números mayores o iguales a 10 al tratar los números como strings, colocando por ejemplo "10" antes de "2" porque compara solo el primer carácter.
+console.log('--- Método sort en array con numeros iguales o mayores a 10 por defecto. ---');
+const arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortSinFuncion = [12, 13, 9, 34, 7, 3, 1, 0, 39, 78]; 
+console.log(arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortSinFuncion.sort()); //* Orden incorrecto por tratar los números como cadenas.
+
+// ^Ordenamiento de números iguales o mayores a 10 con función interna
+// ^Aquí se utiliza una función de comparación que recibe dos elementos (`x` y `y`) y devuelve la diferencia `x - y`. Esta función indica a `.sort()` cómo comparar los valores numéricos. El método ejecuta esta comparación repetidamente entre pares de elementos y reordena el array hasta que esté completamente ordenado. Si la resta es positiva, significa que `x` es mayor que `y` y `.sort()` intercambia sus posiciones, si es negativa o cero mantiene el orden.
+console.log('--- Método sort en array con numeros iguales o mayores a 10 con funcion interna. ---');
+const arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortConFuncion = [12, 13, 9, 34, 7, 3, 1, 0, 39, 78]; 
+console.log(arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortConFuncion.sort((x,y) => x - y )); //* Orden correcto en orden ascendente numérico.
 
 // &Filtro (.filter())
 // &El método `.filter()` se utiliza para **filtrar elementos dentro de un array** según una condición que definimos nosotros mismos. Este método no modifica el array original, sino que **crea un nuevo array** que contiene **solo los elementos que cumplan con la condición especificada**. Dentro del `.filter()` se coloca una función que puede ser anónima (como una arrow function) y que recibe como parámetro **cada uno de los elementos del array, uno por uno**. Aquí es importante aclarar que **no es necesario declarar muchos parámetros aunque el array tenga muchos valores**, ya que `.filter()` se encarga automáticamente de **pasar cada elemento individualmente a la función**, ejecutándola tantas veces como elementos haya en el array. A medida que la función se ejecuta, el método evalúa si ese elemento cumple o no con la condición. Si la cumple, **ese elemento será incluido en el nuevo array**. Si no, será descartado. Por ejemplo: si se quiere filtrar todos los elementos que sean `"Naranja"`, lo que se hace es comparar cada elemento con esa palabra. Si hay 2 `"Naranja"` en un array de 6 elementos, el resultado final será un array con esos 2 elementos: `['Naranja', 'Naranja']`. 
