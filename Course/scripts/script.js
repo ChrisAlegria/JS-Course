@@ -835,6 +835,21 @@ const resultadoExtraccionShiftArray = arrayQueSeUsaraShift.shift(); //* Extrae "
 console.log(resultadoExtraccionShiftArray); //* Imprime el valor extraído.
 console.log(arrayQueSeUsaraShift); //* Imprime el array ya sin el primer valor ("Manzana").
 
+// &Agregar un elemento al final del array (push())
+// &El método `.push()` sirve para **insertar uno o más elementos al final de un array**. Al hacerlo, el array se **modifica directamente**, agregando el nuevo elemento al final de la lista.
+// &Este método además **retorna la nueva longitud (length)** del array después de insertar el/los elemento/s.
+console.log('--- Método push en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `push()` en un array.
+const arrayQueSeUsaraPush = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+console.log(arrayQueSeUsaraPush.push('Piña')); //* Agrega el elemento "Piña" al final del array y retorna la nueva longitud.
+console.log(arrayQueSeUsaraPush); //* Muestra el array con el nuevo elemento agregado al final.
+
+// &Agregar un elemento al inicio del array (unshift())
+// &El método `.unshift()` permite **agregar uno o más elementos al inicio de un array**, desplazando los elementos existentes hacia la derecha. También **modifica directamente el array**.
+// &Al igual que `.push()`, este método **retorna la nueva longitud (length)** del array tras insertar el/los nuevo/s valor/es.
+console.log('--- Método unshift en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `unshift()` en un array.
+const arrayQueSeUsaraUnshift = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+console.log(arrayQueSeUsaraUnshift.unshift('Piña')); //* Agrega el elemento "Piña" al inicio del array y retorna la nueva longitud.
+console.log(arrayQueSeUsaraUnshift); //* Muestra el array con el nuevo elemento insertado al principio.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
