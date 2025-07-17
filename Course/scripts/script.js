@@ -807,6 +807,35 @@ console.log(arrayQueSeUsaraFindIndex.findIndex(x => x == 'Naranja'));
 //* Devuelve el índice del primer elemento que sea exactamente igual a 'Naranja'.
 //* En este caso el resultado es 3, porque 'Naranja' aparece por primera vez en la posición 3 del array.
 
+// &¿Existe algún elemento específico en el array? (some())
+// &El método `.some()` evalúa si **al menos uno de los elementos** del array cumple con la condición indicada en la función flecha. Retorna `true` si encuentra al menos un elemento que la cumpla, y `false` si ninguno la cumple. Este método **no modifica** el array original.
+console.log('--- Método some en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `some()` en un array.
+const arrayQueSeUsaraSome = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+console.log(arrayQueSeUsaraSome.some(x => x === 'Manzana')); //* Retorna true, porque "Manzana" sí existe en el array.
+
+// &¿Todos los elementos cumplen cierta condición? (every())
+// &El método `.every()` verifica si **todos los elementos del array** cumplen con la condición proporcionada. Retorna `true` únicamente si **cada uno** cumple la condición, de lo contrario retorna `false`. También **no modifica** el array original.
+console.log('--- Método every en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `every()` en un array.
+const arrayQueSeUsaraEvery = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+console.log(arrayQueSeUsaraEvery.every(x => x === 'Manzana')); //* Retorna false, porque no todos los elementos son "Manzana".
+
+// &Extraer el último elemento del array y eliminarlo (pop())
+// &El método `.pop()` **extrae el último elemento del array** y lo retorna, pero además **lo elimina** del array original. Por lo tanto, modifica directamente el contenido del array.
+console.log('--- Método pop en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `pop()` en un array.
+const arrayQueSeUsaraPop = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+const resultadoExtraccionPopArray = arrayQueSeUsaraPop.pop(); //* Extrae "Naranja", que es el último valor del array.
+console.log(resultadoExtraccionPopArray); //* Imprime el valor extraído.
+console.log(arrayQueSeUsaraPop); //* Imprime el array ya sin el último valor ("Naranja").
+
+// &Extraer el primer elemento del array y eliminarlo (shift())
+// &El método `.shift()` funciona de forma similar a `.pop()`, pero en lugar de tomar el último elemento, **extrae el primero** del array. También **modifica** el array original al eliminar dicho primer elemento.
+console.log('--- Método shift en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `shift()` en un array.
+const arrayQueSeUsaraShift = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja'];
+const resultadoExtraccionShiftArray = arrayQueSeUsaraShift.shift(); //* Extrae "Manzana", que es el primer valor del array.
+console.log(resultadoExtraccionShiftArray); //* Imprime el valor extraído.
+console.log(arrayQueSeUsaraShift); //* Imprime el array ya sin el primer valor ("Manzana").
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
