@@ -771,21 +771,26 @@ console.log(arrayAlQueSeLeAplicaraMetodoLength.length); //* Retorna el número t
 // &El método `.sort()` se utiliza para ordenar los elementos de un array. Cuando el array contiene cadenas de texto, `.sort()` ordena alfabéticamente basándose en el valor Unicode de los caracteres. Sin embargo, cuando el array contiene números, JavaScript los convierte primero a cadenas y los ordena como texto, lo que puede producir resultados inesperados. Por ejemplo, números mayores o iguales a 10 se ordenan considerando solo el primer dígito, provocando un orden incorrecto para números como 10, 11, 12, etc. Para ordenar correctamente números, es necesario proporcionar una función de comparación personalizada que defina la lógica del ordenamiento.
 // ^Ordenamiento de números menores a 10
 // ^Aquí se muestra un ejemplo donde `.sort()` se aplica sobre números todos menores a 10. En este caso, el método funciona correctamente porque la conversión a texto no afecta el orden esperado.
-console.log('--- Método sort en array con numeros menores a 10. ---'); 
+// &Ordenamiento de valores (sort())
+// &El método `.sort()` se utiliza para ordenar los elementos de un array. Cuando el array contiene cadenas de texto, `.sort()` ordena alfabéticamente basándose en el valor Unicode de los caracteres. Sin embargo, cuando el array contiene números, JavaScript los convierte primero a cadenas y los ordena como texto, lo que puede producir resultados inesperados. Por ejemplo, números mayores o iguales a 10 se ordenan considerando solo el primer dígito, provocando un orden incorrecto para números como 10, 11, 12, etc. Para ordenar correctamente números, es necesario proporcionar una función de comparación personalizada que defina la lógica del ordenamiento.
+
+// ^Ordenamiento de números menores a 10
+// ^Aquí se muestra un ejemplo donde `.sort()` se aplica sobre números todos menores a 10. En este caso, el método funciona correctamente porque la conversión a texto no afecta el orden esperado.
+console.log('--- Método sort en array con numeros menores a 10. ---'); //* Imprime en consola un mensaje que indica que se ordenará un array con números menores a 10.
 const arrayConNumerosMenoresADiezAlQueSeLeAplicaraMetodoSort = [5, 2, 9, 4, 7, 3, 1, 0];
 console.log(arrayConNumerosMenoresADiezAlQueSeLeAplicaraMetodoSort.sort()); //* Ordena y muestra el array con números del 0 al 9 ordenados ascendentemente.
 
 // ^Ordenamiento de números iguales o mayores a 10 por defecto
 // ^En este ejemplo se observa cómo `.sort()` ordena incorrectamente números mayores o iguales a 10 al tratar los números como strings, colocando por ejemplo "10" antes de "2" porque compara solo el primer carácter.
-console.log('--- Método sort en array con numeros iguales o mayores a 10 por defecto. ---');
+console.log('--- Método sort en array con numeros iguales o mayores a 10 por defecto. ---'); //* Imprime en consola un mensaje que indica que se demostrará un ordenamiento incorrecto de números grandes por defecto.
 const arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortSinFuncion = [12, 13, 9, 34, 7, 3, 1, 0, 39, 78]; 
-console.log(arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortSinFuncion.sort()); //* Orden incorrecto por tratar los números como cadenas.
+console.log(arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortSinFuncion.sort()); //* Muestra el resultado del ordenamiento incorrecto al tratar números como texto.
 
 // ^Ordenamiento de números iguales o mayores a 10 con función interna
 // ^Aquí se utiliza una función de comparación que recibe dos elementos (`x` y `y`) y devuelve la diferencia `x - y`. Esta función indica a `.sort()` cómo comparar los valores numéricos. El método ejecuta esta comparación repetidamente entre pares de elementos y reordena el array hasta que esté completamente ordenado. Si la resta es positiva, significa que `x` es mayor que `y` y `.sort()` intercambia sus posiciones, si es negativa o cero mantiene el orden.
-console.log('--- Método sort en array con numeros iguales o mayores a 10 con funcion interna. ---');
+console.log('--- Método sort en array con numeros iguales o mayores a 10 con funcion interna. ---'); //* Imprime un mensaje que indica que ahora se usará una función interna para ordenar correctamente los números.
 const arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortConFuncion = [12, 13, 9, 34, 7, 3, 1, 0, 39, 78]; 
-console.log(arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortConFuncion.sort((x,y) => x - y )); //* Orden correcto en orden ascendente numérico.
+console.log(arrayConNumerosIgualesMayoresADiezAlQueSeLeAplicaraMetodoSortConFuncion.sort((x,y) => x - y )); //* Muestra el array correctamente ordenado de menor a mayor gracias a la función de comparación.
 
 // &Filtro (.filter())
 // &El método `.filter()` se utiliza para **filtrar elementos dentro de un array** según una condición que definimos nosotros mismos. Este método no modifica el array original, sino que **crea un nuevo array** que contiene **solo los elementos que cumplan con la condición especificada**. Dentro del `.filter()` se coloca una función que puede ser anónima (como una arrow function) y que recibe como parámetro **cada uno de los elementos del array, uno por uno**. Aquí es importante aclarar que **no es necesario declarar muchos parámetros aunque el array tenga muchos valores**, ya que `.filter()` se encarga automáticamente de **pasar cada elemento individualmente a la función**, ejecutándola tantas veces como elementos haya en el array. A medida que la función se ejecuta, el método evalúa si ese elemento cumple o no con la condición. Si la cumple, **ese elemento será incluido en el nuevo array**. Si no, será descartado. Por ejemplo: si se quiere filtrar todos los elementos que sean `"Naranja"`, lo que se hace es comparar cada elemento con esa palabra. Si hay 2 `"Naranja"` en un array de 6 elementos, el resultado final será un array con esos 2 elementos: `['Naranja', 'Naranja']`. 
@@ -899,7 +904,28 @@ const arrayQueSeraConcatenado2 = ['Zanahoria', 'Lechuga', 'Brocoli']; //* Segund
 console.log(arrayQueSeraConcatenado1.concat(arrayQueSeraConcatenado2)); //* Imprime un nuevo array que contiene los valores de ambos arrays, en orden.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ~Dates (Fechas)    
+// ~Dates (Fechas)
+// ~Aqui pones que son y como se definen asignandose a una variabel con new Dat() la cual por defecto tendra la fecha y hora actual pero que si especificamos dentro de los parenteis podemos poner cierto dia, mes y año. o eso
+console.log('=========== Dates. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Dates.
+
+// Todo - Obtencion de un solo valor (fheca/mes/año)
+// Todo - Aqui pones que cuando se tiene una fecha Date en una variable podemos usar diferentes meotods ya sea par obtener solo el año, el dia, el mes de una fheca
+// &getFullYear
+// &Aui pones qeu este metodo extrae el año y eso
+console.log('--- Método getFullYear en Date. ---');
+const dateConMetodoGetDate = new Date();
+console.log(dateConMetodoGetDate.getFullYear())
+// &getMonth
+// &Aqui le pones que aqui nos trae el mes, pero en numero, ya que es la forma en que se declaran fechas en el date, con num o eso, peroooooo que siempre te dara un mes o un numero menor al actual, por ejemplo si es dicimente (mes 12), arrojara 11, ya que la forma en que se declaran o se usa getMonth lo que hace es que existe en JavaScript un array de meses y lo que hace es extraer el numero del index de dicho mes.
+console.log('--- Método getMonth en Date. ---');
+const dateConMetodoGetMonth= new Date(); 
+console.log(dateConMetodoGetMonth.getMonth());
+
+// &getDate
+// &
+console.log('--- Método getDate en Date. ---');
+const dateConGetDate = new Date();
+console.log(dateConGetDate.getDate())
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
