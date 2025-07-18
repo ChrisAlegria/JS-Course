@@ -905,27 +905,55 @@ console.log(arrayQueSeraConcatenado1.concat(arrayQueSeraConcatenado2)); //* Impr
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Dates (Fechas)
-// ~Aqui pones que son y como se definen asignandose a una variabel con new Dat() la cual por defecto tendra la fecha y hora actual pero que si especificamos dentro de los parenteis podemos poner cierto dia, mes y año. o eso
+// ~Las fechas en JavaScript se manejan mediante el objeto `Date`. Al crear una nueva instancia con `new Date()`, se genera automáticamente la **fecha y hora actual del sistema**. Sin embargo, también es posible especificar manualmente una fecha dentro de los paréntesis (por ejemplo: `new Date(2025, 6, 18)` para el 18 de julio de 2025).
+
 console.log('=========== Dates. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Dates.
 
-// Todo - Obtencion de un solo valor (fheca/mes/año)
-// Todo - Aqui pones que cuando se tiene una fecha Date en una variable podemos usar diferentes meotods ya sea par obtener solo el año, el dia, el mes de una fheca
-// &getFullYear
-// &Aui pones qeu este metodo extrae el año y eso
-console.log('--- Método getFullYear en Date. ---');
-const dateConMetodoGetDate = new Date();
-console.log(dateConMetodoGetDate.getFullYear())
-// &getMonth
-// &Aqui le pones que aqui nos trae el mes, pero en numero, ya que es la forma en que se declaran fechas en el date, con num o eso, peroooooo que siempre te dara un mes o un numero menor al actual, por ejemplo si es dicimente (mes 12), arrojara 11, ya que la forma en que se declaran o se usa getMonth lo que hace es que existe en JavaScript un array de meses y lo que hace es extraer el numero del index de dicho mes.
-console.log('--- Método getMonth en Date. ---');
-const dateConMetodoGetMonth= new Date(); 
-console.log(dateConMetodoGetMonth.getMonth());
 
-// &getDate
-// &
-console.log('--- Método getDate en Date. ---');
-const dateConGetDate = new Date();
-console.log(dateConGetDate.getDate())
+// Todo - Obtención de un solo valor (fecha/mes/año)
+// Todo - Cuando se tiene una variable con una fecha (`Date`), podemos acceder a **partes específicas** de ella utilizando métodos `get`, como `.getFullYear()` para el año, `.getMonth()` para el mes, o `.getDate()` para el día. Por otro lado, también existen métodos `set` para modificar estos valores. Mientras los métodos `get` **extraen datos**, los `set` **modifican partes de una fecha existente**.
+// &Métodos get
+// &Los métodos `get` permiten obtener **componentes específicos** de una fecha como el año, mes, día, hora, minutos, segundos, etc. Estos valores se devuelven como números que representan su parte correspondiente en la fecha.
+// ^getFullYear
+// ^El método `.getFullYear()` devuelve el **año completo** (en 4 dígitos) de la fecha almacenada. Por ejemplo, si la fecha es `2025-07-18`, el método devolverá `2025`.
+console.log('--- Método getFullYear en Date. ---'); //* Indica que se demostrará cómo obtener el año de una fecha.
+const dateConMetodoGetFullYear = new Date(); //* Se crea una instancia de fecha con la fecha actual.
+console.log(dateConMetodoGetFullYear.getFullYear()); //* Muestra el año actual obtenido mediante `.getFullYear()`.
+
+// ^getMonth
+// ^El método `.getMonth()` devuelve el **mes**, pero basado en un índice que va de 0 a 11. Es decir, **enero es 0 y diciembre es 11**. Por lo tanto, si actualmente estamos en diciembre (mes 12), este método devolverá `11`. Esto se debe a que internamente JavaScript trata los meses como posiciones en un array.
+console.log('--- Método getMonth en Date. ---'); //* Indica que se demostrará cómo obtener el mes actual.
+const dateConMetodoGetMonth = new Date(); //* Se crea una instancia de fecha con la fecha actual.
+console.log(dateConMetodoGetMonth.getMonth()); //* Muestra el mes actual como número de índice (0-11).
+
+// ^getDate
+// ^El método `.getDate()` devuelve el **día del mes** (de 1 a 31). A diferencia de `.getMonth()`, este sí devuelve el número directamente como lo conocemos (por ejemplo: 1, 2, 18, etc.).
+console.log('--- Método getDate en Date. ---'); //* Indica que se demostrará cómo obtener el día del mes actual.
+const dateConGetDate = new Date(); //* Se crea una instancia de fecha con la fecha actual.
+console.log(dateConGetDate.getDate()); //* Muestra el día actual del mes.
+
+// &Métodos set
+// &Los métodos `set` permiten modificar partes específicas de una fecha ya existente. Por ejemplo, puedes cambiar solo el año, el mes o el día sin afectar el resto de la fecha. Para que surtan efecto, el valor debe pasarse como argumento dentro de los paréntesis. Es importante recordar que si haces algo como `console.log(fecha.setFullYear(2023))`, eso **no devuelve la fecha modificada directamente**, sino un valor numérico (el timestamp). Por eso, primero debes aplicar el `set`, y luego mostrar la fecha resultante completa con `console.log(fecha)`.
+// ^setFullYear
+// ^El método `.setFullYear(año)` permite cambiar el **año** de una fecha ya existente. El nuevo valor se pasa como argumento. Aquí, por ejemplo, se cambia el año al 2853.
+console.log('--- Método setFullYear en Date. ---'); //* Indica que se demostrará cómo establecer un nuevo año en la fecha.
+const dateConMetodoSetFullYear = new Date(); //* Se crea una instancia de fecha con la fecha actual.
+dateConMetodoSetFullYear.setFullYear(2853); //* Se cambia el año a 2853.
+console.log(dateConMetodoSetFullYear); //* Se muestra la fecha completa actualizada.
+
+// ^setMonth
+// ^El método `.setMonth()` permite cambiar el **mes** de una fecha. Al igual que con `.getMonth()`, se debe usar el número de índice del mes (enero es 0, diciembre es 11). Aquí se asigna el mes de diciembre usando `11`.
+console.log('--- Método setMonth en Date. ---'); //* Indica que se demostrará cómo establecer un nuevo mes.
+const dateConMetodoSetMonth = new Date(); //* Se crea una instancia de fecha con la fecha actual.
+dateConMetodoSetMonth.setMonth(11); //* Se cambia el mes a diciembre (índice 11).
+console.log(dateConMetodoSetMonth); //* Se muestra la fecha con el nuevo mes.
+
+// ^setDate
+// ^El método `.setDate()` permite establecer un **día específico del mes**. Si deseas establecer un día menor a 10, simplemente pon el número (por ejemplo `1`), **no es necesario** escribirlo como `01` (eso sería un string, no un número). Aquí se establece el día 1.
+console.log('--- Método setDate en Date. ---'); //* Indica que se demostrará cómo establecer un nuevo día del mes.
+const dateConMetodoSetDate = new Date(); //* Se crea una instancia de fecha con la fecha actual.
+dateConMetodoSetDate.setDate(1); //* Se cambia el día del mes a 1.
+console.log(dateConMetodoSetDate); //* Se muestra la fecha actualizada con el nuevo día.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
