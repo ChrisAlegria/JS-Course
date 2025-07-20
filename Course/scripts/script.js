@@ -1020,6 +1020,11 @@ console.log(Math.floor(2.9)); //* Muestra 2, sin importar que 2.9 esté más cer
 console.log('--- Trunca los decimales. ---');
 console.log(Math.trunc(8.6)); //* Muestra 8, ya que trunc simplemente descarta todo lo que está después del punto decimal.
 
+// Todo - Número aleatorio
+// Todo - El método `Math.random()` es una función muy útil que genera un **número decimal aleatorio** entre 0 (inclusive) y 1 (exclusivo). Esto significa que el resultado siempre estará en el rango **0 ≤ número < 1**. Es comúnmente utilizado para simulaciones, juegos, selecciones aleatorias y cualquier situación donde se requiera un valor impredecible dentro de este rango.
+console.log('--- Número aleatorio del 0 al 1. ---'); //* Mensaje que indica que se mostrará un número aleatorio entre 0 y 1.
+console.log(Math.random()); //* Imprime un número decimal aleatorio entre 0 (incluido) y 1 (excluido). Ejemplo: 0.23764589
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
