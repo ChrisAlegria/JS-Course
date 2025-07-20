@@ -950,48 +950,48 @@ console.log(dateConMetodoSetDate); //* Se muestra la fecha actualizada con el nu
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Objeto Math
-// ~El objeto Math es ub objewto que trae las matematicas a JavaScrit donde permite el uso de diversas cosas relacionado con las matematicas en codigo, por lo que para poder invicarla solo es necesario escribir Math y posteriormente '.yElNombreDelElementoMatematico', donde podemos usar pi, euler y muchas mas por lo que el uso de pi seria (Math.PI) donde al utilizarlo o imprimirlo en consola saldra su valor el cual es 3.141592 etc..
+// ~El objeto `Math` en JavaScript proporciona propiedades y métodos matemáticos que pueden ser utilizados sin necesidad de crear una instancia (es decir, no se usa `new Math()`). Para acceder a sus propiedades y constantes, simplemente se escribe `Math.` seguido del nombre correspondiente, como `Math.PI` para el valor de π. Este objeto incluye **constantes matemáticas universales**, funciones trigonométricas, exponenciales, logarítmicas y más.
 console.log('=========== Objeto Math. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Objeto Math.
 
-// &Numero de Euler (E)
-// &
-console.log('--- Numero de Euler. ---'); //* Indica que se demostrará con el objeto Math el numero de Euler.
-console.log(Math.E);
+// &Número de Euler (E)
+// &La constante `Math.E` representa el **número de Euler**, una constante matemática fundamental en logaritmos y crecimiento exponencial. Su valor aproximado es **2.71828...** y es la base de los logaritmos naturales.
+console.log('--- Número de Euler. ---'); //* Indica que se demostrará con el objeto Math el número de Euler.
+console.log(Math.E); //* Muestra el valor de la constante E (Euler).
 
 // &π (PI)
+// &La constante `Math.PI` representa el valor de **π (pi)**, una constante matemática utilizada para cálculos circulares y trigonométricos. Su valor aproximado es **3.14159...**.
 console.log('--- PI. ---'); //* Indica que se demostrará con el objeto Math PI.
-console.log(Math.PI);
+console.log(Math.PI); //* Muestra el valor de PI.
 
-// &Raiz cuadrada de 2 (SQRT2)
-// &
-console.log('--- Raiz cuadrada de 2. ---'); //* Indica que se demostrará con el objeto Math la raiz cuadrada de 2.
-console.log(Math.SQRT2);
+// &Raíz cuadrada de 2 (SQRT2)
+// &La constante `Math.SQRT2` devuelve el valor de la **raíz cuadrada de 2**, que es aproximadamente **1.4142...**. Esta constante puede utilizarse para cálculos donde esté presente √2.
+console.log('--- Raíz cuadrada de 2. ---'); //* Indica que se demostrará con el objeto Math la raíz cuadrada de 2.
+console.log(Math.SQRT2); //* Muestra el valor de √2.
 
-// &Raiz cuadrada de un medio (SQTR1_2)
-// &
-console.log('--- Raiz cuadrada de 1/2. ---'); //* Indica que se demostrará con el objeto Math la raiz cuadrada de 1/2.
-console.log(Math.SQRT1_2);
+// &Raíz cuadrada de un medio (SQRT1_2)
+// &La constante `Math.SQRT1_2` devuelve el valor de la **raíz cuadrada de 1/2**, es decir **√(1/2)**, cuyo valor es aproximadamente **0.7071...**. También equivale a **1/√2**, y es común en cálculos trigonométricos.
+console.log('--- Raíz cuadrada de 1/2. ---'); //* Indica que se demostrará con el objeto Math la raíz cuadrada de 1/2.
+console.log(Math.SQRT1_2); //* Muestra el valor de √(1/2).
 
 // &Logaritmo natural de 2 (LN2)
-// &
-console.log('--- Logaritmo natural de 2. ---'); //* Indica que se demostrará con el objeto Math el logaritmo natural de 2
-console.log(Math.LN2);
+// &La constante `Math.LN2` representa el **logaritmo natural de 2**, es decir, `ln(2)`, cuyo valor aproximado es **0.6931...**. Este valor se basa en logaritmos naturales (base Euler).
+console.log('--- Logaritmo natural de 2. ---'); //* Indica que se demostrará con el objeto Math el logaritmo natural de 2.
+console.log(Math.LN2); //* Muestra el valor de ln(2).
 
 // &Logaritmo natural de 10 (LN10)
-// &
+// &La constante `Math.LN10` representa el **logaritmo natural de 10**, es decir, `ln(10)`, cuyo valor es aproximadamente **2.3025...**. Se usa cuando se necesita convertir de logaritmo base 10 a natural.
 console.log('--- Logaritmo natural de 10. ---'); //* Indica que se demostrará con el objeto Math el logaritmo natural de 10.
-console.log(Math.LN10);
+console.log(Math.LN10); //* Muestra el valor de ln(10).
 
-// &Logartimo de E en base 2 (LOG2E)
-// &
-console.log('--- Logaritmo de E en base 2. ---'); //* Indica que se demostrará con el objeto Math de logaritmo de E base 2.
-console.log(Math.LOG2E)
+// &Logaritmo de E en base 2 (LOG2E)
+// &La constante `Math.LOG2E` representa el **logaritmo de Euler en base 2**, es decir, `log₂(e)`, cuyo valor aproximado es **1.4426...**. Se puede utilizar para cambiar la base de logaritmos.
+console.log('--- Logaritmo de E en base 2. ---'); //* Indica que se demostrará con el objeto Math el logaritmo de E en base 2.
+console.log(Math.LOG2E); //* Muestra el valor de log₂(e).
 
 // &Logaritmo de E en base 10 (LOG10E)
-// &
-console.log('--- Logaritmo de E en base 10. ---'); //* Indica que se demostrará con el objeto Math de logaritmo de E base 10.
-console.log(Math.LOG10E);
-
+// &La constante `Math.LOG10E` representa el **logaritmo de Euler en base 10**, es decir, `log₁₀(e)`, y su valor aproximado es **0.4342...**. Es útil en operaciones de conversión entre bases logarítmicas.
+console.log('--- Logaritmo de E en base 10. ---'); //* Indica que se demostrará con el objeto Math el logaritmo de E en base 10.
+console.log(Math.LOG10E); //* Muestra el valor de log₁₀(e).
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
