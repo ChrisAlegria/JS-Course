@@ -950,7 +950,48 @@ console.log(dateConMetodoSetDate); //* Se muestra la fecha actualizada con el nu
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Objeto Math
-    
+// ~El objeto Math es ub objewto que trae las matematicas a JavaScrit donde permite el uso de diversas cosas relacionado con las matematicas en codigo, por lo que para poder invicarla solo es necesario escribir Math y posteriormente '.yElNombreDelElementoMatematico', donde podemos usar pi, euler y muchas mas por lo que el uso de pi seria (Math.PI) donde al utilizarlo o imprimirlo en consola saldra su valor el cual es 3.141592 etc..
+console.log('=========== Objeto Math. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Objeto Math.
+
+// &Numero de Euler (E)
+// &
+console.log('--- Numero de Euler. ---'); //* Indica que se demostrará con el objeto Math el numero de Euler.
+console.log(Math.E);
+
+// &π (PI)
+console.log('--- PI. ---'); //* Indica que se demostrará con el objeto Math PI.
+console.log(Math.PI);
+
+// &Raiz cuadrada de 2 (SQRT2)
+// &
+console.log('--- Raiz cuadrada de 2. ---'); //* Indica que se demostrará con el objeto Math la raiz cuadrada de 2.
+console.log(Math.SQRT2);
+
+// &Raiz cuadrada de un medio (SQTR1_2)
+// &
+console.log('--- Raiz cuadrada de 1/2. ---'); //* Indica que se demostrará con el objeto Math la raiz cuadrada de 1/2.
+console.log(Math.SQRT1_2);
+
+// &Logaritmo natural de 2 (LN2)
+// &
+console.log('--- Logaritmo natural de 2. ---'); //* Indica que se demostrará con el objeto Math el logaritmo natural de 2
+console.log(Math.LN2);
+
+// &Logaritmo natural de 10 (LN10)
+// &
+console.log('--- Logaritmo natural de 10. ---'); //* Indica que se demostrará con el objeto Math el logaritmo natural de 10.
+console.log(Math.LN10);
+
+// &Logartimo de E en base 2 (LOG2E)
+// &
+console.log('--- Logaritmo de E en base 2. ---'); //* Indica que se demostrará con el objeto Math de logaritmo de E base 2.
+console.log(Math.LOG2E)
+
+// &Logaritmo de E en base 10 (LOG10E)
+// &
+console.log('--- Logaritmo de E en base 10. ---'); //* Indica que se demostrará con el objeto Math de logaritmo de E base 10.
+console.log(Math.LOG10E);
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
