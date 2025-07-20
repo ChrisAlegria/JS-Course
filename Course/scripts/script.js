@@ -771,11 +771,6 @@ console.log(arrayAlQueSeLeAplicaraMetodoLength.length); //* Retorna el número t
 // &El método `.sort()` se utiliza para ordenar los elementos de un array. Cuando el array contiene cadenas de texto, `.sort()` ordena alfabéticamente basándose en el valor Unicode de los caracteres. Sin embargo, cuando el array contiene números, JavaScript los convierte primero a cadenas y los ordena como texto, lo que puede producir resultados inesperados. Por ejemplo, números mayores o iguales a 10 se ordenan considerando solo el primer dígito, provocando un orden incorrecto para números como 10, 11, 12, etc. Para ordenar correctamente números, es necesario proporcionar una función de comparación personalizada que defina la lógica del ordenamiento.
 // ^Ordenamiento de números menores a 10
 // ^Aquí se muestra un ejemplo donde `.sort()` se aplica sobre números todos menores a 10. En este caso, el método funciona correctamente porque la conversión a texto no afecta el orden esperado.
-// &Ordenamiento de valores (sort())
-// &El método `.sort()` se utiliza para ordenar los elementos de un array. Cuando el array contiene cadenas de texto, `.sort()` ordena alfabéticamente basándose en el valor Unicode de los caracteres. Sin embargo, cuando el array contiene números, JavaScript los convierte primero a cadenas y los ordena como texto, lo que puede producir resultados inesperados. Por ejemplo, números mayores o iguales a 10 se ordenan considerando solo el primer dígito, provocando un orden incorrecto para números como 10, 11, 12, etc. Para ordenar correctamente números, es necesario proporcionar una función de comparación personalizada que defina la lógica del ordenamiento.
-
-// ^Ordenamiento de números menores a 10
-// ^Aquí se muestra un ejemplo donde `.sort()` se aplica sobre números todos menores a 10. En este caso, el método funciona correctamente porque la conversión a texto no afecta el orden esperado.
 console.log('--- Método sort en array con numeros menores a 10. ---'); //* Imprime en consola un mensaje que indica que se ordenará un array con números menores a 10.
 const arrayConNumerosMenoresADiezAlQueSeLeAplicaraMetodoSort = [5, 2, 9, 4, 7, 3, 1, 0];
 console.log(arrayConNumerosMenoresADiezAlQueSeLeAplicaraMetodoSort.sort()); //* Ordena y muestra el array con números del 0 al 9 ordenados ascendentemente.
@@ -906,9 +901,7 @@ console.log(arrayQueSeraConcatenado1.concat(arrayQueSeraConcatenado2)); //* Impr
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Dates (Fechas)
 // ~Las fechas en JavaScript se manejan mediante el objeto `Date`. Al crear una nueva instancia con `new Date()`, se genera automáticamente la **fecha y hora actual del sistema**. Sin embargo, también es posible especificar manualmente una fecha dentro de los paréntesis (por ejemplo: `new Date(2025, 6, 18)` para el 18 de julio de 2025).
-
 console.log('=========== Dates. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Dates.
-
 
 // Todo - Obtención de un solo valor (fecha/mes/año)
 // Todo - Cuando se tiene una variable con una fecha (`Date`), podemos acceder a **partes específicas** de ella utilizando métodos `get`, como `.getFullYear()` para el año, `.getMonth()` para el mes, o `.getDate()` para el día. Por otro lado, también existen métodos `set` para modificar estos valores. Mientras los métodos `get` **extraen datos**, los `set` **modifican partes de una fecha existente**.
@@ -958,6 +951,7 @@ console.log(dateConMetodoSetDate); //* Se muestra la fecha actualizada con el nu
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Objeto Math
     
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
