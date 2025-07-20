@@ -950,9 +950,11 @@ console.log(dateConMetodoSetDate); //* Se muestra la fecha actualizada con el nu
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Objeto Math
-// ~El objeto `Math` en JavaScript proporciona propiedades y métodos matemáticos que pueden ser utilizados sin necesidad de crear una instancia (es decir, no se usa `new Math()`). Para acceder a sus propiedades y constantes, simplemente se escribe `Math.` seguido del nombre correspondiente, como `Math.PI` para el valor de π. Este objeto incluye **constantes matemáticas universales**, funciones trigonométricas, exponenciales, logarítmicas y más.
+// ~El objeto `Math` en JavaScript proporciona propiedades y métodos matemáticos que pueden ser utilizados sin necesidad de crear una instancia (es decir, no se usa `new Math()`). Para acceder a sus propiedades y constantes, simplemente se escribe `Math.` seguido del nombre correspondiente, como `Math.PI` para el valor de π. Este objeto incluye **constantes matemáticas universales**, funciones trigonométricas, exponenciales, logarítmicas, redondeos y más.
 console.log('=========== Objeto Math. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Objeto Math.
 
+// Todo - Constantes matematicas 
+// Todo - Las constantes matemáticas son valores fijos predefinidos que proporciona el objeto Math. Estas constantes representan números matemáticos importantes como el número PI, el número de Euler, raíces cuadradas y logaritmos. Se accede a ellas directamente desde el objeto Math, sin necesidad de crear una instancia. Por eso se les conoce como **propiedades estáticas**. Estas constantes no cambian y son útiles cuando se hacen cálculos matemáticos precisos en JavaScript. Por ejemplo, `Math.PI` representa el valor de π (3.14159...), que se puede usar para calcular áreas, circunferencias, etc. Su sintaxis es siempre: Math.NOMBRE_CONSTANTE
 // &Número de Euler (E)
 // &La constante `Math.E` representa el **número de Euler**, una constante matemática fundamental en logaritmos y crecimiento exponencial. Su valor aproximado es **2.71828...** y es la base de los logaritmos naturales.
 console.log('--- Número de Euler. ---'); //* Indica que se demostrará con el objeto Math el número de Euler.
@@ -992,6 +994,31 @@ console.log(Math.LOG2E); //* Muestra el valor de log₂(e).
 // &La constante `Math.LOG10E` representa el **logaritmo de Euler en base 10**, es decir, `log₁₀(e)`, y su valor aproximado es **0.4342...**. Es útil en operaciones de conversión entre bases logarítmicas.
 console.log('--- Logaritmo de E en base 10. ---'); //* Indica que se demostrará con el objeto Math el logaritmo de E en base 10.
 console.log(Math.LOG10E); //* Muestra el valor de log₁₀(e).
+
+// Todo - Redondeos
+// Todo - En JavaScript, el objeto `Math` también incluye métodos para **redondear valores numéricos**. Estos métodos permiten controlar cómo se deben manejar los decimales: si deben eliminarse, redondearse hacia arriba, hacia abajo o al número más cercano. A diferencia de las **constantes matemáticas** (como `Math.PI`), aquí los métodos se **invocan como funciones**, y por lo tanto, se escriben como `Math.nombreDelMétodo(valor)` pasando el número que se quiere redondear entre paréntesis.
+// &Redondeo al valor más cercano (round())
+// &El método `Math.round()` redondea un número **hacia el entero más cercano**, es decir, analiza si el decimal es mayor o menor a .5:
+// &- Si el decimal es menor a 0.5, redondea hacia abajo (por ejemplo, `2.4` se convierte en `2`)
+// &- Si el decimal es 0.5 o mayor, redondea hacia arriba (por ejemplo, `7.5` se convierte en `8`).
+console.log('--- Redondeo de valor hacia donde esté más cerca. ---');
+console.log(Math.round(4.6)); //* Muestra 5 porque 4.6 está más cerca de 5 que de 4.
+
+// &Redondeo siempre hacia arriba (ceil())
+// &El método `Math.ceil()` siempre **redondea hacia arriba**, sin importar cuán pequeño sea el decimal:
+// &Por ejemplo, `2.1`, `2.00001` o incluso `2.5` siempre se convertirán en `3`. Esto es útil cuando se quiere asegurar que el número redondeado **nunca sea menor** al original.
+console.log('--- Redondeo de valor siempre hacia arriba. ---');
+console.log(Math.ceil(4.1)); //* Muestra 5, porque ceil fuerza el redondeo al entero superior.
+
+// &Redondeo siempre hacia abajo (floor())
+// &El método `Math.floor()` hace lo contrario a `ceil()`: siempre **redondea hacia abajo** al entero más cercano, sin importar el decimal. Es útil si se desea **descartar los decimales** sin importar su valor, pero dejando el número más pequeño posible.
+console.log('--- Redondeo de valor siempre hacia abajo. ---');
+console.log(Math.floor(2.9)); //* Muestra 2, sin importar que 2.9 esté más cerca de 3.
+
+// &Truncar decimales (trunc())
+// &El método `Math.trunc()` **elimina completamente la parte decimal**, sin hacer ningún tipo de redondeo. Es decir, simplemente **corta el número** y se queda con su parte entera. Este comportamiento es similar a `floor()` pero funciona igual para positivos y negativos sin redondeo.
+console.log('--- Trunca los decimales. ---');
+console.log(Math.trunc(8.6)); //* Muestra 8, ya que trunc simplemente descarta todo lo que está después del punto decimal.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
