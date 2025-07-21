@@ -7,16 +7,20 @@
 // ^JavaScript
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Simbologia en JS
-// Todo - Separador (,): En JavaScript, la coma se utiliza para separar múltiples declaraciones o elementos dentro de una misma línea. Por ejemplo, permite declarar varias variables al mismo tiempo usando una sola instrucción, separando cada variable con una coma.
+// Todo - Separador (,)
+// Todo - En JavaScript, la coma se utiliza para separar múltiples declaraciones o elementos dentro de una misma línea. Por ejemplo, permite declarar varias variables al mismo tiempo usando una sola instrucción, separando cada variable con una coma.
 var x, y, z; //* Declaración de tres variables 'var' en una sola línea. La coma indica que 'x', 'y' y 'z' son variables independientes.
 
-// Todo - Delimitador (;): El punto y coma en JavaScript, como en muchos otros lenguajes, indica el final de una sentencia o instrucció, aunque dentro de JS es totalmente opcional, pero recomendable. Sirve para delimitar dónde termina una operación o declaración, ayudando al intérprete a entender el código correctamente.
+// Todo - Delimitador (;)
+// Todo - El punto y coma en JavaScript, como en muchos otros lenguajes, indica el final de una sentencia o instrucció, aunque dentro de JS es totalmente opcional, pero recomendable. Sirve para delimitar dónde termina una operación o declaración, ayudando al intérprete a entender el código correctamente.
 x = 5; y = 6; z = 3; //* Declaración y asignación de tres variables. Cada punto y coma (;) indica el final de una instrucción independiente, permitiendo escribir múltiples sentencias en una sola línea.
 
-// Todo - Asignador (=): En JavaScript, el símbolo igual (=) se utiliza como **asignador**, lo que significa que se emplea para asignar un valor a una variable. A diferencia de las matemáticas, donde el igual indica igualdad, en JavaScript se interpreta como una operación de asignación: el valor del lado derecho se asigna a la variable del lado izquierdo.
+// Todo - Asignador (=)
+// Todo - En JavaScript, el símbolo igual (=) se utiliza como **asignador**, lo que significa que se emplea para asignar un valor a una variable. A diferencia de las matemáticas, donde el igual indica igualdad, en JavaScript se interpreta como una operación de asignación: el valor del lado derecho se asigna a la variable del lado izquierdo.
 z = 'Valor de la variable Z'; //* Se asigna el valor de texto a la variable 'z' usando el símbolo de asignación (=).
 
-// Todo - Scope ({}): En JavaScript, las llaves `{}` definen un bloque de código o scope (ámbito). Este scope actúa como una especie de “célula aislada”: puede acceder a variables externas, pero las variables declaradas dentro no estarán disponibles fuera del bloque. Esto permite organizar el código y limitar el alcance de las variables para evitar conflictos o interferencias. Las llaves se utilizan en estructuras como condicionales, funciones, bucles y objetos. Ademas cabe mencionar que la llave de apertura es `{` y la de cierre es `}`.
+// Todo - Scope ({})
+// Todo - En JavaScript, las llaves `{}` definen un bloque de código o scope (ámbito). Este scope actúa como una especie de “célula aislada”: puede acceder a variables externas, pero las variables declaradas dentro no estarán disponibles fuera del bloque. Esto permite organizar el código y limitar el alcance de las variables para evitar conflictos o interferencias. Las llaves se utilizan en estructuras como condicionales, funciones, bucles y objetos. Ademas cabe mencionar que la llave de apertura es `{` y la de cierre es `}`.
 
 function scope() { // *Se declara una función llamada 'scope'. Todo lo que esté dentro de estas llaves será su scope local.
     var x; // *Variable declarada con 'var', la cual pertenece únicamente al scope de esta función.
@@ -86,7 +90,8 @@ const variableTipoConst = 'Variable const con un valor'; //* Esta es una variabl
 // ^Redeclaración
 // !Las variables 'const' no permiten ser redeclaradas dentro del mismo bloque. Intentar redeclarar una variable con 'const' generará un error, ayudando a mantener la integridad del código.
 
-// Todo - Declaración múltiple de variables (únicamente con 'var' y 'let'): Es posible declarar varias variables en una sola línea utilizando solo una vez la palabra clave 'var' o 'let'. Las variables pueden declararse de tres formas: con valor asignado, sin valor, o combinando ambas (mixto). La asignación de valores es opcional para cada variable, por lo que se puede elegir si alguna tendrá valor inicial o no. Todas las variables deben ir separadas por comas, y la sintaxis general es: palabraClave variable1 [= valor], variable2 [= valor], ..., variableN [= valor];
+// Todo - Declaración múltiple de variables (únicamente con 'var' y 'let'): 
+// Todo - Es posible declarar varias variables en una sola línea utilizando solo una vez la palabra clave 'var' o 'let'. Las variables pueden declararse de tres formas: con valor asignado, sin valor, o combinando ambas (mixto). La asignación de valores es opcional para cada variable, por lo que se puede elegir si alguna tendrá valor inicial o no. Todas las variables deben ir separadas por comas, y la sintaxis general es: palabraClave variable1 [= valor], variable2 [= valor], ..., variableN [= valor];
 // &Declaración múltiple de variables sin valores
 var elementoDeclaracionMultipleSinValor1, elementoDeclaracionMultipleSinValor2, elementoDeclaracionMultipleSinValores; //* Se declaran tres variables sin asignarles valores, todas en una sola línea.
 
@@ -167,8 +172,7 @@ const variableTipoDate = new Date('07/25/2025'); //* Fecha creada en formato MM/
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Operadores en JavaScript
-// ~En JavaScript, los operadores son símbolos que permiten realizar diferentes tipos de operaciones entre variables o valores. Estas operaciones pueden ser de **asignación**, **aritméticas**, **lógicas**, **comparación**, entre otras. 
-// ~Los operadores son fundamentales para manipular datos, realizar cálculos, construir condiciones y ejecutar tareas dentro del código. A continuación, se explican los operadores **de asignación** y **aritméticos**, que son los más utilizados al comenzar a programar.
+// ~En JavaScript, los operadores son símbolos que permiten realizar diferentes tipos de operaciones entre variables o valores. Estas operaciones pueden ser de **asignación**, **aritméticas**, **lógicas**, **comparación**, entre otras. Los operadores son fundamentales para manipular datos, realizar cálculos, construir condiciones y ejecutar tareas dentro del código. A continuación, se explican los operadores **de asignación** y **aritméticos**, que son los más utilizados al comenzar a programar.
 // Todo - Operador de asignación (=)
 // Todo - El operador de asignación (`=`) es utilizado para **asignar un valor** a una variable. A diferencia de las matemáticas, donde el símbolo `=` representa igualdad, en JavaScript significa que el valor a la derecha del signo será **asignado a la variable de la izquierda**. Este es el operador que más se usa al declarar y definir variables. Además del operador `=`, existen **otros operadores de asignación compuestos**, como `+=`, `-=`, `*=`, entre otros, que combinan una operación matemática con la asignación, y permiten escribir código de forma más concisa y eficiente.
 // &Operador de asignación
@@ -278,10 +282,7 @@ const variableConOperadorLogicoOr = 34 == 34 || 23 == 64; //* Resultado: true. A
 
 // Todo - Orden de prioridad de operadores lógicos
 // Todo - En JavaScript, cuando se combinan múltiples operadores lógicos en una misma expresión, como `&&` (AND) y `||` (OR), es importante conocer el **orden de prioridad** o **precedencia** con el que se evalúan. 
-// ~El operador `&&` tiene **mayor prioridad** que el operador `||`, por lo tanto, las expresiones que usan `&&` se evaluarán primero, antes de considerar el `||`. 
-// ~Esto puede afectar completamente el resultado de una operación lógica compuesta. 
-// ~Además, si la expresión incluye comparaciones como `==` o `!=`, estas se evaluarán antes que los operadores lógicos.
-// ~El siguiente ejemplo muestra cómo una expresión con varios operadores se resuelve internamente paso a paso:
+// &El operador `&&` tiene **mayor prioridad** que el operador `||`, por lo tanto, las expresiones que usan `&&` se evaluarán primero, antes de considerar el `||`. Esto puede afectar completamente el resultado de una operación lógica compuesta. Además, si la expresión incluye comparaciones como `==` o `!=`, estas se evaluarán antes que los operadores lógicos. El siguiente ejemplo muestra cómo una expresión con varios operadores se resuelve internamente paso a paso:
 const resultadoConPrioridadOperadores = 4 == 2 && 3 == 3 || 4 == 4 != 4;
 //* Paso 1: 4 == 2 → false (comparación de igualdad relajada)
 //* Paso 2: 3 == 3 → true
@@ -1027,6 +1028,16 @@ console.log(Math.random()); //* Imprime un número decimal aleatorio entre 0 (in
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Condicionales (if/else/switch)
+// ~Un condicional en JavaScript es una estructura del control, la cual permite ejecutar distintos bloques de codigo dependiendo de una condicion especifica, esto permite tener cierto comportamiento o ciertas acciones dependiendo de si esta condicion es verdadera o falsa
+console.log('=========== Condicionales. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Condicionales
+
+// Todo - Declaracion y funcion de condicionales en JavaScript
+// Todo - Aqui le pones que existen 3 condicionales en Javascript y cada una de ella tienen funciones diferentes y maneras diferentes de declarase y e usarse
+// &Si se cumple una conficion (If)
+// &Aqui le pones que if(){} lo que hace es que dentro de los aprwntesis evalua que se cumpla lo que ponemos, le puedes que pone que dentro del if normalmente se usan operadores de comparaccion como (==, <=) y esas cosas, para que se entienda que se tiene que debolver normalmente un valor true o false para que el condicional if pueda funcionar, ademas ponle que if normalmente lleva llavez, por lo que si el valor o lo que esta dentro de () se cumple se procedera a ejecutar lo que esta entre las llaves.
+if(3 <= 5){
+    console.log('El valor de 3 es menor a 5');
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
