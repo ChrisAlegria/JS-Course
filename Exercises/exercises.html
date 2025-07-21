@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="exercise.css">
+    <link rel="stylesheet" href="exercises.css">
     <title>Exercises</title>
 </head>
 <body>
     <div class="saludoUsuario">
-        <h3>Saludar a usuario cuando ingrese su nombre en input y precione boton</h3>
+        <h3>Saludar a usuario cuando ingrese su nombre en input y precione boton.</h3>
         <form onsubmit="saludo()" >
             <input id="nombreUsuarioSaludo" type="text" placeholder="Ingresa tu nombre" required>
             <input type="submit">
@@ -17,11 +17,16 @@
     <hr>
 
     <div>
-        <form" onsubmit="mediaNumeros()">
-            <input id="numerosDadosUsuario" type="text" required>
+        <h3>Sacar media de 3 numeros dados por el usuario.</h3>
+        <form onsubmit="mediaNumeros()">
+            <input id="numeroDadoUsuario1" type="text" placeholder="Ingresa el primer valor" required>
+            <input id="numeroDadoUsuario2" type="text" placeholder="Ingresa el primer valor" required>
+            <input id="numeroDadoUsuario3" type="text" placeholder="Ingresa el primer valor" required>
             <input type="submit">
         </form>
     </div>
+    <hr>
+
     <script src="exercises.js"></script>
 </body>
 </html>

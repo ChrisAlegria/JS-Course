@@ -18,6 +18,10 @@ function saludo(){
 
 // *Sacar la media de 3 numeros dados por el usuario
 function mediaNumeros(){
-    const numerosDados = document.getElementById('numerosDadosUsuario').value.split(',');
-    console.log(numerosDados)
+    const numeroDado1 = document.getElementById('numeroDadoUsuario1').value;
+    const numeroDado2 = document.getElementById('numeroDadoUsuario2').value;
+    const numeroDado3 = document.getElementById('numeroDadoUsuario3').value;
+    const operacion3NumerosDados = `(${numeroDado1}+${numeroDado2}+${numeroDado3})/3`
+    const resultado = eval(operacion3NumerosDados);
+    alert(`La media de tus 3 numeros es: ${resultado}`)
 }
