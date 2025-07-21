@@ -1002,23 +1002,23 @@ console.log(Math.LOG10E); //* Muestra el valor de log₁₀(e).
 // &El método `Math.round()` redondea un número **hacia el entero más cercano**, es decir, analiza si el decimal es mayor o menor a .5:
 // &- Si el decimal es menor a 0.5, redondea hacia abajo (por ejemplo, `2.4` se convierte en `2`)
 // &- Si el decimal es 0.5 o mayor, redondea hacia arriba (por ejemplo, `7.5` se convierte en `8`).
-console.log('--- Redondeo de valor hacia donde esté más cerca. ---');
+console.log('--- Redondeo de valor hacia donde esté más cerca. ---'); //* Indica que se va a demostrar el uso del método `Math.round()`.
 console.log(Math.round(4.6)); //* Muestra 5 porque 4.6 está más cerca de 5 que de 4.
 
 // &Redondeo siempre hacia arriba (ceil())
 // &El método `Math.ceil()` siempre **redondea hacia arriba**, sin importar cuán pequeño sea el decimal:
 // &Por ejemplo, `2.1`, `2.00001` o incluso `2.5` siempre se convertirán en `3`. Esto es útil cuando se quiere asegurar que el número redondeado **nunca sea menor** al original.
-console.log('--- Redondeo de valor siempre hacia arriba. ---');
+console.log('--- Redondeo de valor siempre hacia arriba. ---'); //* Indica que se demostrará el uso de `Math.ceil()`.
 console.log(Math.ceil(4.1)); //* Muestra 5, porque ceil fuerza el redondeo al entero superior.
 
 // &Redondeo siempre hacia abajo (floor())
 // &El método `Math.floor()` hace lo contrario a `ceil()`: siempre **redondea hacia abajo** al entero más cercano, sin importar el decimal. Es útil si se desea **descartar los decimales** sin importar su valor, pero dejando el número más pequeño posible.
-console.log('--- Redondeo de valor siempre hacia abajo. ---');
+console.log('--- Redondeo de valor siempre hacia abajo. ---'); //* Indica que se demostrará el uso de `Math.floor()`.
 console.log(Math.floor(2.9)); //* Muestra 2, sin importar que 2.9 esté más cerca de 3.
 
 // &Truncar decimales (trunc())
 // &El método `Math.trunc()` **elimina completamente la parte decimal**, sin hacer ningún tipo de redondeo. Es decir, simplemente **corta el número** y se queda con su parte entera. Este comportamiento es similar a `floor()` pero funciona igual para positivos y negativos sin redondeo.
-console.log('--- Trunca los decimales. ---');
+console.log('--- Trunca los decimales. ---'); //* Indica que se demostrará el uso de `Math.trunc()`.
 console.log(Math.trunc(8.6)); //* Muestra 8, ya que trunc simplemente descarta todo lo que está después del punto decimal.
 
 // Todo - Número aleatorio
@@ -1028,16 +1028,29 @@ console.log(Math.random()); //* Imprime un número decimal aleatorio entre 0 (in
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Condicionales (if/else/switch)
-// ~Un condicional en JavaScript es una estructura del control, la cual permite ejecutar distintos bloques de codigo dependiendo de una condicion especifica, esto permite tener cierto comportamiento o ciertas acciones dependiendo de si esta condicion es verdadera o falsa
-console.log('=========== Condicionales. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Condicionales
+// ~Un condicional en JavaScript es una estructura del control, la cual permite ejecutar distintos bloques de código dependiendo de una condición específica, esto permite tener cierto comportamiento o ciertas acciones dependiendo de si esta condición es verdadera o falsa. También permite que un programa tome decisiones y ejecute ciertos caminos distintos según el valor o resultado de una expresión, permitiendo mayor control y flexibilidad dentro del flujo del programa.
+console.log('=========== Condicionales. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Condicionales.
 
-// Todo - Declaracion y funcion de condicionales en JavaScript
-// Todo - Aqui le pones que existen 3 condicionales en Javascript y cada una de ella tienen funciones diferentes y maneras diferentes de declarase y e usarse
-// &Si se cumple una conficion (If)
-// &Aqui le pones que if(){} lo que hace es que dentro de los aprwntesis evalua que se cumpla lo que ponemos, le puedes que pone que dentro del if normalmente se usan operadores de comparaccion como (==, <=) y esas cosas, para que se entienda que se tiene que debolver normalmente un valor true o false para que el condicional if pueda funcionar, ademas ponle que if normalmente lleva llavez, por lo que si el valor o lo que esta dentro de () se cumple se procedera a ejecutar lo que esta entre las llaves.
-if(3 <= 5){
-    console.log('El valor de 3 es menor a 5');
-}
+// Todo - Declaración y función de condicionales en JavaScript
+// Todo - Aqui le pones que existen 3 condicionales en Javascript y cada una de ellas tienen funciones diferentes y maneras diferentes de declararse y usarse; los condicionales permiten ejecutar distintos bloques de código dependiendo de si una condición lógica se cumple o no, y estas condiciones suelen evaluarse mediante operadores de comparación.
+// &Si se cumple una condición (if(){})
+// &Aqui le pones que if(){} lo que hace es que dentro de los paréntesis evalúa que se cumpla lo que ponemos, normalmente se usan operadores de comparación como (==, <=, ===, etc.), ya que lo que se espera es un valor booleano (true o false); si la condición devuelve true, se ejecuta lo que esté dentro de las llaves {}.
+if(3 <= 5){ //* Se evalúa si el número 3 es menor o igual a 5, lo cual es verdadero.
+    console.log('--- Condicional IF. ---'); //* Imprime un mensaje para indicar que se ejecutó el bloque del condicional if.
+    console.log('El valor de 3 es menor a 5'); //* Muestra un mensaje que explica por qué se ejecutó el bloque.
+} // *Cierre de condicionales.
+
+// &En caso de que no se cumpla la primera condición entonces (else(){})
+// &Aqui pones que else comúnmente va después de la llave de cierre de if, lo que permite else es ejecutar un bloque alternativo si la condición del if no se cumplió, además se puede usar else if, el cual permite evaluar condiciones adicionales si la primera fue falsa, y se pueden agregar tantos else if como se necesiten para cubrir distintos casos posibles.
+const valorParaCondicionalElse = 5; //* Se declara una variable con valor 5 que se usará en los condicionales.
+if(valorParaCondicionalElse >= 7 && valorParaCondicionalElse <= 10){ //* Evalúa si el valor es mayor o igual a 7 y menor o igual a 10.
+    console.log('El valor de la variable es igual o mayor que 7 y menor o igual a 10 '); //* Se ejecuta si la condición anterior es verdadera.
+} else if(valorParaCondicionalElse < 7){ //* Evalúa si el valor es menor que 7 si la primera condición no se cumplió.
+    console.log('El valor de la variable es menor que 7'); //* Se ejecuta si esta segunda condición es verdadera.
+} else{ //* Si ninguna de las condiciones anteriores se cumple, se ejecuta este bloque final.
+    console.log('El valor de la variable es mayor que 10'); //* Muestra un mensaje indicando que el valor supera los 10.
+} // *Cierre de condicionales.
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
