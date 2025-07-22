@@ -1036,12 +1036,13 @@ console.log('=========== Condicionales. ==========='); //* Muestra un mensaje en
 // &Si se cumple una condición (if(){})
 // &Aqui le pones que if(){} lo que hace es que dentro de los paréntesis evalúa que se cumpla lo que ponemos, normalmente se usan operadores de comparación como (==, <=, ===, etc.), ya que lo que se espera es un valor booleano (true o false); si la condición devuelve true, se ejecuta lo que esté dentro de las llaves {}.
 if(3 <= 5){ //* Se evalúa si el número 3 es menor o igual a 5, lo cual es verdadero.
-    console.log('--- Condicional IF. ---'); //* Imprime un mensaje para indicar que se ejecutó el bloque del condicional if.
+    console.log('--- Condicional If. ---'); //* Imprime un mensaje para indicar que se ejecutó el bloque del condicional if.
     console.log('El valor de 3 es menor a 5'); //* Muestra un mensaje que explica por qué se ejecutó el bloque.
 } // *Cierre de condicionales.
 
-// &En caso de que no se cumpla la primera condición entonces (else(){})
+// &En caso de que no se cumpla la condición anterior entonces (else(){})
 // &Aqui pones que else comúnmente va después de la llave de cierre de if, lo que permite else es ejecutar un bloque alternativo si la condición del if no se cumplió, además se puede usar else if, el cual permite evaluar condiciones adicionales si la primera fue falsa, y se pueden agregar tantos else if como se necesiten para cubrir distintos casos posibles.
+console.log('--- Condicional Else. ---'); //* Imprime un mensaje para indicar que se ejecutó el bloque del condicional else.
 const valorParaCondicionalElse = 5; //* Se declara una variable con valor 5 que se usará en los condicionales.
 if(valorParaCondicionalElse >= 7 && valorParaCondicionalElse <= 10){ //* Evalúa si el valor es mayor o igual a 7 y menor o igual a 10.
     console.log('El valor de la variable es igual o mayor que 7 y menor o igual a 10 '); //* Se ejecuta si la condición anterior es verdadera.
@@ -1051,6 +1052,28 @@ if(valorParaCondicionalElse >= 7 && valorParaCondicionalElse <= 10){ //* Evalúa
     console.log('El valor de la variable es mayor que 10'); //* Muestra un mensaje indicando que el valor supera los 10.
 } // *Cierre de condicionales.
 
+// &Si se cuenta con diferentes opciones (switch)
+// &Aqui le pones que switch es un poco complicado de usar quizás, pero lo que hace es que está conformado por una estructura un poco más compleja que if y else, ya que switch se enfoca más para cuando se tienen varios valores posibles que queremos comparar con uno solo; mientras if espera un valor booleano (true o false) para ejecutarse, switch lo que hace es evaluar directamente el valor que se le pasa y verificar si coincide con alguno de los valores definidos en cada case, si encuentra coincidencia se ejecuta lo que esté dentro de ese case; su estructura es: switch(valor){ case valorAComparar: acciones; break; } permitiendo definir múltiples case para distintos escenarios; el break se utiliza para que, una vez se ejecute un case coincidente, finalice el bloque y no se sigan ejecutando los demás case, mientras que default se usa para ejecutar un bloque en caso de que ningún case coincida con el valor evaluado.
+console.log('--- Condicional Switch. ---'); //* Imprime un mensaje para indicar que se ejecutó el bloque del condicional switch.
+const variableParaCondicionalSwitch = 'Rock'; //* Se declara una variable que contiene el valor que se evaluará en la estructura switch.
+
+switch (variableParaCondicionalSwitch) { //* Se inicia la estructura switch que evaluará el valor de la variable contra diferentes posibles opciones.
+    case 'Pop': //* Si el valor de la variable es exactamente 'Pop', se ejecutará el siguiente bloque.
+        console.log('Te gusta el Pop, por lo que te recomiendo a Michale Jackson'); //* Muestra una recomendación musical para el género Pop.
+        break; //* Finaliza la ejecución del switch si se cumple este case.
+
+    case 'Regional Mexicano': //* Si el valor es exactamente 'Regional Mexicano', se ejecutará este bloque.
+        console.log('Te gusta el Regional Mexicano, por lo que te recomiendo a Alfredo Olivas'); //* Muestra una recomendación musical para el género Regional Mexicano.
+        break; //* Finaliza la ejecución del switch si se cumple este case.
+
+    case 'Rock': //* Si el valor es exactamente 'Rock', se ejecutará este bloque.
+        console.log('Te gusta el Rock, por lo que te recomiendo a Queen'); //* Muestra una recomendación musical para el género Rock.
+        break; //* Finaliza la ejecución del switch si se cumple este case.
+
+    default: //* Si ningún case anterior coincide con el valor de la variable, se ejecutará este bloque por defecto.
+        console.log('No se ha encontrado tu género musical dentro de las posibles opciones'); //* Muestra un mensaje indicando que no hubo coincidencia en los case.
+        break; //* Finaliza el bloque default (aunque no es obligatorio, se pone por buenas prácticas).
+} // *Cierre de condicional
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
