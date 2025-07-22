@@ -1076,27 +1076,32 @@ switch (variableParaCondicionalSwitch) { //* Se inicia la estructura switch que 
 } // *Cierre de condicional
 
 // &If's anidados
-// &Aqui le pones uqe podemos meter ifs dentro de mas ifs y eso
-console.log('--- If´s anidados. ---'); 
-let edad = 18;
-let nacionalidad = 'Mexicana';
-let tienePasaporte = true;
+// &Aqui le pones que podemos tener condicionales `if` dentro de otros `if`, lo que permite evaluar múltiples condiciones en un orden jerárquico; esto es útil cuando una condición solo debe evaluarse si otra ya se ha cumplido previamente. Por ejemplo, primero se puede verificar si una persona es mayor de edad y solo si lo es, después se valida su nacionalidad, y finalmente si tiene pasaporte. Esto ayuda a estructurar decisiones más complejas en pasos lógicos, anidando los `if` uno dentro de otro según la necesidad.
+console.log('--- If´s anidados. ---'); //* Imprime un mensaje indicando que se demostrará el uso de if anidados.
+let edad = 18; //* Se declara una variable que representa la edad de la persona.
+let nacionalidad = 'Mexicana'; //* Se declara una variable que indica la nacionalidad de la persona.
+let tienePasaporte = true; //* Se declara una variable booleana que indica si la persona tiene pasaporte.
 
-if(edad >= 18){
-    console.log('Eres mayor de edad, aprobado tramite 1.')
-    if(nacionalidad == 'Mexicana'){
-        console.log('Tu nacionalidad es Mexicana, aprobado tramite 2.')
-        if(tienePasaporte == true){
-            console.log('Tienes pasaporte por lo que puedes viajar, Feliz Viaje!')
-        } else {
-            console.log('Es obligatorio tener pasaporte para poder viajar')
-        }
-    } else {
-        console.log('Es obligatorio presentar la documentacion  de tu nacionalidad.')
-    }
-} else{
-    console.log('Es obligatorio ser mayor de edad para poder viajar al exterior.')
-}
+if(edad >= 18){ //* Se evalúa si la persona es mayor o igual a 18 años.
+    console.log('Eres mayor de edad, aprobado trámite 1.'); //* Si se cumple la condición, se aprueba el primer requisito.
+
+    if(nacionalidad == 'Mexicana'){ //* Si la persona es mayor de edad, ahora se verifica si su nacionalidad es Mexicana.
+        console.log('Tu nacionalidad es Mexicana, aprobado trámite 2.'); //* Si es mexicana, se aprueba el segundo requisito.
+
+        if(tienePasaporte == true){ //* Si las dos condiciones anteriores se cumplen, se verifica si tiene pasaporte.
+            console.log('Tienes pasaporte por lo que puedes viajar, ¡Feliz Viaje!'); //* Si tiene pasaporte, se permite viajar.
+        } else { //* Si no tiene pasaporte...
+            console.log('Es obligatorio tener pasaporte para poder viajar'); //* Se muestra un mensaje indicando que es necesario tener pasaporte.
+        } // *Cierre del if que evalúa si tiene pasaporte
+
+    } else { //* Si no tiene nacionalidad mexicana...
+        console.log('Es obligatorio presentar la documentación de tu nacionalidad.'); //* Se solicita la documentación correspondiente.
+    } // *Cierre del if que evalúa la nacionalidad
+
+} else { //* Si no es mayor de edad...
+    console.log('Es obligatorio ser mayor de edad para poder viajar al exterior.'); //* Se informa que no cumple con el requisito mínimo de edad.
+} // *Cierre del if que evalúa la mayoría de edad
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
