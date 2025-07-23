@@ -1,11 +1,14 @@
+const numeroAleatorio = Math.trunc(Math.random()*100);
+console.log(numeroAleatorio)
 
 function adivinarNumeroAleatorio(){
     const valorUsuaurio = document.getElementById('numeroEntrada').value;
-    const numeroAleatorio = Math.trunc(Math.random()*100);
 
     if(valorUsuaurio == Math.trunc(numeroAleatorio)){
-        console.log(`Has acertado, el numero es ${numeroAleatorio}`);
+        alert(`Has acertado, el numero es ${numeroAleatorio}`);
+    } else if(valorUsuaurio > numeroAleatorio){
+        alert(`Te has pasado, es un menor`);
     } else {
-        console.log(`Has fallado, el numero es ${numeroAleatorio}`);
+        alert(`Aun estas por debajo del numero`)
     }
 }
