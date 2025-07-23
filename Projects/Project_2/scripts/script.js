@@ -2,16 +2,15 @@
 let numeroAleatorio = Math.floor(Math.random()*100)+1;
 console.log(numeroAleatorio);
 
+// *Se declarar la vairable que almacenara los intentos.s
 let contadorIntentos = 0;
-
-intentos.textContent = `Llevas un total de ${contadorIntentos} intentos.`;
 
 // *Esta funcion se ejecutara cuando el usuario haga click en el btn.
 function adivinarNumeroAleatorio(){
     const valorUsuaurio = document.getElementById('numeroEntrada').value;
     if(valorUsuaurio >= 1 && valorUsuaurio <=100 ){
         contadorIntentos++; 
-        intentos.textContent = `Llevas un total de ${contadorIntentos} intentos.`;
+        document.getElementById('intentos').innerHTML = contadorIntentos;
 
         if(valorUsuaurio == Math.trunc(numeroAleatorio)){
             mensaje.textContent =`¡Felicitaciones!, ¡has adivinado el numero, el cual es: ${numeroAleatorio}.!`;
