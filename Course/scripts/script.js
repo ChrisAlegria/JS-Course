@@ -5,7 +5,7 @@
 // CamelCase: El camelCase es una convención de escritura que se utiliza en programación para nombrar variables, funciones, clases, etc. Se escribe en minúsculas y cada palabra adicional comienza con mayúscula. Por ejemplo, "miVariable", "miFuncion", "miClasePersonalizada".
 
 // ^JavaScript
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Simbologia en JS
 // Todo - Separador (,)
 // Todo - En JavaScript, la coma se utiliza para separar múltiples declaraciones o elementos dentro de una misma línea. Por ejemplo, permite declarar varias variables al mismo tiempo usando una sola instrucción, separando cada variable con una coma.
@@ -26,7 +26,7 @@ function scope() { // *Se declara una función llamada 'scope'. Todo lo que est�
     var x; // *Variable declarada con 'var', la cual pertenece únicamente al scope de esta función.
 } // *Cierre de la funcion y por ende del scope de la variable.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Variables en JS
 // ~Las variables dentro de JS son contenedores donde se puede almacenar valores, como texto, numeros, objetos, arreglos, etc.. Ademas que existen 3 maneras de diferentes para declararlas.
 // Todo - Declaración de Variables en JavaScript: En JavaScript existen tres formas principales de declarar una variable: `var`, `let` y `const`. Aunque cada una tiene diferencias clave en su comportamiento (como el alcance o si permite reasignación), todas siguen una estructura básica común:  **palabraClave + nombreVariable + asignador + valor**. Primero se escribe la palabra clave (`let`, `const` o `var`), seguida del nombre de la variable, después el signo igual `=` que funciona como asignador, y finalmente el valor que se desea almacenar. Por ejemplo: `let nombre = "Juan";`. Esta sintaxis permite crear variables claras y organizadas que se pueden usar a lo largo del código según las necesidades del programa. */
@@ -101,7 +101,7 @@ var elementoDeclaracionMultipleConValor1 = 'Variable 1 de la declaración múlti
 // &Declaración múltiple mixta
 var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'Variable 2 de la declaración múltiple mixta, la cual contiene un valor.'; //* Se declara una variable sin valor y otra con valor asignado en una sola línea.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Tipos de datos
 // ~En JavaScript, las variables pueden almacenar distintos tipos de datos, y estos son fundamentales para realizar operaciones, representar información y controlar el flujo del programa. Existen varios tipos de datos básicos, como los **números**, **cadenas de texto**, **booleanos**, **objetos**, **arreglos**, entre otros. Cada tipo de dato tiene su propia sintaxis y comportamiento. Comprender bien estos tipos es clave para escribir código eficiente y evitar errores, ya que determinan cómo se procesan, comparan y manipulan los valores dentro del programa.
 // &Números enteros (Int)
@@ -170,7 +170,7 @@ const variableTipoArrayMixto = [1, 'Texto1', 2, ['Texto2']]; //* Array que mezcl
 // &El tipo de dato `Date` permite trabajar con fechas y horas. Para crear una nueva fecha, se puede utilizar el constructor `new Date()`, pasando como argumento una cadena en formato válido. En JavaScript, el formato más comúnmente aceptado para fechas es el estilo **estadounidense (MM/DD/YYYY)**, donde primero se indica el **mes**, luego el **día** y por último el **año**. Este tipo de dato es útil para manejar cronologías, agendas, cálculos de tiempo, etc.
 const variableTipoDate = new Date('07/25/2025'); //* Fecha creada en formato MM/DD/YYYY. Representa el 25 de julio de 2025.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Operadores en JavaScript
 // ~En JavaScript, los operadores son símbolos que permiten realizar diferentes tipos de operaciones entre variables o valores. Estas operaciones pueden ser de **asignación**, **aritméticas**, **lógicas**, **comparación**, entre otras. Los operadores son fundamentales para manipular datos, realizar cálculos, construir condiciones y ejecutar tareas dentro del código. A continuación, se explican los operadores **de asignación** y **aritméticos**, que son los más utilizados al comenzar a programar.
 // Todo - Operador de asignación (=)
@@ -292,7 +292,7 @@ const resultadoConPrioridadOperadores = 4 == 2 && 3 == 3 || 4 == 4 != 4;
 //* Paso 6: false || true → true (luego se evalúa el OR)
 //* Resultado final: true
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Sintaxis de las variables
 // ~En JavaScript, para declarar una variable es necesario seguir una estructura básica: primero se escribe la palabra clave (`var`, `let` o `const`), luego el nombre de la variable, y opcionalmente un valor que se le asignará usando el operador `=`. Pero más allá de esta estructura, es muy importante que el nombre de la variable cumpla con ciertas reglas que dicta el lenguaje. Por ejemplo, los nombres deben comenzar con una letra, un guion bajo (`_`) o un signo de pesos (`$`), pero **no pueden comenzar con un número** ni contener símbolos especiales como `!`, `@`, `-`, etc. Además, **no se permiten espacios** en los nombres. También es importante saber que JavaScript es un lenguaje **case-sensitive**, es decir, distingue entre mayúsculas y minúsculas, por lo que `nombre`, `Nombre` y `NOMBRE` son variables distintas. Aunque se pueden usar varios estilos para escribir nombres de variables, estos estilos son conocidos como **convenciones de nomenclatura** (por ejemplo: `camelCase`, `snake_case`, `PascalCase`, `kebab-case`, etc.). En JavaScript se recomienda utilizar **camelCase** como estándar, ya que mejora la legibilidad del código y es ampliamente aceptado por la comunidad.
 // Todo - Nombres válidos para variables
@@ -333,7 +333,7 @@ const variable_con_convencion_nomenclatura_snakecase = 'Esta es una variable cuy
 // &La convención PascalCase es similar a camelCase, pero aquí la primera palabra también inicia con mayúscula. Este estilo es comúnmente usado para nombrar clases o constructores en JavaScript, y ayuda a distinguirlas de variables o funciones regulares.
 const VariableConConvencionNomenclaturaPascalCase = 'Esta es una variable cuyo nombre está definido usando la convención PascalCase.'; //* Nombre compuesto por palabras unidas, empezando con mayúscula en cada palabra, incluyendo la primera.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Scope (disponibilidad)
 // ~En JavaScript, el *scope* (alcance o disponibilidad) se refiere al contexto en el que una variable puede ser accedida o usada. Para visualizarlo, podemos imaginar que el código tiene jerarquías parecidas a una familia: el bloque principal (fuera de las llaves `{}`) es como un "padre", y cada bloque encerrado entre llaves `{}` (por ejemplo, dentro de funciones, condicionales o bucles) es un "hijo". Las variables declaradas **fuera** de las llaves (en el padre) pueden ser accedidas **dentro** del bloque (por los hijos), pero las variables creadas **dentro** de las llaves solo existen en ese bloque y **no pueden ser accedidas por el padre**. Esto se conoce como *scope local* (dentro del bloque) y *scope global* (fuera del bloque). Además, si se declara una variable con el mismo nombre tanto fuera como dentro del bloque, JavaScript las trata como variables completamente **independientes**, incluso si son del mismo tipo (`const`, `let`). En ese caso, dentro del bloque se utilizará únicamente la versión local (la que esté más cerca).
 console.log('=========== Scope (disponibilidad). ==========='); //* Título visual que se imprime en consola para señalar el inicio de la sección dedicada a explicar el concepto de scope (disponibilidad de variables según el contexto donde son declaradas).
@@ -366,7 +366,7 @@ const variableFueraNoDentro = 7; //* Declaración en el scope global (raíz), va
 }
 console.log(variableFueraNoDentro); //* Se imprime 7 nuevamente, accediendo desde el mismo scope global.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Parseo
 // ~El parseo (también conocido como **conversión de tipo**) es el proceso mediante el cual se transforma un dato de un tipo a otro. En JavaScript, una de las conversiones más comunes es la de un **string (texto)** a un **número**, ya sea entero (`int`) o decimal (`float`). Esto es muy útil, por ejemplo, cuando los valores numéricos se reciben desde formularios o bases de datos en forma de texto y se desea realizar operaciones matemáticas con ellos. JavaScript ofrece funciones como `parseInt()` y `parseFloat()` para realizar este tipo de conversiones de forma explícita.
 console.log('=========== Parseo. ==========='); //* Título principal que indica que inicia la sección de parseo o conversión de tipos.
@@ -386,7 +386,7 @@ console.log('--- Parseo de string a número con decimales (parseFloat). ---'); /
 variableParaAlmacenarParseo = 2.5 + parseFloat(vairableParaParseoTipoFloat); //* El string '2.5' se convierte en número 2.5, luego se suma a 2.5. Resultado final: 5.
 console.log(variableParaAlmacenarParseo); //* Se imprime el resultado: 5.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Funciones
 // ~Una función en JavaScript es un bloque de código **reutilizable** que sirve para ejecutar una tarea específica. Se puede pensar en una función como un conjunto de instrucciones que se agrupan bajo un **nombre especial**, y ese nombre permite invocar o ejecutar ese bloque de instrucciones cada vez que sea necesario. Las funciones pueden ser llamadas desde cualquier parte del código, lo cual resulta útil para **evitar la repetición** de instrucciones y hacer que el código sea más **organizado, legible y eficiente**.
 console.log('=========== Funciones. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre funciones.
@@ -488,7 +488,7 @@ const variableConValorDelRetornoDeFuncion = funcionQueRetornaUnValor(3,6);
 
 console.log(variableConValorDelRetornoDeFuncion); //* Resultado: 9
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Objetos
 // ~Un objeto en JavaScript es una **estructura de datos compleja** que permite almacenar múltiples valores relacionados en una sola entidad. Está compuesto por pares clave-valor, donde cada **clave** (también llamada propiedad) actúa como el nombre que identifica un dato, y cada **valor** es la información asociada a esa clave. Los objetos pueden representar elementos del mundo real como un coche, una persona, un producto o cualquier cosa que tenga características (propiedades) y acciones (métodos). En la programación orientada a objetos, los objetos pueden construirse a partir de **clases** que definen su estructura y comportamiento. Una característica poderosa de los objetos es que **pueden contener otros objetos dentro de sí mismos**, permitiendo modelar estructuras complejas. Además, **no hay restricción en reutilizar nombres de claves** entre diferentes objetos, ya que cada objeto es independiente y sus propiedades son locales a él. Es decir, si un objeto `casa1` tiene la clave `color` y otro objeto `casa2` también tiene `color`, no hay conflicto porque pertenecen a contextos diferentes.
 console.log('=========== Funciones. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre objetos.
@@ -544,7 +544,7 @@ var consolaVideojuegos = { //* Se vuelve a declarar el objeto `consolaVideojuego
 
 console.log(consolaVideojuegos["color"]); //* Se accede a la propiedad 'color' usando notación de corchetes. Resultado: 'Rojo y azul'.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Eventos (Del DOM)
 // ~En JavaScript, un **evento** es cualquier acción que ocurre dentro de una página web, como un clic, el paso del mouse, una pulsación de tecla, el envío de un formulario, la carga de la página, entre otros. Estos eventos pueden ser provocados por el usuario o por el propio navegador, y permiten que JavaScript interactúe con el contenido HTML para generar experiencias dinámicas e interactivas. Los eventos del DOM (Modelo de Objetos del Documento) son fundamentales para la manipulación del comportamiento del sitio. Generalmente, se capturan mediante atributos HTML como `onclick`, `onchange`, `onmouseover`, etc., o mediante JavaScript directamente. Por ejemplo, al usar `onclick="mostrarEventoDOM()"` en un botón HTML, se está indicando que cuando ese botón sea clicado, se ejecutará una función llamada `mostrarEventoDOM`. Para que esto funcione correctamente, dicha función debe estar definida en el archivo JavaScript vinculado, o dentro de una etiqueta `<script>` en el HTML. Gracias a los eventos del DOM, es posible crear páginas web interactivas donde el contenido cambia dinámicamente según las acciones del usuario, lo que mejora notablemente la experiencia del sitio.
 // Todo - Estrcutura de un evento en JavaScript
@@ -600,7 +600,7 @@ value = 'Juan Pérez'; //* El campo de texto mostrará por defecto el valor 'Jua
 document.getElementById('nombreElemento').setAttribute('src', 'nueva-imagen.jpg'); //* Cambia la ruta de la imagen que se mostrará.
 document.getElementById('nombreElemento').setAttribute('href', 'https://openai.com'); //* Cambia el destino del enlace.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Strings
 // ~En JavaScript, los **strings** son variables que almacenan una secuencia de caracteres o texto. Esto puede incluir letras, números, símbolos, espacios, e incluso caracteres especiales como saltos de línea o tabulaciones. Aunque trabajar con strings es sencillo en apariencia, existen detalles importantes que se deben entender para evitar errores comunes, especialmente al manejar caracteres que tienen un significado especial en el lenguaje.
 console.log('=========== Strings. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre string.
@@ -717,7 +717,7 @@ console.log('--- Método eval con cadena. ---'); //* Imprime en consola un mensa
 const variableAlaQueSeLeAplicaraEval = '5+-3/8'; //* Cadena de texto que representa una operación matemática.
 console.log(eval(variableAlaQueSeLeAplicaraEval)); //* Evalúa la cadena como una expresión matemática real y muestra el resultado.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Array (Listas)
 // ~Los arrays son muy utilizados por lo que son una de las bases mas utilizados de manera general, por lo que un array o arreglo en JavaScript es una estructura de datos que nos permite almacenar varios elementos en una sola variable, asi que se puede pensar en esto como una lista ordenada de elementos, en la cual cada elemento tiene un indice que indica cual es la posicion exacta en esta lista, donde se puedne almacenar cualquier tipo de datos (string, int, float, booleano, null, etc..) y se puede acceder a ella a traves del indice, ademas que a diferencia de otros lengiajes de programacion el alrgo del array no esta definido y podemos definirlo en el momento que le vamos asignando lso valores o elenentos. 
 console.log('=========== Arrays. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre arrays.
@@ -899,7 +899,7 @@ const arrayQueSeraConcatenado1 = ['Manzana', 'Pera', 'Banana', 'Naranja']; //* P
 const arrayQueSeraConcatenado2 = ['Zanahoria', 'Lechuga', 'Brocoli']; //* Segundo array con verduras.
 console.log(arrayQueSeraConcatenado1.concat(arrayQueSeraConcatenado2)); //* Imprime un nuevo array que contiene los valores de ambos arrays, en orden.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Dates (Fechas)
 // ~Las fechas en JavaScript se manejan mediante el objeto `Date`. Al crear una nueva instancia con `new Date()`, se genera automáticamente la **fecha y hora actual del sistema**. Sin embargo, también es posible especificar manualmente una fecha dentro de los paréntesis (por ejemplo: `new Date(2025, 6, 18)` para el 18 de julio de 2025).
 console.log('=========== Dates. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Dates.
@@ -949,7 +949,7 @@ const dateConMetodoSetDate = new Date(); //* Se crea una instancia de fecha con 
 dateConMetodoSetDate.setDate(1); //* Se cambia el día del mes a 1.
 console.log(dateConMetodoSetDate); //* Se muestra la fecha actualizada con el nuevo día.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Objeto Math
 // ~El objeto `Math` en JavaScript proporciona propiedades y métodos matemáticos que pueden ser utilizados sin necesidad de crear una instancia (es decir, no se usa `new Math()`). Para acceder a sus propiedades y constantes, simplemente se escribe `Math.` seguido del nombre correspondiente, como `Math.PI` para el valor de π. Este objeto incluye **constantes matemáticas universales**, funciones trigonométricas, exponenciales, logarítmicas, redondeos y más.
 console.log('=========== Objeto Math. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Objeto Math.
@@ -1026,7 +1026,7 @@ console.log(Math.trunc(8.6)); //* Muestra 8, ya que trunc simplemente descarta t
 console.log('--- Número aleatorio del 0 al 1. ---'); //* Mensaje que indica que se mostrará un número aleatorio entre 0 y 1.
 console.log(Math.random()); //* Imprime un número decimal aleatorio entre 0 (incluido) y 1 (excluido). Ejemplo: 0.23764589
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Condicionales (if/else/switch)
 // ~Un condicional en JavaScript es una estructura del control, la cual permite ejecutar distintos bloques de código dependiendo de una condición específica, esto permite tener cierto comportamiento o ciertas acciones dependiendo de si esta condición es verdadera o falsa. También permite que un programa tome decisiones y ejecute ciertos caminos distintos según el valor o resultado de una expresión, permitiendo mayor control y flexibilidad dentro del flujo del programa.
 console.log('=========== Condicionales. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Condicionales.
@@ -1104,6 +1104,9 @@ if(edad >= 18){ //* Se evalúa si la persona es mayor o igual a 18 años.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Bucles (for,while,etc..)
+// ~Los bucles en JavaScrip son una estructura de control que nos permite ejecutar un bloque de codigo de forma repetida mientras se cumpla una condicion determinada, esto nos permite repetir muchas veces un proceso sin repetir codigo, ademas que los bucles comunmente son usados con arrays.
+console.log('=========== Condicionales. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Condicionales.
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
