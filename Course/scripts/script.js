@@ -1075,7 +1075,6 @@ switch (variableParaCondicionalSwitch) { //* Se inicia la estructura switch que 
         break; //* Finaliza el bloque default (aunque no es obligatorio, se pone por buenas prácticas).
 } // *Cierre de condicional
 
-// &If's anidados
 // &Aqui le pones que podemos tener condicionales `if` dentro de otros `if`, lo que permite evaluar múltiples condiciones en un orden jerárquico; esto es útil cuando una condición solo debe evaluarse si otra ya se ha cumplido previamente. Por ejemplo, primero se puede verificar si una persona es mayor de edad y solo si lo es, después se valida su nacionalidad, y finalmente si tiene pasaporte. Esto ayuda a estructurar decisiones más complejas en pasos lógicos, anidando los `if` uno dentro de otro según la necesidad.
 console.log('--- If´s anidados. ---'); //* Imprime un mensaje indicando que se demostrará el uso de if anidados.
 let edad = 18; //* Se declara una variable que representa la edad de la persona.
@@ -1102,11 +1101,24 @@ if(edad >= 18){ //* Se evalúa si la persona es mayor o igual a 18 años.
     console.log('Es obligatorio ser mayor de edad para poder viajar al exterior.'); //* Se informa que no cumple con el requisito mínimo de edad.
 } // *Cierre del if que evalúa la mayoría de edad
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ~Bucles (for,while,etc..)
-// ~Los bucles en JavaScrip son una estructura de control que nos permite ejecutar un bloque de codigo de forma repetida mientras se cumpla una condicion determinada, esto nos permite repetir muchas veces un proceso sin repetir codigo, ademas que los bucles comunmente son usados con arrays.
-console.log('=========== Condicionales. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Condicionales.
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Bucles (for, while, etc...)
+// ~Los bucles en JavaScript son una estructura de control que nos permite ejecutar un bloque de código de forma repetida mientras se cumpla una condición determinada. Esto permite automatizar tareas repetitivas sin tener que reescribir el código muchas veces. Los bucles son especialmente útiles cuando trabajamos con estructuras como los arrays, ya que podemos recorrer todos sus elementos de forma ordenada y dinámica.
+console.log('=========== Bucles. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Bucles.
 
+// Todo - Sintaxis de los bucles
+// Todo - Los bucles en JavaScript tienen una estructura definida que incluye tres partes fundamentales dentro de los paréntesis: (1) la **declaración de una variable de control** (comúnmente con `let`, iniciando desde 0), (2) una **condición lógica** que evalúa si el bucle debe continuar ejecutándose (por ejemplo, si la variable es menor al tamaño del array), y (3) una **actualización de la variable de control** (normalmente se incrementa con `index++`, lo cual suma 1 en cada iteración). El bucle `for` es el más utilizado cuando se conoce de antemano cuántas veces queremos repetir una acción. Por ejemplo, si tenemos un array y queremos recorrer cada uno de sus elementos, podemos usar un bucle `for` con la siguiente estructura: `for(let index = 0; index < nombreArray.length; index++)`, donde `nombreArray.length` indica el tamaño total del array. Dentro del bucle, usamos la línea `const element = array[index];` para acceder individualmente a cada elemento, utilizando la variable `index` como posición en el array. Así, en cada vuelta del bucle, se seleccionará un nuevo elemento y se ejecutarán las instrucciones correspondientes.
+console.log('--- Bucle For. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle for.
+let dispositiovosTecnologicos = [ //* Se declara un array llamado `dispositiovosTecnologicos` usando la palabra clave `let`. Luego se abren corchetes `[]`, lo que indica que es una lista.
+    'celular', //* Elemento 0: una cadena de texto. Representa un dispositivo tecnologico.
+    'laptop',    //* Elemento 1: otra cadena. Los elementos están separados por comas.
+    'bocina'      //* Elemento 2: el último elemento no lleva coma final (aunque JS lo permite en versiones modernas).
+]; //* Cierre del array. Este array contiene 3 elementos de tipo `string`.
+
+for (let index = 0; index < dispositiovosTecnologicos.length; index++) { //* Se declara un bucle `for`. Primero se crea una variable `index` que comienza en 0. Luego se verifica si `index` es menor que la longitud del array `dispositiovosTecnologicos` (es decir, el número total de elementos). Si la condición se cumple, el bloque de código se ejecuta y después `index` aumenta en 1 con `index++`.
+    const element = dispositiovosTecnologicos[index]; //* Se crea una constante `element` que toma el valor de `dispositiovosTecnologicos[index]`, es decir, el elemento del array en la posición actual indicada por `index`.
+    console.log('Dispotiivo tecnologico actual: ', element); //* Se imprime en consola el valor actual de `element`, mostrando cada fruta una por una.
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
