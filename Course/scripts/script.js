@@ -1106,7 +1106,7 @@ if(edad >= 18){ //* Se evalúa si la persona es mayor o igual a 18 años.
 // ~Los bucles en JavaScript son una estructura de control que nos permite ejecutar un bloque de código de forma repetida mientras se cumpla una condición determinada. Esto permite automatizar tareas repetitivas sin tener que reescribir el código muchas veces. Los bucles son especialmente útiles cuando trabajamos con estructuras como los arrays, ya que podemos recorrer todos sus elementos de forma ordenada y dinámica.
 console.log('=========== Bucles. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Bucles.
 
-// Todo - Sintaxis de los bucles
+// Todo - Sintaxis de los bucles For
 // Todo - Los bucles en JavaScript tienen una estructura definida que incluye tres partes fundamentales dentro de los paréntesis: (1) la **declaración de una variable de control** (comúnmente con `let`, iniciando desde 0), (2) una **condición lógica** que evalúa si el bucle debe continuar ejecutándose (por ejemplo, si la variable es menor al tamaño del array), y (3) una **actualización de la variable de control** (normalmente se incrementa con `index++`, lo cual suma 1 en cada iteración). El bucle `for` es el más utilizado cuando se conoce de antemano cuántas veces queremos repetir una acción. Por ejemplo, si tenemos un array y queremos recorrer cada uno de sus elementos, podemos usar un bucle `for` con la siguiente estructura: `for(let index = 0; index < nombreArray.length; index++)`, donde `nombreArray.length` indica el tamaño total del array. Dentro del bucle, usamos la línea `const element = array[index];` para acceder individualmente a cada elemento, utilizando la variable `index` como posición en el array. Así, en cada vuelta del bucle, se seleccionará un nuevo elemento y se ejecutarán las instrucciones correspondientes.
 console.log('--- Bucle For. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle for.
 let dispositiovosTecnologicos = [ //* Se declara un array llamado `dispositiovosTecnologicos` usando la palabra clave `let`. Luego se abren corchetes `[]`, lo que indica que es una lista.
@@ -1120,7 +1120,9 @@ for (let index = 0; index < dispositiovosTecnologicos.length; index++) { //* Se 
     console.log('Dispotiivo tecnologico actual: ', element); //* Se imprime en consola el valor actual de `element`, mostrando cada fruta una por una.
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Todo - Sintaxis de los bucles For Of
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
 
