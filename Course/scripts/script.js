@@ -1121,7 +1121,20 @@ for (let index = 0; index < dispositiovosTecnologicos.length; index++) { //* Se 
 }
 
 // Todo - Sintaxis de los bucles For Of
-// Todo -
+// Todo - El bucle `for...of` es una forma más simple y moderna de recorrer elementos en un array. A diferencia del bucle `for` tradicional, que requiere declarar una variable de control y manejar índices, `for...of` itera directamente sobre los valores de la colección, facilitando la lectura y evitando errores con índices. La sintaxis básica es: `for (nombreSingularDeElemento of nombreArray)`, donde `nombreSingularDeElemento` representa cada elemento individual que se tomará del array en cada vuelta del bucle, y `nombreArray` es el array que se quiere recorrer. Aunque no es obligatorio que el nombre singular sea exactamente la versión singular del plural del array, se recomienda por claridad y buenas prácticas para entender mejor el código.
+console.log('--- Bucle For Of. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle for...of.
+
+let utensiliosCocina = [ //* Se declara un array llamado `utensiliosCocina` usando la palabra clave `let`. Luego se abren corchetes `[]`, lo que indica que es una lista.
+    'cuchara',   //* Elemento 0: una cadena de texto que representa un utensilio de cocina.
+    'tenedor',   //* Elemento 1: otra cadena que representa otro utensilio.
+    'cuchillo'   //* Elemento 2: el último elemento no lleva coma final (aunque JS lo permite en versiones modernas).
+]; //* Cierre del array `utensiliosCocina`.
+
+for (let utensilioCocina of utensiliosCocina) { //* Se inicia un bucle for...of que declara la variable `utensilioCocina` y recorre cada elemento del array `utensiliosCocina` directamente.
+    console.log(utensilioCocina); //* En cada iteración se imprime en consola el valor actual de `utensilioCocina`, mostrando los elementos uno por uno.
+}
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
