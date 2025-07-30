@@ -1103,11 +1103,12 @@ if(edad >= 18){ //* Se evalúa si la persona es mayor o igual a 18 años.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Bucles (for, while, etc...)
-// ~Los bucles en JavaScript son una estructura de control que nos permite ejecutar un bloque de código de forma repetida mientras se cumpla una condición determinada. Esto permite automatizar tareas repetitivas sin tener que reescribir el código muchas veces. Los bucles son especialmente útiles cuando trabajamos con estructuras como los arrays, ya que podemos recorrer todos sus elementos de forma ordenada y dinámica.
-console.log('=========== Bucles. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre Bucles.
-
-// Todo - Sintaxis de los bucles For
-// Todo - Los bucles en JavaScript tienen una estructura definida que incluye tres partes fundamentales dentro de los paréntesis: (1) la **declaración de una variable de control** (comúnmente con `let`, iniciando desde 0), (2) una **condición lógica** que evalúa si el bucle debe continuar ejecutándose (por ejemplo, si la variable es menor al tamaño del array), y (3) una **actualización de la variable de control** (normalmente se incrementa con `index++`, lo cual suma 1 en cada iteración). El bucle `for` es el más utilizado cuando se conoce de antemano cuántas veces queremos repetir una acción. Por ejemplo, si tenemos un array y queremos recorrer cada uno de sus elementos, podemos usar un bucle `for` con la siguiente estructura: `for(let index = 0; index < nombreArray.length; index++)`, donde `nombreArray.length` indica el tamaño total del array. Dentro del bucle, usamos la línea `const element = array[index];` para acceder individualmente a cada elemento, utilizando la variable `index` como posición en el array. Así, en cada vuelta del bucle, se seleccionará un nuevo elemento y se ejecutarán las instrucciones correspondientes.
+// ~Los bucles en JavaScript son una **estructura de control** que permite ejecutar un bloque de código repetidamente mientras se cumpla una condición. Esto automatiza tareas repetitivas sin necesidad de escribir el mismo código muchas veces. Son especialmente útiles para recorrer arrays, permitiendo acceder a cada elemento sin escribir código duplicado. En JavaScript existen dos tipos principales de bucles para arrays: el `for` tradicional y el `for...of`. Además, hay bucles para objetos como `for...in`. También existen bucles generales como `while` y `do...while`. Conocer sus diferencias y usos nos permite escribir código más eficiente y claro.
+console.log('=========== Bucles. ==========='); //* Indica el inicio de la sección de bucles.
+// Todo - Bucles de Arrays (for, for...of)
+// Todo - Los bucles para arrays permiten iterar sobre todos los elementos, facilitando la lectura o manipulación de datos. El bucle `for` es más detallado, pues se controla el índice manualmente, ideal cuando necesitamos ese control. El bucle `for...of` es más simple y directo, perfecto cuando solo queremos el valor de cada elemento sin preocuparnos por el índice.
+// &Sintaxis de los bucles For
+// &Los bucles en JavaScript tienen una estructura definida que incluye tres partes fundamentales dentro de los paréntesis: (1) la **declaración de una variable de control** (comúnmente con `let`, iniciando desde 0), (2) una **condición lógica** que evalúa si el bucle debe continuar ejecutándose (por ejemplo, si la variable es menor al tamaño del array), y (3) una **actualización de la variable de control** (normalmente se incrementa con `index++`, lo cual suma 1 en cada iteración). El bucle `for` es el más utilizado cuando se conoce de antemano cuántas veces queremos repetir una acción. Por ejemplo, si tenemos un array y queremos recorrer cada uno de sus elementos, podemos usar un bucle `for` con la siguiente estructura: `for(let index = 0; index < nombreArray.length; index++)`, donde `nombreArray.length` indica el tamaño total del array. Dentro del bucle, usamos la línea `const element = array[index];` para acceder individualmente a cada elemento, utilizando la variable `index` como posición en el array. Así, en cada vuelta del bucle, se seleccionará un nuevo elemento y se ejecutarán las instrucciones correspondientes.
 console.log('--- Bucle For. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle for.
 let dispositiovosTecnologicos = [ //* Se declara un array llamado `dispositiovosTecnologicos` usando la palabra clave `let`. Luego se abren corchetes `[]`, lo que indica que es una lista.
     'celular', //* Elemento 0: una cadena de texto. Representa un dispositivo tecnologico.
@@ -1118,12 +1119,11 @@ let dispositiovosTecnologicos = [ //* Se declara un array llamado `dispositiovos
 for (let index = 0; index < dispositiovosTecnologicos.length; index++) { //* Se declara un bucle `for`. Primero se crea una variable `index` que comienza en 0. Luego se verifica si `index` es menor que la longitud del array `dispositiovosTecnologicos` (es decir, el número total de elementos). Si la condición se cumple, el bloque de código se ejecuta y después `index` aumenta en 1 con `index++`.
     const element = dispositiovosTecnologicos[index]; //* Se crea una constante `element` que toma el valor de `dispositiovosTecnologicos[index]`, es decir, el elemento del array en la posición actual indicada por `index`.
     console.log('Dispotiivo tecnologico actual: ', element); //* Se imprime en consola el valor actual de `element`, mostrando cada fruta una por una.
-}
+} // *Cierre del ciclo for.
 
-// Todo - Sintaxis de los bucles For Of
-// Todo - El bucle `for...of` es una forma más simple y moderna de recorrer elementos en un array. A diferencia del bucle `for` tradicional, que requiere declarar una variable de control y manejar índices, `for...of` itera directamente sobre los valores de la colección, facilitando la lectura y evitando errores con índices. La sintaxis básica es: `for (nombreSingularDeElemento of nombreArray)`, donde `nombreSingularDeElemento` representa cada elemento individual que se tomará del array en cada vuelta del bucle, y `nombreArray` es el array que se quiere recorrer. Aunque no es obligatorio que el nombre singular sea exactamente la versión singular del plural del array, se recomienda por claridad y buenas prácticas para entender mejor el código.
+// &Sintaxis de los bucles For Of
+// &El bucle `for...of` es una forma más simple y moderna de recorrer elementos en un array. A diferencia del bucle `for` tradicional, que requiere declarar una variable de control y manejar índices, `for...of` itera directamente sobre los valores de la colección, facilitando la lectura y evitando errores con índices. La sintaxis básica es: `for (nombreSingularDeElemento of nombreArray)`, donde `nombreSingularDeElemento` representa cada elemento individual que se tomará del array en cada vuelta del bucle, y `nombreArray` es el array que se quiere recorrer. Aunque no es obligatorio que el nombre singular sea exactamente la versión singular del plural del array, se recomienda por claridad y buenas prácticas para entender mejor el código.
 console.log('--- Bucle For Of. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle for...of.
-
 let utensiliosCocina = [ //* Se declara un array llamado `utensiliosCocina` usando la palabra clave `let`. Luego se abren corchetes `[]`, lo que indica que es una lista.
     'cuchara',   //* Elemento 0: una cadena de texto que representa un utensilio de cocina.
     'tenedor',   //* Elemento 1: otra cadena que representa otro utensilio.
@@ -1132,8 +1132,47 @@ let utensiliosCocina = [ //* Se declara un array llamado `utensiliosCocina` usan
 
 for (let utensilioCocina of utensiliosCocina) { //* Se inicia un bucle for...of que declara la variable `utensilioCocina` y recorre cada elemento del array `utensiliosCocina` directamente.
     console.log(utensilioCocina); //* En cada iteración se imprime en consola el valor actual de `utensilioCocina`, mostrando los elementos uno por uno.
+} // *Cierre del ciclo for of.
+
+// &Sintaxis de los bucles For Each
+// &El método `.forEach()` es una forma moderna y muy utilizada para recorrer arrays en JavaScript. A diferencia del bucle `for` tradicional, `forEach` **no necesita una variable de control** ni una condición manual, ya que internamente se encarga de recorrer **cada elemento del array en orden**. Su estructura general es: `array.forEach((elemento) => { /* código */ })`, donde `elemento` representa cada uno de los valores del array.  Es importante saber que `forEach` ejecuta la función proporcionada **una vez por cada elemento**, y es especialmente útil cuando simplemente se quiere hacer algo con cada valor (como imprimirlo o modificarlo visualmente). Aunque es más legible, una diferencia clave es que **no se puede detener** o hacer "break" como en otros bucles (como `for` o `while`). Cada elemento será procesado sin interrupción.
+console.log('--- Bucle For Each. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle for...each.
+let colores = [ //* Se declara un array llamado `colores` que contiene cuatro cadenas de texto. Cada una representa un color distinto.
+    'Rojo',    //* Elemento 0: color rojo.
+    'Verde',   //* Elemento 1: color verde.
+    'Azul',    //* Elemento 2: color azul.
+    'Morado'   //* Elemento 3: color morado.
+]; //* Fin del array.
+
+colores.forEach(element => { //* Se aplica el método `.forEach()` sobre el array `colores`. La función flecha recibe el parámetro `element`, que será cada color individual.
+    console.log(element); //* Se imprime en consola el valor actual del color que se está recorriendo.
+});
+
+// Todo - Bucles de objetos (For In)
+// Todo - El bucle `for...in` se utiliza principalmente para **recorrer todas las propiedades enumerables** de un objeto. A diferencia del bucle `for...of`, que se usa con arrays y devuelve los **valores**, `for...in` devuelve las **claves** (o llaves) de un objeto, es decir, los nombres de sus propiedades. La sintaxis básica es: `for (clave in objeto)`, donde la variable `clave` tomará el nombre de cada propiedad del objeto una por una en cada iteración. Posteriormente, se puede acceder al valor de cada propiedad usando la notación de corchetes: `objeto[clave]`. Este tipo de bucle es muy útil cuando se quiere procesar dinámicamente las propiedades de un objeto, sin necesidad de saber cuántas o cuáles son con anticipación.
+console.log('--- Bucle For In. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle for...in.
+let alumnos = { //* Se declara un objeto llamado `alumnos` que contiene varias propiedades con distintos tipos de valores.
+    nombre: 'Miguel', //* Propiedad `nombre`: almacena una cadena de texto.
+    edad: 23,         //* Propiedad `edad`: almacena un número.
+    tecnologias: ['HTML','CSS'] //* Propiedad `tecnologias`: almacena un array con dos tecnologías.
+}; //* Fin de la declaración del objeto.
+
+for (const key in alumnos) { //* Se inicia un bucle `for...in` donde `key` tomará el nombre de cada propiedad del objeto `alumnos` en cada vuelta del bucle.
+    console.log(alumnos[key]); //* En cada iteración, se imprime el valor de la propiedad actual usando notación de corchetes: `alumnos[key]`.
+} // *Cierre del ciclo for in.
+
+// Todo - Bucle Lógico (While)
+// Todo - El bucle `while` es una estructura de control que funciona como un condicional en forma de bucle. Su principal característica es que **ejecutará un bloque de código repetidamente mientras una condición sea verdadera**. Es decir, si la condición se cumple, se entra al bucle y se ejecuta su contenido. Cuando termine esa vuelta, **se vuelve a verificar la condición**, y si aún es verdadera, se repite el proceso.  Este tipo de bucle es muy útil cuando **no sabemos exactamente cuántas veces necesitaremos repetir una acción**, pero sí sabemos la condición que debe cumplirse para detenerlo. ⚠️ Sin embargo, hay que tener mucho cuidado: **si la condición nunca deja de cumplirse, el bucle se ejecutará infinitamente**, lo que puede hacer que el navegador o programa se congele o falle.  Por eso es fundamental que **dentro del bucle haya algo que modifique la condición**, para que eventualmente se vuelva falsa y el bucle termine.
+console.log('--- Bucle While. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle while.
+
+edad = 0; //* Se declara la variable `edad` y se le asigna el valor 0. Esta será usada para controlar cuándo termina el bucle.
+
+while(edad < 18){ //* Se inicia un bucle `while`. La condición es que la edad sea menor a 18. Mientras esta condición sea verdadera, el código dentro del bucle seguirá ejecutándose.
+    console.log(`Tienes ${edad}, por lo que aun eres menor.`); //* Se imprime un mensaje con el valor actual de `edad`, indicando que aún no es mayor de edad.
+    edad++; //* Se incrementa el valor de `edad` en 1. Esto es esencial para que eventualmente la condición deje de cumplirse y el bucle termine.
 }
 
+console.log(`Tienes ${edad}, por lo que ya eres mayor.`); //* Una vez que termina el bucle (cuando `edad` llega a 18), se imprime un mensaje indicando que ya se es mayor de edad.
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
