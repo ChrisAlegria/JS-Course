@@ -1193,6 +1193,7 @@ console.log(`Tienes ${edad} años.`); //* Una vez que la condición del `while` 
 // Todo - Dentro de los bucles podemos utilizar **instrucciones especiales** que modifican el comportamiento normal de la ejecución del ciclo. Las más comunes son `break` y `continue`. `break` se usa para **salir del bucle de forma inmediata**, aunque la condición aún sea verdadera.`continue` se utiliza para **saltar la iteración actual** y continuar con la siguiente vuelta del bucle. Estas herramientas son útiles cuando, por ejemplo, se quiere detener el bucle ante una condición específica o evitar ejecutar parte del código en ciertas situaciones.
 // &Break
 // &La instrucción `break` detiene por completo la ejecución del bucle en el que se encuentra, es decir, cuando el intérprete de JavaScript encuentra un `break`, **sale inmediatamente del bucle**, incluso si la condición del bucle sigue siendo verdadera.  Esto es útil, por ejemplo, para detener un bucle infinito o evitar que siga ejecutándose después de alcanzar cierta condición específica.
+console.log('--- Break. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle break.
 var x = 5; //* Se declara una variable `x` con valor inicial 5.
 
 while(x == 5){ //* Se declara un bucle `while` cuya condición es que `x` sea igual a 5. Como la condición es verdadera y no se modifica dentro del bucle, sería un bucle infinito.
@@ -1202,6 +1203,23 @@ while(x == 5){ //* Se declara un bucle `while` cuya condición es que `x` sea ig
 
 //* En este ejemplo, aunque el bucle `while` tenía una condición que siempre sería verdadera (`x == 5`), el uso de `break` provoca que el bucle **solo se ejecute una vez y luego se detenga**.  
 //* Esto demuestra cómo `break` puede usarse para **forzar la salida** de bucles infinitos o para terminar la ejecución cuando se cumpla una condición específica.
+
+// &Continue
+// &La instrucción `continue` se utiliza dentro de bucles para **saltar la iteración actual** y continuar con la siguiente vuelta del ciclo, es decir, cuando el intérprete encuentra un `continue`, **ignora cualquier código que venga después de él en esa vuelta del bucle** y pasa directamente a la siguiente iteración. Esto es útil cuando queremos evitar que se ejecute cierto bloque de código bajo una condición específica, pero sin detener todo el bucle como lo haría `break`. Por lo que cabe mencionar que el continue omitira absolutamente todo el resto del codigo dentro del bucle desde donde se lee continue, pero a diferencia de 'break', este si permitira la repeticion o ejecucion del bucle.
+console.log('--- Continue. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle continue.
+for (let i = 1; i <= 5; i++) { //* Se declara un bucle `for` que comenzará con `i` igual a 1 y se repetirá mientras `i` sea menor o igual a 5. En cada vuelta, `i` aumentará en 1.
+    
+    if(i === 3){ //* Se evalúa si el valor actual de `i` es exactamente igual a 3.
+        continue; //* Si la condición se cumple (i es 3), se ejecuta `continue`, lo que hace que se **salte el resto del código** dentro del bucle para esta iteración.
+    }
+
+    console.log(`Iteración número: ${i}`); //* Solo se ejecutará si `i` NO es 3. Imprime el número de la iteración actual.
+}
+
+//* En este ejemplo, el bucle imprimirá los números del 1 al 5, excepto el número 3.  
+//* Cuando `i` vale 3, el `continue` evita que se ejecute el `console.log`, y pasa a la siguiente vuelta (`i = 4`).  
+//* Este comportamiento es útil cuando quieres **evitar ejecutar ciertas instrucciones para casos específicos sin terminar el bucle completo**, a diferencia del `break` que lo finalizaría por completo.
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
