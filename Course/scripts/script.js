@@ -1021,8 +1021,8 @@ console.log(Math.floor(2.9)); //* Muestra 2, sin importar que 2.9 esté más cer
 console.log('--- Trunca los decimales. ---'); //* Indica que se demostrará el uso de `Math.trunc()`.
 console.log(Math.trunc(8.6)); //* Muestra 8, ya que trunc simplemente descarta todo lo que está después del punto decimal.
 
-// Todo - Número aleatorio
-// Todo - El método `Math.random()` es una función muy útil que genera un **número decimal aleatorio** entre 0 (inclusive) y 1 (exclusivo). Esto significa que el resultado siempre estará en el rango **0 ≤ número < 1**. Es comúnmente utilizado para simulaciones, juegos, selecciones aleatorias y cualquier situación donde se requiera un valor impredecible dentro de este rango.
+// Todo - Bucles Lógicos (While, Do While)
+// Todo - Los bucles lógicos `while` y `do while` son estructuras de control que permiten repetir un bloque de código mientras se cumpla una condición específica. El bucle `while` evalúa la condición **antes** de ejecutar el código en cada iteración, por lo que si la condición es falsa desde un inicio, el código dentro del bucle no se ejecutará ni una sola vez. En cambio, el bucle `do while` ejecuta el bloque de código **al menos una vez** antes de evaluar la condición, y luego repetirá la ejecución mientras la condición siga siendo verdadera. Estos bucles son muy útiles cuando no se conoce de antemano cuántas veces debe repetirse un proceso, y la repetición depende de una condición dinámica que puede cambiar durante la ejecución.
 console.log('--- Número aleatorio del 0 al 1. ---'); //* Mensaje que indica que se mostrará un número aleatorio entre 0 y 1.
 console.log(Math.random()); //* Imprime un número decimal aleatorio entre 0 (incluido) y 1 (excluido). Ejemplo: 0.23764589
 
@@ -1220,6 +1220,11 @@ for (let i = 1; i <= 5; i++) { //* Se declara un bucle `for` que comenzará con 
 //* Cuando `i` vale 3, el `continue` evita que se ejecute el `console.log`, y pasa a la siguiente vuelta (`i = 4`).  
 //* Este comportamiento es útil cuando quieres **evitar ejecutar ciertas instrucciones para casos específicos sin terminar el bucle completo**, a diferencia del `break` que lo finalizaría por completo.
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Sets y Maps
+// ~
+// &Set
+// &Set es un conjunto de unico de elementos, por lo cual al ser unico es irepetible, este nos puede ser de mucha utilidad ya que muchas veces necesitamos eliminar los elementos duplicados. 
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
