@@ -1189,6 +1189,19 @@ do{ //* Se inicia el bucle `do`, que garantiza que el bloque de código se ejecu
 
 console.log(`Tienes ${edad} años.`); //* Una vez que la condición del `while` es falsa (cuando `edad` > 7), se imprime un mensaje indicando la edad final.
 
+// Todo - Intrucciones especiales dentro de bucles
+// Todo - Dentro de los bucles podemos utilizar **instrucciones especiales** que modifican el comportamiento normal de la ejecución del ciclo. Las más comunes son `break` y `continue`. `break` se usa para **salir del bucle de forma inmediata**, aunque la condición aún sea verdadera.`continue` se utiliza para **saltar la iteración actual** y continuar con la siguiente vuelta del bucle. Estas herramientas son útiles cuando, por ejemplo, se quiere detener el bucle ante una condición específica o evitar ejecutar parte del código en ciertas situaciones.
+// &Break
+// &La instrucción `break` detiene por completo la ejecución del bucle en el que se encuentra, es decir, cuando el intérprete de JavaScript encuentra un `break`, **sale inmediatamente del bucle**, incluso si la condición del bucle sigue siendo verdadera.  Esto es útil, por ejemplo, para detener un bucle infinito o evitar que siga ejecutándose después de alcanzar cierta condición específica.
+var x = 5; //* Se declara una variable `x` con valor inicial 5.
+
+while(x == 5){ //* Se declara un bucle `while` cuya condición es que `x` sea igual a 5. Como la condición es verdadera y no se modifica dentro del bucle, sería un bucle infinito.
+    console.log('El valor de X es 5.'); //* Se imprime un mensaje indicando el valor de `x`.
+    break; //* Se ejecuta la instrucción `break`, lo que **interrumpe la ejecución del bucle inmediatamente**, evitando que se vuelva infinito.
+} // *Cierre del bucle while.
+
+//* En este ejemplo, aunque el bucle `while` tenía una condición que siempre sería verdadera (`x == 5`), el uso de `break` provoca que el bucle **solo se ejecute una vez y luego se detenga**.  
+//* Esto demuestra cómo `break` puede usarse para **forzar la salida** de bucles infinitos o para terminar la ejecución cuando se cumpla una condición específica.
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
