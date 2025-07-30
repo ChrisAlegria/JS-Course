@@ -1161,10 +1161,11 @@ for (const key in alumnos) { //* Se inicia un bucle `for...in` donde `key` tomar
     console.log(alumnos[key]); //* En cada iteración, se imprime el valor de la propiedad actual usando notación de corchetes: `alumnos[key]`.
 } // *Cierre del ciclo for in.
 
-// Todo - Bucle Lógico (While)
-// Todo - El bucle `while` es una estructura de control que funciona como un condicional en forma de bucle. Su principal característica es que **ejecutará un bloque de código repetidamente mientras una condición sea verdadera**. Es decir, si la condición se cumple, se entra al bucle y se ejecuta su contenido. Cuando termine esa vuelta, **se vuelve a verificar la condición**, y si aún es verdadera, se repite el proceso.  Este tipo de bucle es muy útil cuando **no sabemos exactamente cuántas veces necesitaremos repetir una acción**, pero sí sabemos la condición que debe cumplirse para detenerlo. ⚠️ Sin embargo, hay que tener mucho cuidado: **si la condición nunca deja de cumplirse, el bucle se ejecutará infinitamente**, lo que puede hacer que el navegador o programa se congele o falle.  Por eso es fundamental que **dentro del bucle haya algo que modifique la condición**, para que eventualmente se vuelva falsa y el bucle termine.
+// Todo - Bucles Lógicos (While, Do While)
+// Todo - 
+// &While
+// &El bucle `while` es una estructura de control que funciona como un condicional en forma de bucle. Su principal característica es que **ejecutará un bloque de código repetidamente mientras una condición sea verdadera**. Es decir, si la condición se cumple, se entra al bucle y se ejecuta su contenido. Cuando termine esa vuelta, **se vuelve a verificar la condición**, y si aún es verdadera, se repite el proceso.  Este tipo de bucle es muy útil cuando **no sabemos exactamente cuántas veces necesitaremos repetir una acción**, pero sí sabemos la condición que debe cumplirse para detenerlo. ⚠️ Sin embargo, hay que tener mucho cuidado: **si la condición nunca deja de cumplirse, el bucle se ejecutará infinitamente**, lo que puede hacer que el navegador o programa se congele o falle.  Por eso es fundamental que **dentro del bucle haya algo que modifique la condición**, para que eventualmente se vuelva falsa y el bucle termine.
 console.log('--- Bucle While. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle while.
-
 edad = 0; //* Se declara la variable `edad` y se le asigna el valor 0. Esta será usada para controlar cuándo termina el bucle.
 
 while(edad < 18){ //* Se inicia un bucle `while`. La condición es que la edad sea menor a 18. Mientras esta condición sea verdadera, el código dentro del bucle seguirá ejecutándose.
@@ -1173,6 +1174,21 @@ while(edad < 18){ //* Se inicia un bucle `while`. La condición es que la edad s
 }
 
 console.log(`Tienes ${edad}, por lo que ya eres mayor.`); //* Una vez que termina el bucle (cuando `edad` llega a 18), se imprime un mensaje indicando que ya se es mayor de edad.
+
+// &Do While
+// &El bucle `do...while` es una estructura de control que **garantiza que el bloque de código se ejecutará al menos una vez**, sin importar si la condición es verdadera o falsa en la primera evaluación. Esto se debe a que **primero se ejecuta el código dentro del bloque `do`**, y **después se evalúa la condición del `while`**. Si la condición es verdadera, el bucle se repite. Si es falsa, se detiene. En contraste, el bucle `while` tradicional **evalúa la condición primero**, y solo ejecuta el código si la condición es verdadera desde el inicio. Por eso el `do...while` es útil cuando **se necesita ejecutar algo al menos una vez**, sin depender de la condición inicial.
+console.log('--- Bucle Do While. ---'); //* Imprime un mensaje indicando que se demostrará el uso de un bucle do while.
+edad = 0; //* Se declara la variable `edad` y se le asigna el valor 0. Esta será usada para controlar cuándo termina el bucle.
+
+do{ //* Se inicia el bucle `do`, que garantiza que el bloque de código se ejecutará al menos una vez.
+    {
+        edad++; //* Se incrementa la variable `edad` en 1. Esto modifica la condición que se evaluará después.
+        console.log(`Tienes ${edad} años.`); //* Se imprime el valor actual de `edad`.
+    }
+}while(edad <= 7) //* Después de ejecutar el bloque, se evalúa esta condición. Si `edad` sigue siendo menor o igual a 7, se vuelve a ejecutar el `do`.
+
+console.log(`Tienes ${edad} años.`); //* Una vez que la condición del `while` es falsa (cuando `edad` > 7), se imprime un mensaje indicando la edad final.
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
