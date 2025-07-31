@@ -1105,6 +1105,7 @@ if(edad >= 18){ //* Se evalúa si la persona es mayor o igual a 18 años.
 // ~Bucles (for, while, etc...)
 // ~Los bucles en JavaScript son una **estructura de control** que permite ejecutar un bloque de código repetidamente mientras se cumpla una condición. Esto automatiza tareas repetitivas sin necesidad de escribir el mismo código muchas veces. Son especialmente útiles para recorrer arrays, permitiendo acceder a cada elemento sin escribir código duplicado. En JavaScript existen dos tipos principales de bucles para arrays: el `for` tradicional y el `for...of`. Además, hay bucles para objetos como `for...in`. También existen bucles generales como `while` y `do...while`. Conocer sus diferencias y usos nos permite escribir código más eficiente y claro.
 console.log('=========== Bucles. ==========='); //* Indica el inicio de la sección de bucles.
+
 // Todo - Bucles de Arrays (for, for...of)
 // Todo - Los bucles para arrays permiten iterar sobre todos los elementos, facilitando la lectura o manipulación de datos. El bucle `for` es más detallado, pues se controla el índice manualmente, ideal cuando necesitamos ese control. El bucle `for...of` es más simple y directo, perfecto cuando solo queremos el valor de cada elemento sin preocuparnos por el índice.
 // &Sintaxis de los bucles For
@@ -1223,9 +1224,16 @@ for (let i = 1; i <= 5; i++) { //* Se declara un bucle `for` que comenzará con 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Sets y Maps
 // ~
-// &Set
-// &Set es un conjunto de unico de elementos, por lo cual al ser unico es irepetible, este nos puede ser de mucha utilidad ya que muchas veces necesitamos eliminar los elementos duplicados. 
+console.log('=========== Sets y Maps. ==========='); //* Indica el inicio de la sección de sets y maps.
 
+// &Set
+// &Set es un conjunto de unico de elementos, por lo cual al ser unico es irepetible, este nos puede ser de mucha utilidad ya que muchas veces necesitamos eliminar los elementos duplicados. por lo que set lo que hace es tomar un array, donde lo que hara es eliminar todos los elementos repetidos y dejara solo 1, por lo que para declarar un set es necesario declararlo en una nueva diciendo new Set() domde dentro de los () ira el nombre del array al cual le aplicaremos el set.
+let nombres = ['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo'];
+let nombreConSet = new Set(nombres);
+console.log(nombreConSet);
+
+// &Maps
+// &
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
