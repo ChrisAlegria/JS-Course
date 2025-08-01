@@ -1217,44 +1217,42 @@ for (let i = 1; i <= 5; i++) { //* Se declara un bucle `for` que comenzará con 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Sets y Maps
-// ~
-console.log('=========== Sets y Maps. ==========='); //* Indica el inicio de la sección de sets y maps.
+// ~Un Set en JavaScript es una estructura de datos que almacena valores únicos, es decir, no permite elementos duplicados. Esto lo hace ideal para eliminar duplicados de una lista o verificar la presencia de un valor sin importar el orden. Un Map es similar a un objeto tradicional pero más flexible, pues permite usar como claves cualquier tipo de dato, no solo strings. Ambas estructuras son muy útiles para manejar colecciones de datos de forma eficiente.
+console.log('=========== Sets y Maps. ==========='); //* Indica el inicio de la sección de Sets y Maps.
 
 // Todo - Set
-// Todo - Set es un conjunto de unico de elementos, por lo cual al ser unico es irepetible, este nos puede ser de mucha utilidad ya que muchas veces necesitamos eliminar los elementos duplicados. por lo que set lo que hace es tomar un array, donde lo que hara es eliminar todos los elementos repetidos y dejara solo 1, por lo que para declarar un set es necesario declararlo en una nueva diciendo new Set() domde dentro de los () ira el nombre del array al cual le aplicaremos el set.
-console.log('--- Set. ---'); //* Imprime un mensaje indicando que se demostrará el uso de set´s.
-let nombres = ['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo'];
-let nombreConSet = new Set(nombres);
-console.log(nombreConSet);
+// Todo - Un Set es un conjunto único de elementos, lo que significa que no puede contener valores repetidos. Se usa para almacenar colecciones donde la unicidad es importante. Al crear un Set a partir de un array, JavaScript elimina automáticamente los duplicados y conserva solo una instancia de cada valor. Esto facilita trabajar con listas limpias y evitar redundancias.
+console.log('--- Set. ---'); //* Imprime un mensaje indicando que se demostrará el uso de Set.
+let nombres = ['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']; //* Se declara un array con nombres que incluyen valores repetidos.
+let nombreConSet = new Set(nombres); //* Se crea un Set a partir del array, eliminando automáticamente los elementos duplicados.
+console.log(nombreConSet); //* Muestra el Set en consola con solo los valores únicos, sin repeticiones.
 
-// Todo - Metodos de set
-// Todo - Aqui le pobes que estos metodos solo pueden ser usados con por ejemplo un elemento que almacene un set con un arrya o no se, ya que de esta forma se pueen agregar, elimiar, etc.. mas elementos a los cuales ya estan siendo afectados por un set va?
+// Todo - Métodos de Set
+// Todo - Los Sets poseen métodos específicos para manipular sus elementos. Estos métodos permiten agregar nuevos valores, eliminar existentes, verificar si un elemento está presente y obtener la cantidad total de elementos únicos. Es importante recordar que estos métodos solo funcionan en variables que contienen Sets, no en arrays comunes.
 // &Agregar elemento (add())
-// &
-console.log('--- Add. ---'); //* Imprime un mensaje indicando que se demostrará el uso de add.
-nombres = new Set(['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo']);
-console.log(nombres.add('Felipe'));
+// &El método add() permite insertar un nuevo valor en el Set. Si el valor ya existe, el Set no lo agregará de nuevo, manteniendo la unicidad. Esto es útil para ampliar una colección sin crear duplicados.
+console.log('--- Add. ---'); //* Muestra un mensaje indicando el uso del método add.
+nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']); //* Se crea un nuevo Set con elementos duplicados eliminados.
+console.log(nombres.add('Felipe')); //* Se agrega un nuevo elemento 'Felipe' al Set y se imprime el Set actualizado.
 
 // &Eliminar elemento (delete())
-// &
-console.log('--- Delete. ---'); //* Imprime un mensaje indicando que se demostrará el uso de delete.
-nombres = new Set(['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo']);
-console.log(nombres.delete('Jose'));
-console.log(nombres);
+// &El método delete() elimina un valor específico del Set si este existe. Retorna true si el elemento fue eliminado, o false si no se encontró el elemento. Es útil para modificar la colección eliminando valores no deseados.
+console.log('--- Delete. ---'); //* Muestra un mensaje indicando el uso del método delete.
+nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']); //* Se crea nuevamente el Set desde un array con duplicados.
+console.log(nombres.delete('Jose')); //* Se elimina el elemento 'Jose' del Set, mostrando true si fue eliminado.
+console.log(nombres); //* Se muestra el Set actualizado tras la eliminación del elemento.
 
-// &Existe algun elemento con dicho valor (has())
-// &Aqui le pones que este lo que hace es verificar si existe dicho elemento dentro del Set, pór lo que arrojara unicamente un true o un false.
-console.log('--- Has. ---'); //* Imprime un mensaje indicando que se demostrará el uso de has.
-nombres = new Set(['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo']);
-console.log(nombres.has('Miguel'))
+// &Verificar existencia de un elemento (has())
+// &El método has() comprueba si un valor determinado está presente en el Set. Devuelve true si el valor existe, o false si no. Es una forma eficiente de hacer consultas rápidas dentro del Set.
+console.log('--- Has. ---'); //* Muestra un mensaje indicando el uso del método has.
+nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']); //* Se define el Set con valores únicos.
+console.log(nombres.has('Miguel')); //* Verifica si 'Miguel' está en el Set, devolviendo true.
 
-// &Tamaño de array con Set (size)
-// &Pones que cuando se usan set pese a tener un array no se puede usar sobre este un lenght, y que por el contrario estea el metodo size el cual tiene la misma funcion. el cual es decir la cantidad de eleemntos dentro de dicho elemento.
-console.log('--- Has. ---'); //* Imprime un mensaje indicando que se demostrará el uso de has.
-nombres = new Set(['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo']);
-console.log(nombres.size);
-
-
+// &Cantidad de elementos en el Set (size)
+// &A diferencia de los arrays, los Sets no tienen la propiedad length. En su lugar, tienen la propiedad size, que devuelve el número total de elementos únicos almacenados en el Set. Esto es útil para conocer la extensión de la colección.
+console.log('--- Size. ---'); //* Muestra un mensaje indicando el uso de la propiedad size.
+nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']); //* Se crea el Set con elementos únicos.
+console.log(nombres.size); //* Muestra la cantidad total de elementos únicos dentro del Set.
 
 // Todo - Maps
 // Todo - 
