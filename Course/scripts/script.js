@@ -646,8 +646,7 @@ console.log(variableQueSeUsaraContadorCaracteres.length); //* Muestra en consola
 // Todo - Métodos en string
 // Todo - En JavaScript, existen múltiples métodos integrados para manipular y transformar cadenas de texto (strings). Para aplicar un método, se escribe el nombre de la variable seguido de un punto (`.`), el nombre del método y paréntesis `()`, donde a veces se incluyen argumentos. Estos métodos permiten desde cortar, reemplazar o cambiar el formato del texto hasta realizar búsquedas o comparaciones dentro de una cadena.
 // &Extraccion de parte de cadena de texto (slice())
-// &El método `slice()` permite extraer una parte de una cadena de texto especificando dos posiciones: la posición inicial (desde dónde empieza a cortar) y la final (hasta dónde cortará sin incluir ese carácter). Si se utilizan números positivos, el conteo empieza desde el inicio (posición 0). Si se usan números negativos, el conteo va desde el final hacia atrás, lo cual permite recortar partes finales de la cadena.
-// ^Números positivos
+// &El método `slice()` permite extraer una parte de una cadena de texto especificando dos posiciones: la posición inicial (desde dónde empieza a cortar) y la final (hasta dónde cortará sin incluir ese carácter). Si se utilizan números positivos, el conteo empieza desde el inicio (posición 0). Si se usan números negativos, el conteo va desde el final hacia atrás, lo cual permite recortar partes finales de la cadena.// ^Números positivos
 console.log('--- Método string slice con números positivos. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `slice()` con índices positivos.
 const variableAlaQueSeAplicaraMetodoSlicePositivos = 'Esta es una variable a la cual se le aplicará el método slice.'; //* Cadena de texto original con 62 caracteres.
 console.log(variableAlaQueSeAplicaraMetodoSlicePositivos.slice(56, 62)); //* Extrae desde el carácter 56 al 61. Resultado: "slice."
@@ -678,7 +677,7 @@ console.log('--- Método toLowerCase. ---'); //* Imprime en consola un mensaje i
 const variableAlaQueSeLeAplicaraMetodoToLowerCase = 'Esta Es Una Variable A La Cual Se Le Aplica El Método ToLowerCase.'; //* Cadena con varias mayúsculas.
 console.log(variableAlaQueSeLeAplicaraMetodoToLowerCase.toLowerCase()); //* Resultado: "esta es una variable a la cual se le aplica el método tolowercase."
 
-// &Concatenación (cancat())
+// &Concatenación (concat())
 // &Además del símbolo `+`, JavaScript permite unir (concatenar) cadenas de texto utilizando el método `.concat()`. Este método se aplica sobre una cadena base y se le pasa como argumento otra u otras cadenas que se desean unir. Aunque el uso de `+` es más común hoy en día, `concat()` sigue siendo una forma válida y explícita de concatenar strings.
 console.log('--- Método concat. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `concat()`.
 const variableAlaQueSeLeAplicaraUnConcat1 = 'Esta variable concatenará '; //* Primera cadena base a la que se le añadirá la segunda.
@@ -1021,11 +1020,6 @@ console.log(Math.floor(2.9)); //* Muestra 2, sin importar que 2.9 esté más cer
 console.log('--- Trunca los decimales. ---'); //* Indica que se demostrará el uso de `Math.trunc()`.
 console.log(Math.trunc(8.6)); //* Muestra 8, ya que trunc simplemente descarta todo lo que está después del punto decimal.
 
-// Todo - Bucles Lógicos (While, Do While)
-// Todo - Los bucles lógicos `while` y `do while` son estructuras de control que permiten repetir un bloque de código mientras se cumpla una condición específica. El bucle `while` evalúa la condición **antes** de ejecutar el código en cada iteración, por lo que si la condición es falsa desde un inicio, el código dentro del bucle no se ejecutará ni una sola vez. En cambio, el bucle `do while` ejecuta el bloque de código **al menos una vez** antes de evaluar la condición, y luego repetirá la ejecución mientras la condición siga siendo verdadera. Estos bucles son muy útiles cuando no se conoce de antemano cuántas veces debe repetirse un proceso, y la repetición depende de una condición dinámica que puede cambiar durante la ejecución.
-console.log('--- Número aleatorio del 0 al 1. ---'); //* Mensaje que indica que se mostrará un número aleatorio entre 0 y 1.
-console.log(Math.random()); //* Imprime un número decimal aleatorio entre 0 (incluido) y 1 (excluido). Ejemplo: 0.23764589
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Condicionales (if/else/switch)
 // ~Un condicional en JavaScript es una estructura del control, la cual permite ejecutar distintos bloques de código dependiendo de una condición específica, esto permite tener cierto comportamiento o ciertas acciones dependiendo de si esta condición es verdadera o falsa. También permite que un programa tome decisiones y ejecute ciertos caminos distintos según el valor o resultado de una expresión, permitiendo mayor control y flexibilidad dentro del flujo del programa.
@@ -1075,7 +1069,8 @@ switch (variableParaCondicionalSwitch) { //* Se inicia la estructura switch que 
         break; //* Finaliza el bloque default (aunque no es obligatorio, se pone por buenas prácticas).
 } // *Cierre de condicional
 
-// &Aqui le pones que podemos tener condicionales `if` dentro de otros `if`, lo que permite evaluar múltiples condiciones en un orden jerárquico; esto es útil cuando una condición solo debe evaluarse si otra ya se ha cumplido previamente. Por ejemplo, primero se puede verificar si una persona es mayor de edad y solo si lo es, después se valida su nacionalidad, y finalmente si tiene pasaporte. Esto ayuda a estructurar decisiones más complejas en pasos lógicos, anidando los `if` uno dentro de otro según la necesidad.
+// &If's anidados
+// &Se pueden tener condicionales `if` dentro de otros `if`, lo que permite evaluar múltiples condiciones en un orden jerárquico; esto es útil cuando una condición solo debe evaluarse si otra ya se ha cumplido previamente. Por ejemplo, primero se puede verificar si una persona es mayor de edad y solo si lo es, después se valida su nacionalidad, y finalmente si tiene pasaporte. Esto ayuda a estructurar decisiones más complejas en pasos lógicos, anidando los `if` uno dentro de otro según la necesidad.
 console.log('--- If´s anidados. ---'); //* Imprime un mensaje indicando que se demostrará el uso de if anidados.
 let edad = 18; //* Se declara una variable que representa la edad de la persona.
 let nacionalidad = 'Mexicana'; //* Se declara una variable que indica la nacionalidad de la persona.
