@@ -1142,7 +1142,7 @@ let colores = [ //* Se declara un array llamado `colores` que contiene cuatro ca
 
 colores.forEach(element => { //* Se aplica el método `.forEach()` sobre el array `colores`. La función flecha recibe el parámetro `element`, que será cada color individual.
     console.log(element); //* Se imprime en consola el valor actual del color que se está recorriendo.
-});
+}); //* Cierre de bucle forEach
 
 // Todo - Bucles de objetos (For In)
 // Todo - El bucle `for...in` se utiliza principalmente para **recorrer todas las propiedades enumerables** de un objeto. A diferencia del bucle `for...of`, que se usa con arrays y devuelve los **valores**, `for...in` devuelve las **claves** (o llaves) de un objeto, es decir, los nombres de sus propiedades. La sintaxis básica es: `for (clave in objeto)`, donde la variable `clave` tomará el nombre de cada propiedad del objeto una por una en cada iteración. Posteriormente, se puede acceder al valor de cada propiedad usando la notación de corchetes: `objeto[clave]`. Este tipo de bucle es muy útil cuando se quiere procesar dinámicamente las propiedades de un objeto, sin necesidad de saber cuántas o cuáles son con anticipación.
@@ -1167,7 +1167,7 @@ edad = 0; //* Se declara la variable `edad` y se le asigna el valor 0. Esta ser�
 while(edad < 18){ //* Se inicia un bucle `while`. La condición es que la edad sea menor a 18. Mientras esta condición sea verdadera, el código dentro del bucle seguirá ejecutándose.
     console.log(`Tienes ${edad}, por lo que aun eres menor.`); //* Se imprime un mensaje con el valor actual de `edad`, indicando que aún no es mayor de edad.
     edad++; //* Se incrementa el valor de `edad` en 1. Esto es esencial para que eventualmente la condición deje de cumplirse y el bucle termine.
-}
+} // *Cierre del buclew while
 
 console.log(`Tienes ${edad}, por lo que ya eres mayor.`); //* Una vez que termina el bucle (cuando `edad` llega a 18), se imprime un mensaje indicando que ya se es mayor de edad.
 
@@ -1177,10 +1177,10 @@ console.log('--- Bucle Do While. ---'); //* Imprime un mensaje indicando que se 
 edad = 0; //* Se declara la variable `edad` y se le asigna el valor 0. Esta será usada para controlar cuándo termina el bucle.
 
 do{ //* Se inicia el bucle `do`, que garantiza que el bloque de código se ejecutará al menos una vez.
-    {
+    { // *Apertura de funciones del do.
         edad++; //* Se incrementa la variable `edad` en 1. Esto modifica la condición que se evaluará después.
         console.log(`Tienes ${edad} años.`); //* Se imprime el valor actual de `edad`.
-    }
+    } // *Cierre de funciones del do.
 }while(edad <= 7) //* Después de ejecutar el bloque, se evalúa esta condición. Si `edad` sigue siendo menor o igual a 7, se vuelve a ejecutar el `do`.
 
 console.log(`Tienes ${edad} años.`); //* Una vez que la condición del `while` es falsa (cuando `edad` > 7), se imprime un mensaje indicando la edad final.
@@ -1207,10 +1207,9 @@ for (let i = 1; i <= 5; i++) { //* Se declara un bucle `for` que comenzará con 
     
     if(i === 3){ //* Se evalúa si el valor actual de `i` es exactamente igual a 3.
         continue; //* Si la condición se cumple (i es 3), se ejecuta `continue`, lo que hace que se **salte el resto del código** dentro del bucle para esta iteración.
-    }
-
+    } // *Cierre de condicional if
     console.log(`Iteración número: ${i}`); //* Solo se ejecutará si `i` NO es 3. Imprime el número de la iteración actual.
-}
+} // *Cierre de bucle for.
 
 //* En este ejemplo, el bucle imprimirá los números del 1 al 5, excepto el número 3.  
 //* Cuando `i` vale 3, el `continue` evita que se ejecute el `console.log`, y pasa a la siguiente vuelta (`i = 4`).  
@@ -1221,14 +1220,44 @@ for (let i = 1; i <= 5; i++) { //* Se declara un bucle `for` que comenzará con 
 // ~
 console.log('=========== Sets y Maps. ==========='); //* Indica el inicio de la sección de sets y maps.
 
-// &Set
-// &Set es un conjunto de unico de elementos, por lo cual al ser unico es irepetible, este nos puede ser de mucha utilidad ya que muchas veces necesitamos eliminar los elementos duplicados. por lo que set lo que hace es tomar un array, donde lo que hara es eliminar todos los elementos repetidos y dejara solo 1, por lo que para declarar un set es necesario declararlo en una nueva diciendo new Set() domde dentro de los () ira el nombre del array al cual le aplicaremos el set.
+// Todo - Set
+// Todo - Set es un conjunto de unico de elementos, por lo cual al ser unico es irepetible, este nos puede ser de mucha utilidad ya que muchas veces necesitamos eliminar los elementos duplicados. por lo que set lo que hace es tomar un array, donde lo que hara es eliminar todos los elementos repetidos y dejara solo 1, por lo que para declarar un set es necesario declararlo en una nueva diciendo new Set() domde dentro de los () ira el nombre del array al cual le aplicaremos el set.
+console.log('--- Set. ---'); //* Imprime un mensaje indicando que se demostrará el uso de set´s.
 let nombres = ['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo'];
 let nombreConSet = new Set(nombres);
 console.log(nombreConSet);
 
-// &Maps
+// Todo - Metodos de set
+// Todo - Aqui le pobes que estos metodos solo pueden ser usados con por ejemplo un elemento que almacene un set con un arrya o no se, ya que de esta forma se pueen agregar, elimiar, etc.. mas elementos a los cuales ya estan siendo afectados por un set va?
+// &Agregar elemento (add())
 // &
+console.log('--- Add. ---'); //* Imprime un mensaje indicando que se demostrará el uso de add.
+nombres = new Set(['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo']);
+console.log(nombres.add('Felipe'));
+
+// &Eliminar elemento (delete())
+// &
+console.log('--- Delete. ---'); //* Imprime un mensaje indicando que se demostrará el uso de delete.
+nombres = new Set(['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo']);
+console.log(nombres.delete('Jose'));
+console.log(nombres);
+
+// &Existe algun elemento con dicho valor (has())
+// &Aqui le pones que este lo que hace es verificar si existe dicho elemento dentro del Set, pór lo que arrojara unicamente un true o un false.
+console.log('--- Has. ---'); //* Imprime un mensaje indicando que se demostrará el uso de has.
+nombres = new Set(['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo']);
+console.log(nombres.has('Miguel'))
+
+// &Tamaño de array con Set (size)
+// &Pones que cuando se usan set pese a tener un array no se puede usar sobre este un lenght, y que por el contrario estea el metodo size el cual tiene la misma funcion. el cual es decir la cantidad de eleemntos dentro de dicho elemento.
+console.log('--- Has. ---'); //* Imprime un mensaje indicando que se demostrará el uso de has.
+nombres = new Set(['Jose','Miguel','Gerardo','Luis','Jose','Miguel','Gerardo']);
+console.log(nombres.size);
+
+
+
+// Todo - Maps
+// Todo - 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
