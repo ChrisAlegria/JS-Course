@@ -1257,8 +1257,7 @@ console.log(nombres.size); //* Muestra la cantidad total de elementos únicos de
 // Todo - Maps
 // Todo - Los Maps son una estructura en JavaScript que permite almacenar datos en forma de pares clave-valor. Aunque se parecen a los objetos tradicionales, tienen características que los hacen más flexibles. La principal diferencia es que en un Map las claves pueden ser de **cualquier tipo**, incluyendo **números, objetos, funciones o strings**, mientras que en un objeto las claves son convertidas automáticamente a strings. Además, los Maps conservan el **orden de inserción**, lo que significa que los elementos se mantienen en el orden en el que fueron añadidos. Para declarar un Map, se utiliza la sintaxis `new Map()`, y si se quiere iniciar con valores, estos se pasan dentro de un array que contiene subarrays con los pares clave-valor.
 console.log('--- MAP. ---'); //* Muestra un mensaje indicando el uso de un Map.
-
-const mapaConDistintosDatos = new Map([ //* Se crea un nuevo Map llamado `mapaConDistintosDatos` con distintos tipos de valores asociados a sus claves.
+let mapaConDistintosDatos = new Map([ //* Se crea un nuevo Map llamado `mapaConDistintosDatos` con distintos tipos de valores asociados a sus claves.
     ['nombre', 'Christian'], //* Clave: 'nombre', Valor: 'Christian'. Un string simple como valor.
     ['frutas', ['manzana', 'pera', 'sandía']], //* Clave: 'frutas', Valor: un array con distintos tipos de fruta.
     ['infoUsuario', { id: 1, rol: 'admin' }], //* Clave: 'infoUsuario', Valor: un objeto con información de usuario.
@@ -1269,6 +1268,53 @@ console.log(mapaConDistintosDatos.get('nombre')); //* Se accede al valor de la c
 console.log(mapaConDistintosDatos.get('frutas')); //* Se accede al valor de la clave 'frutas', mostrando el array ['manzana', 'pera', 'sandía'].
 console.log(mapaConDistintosDatos.get('infoUsuario')); //* Se accede al valor de la clave 'infoUsuario', mostrando el objeto { id: 1, rol: 'admin' }.
 console.log(mapaConDistintosDatos.get('saludo')); //* Se accede a la función almacenada en 'saludo'. Muestra el contenido de la función como tal, no su ejecución.
+
+// Todo - Métodos de Map
+// Todo - Un Map en JavaScript es una colección de pares clave-valor donde tanto las claves como los valores pueden ser de cualquier tipo (no solo strings). Los métodos principales permiten agregar, eliminar, verificar elementos, y obtener información sobre la colección. Los Maps son ideales cuando necesitamos mapas flexibles con claves que no son solo strings o queremos mantener el orden de inserción.
+// &Agregar elemento al mapa (set())
+// &El método set() se usa para añadir un nuevo par clave-valor al Map. Si la clave ya existe, su valor se actualiza. Esto permite construir o modificar dinámicamente el contenido del Map.
+console.log('--- set. ---'); //* Imprime un mensaje indicando el inicio de la demostración del método set.
+mapaConDistintosDatos = new Map([ //* Se crea un Map con varios pares clave-valor iniciales.
+    ['nombre', 'Christian'], //* Clave 'nombre' con valor string 'Christian'.
+    ['frutas', ['manzana', 'pera', 'sandía']], //* Clave 'frutas' con valor un array de frutas.
+    ['infoUsuario', { id: 1, rol: 'admin' }], //* Clave 'infoUsuario' con valor un objeto que contiene datos del usuario.
+    ['saludo', function () { return '¡Hola desde el Map!'; }] //* Clave 'saludo' con valor una función que retorna un saludo.
+]); // *Cierre del Mapa.
+console.log(mapaConDistintosDatos.set('edad', 22)); //* Añade la clave 'edad' con valor 22 al Map y muestra el Map actualizado.
+
+// &Cantidad de elementos en el Map (size)
+// &La propiedad size devuelve el número total de pares clave-valor actualmente almacenados en el Map. Esto es útil para conocer la dimensión o tamaño del Map en cualquier momento.
+console.log('--- size. ---'); //* Imprime un mensaje indicando que se mostrará la cantidad de elementos del Map.
+mapaConDistintosDatos = new Map([ //* Se crea nuevamente el Map con los mismos pares clave-valor para esta demostración.
+    ['nombre', 'Christian'], //* Clave 'nombre' con valor string.
+    ['frutas', ['manzana', 'pera', 'sandía']], //* Clave 'frutas' con array como valor.
+    ['infoUsuario', { id: 1, rol: 'admin' }], //* Clave 'infoUsuario' con objeto como valor.
+    ['saludo', function () { return '¡Hola desde el Map!'; }] //* Clave 'saludo' con función como valor.
+]); // *Cierre del Mapa.
+console.log(mapaConDistintosDatos.size); //* Muestra el número de elementos que contiene el Map (en este caso 4).
+
+// &Eliminar elemento del mapa (delete())
+// &El método delete() elimina del Map el par clave-valor correspondiente a la clave indicada. Devuelve true si el elemento existía y fue eliminado, o false si no se encontró la clave.
+console.log('--- delete. ---'); //* Imprime un mensaje indicando que se demostrará el método delete.
+mapaConDistintosDatos = new Map([ //* Se crea nuevamente el Map para esta demostración.
+    ['nombre', 'Christian'], //* Clave 'nombre'.
+    ['frutas', ['manzana', 'pera', 'sandía']], //* Clave 'frutas'.
+    ['infoUsuario', { id: 1, rol: 'admin' }], //* Clave 'infoUsuario'.
+    ['saludo', function () { return '¡Hola desde el Map!'; }] //* Clave 'saludo'.
+]); // *Cierre del Mapa.
+console.log(mapaConDistintosDatos.delete('infoUsuario')); //* Elimina la clave 'infoUsuario' y muestra true si fue eliminada correctamente.
+console.log(mapaConDistintosDatos); //* Muestra el Map actualizado tras la eliminación del elemento.
+
+// &Verificar existencia de un elemento (has())
+// &El método has() verifica si una clave específica existe en el Map. Retorna true si está presente, o false si no. Esto permite comprobar rápidamente la existencia de una clave antes de operar con ella.
+console.log('--- has. ---'); //* Imprime un mensaje indicando que se demostrará el método has.
+mapaConDistintosDatos = new Map([ //* Se crea nuevamente el Map para esta demostración.
+    ['nombre', 'Christian'], //* Clave 'nombre'.
+    ['frutas', ['manzana', 'pera', 'sandía']], //* Clave 'frutas'.
+    ['infoUsuario', { id: 1, rol: 'admin' }], //* Clave 'infoUsuario'.
+    ['saludo', function () { return '¡Hola desde el Map!'; }] //* Clave 'saludo'.
+]); // *Cierre del Mapa.
+console.log(mapaConDistintosDatos.has('nombre')); //* Verifica si la clave 'nombre' existe en el Map y muestra true o false.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
