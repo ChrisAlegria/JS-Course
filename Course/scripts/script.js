@@ -1221,8 +1221,8 @@ for (let i = 1; i <= 5; i++) { //* Se declara un bucle `for` que comenzará con 
 console.log('=========== Sets y Maps. ==========='); //* Indica el inicio de la sección de Sets y Maps.
 
 // Todo - Set
-// Todo - Un Set es un conjunto único de elementos, lo que significa que no puede contener valores repetidos. Se usa para almacenar colecciones donde la unicidad es importante. Al crear un Set a partir de un array, JavaScript elimina automáticamente los duplicados y conserva solo una instancia de cada valor. Esto facilita trabajar con listas limpias y evitar redundancias.
-console.log('--- Set. ---'); //* Imprime un mensaje indicando que se demostrará el uso de Set.
+// Todo - Un Set es un conjunto único de elementos, lo que significa que no puede contener valores repetidos. Se usa para almacenar colecciones donde la unicidad es importante. Al crear un Set a partir de un array, JavaScript elimina automáticamente los duplicados y conserva solo una instancia de cada valor. Esto facilita trabajar con listas limpias y evitar redundancias. Por lo que para declarar un Set, se utiliza la palabra clave `new` seguida de `Set()`, pasando un array como argumento. Los Sets son útiles para operaciones como verificar si un valor ya existe, agregar nuevos elementos sin duplicados o eliminar valores específicos. Además, ofrecen métodos para manipular sus elementos, como `add()`, `delete()`, `has()` y `size`, que permiten agregar, eliminar, verificar existencia y contar elementos únicos respectivamente.
+console.log('--- SET. ---'); //* Imprime un mensaje indicando que se demostrará el uso de Set.
 let nombres = ['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']; //* Se declara un array con nombres que incluyen valores repetidos.
 let nombreConSet = new Set(nombres); //* Se crea un Set a partir del array, eliminando automáticamente los elementos duplicados.
 console.log(nombreConSet); //* Muestra el Set en consola con solo los valores únicos, sin repeticiones.
@@ -1255,7 +1255,20 @@ nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerar
 console.log(nombres.size); //* Muestra la cantidad total de elementos únicos dentro del Set.
 
 // Todo - Maps
-// Todo - 
+// Todo - Los Maps son una estructura en JavaScript que permite almacenar datos en forma de pares clave-valor. Aunque se parecen a los objetos tradicionales, tienen características que los hacen más flexibles. La principal diferencia es que en un Map las claves pueden ser de **cualquier tipo**, incluyendo **números, objetos, funciones o strings**, mientras que en un objeto las claves son convertidas automáticamente a strings. Además, los Maps conservan el **orden de inserción**, lo que significa que los elementos se mantienen en el orden en el que fueron añadidos. Para declarar un Map, se utiliza la sintaxis `new Map()`, y si se quiere iniciar con valores, estos se pasan dentro de un array que contiene subarrays con los pares clave-valor.
+console.log('--- MAP. ---'); //* Muestra un mensaje indicando el uso de un Map.
+
+const mapaConDistintosDatos = new Map([ //* Se crea un nuevo Map llamado `mapaConDistintosDatos` con distintos tipos de valores asociados a sus claves.
+    ['nombre', 'Christian'], //* Clave: 'nombre', Valor: 'Christian'. Un string simple como valor.
+    ['frutas', ['manzana', 'pera', 'sandía']], //* Clave: 'frutas', Valor: un array con distintos tipos de fruta.
+    ['infoUsuario', { id: 1, rol: 'admin' }], //* Clave: 'infoUsuario', Valor: un objeto con información de usuario.
+    ['saludo', function () { return '¡Hola desde el Map!'; }] //* Clave: 'saludo', Valor: una función anónima que devuelve un saludo.
+]);
+
+console.log(mapaConDistintosDatos.get('nombre')); //* Se accede al valor de la clave 'nombre', mostrando 'Christian'.
+console.log(mapaConDistintosDatos.get('frutas')); //* Se accede al valor de la clave 'frutas', mostrando el array ['manzana', 'pera', 'sandía'].
+console.log(mapaConDistintosDatos.get('infoUsuario')); //* Se accede al valor de la clave 'infoUsuario', mostrando el objeto { id: 1, rol: 'admin' }.
+console.log(mapaConDistintosDatos.get('saludo')); //* Se accede a la función almacenada en 'saludo'. Muestra el contenido de la función como tal, no su ejecución.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
