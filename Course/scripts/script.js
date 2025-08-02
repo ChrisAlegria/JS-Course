@@ -1231,28 +1231,37 @@ console.log(nombreConSet); //* Muestra el Set en consola con solo los valores ú
 // Todo - Los Sets poseen métodos específicos para manipular sus elementos. Estos métodos permiten agregar nuevos valores, eliminar existentes, verificar si un elemento está presente y obtener la cantidad total de elementos únicos. Es importante recordar que estos métodos solo funcionan en variables que contienen Sets, no en arrays comunes.
 // &Agregar elemento (add())
 // &El método add() permite insertar un nuevo valor en el Set. Si el valor ya existe, el Set no lo agregará de nuevo, manteniendo la unicidad. Esto es útil para ampliar una colección sin crear duplicados.
-console.log('--- Add. ---'); //* Muestra un mensaje indicando el uso del método add.
+console.log('--- add. ---'); //* Muestra un mensaje indicando el uso del método add.
 nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']); //* Se crea un nuevo Set con elementos duplicados eliminados.
 console.log(nombres.add('Felipe')); //* Se agrega un nuevo elemento 'Felipe' al Set y se imprime el Set actualizado.
 
 // &Eliminar elemento (delete())
 // &El método delete() elimina un valor específico del Set si este existe. Retorna true si el elemento fue eliminado, o false si no se encontró el elemento. Es útil para modificar la colección eliminando valores no deseados.
-console.log('--- Delete. ---'); //* Muestra un mensaje indicando el uso del método delete.
+console.log('--- delete. ---'); //* Muestra un mensaje indicando el uso del método delete.
 nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']); //* Se crea nuevamente el Set desde un array con duplicados.
 console.log(nombres.delete('Jose')); //* Se elimina el elemento 'Jose' del Set, mostrando true si fue eliminado.
 console.log(nombres); //* Se muestra el Set actualizado tras la eliminación del elemento.
 
 // &Verificar existencia de un elemento (has())
 // &El método has() comprueba si un valor determinado está presente en el Set. Devuelve true si el valor existe, o false si no. Es una forma eficiente de hacer consultas rápidas dentro del Set.
-console.log('--- Has. ---'); //* Muestra un mensaje indicando el uso del método has.
+console.log('--- has. ---'); //* Muestra un mensaje indicando el uso del método has.
 nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']); //* Se define el Set con valores únicos.
 console.log(nombres.has('Miguel')); //* Verifica si 'Miguel' está en el Set, devolviendo true.
 
 // &Cantidad de elementos en el Set (size)
 // &A diferencia de los arrays, los Sets no tienen la propiedad length. En su lugar, tienen la propiedad size, que devuelve el número total de elementos únicos almacenados en el Set. Esto es útil para conocer la extensión de la colección.
-console.log('--- Size. ---'); //* Muestra un mensaje indicando el uso de la propiedad size.
+console.log('--- size. ---'); //* Muestra un mensaje indicando el uso de la propiedad size.
 nombres = new Set(['Jose', 'Miguel', 'Gerardo', 'Luis', 'Jose', 'Miguel', 'Gerardo']); //* Se crea el Set con elementos únicos.
 console.log(nombres.size); //* Muestra la cantidad total de elementos únicos dentro del Set.
+
+// Todo - Convertir un valor de set a un array
+// Todo - Cuando se crea un Set a partir de un array, este elimina automáticamente los valores duplicados y almacena solo elementos únicos, representados internamente como "{1, 2, 3, 4}". Sin embargo, si queremos volver a obtener un array con esos valores únicos, podemos convertir el Set nuevamente en un array usando el operador spread (`...`). Esto permite trabajar con los datos como un array normal, con todas sus funcionalidades.
+console.log('--- set a array. ---'); //* Indica que se demostrará la conversión de un Set a un Array.
+let variableConArrayInicial = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5]; //* Se crea un array con valores duplicados.
+let setDelArray = new Set(variableConArrayInicial); //* Se crea un Set a partir del array, eliminando los valores duplicados.
+let setConvertidoArray = [...setDelArray]; //* Se convierte el Set de nuevo en un array utilizando el operador spread, manteniendo solo los valores únicos.
+console.log(setDelArray); //* Muestra el Set con valores únicos.
+console.log(setConvertidoArray); //* Muestra el array resultante, que contiene los mismos valores únicos del Set.
 
 // Todo - Maps
 // Todo - Los Maps son una estructura en JavaScript que permite almacenar datos en forma de pares clave-valor. Aunque se parecen a los objetos tradicionales, tienen características que los hacen más flexibles. La principal diferencia es que en un Map las claves pueden ser de **cualquier tipo**, incluyendo **números, objetos, funciones o strings**, mientras que en un objeto las claves son convertidas automáticamente a strings. Además, los Maps conservan el **orden de inserción**, lo que significa que los elementos se mantienen en el orden en el que fueron añadidos. Para declarar un Map, se utiliza la sintaxis `new Map()`, y si se quiere iniciar con valores, estos se pasan dentro de un array que contiene subarrays con los pares clave-valor.
