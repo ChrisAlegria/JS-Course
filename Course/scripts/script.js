@@ -1326,6 +1326,17 @@ mapaConDistintosDatos = new Map([ //* Se crea nuevamente el Map para esta demost
 console.log(mapaConDistintosDatos.has('nombre')); //* Verifica si la clave 'nombre' existe en el Map y muestra true o false.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~TypeOf & InstanceOf
+// ~
+console.log('=========== TypeOf & InstanceOf. ==========='); //* Indica el inicio de la sección de TypeOf y InstanceOf.
+
+// Todo - TypeOf
+// Todo - Aqui le pones que lo que hace typeof es devolver el tipo de caracter que se almacena en algo o asi, ya sea string, o number o eso. y que si por ejemplo se almacena en una vairbalr asi let test = typeof 'texto' la variable almacenara o mostrara el tipo de caracter en este caso dira string o eso, va!? ademas pon que la estructura es typeof valor o algo asi.
+console.log('--- TypeOf. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof.
+let x = typeof 'Este es un texto.'
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
 
