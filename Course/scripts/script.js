@@ -1333,7 +1333,10 @@ console.log('=========== TypeOf & InstanceOf. ==========='); //* Indica el inici
 // Todo - TypeOf
 // Todo - Aqui le pones que lo que hace typeof es devolver el tipo de caracter que se almacena en algo o asi, ya sea string, o number o eso. y que si por ejemplo se almacena en una vairbalr asi let test = typeof 'texto' la variable almacenara o mostrara el tipo de caracter en este caso dira string o eso, va!? ademas pon que la estructura es typeof valor o algo asi.
 console.log('--- TypeOf. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof.
-let x = typeof 'Este es un texto.'
+x = typeof 'Este es un texto.'
+y = typeof 4.52;
+console.log(x);
+console.log(y);
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
