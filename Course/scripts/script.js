@@ -1327,17 +1327,32 @@ console.log(mapaConDistintosDatos.has('nombre')); //* Verifica si la clave 'nomb
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~TypeOf & InstanceOf
-// ~
+// ~En JavaScript, `typeof` e `instanceof` son operadores fundamentales para identificar tipos de datos y estructuras. `typeof` se utiliza para determinar el tipo primitivo de un valor (por ejemplo, string, number, boolean, etc.), mientras que `instanceof` se usa para verificar si un objeto es una instancia de una clase o constructor determinado. Ambos son herramientas clave para el control de flujo, validaciones y depuración.
 console.log('=========== TypeOf & InstanceOf. ==========='); //* Indica el inicio de la sección de TypeOf y InstanceOf.
 
 // Todo - TypeOf
-// Todo - Aqui le pones que lo que hace typeof es devolver el tipo de caracter que se almacena en algo o asi, ya sea string, o number o eso. y que si por ejemplo se almacena en una vairbalr asi let test = typeof 'texto' la variable almacenara o mostrara el tipo de caracter en este caso dira string o eso, va!? ademas pon que la estructura es typeof valor o algo asi.
-console.log('--- TypeOf. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof.
-x = typeof 'Este es un texto.'
-y = typeof 4.52;
-console.log(x);
-console.log(y);
+// Todo - El operador `typeof` en JavaScript devuelve una cadena que indica el tipo de un valor. Este operador puede usarse directamente antes del valor (`typeof valor`) o almacenar su resultado en una variable. Es muy útil para identificar tipos de datos primitivos como `string`, `number`, `boolean`, `undefined`, `object`, `function` y `symbol`. Si se aplica a un valor no definido o una operación inválida como `NaN`, devolverá `'number'`, ya que `NaN` es considerado técnicamente un número. Esta herramienta es esencial para validaciones de tipo o para depurar el contenido de variables.
+// &TypeOf en valores String
+// &Cuando se aplica `typeof` a una cadena de texto (string), devuelve el tipo `'string'`. Esto es útil cuando queremos confirmar que una variable contiene texto y no otro tipo de dato.
+console.log('--- TypeOf String. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en string.
+let x = typeof 'Este es un texto.'; //* Se evalúa el tipo del valor string con typeof y se almacena en una variable.
+console.log(x); //* Imprime 'string', indicando el tipo de dato del valor.
 
+// &TypeOf en valores Number
+// &Cuando se aplica `typeof` a un número, ya sea entero o decimal, devuelve `'number'`. Es una manera de asegurarse de que se está trabajando con valores numéricos antes de realizar operaciones matemáticas.
+console.log('--- TypeOf Number. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en number.
+let y = typeof 4.52; //* Se evalúa el tipo del valor numérico 4.52 con typeof y se almacena en una variable.
+console.log(y); //* Imprime 'number', indicando el tipo de dato del valor.
+
+// &TypeOf en valores de error (NaN)
+// &Cuando se usa `typeof` sobre `NaN` (Not a Number), devuelve `'number'`, lo cual puede parecer contradictorio. Esto se debe a que `NaN` representa un valor inválido en operaciones numéricas, pero sigue siendo tratado como tipo número. Es importante tener cuidado con esto, ya que puede causar confusión en validaciones.
+console.log('--- TypeOf Error. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en error.
+let z = typeof NaN; //* Se evalúa el tipo del valor NaN (resultado de una operación inválida numéricamente).
+console.log(z); //* Imprime 'number', lo cual refleja cómo JavaScript trata a NaN como tipo numérico.
+
+
+// Todo - InstanceOf
+// Todo - 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
