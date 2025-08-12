@@ -507,7 +507,7 @@ var auto = { //* Se declara una variable con la palabra clave `var` y el nombre 
 const objetoConDiversosTiposDeClabes = { //*Se abre un objeto con el nombre de objetoConDiversosTiposDeClabes.
     claveTipoStrin: 'Clave que almacena una cadena de texto.', //* Clave que guarda un valor tipo string.
     claveTipoInt: 3, //* Clave que guarda un número entero.
-    claveTipoFloar: 4.6, //* Clave que guarda un número con decimales (float).
+    claveTipoFloat: 4.6, //* Clave que guarda un número con decimales (float).
     claveTipoNull: null, //* Clave que guarda el valor `null`, lo que indica ausencia intencional de valor.
     claveTipoArray: ['Elemento1', 2, 'Elemento3', 4], //* Clave que almacena un arreglo con elementos mixtos (string y number).
     claveTipoFuncion: function funcionDentroDeObjeto() { codigoQueEjecutaraLaFuncion }, //* Clave que almacena una función. Esta función puede ser llamada como parte del objeto.
@@ -635,7 +635,7 @@ console.log(variableUsandoCaracterBarraInvertidaAgregacionTabulacion);
 // &El carácter especial `\b` representa un **retroceso**, también llamado backspace. En teoría, este símbolo debería eliminar el carácter anterior en una cadena, simulando el efecto de pulsar la tecla de retroceso (←). Sin embargo, en la mayoría de entornos modernos como los navegadores, `\b` **no elimina visualmente** el carácter anterior cuando se imprime en consola, pero sí es interpretado como un carácter especial invisible. Puede tener efecto en terminales más antiguas o en sistemas donde el retroceso esté soportado. Aunque no es muy común ni confiable en JavaScript moderno para manipular texto en consola, es importante conocerlo porque forma parte del conjunto de caracteres escapables del lenguaje.
 console.log('--- Uso de barra invertira para eliminar un elmento anterios. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso de \b.
 const variableUsandoCaracterBarraInvertidaBackspace = 'ABC\bD'; //* El \b intenta borrar la letra 'C', pero en la mayoría de consolas simplemente lo ignora visualmente.
-console.log(variableUsandoCaracterBarraInvertidaBackspace); //* En consola probablemente se v*
+console.log(variableUsandoCaracterBarraInvertidaBackspace); //* En consola probablemente se veroia junta la palabra*
 
 // Todo - Contador de caracteres (length)
 // Todo - En JavaScript, cuando se trabaja con cadenas de texto (strings), es muy común necesitar saber cuántos caracteres contiene una variable. Para esto se utiliza la propiedad `.length`, que devuelve un **número entero** indicando la cantidad total de caracteres de la cadena, incluyendo letras, espacios, signos de puntuación y tildes. Esta propiedad es útil para validar formularios, recortar texto, aplicar condiciones, entre muchos otros casos.
@@ -848,8 +848,7 @@ console.log(resultadoExtraccionShiftArray); //* Imprime el valor extraído.
 console.log(arrayQueSeUsaraShift); //* Imprime el array ya sin el primer valor ("Manzana").
 
 // &Agregar un elemento al final del array (push())
-// &El método `.push()` sirve para **insertar uno o más elementos al final de un array**. Al hacerlo, el array se **modifica directamente**, agregando el nuevo elemento al final de la lista.
-// &Este método además **retorna la nueva longitud (length)** del array después de insertar el/los elemento/s.
+// &El método `.push()` sirve para **insertar uno o más elementos al final de un array**. Al hacerlo, el array se **modifica directamente**, agregando el nuevo elemento al final de la lista. Este método además **retorna la nueva longitud (length)** del array después de insertar el/los elemento/s.
 console.log('--- Método push en array. ---'); //* Imprime en consola un mensaje indicando que se demostrará el uso del método `push()` en un array.
 const arrayQueSeUsaraPush = ['Manzana', 'Pera', 'Banana', 'Naranja', 'Manzana', 'Naranja']; //* Array con varias frutas, algunas repetidas.
 console.log(arrayQueSeUsaraPush.push('Piña')); //* Agrega el elemento "Piña" al final del array y retorna la nueva longitud.
@@ -1335,21 +1334,56 @@ console.log('=========== TypeOf & InstanceOf. ==========='); //* Indica el inici
 // &TypeOf en valores String
 // &Cuando se aplica `typeof` a una cadena de texto (string), devuelve el tipo `'string'`. Esto es útil cuando queremos confirmar que una variable contiene texto y no otro tipo de dato.
 console.log('--- TypeOf String. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en string.
-let x = typeof 'Este es un texto.'; //* Se evalúa el tipo del valor string con typeof y se almacena en una variable.
+x = typeof 'Este es un texto.'; //* Se evalúa el tipo del valor string con typeof y se almacena en una variable.
 console.log(x); //* Imprime 'string', indicando el tipo de dato del valor.
 
 // &TypeOf en valores Number
 // &Cuando se aplica `typeof` a un número, ya sea entero o decimal, devuelve `'number'`. Es una manera de asegurarse de que se está trabajando con valores numéricos antes de realizar operaciones matemáticas.
 console.log('--- TypeOf Number. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en number.
-let y = typeof 4.52; //* Se evalúa el tipo del valor numérico 4.52 con typeof y se almacena en una variable.
+y = typeof 4.52; //* Se evalúa el tipo del valor numérico 4.52 con typeof y se almacena en una variable.
 console.log(y); //* Imprime 'number', indicando el tipo de dato del valor.
 
+// &TypeOf en funciones
+// &
+console.log('--- TypeOf Funciones. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en funciones.
+z = typeof function funcionParaTypeOf(){
+}
+console.log(z)
+
+// &TypeOf en boleanos
+// &
+console.log('--- TypeOf Boolean. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en booleano.
+y = typeof true; //* Se evalúa el tipo del valor numérico 4.52 con typeof y se almacena en una variable.
+console.log(y); //* Imprime 'bolleano', indicando el tipo de dato del valor.
+
+// Todo - Casos especiales en TypeOf
+// Todo - Aqui pones que existen casos especiales dodne algunos elementos o casos  peuden regreserr un typeof especial o eso
 // &TypeOf en valores de error (NaN)
 // &Cuando se usa `typeof` sobre `NaN` (Not a Number), devuelve `'number'`, lo cual puede parecer contradictorio. Esto se debe a que `NaN` representa un valor inválido en operaciones numéricas, pero sigue siendo tratado como tipo número. Es importante tener cuidado con esto, ya que puede causar confusión en validaciones.
 console.log('--- TypeOf Error. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en error.
-let z = typeof NaN; //* Se evalúa el tipo del valor NaN (resultado de una operación inválida numéricamente).
+z = typeof NaN; //* Se evalúa el tipo del valor NaN (resultado de una operación inválida numéricamente).
 console.log(z); //* Imprime 'number', lo cual refleja cómo JavaScript trata a NaN como tipo numérico.
 
+// &Variables sin valores
+// &Aqui le pones que en este caso se retornara que las variables tienen un valor typo undefined pese a no tener nada almacenado.
+console.log('--- TypeOf Variable Sin Valor. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en una variable sin valor.
+let variableSinValor;
+let variableSinValorConTypeOf = typeof variableSinValor;
+console.log(variableSinValorConTypeOf);
+
+// &Variables con valor null
+// &Aqui le pones que lo que rewtorna uun  typeof en una variable qwue almacena null, regresara que es un objeto.
+console.log('--- TypeOf Variable Con Valor Null. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en una variable con valor Null.
+let variableConValorNull = null;
+let variableConValorNullConTypeOf = typeof variableConValorNull;
+console.log(variableConValorNullConTypeOf);
+
+// &Variables con valor Date
+// &Aqui le pones que cuando una variable almacena una fecha esta retornara con typeof un objeto
+console.log('--- TypeOf Variable Con Valor Date. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en una variable con valor Null.
+let variablerConValorDate = new Date();
+let variablerConValorDateConTypeOf = typeof variablerConValorDate;
+console.log(variablerConValorDateConTypeOf);
 
 // Todo - InstanceOf
 // Todo - 
