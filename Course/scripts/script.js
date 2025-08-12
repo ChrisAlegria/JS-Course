@@ -1344,46 +1344,47 @@ y = typeof 4.52; //* Se evalúa el tipo del valor numérico 4.52 con typeof y se
 console.log(y); //* Imprime 'number', indicando el tipo de dato del valor.
 
 // &TypeOf en funciones
-// &
+// &Cuando se aplica `typeof` a una función, devuelve el valor `'function'`. Este comportamiento es particular, ya que en JavaScript las funciones son técnicamente objetos especiales con la capacidad de ser ejecutados. Aunque las funciones son tratadas como objetos de primera clase, el operador `typeof` las reconoce con este tipo específico para diferenciarlas de otros objetos.
 console.log('--- TypeOf Funciones. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en funciones.
-z = typeof function funcionParaTypeOf(){
-}
-console.log(z)
+z = typeof function funcionParaTypeOf() {
+} //* Se evalúa el tipo de la función declarada y se almacena el resultado.
+console.log(z); //* Imprime 'function', mostrando el tipo específico que `typeof` devuelve para funciones.
 
-// &TypeOf en boleanos
-// &
-console.log('--- TypeOf Boolean. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en booleano.
-y = typeof true; //* Se evalúa el tipo del valor numérico 4.52 con typeof y se almacena en una variable.
-console.log(y); //* Imprime 'bolleano', indicando el tipo de dato del valor.
+// &TypeOf en booleanos
+// &Cuando se usa `typeof` sobre un valor booleano (`true` o `false`), devuelve `'boolean'`. Este tipo primitivo se utiliza para representar condiciones verdaderas o falsas y es fundamental en estructuras de control como `if`, `while` o `for`.
+console.log('--- TypeOf Boolean. ---'); //* Indica que se demostrará el uso de typeof en booleanos.
+y = typeof true; //* Se evalúa el tipo del valor booleano `true` con typeof y se almacena en la variable.
+console.log(y); //* Imprime 'boolean', indicando el tipo de dato que almacena la variable.
 
 // Todo - Casos especiales en TypeOf
-// Todo - Aqui pones que existen casos especiales dodne algunos elementos o casos  peuden regreserr un typeof especial o eso
+// Todo - Aunque `typeof` es útil para identificar el tipo de datos, existen ciertos valores que producen resultados que pueden sorprender. Esto se debe a peculiaridades históricas y a cómo JavaScript maneja internamente los tipos. Conocer estos casos evita errores de validación y mejora la precisión en el manejo de datos.
 // &TypeOf en valores de error (NaN)
-// &Cuando se usa `typeof` sobre `NaN` (Not a Number), devuelve `'number'`, lo cual puede parecer contradictorio. Esto se debe a que `NaN` representa un valor inválido en operaciones numéricas, pero sigue siendo tratado como tipo número. Es importante tener cuidado con esto, ya que puede causar confusión en validaciones.
-console.log('--- TypeOf Error. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en error.
-z = typeof NaN; //* Se evalúa el tipo del valor NaN (resultado de una operación inválida numéricamente).
-console.log(z); //* Imprime 'number', lo cual refleja cómo JavaScript trata a NaN como tipo numérico.
+// &Cuando se usa `typeof` sobre `NaN` (Not a Number), devuelve `'number'`, lo cual puede parecer contradictorio. Esto ocurre porque `NaN` es el resultado de una operación numérica inválida, pero sigue siendo tratado como un número en JavaScript. Es importante ser consciente de esto para evitar confusiones en validaciones.
+console.log('--- TypeOf Error. ---'); //* Indica que se mostrará el uso de typeof sobre NaN.
+z = typeof NaN; //* Evalúa el tipo del valor NaN.
+console.log(z); //* Imprime 'number', mostrando cómo JavaScript clasifica NaN como tipo numérico.
 
 // &Variables sin valores
-// &Aqui le pones que en este caso se retornara que las variables tienen un valor typo undefined pese a no tener nada almacenado.
-console.log('--- TypeOf Variable Sin Valor. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en una variable sin valor.
+// &Si una variable es declarada pero no inicializada, `typeof` devuelve `'undefined'`. Esto significa que la variable existe pero no tiene un valor asignado.
+console.log('--- TypeOf Variable Sin Valor. ---'); //* Demostración del uso de typeof sobre una variable sin inicializar.
 let variableSinValor;
-let variableSinValorConTypeOf = typeof variableSinValor;
-console.log(variableSinValorConTypeOf);
+let variableSinValorConTypeOf = typeof variableSinValor; //* Se evalúa el tipo de la variable no inicializada.
+console.log(variableSinValorConTypeOf); //* Imprime 'undefined'.
 
 // &Variables con valor null
-// &Aqui le pones que lo que rewtorna uun  typeof en una variable qwue almacena null, regresara que es un objeto.
-console.log('--- TypeOf Variable Con Valor Null. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en una variable con valor Null.
+// &Cuando una variable almacena `null`, `typeof` devuelve `'object'`. Esto es un error histórico en JavaScript, pero se mantiene por compatibilidad. A pesar de que `null` representa la ausencia de valor, es tratado como un objeto.
+console.log('--- TypeOf Variable Con Valor Null. ---'); //* Muestra el uso de typeof sobre null.
 let variableConValorNull = null;
-let variableConValorNullConTypeOf = typeof variableConValorNull;
-console.log(variableConValorNullConTypeOf);
+let variableConValorNullConTypeOf = typeof variableConValorNull; //* Se evalúa el tipo de null.
+console.log(variableConValorNullConTypeOf); //* Imprime 'object'.
 
 // &Variables con valor Date
-// &Aqui le pones que cuando una variable almacena una fecha esta retornara con typeof un objeto
-console.log('--- TypeOf Variable Con Valor Date. ---'); //* Imprime un mensaje indicando que se demostrará el uso de typeof en una variable con valor Null.
+// &Un objeto `Date` en JavaScript es un tipo especial de objeto para manejar fechas y horas. Cuando se aplica `typeof` a un objeto `Date`, devuelve `'object'`, ya que internamente se considera un objeto estándar.
+console.log('--- TypeOf Variable Con Valor Date. ---'); //* Muestra el uso de typeof sobre un objeto Date.
 let variablerConValorDate = new Date();
-let variablerConValorDateConTypeOf = typeof variablerConValorDate;
-console.log(variablerConValorDateConTypeOf);
+let variablerConValorDateConTypeOf = typeof variablerConValorDate; //* Evalúa el tipo de un objeto Date.
+console.log(variablerConValorDateConTypeOf); //* Imprime 'object'.
+
 
 // Todo - InstanceOf
 // Todo - 
