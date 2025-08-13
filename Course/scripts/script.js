@@ -1385,9 +1385,19 @@ let variablerConValorDate = new Date();
 let variablerConValorDateConTypeOf = typeof variablerConValorDate; //* Evalúa el tipo de un objeto Date.
 console.log(variablerConValorDateConTypeOf); //* Imprime 'object'.
 
-
 // Todo - InstanceOf
-// Todo - 
+// Todo - El operador `instanceof` en JavaScript se utiliza para verificar si un objeto es una instancia de un tipo o clase específica. A diferencia de `typeof`, que devuelve una cadena con el tipo general del valor, `instanceof` permite hacer comprobaciones más precisas para identificar si un valor pertenece a una clase específica, como `Date`, `Array`, `Function`, entre otros. Esto es especialmente útil porque, por ejemplo, `typeof` sobre un objeto `Date` devolverá `'object'`, lo cual es muy genérico. Sin embargo, `instanceof` nos permitirá saber si realmente es un `Date`, devolviendo `true`. Su funcionamiento consiste en evaluar una expresión con la sintaxis:  **valor** + `instanceof` + **Constructor**. Donde **valor** es el objeto o variable que queremos verificar, y **Constructor** es la función constructora o clase con la que queremos compararlo. El resultado será un valor booleano: `true` si el objeto es una instancia de ese tipo, o `false` si no lo es. Es importante señalar que `instanceof` solo funciona para objetos creados con constructores o clases, no para tipos primitivos directamente.
+// &Caso falso
+// &En este ejemplo, creamos una fecha con `new Date()` y verificamos si es una instancia de `Number`. El resultado será `false` porque, aunque internamente `Date` puede representar valores numéricos, no es un número como tal, sino un objeto especial de tipo fecha.
+console.log('--- InstanceOf Falso. ---'); //* Muestra el uso de instanceof con un caso que devolverá falso.
+a = new Date(); //* Creamos un objeto de tipo fecha.
+console.log(a instanceof Number); //* Evalúa si 'a' es una instancia de Number. Devuelve false.
+
+// &Caso verdadero
+// &Aquí verificamos si el mismo objeto `Date` es una instancia de `Date`. El resultado será `true` porque efectivamente fue creado a partir del constructor `Date`.
+console.log('--- InstanceOf Verdadero. ---'); //* Muestra el uso de instanceof con un caso que devolverá verdadero.
+a = new Date(); //* Creamos un objeto de tipo fecha.
+console.log(a instanceof Date); //* Evalúa si 'a' es una instancia de Date. Devuelve true.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
