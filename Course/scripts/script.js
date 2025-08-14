@@ -106,11 +106,11 @@ var elementoDeclaracionMultipleMixta1, elementoDeclaracionMultipleConValor2 = 'V
 // ~En JavaScript, las variables pueden almacenar distintos tipos de datos, y estos son fundamentales para realizar operaciones, representar información y controlar el flujo del programa. Existen varios tipos de datos básicos, como los **números**, **cadenas de texto**, **booleanos**, **objetos**, **arreglos**, entre otros. Cada tipo de dato tiene su propia sintaxis y comportamiento. Comprender bien estos tipos es clave para escribir código eficiente y evitar errores, ya que determinan cómo se procesan, comparan y manipulan los valores dentro del programa.
 // &Números enteros (Int)
 // &Las variables tipo `number` se utilizan para almacenar **valores numéricos enteros**, es decir, números sin decimales. Estos pueden ser positivos, negativos o incluso el cero. No se requiere ningún símbolo especial para declarar un número entero; simplemente se escribe el número directamente después del signo `=`. Esto es útil cuando se necesita hacer operaciones matemáticas básicas como suma, resta, multiplicación, etc.
-const variableTipoNumber = 4;  //* Variable tipo 'int' que almacena un número con decimales (número no entero).
+let variableTipoNumber = 4;  //* Variable tipo 'int' que almacena un número con decimales (número no entero).
 
 // &Números con decimales (Float)
 // &Las variables tipo `float` también almacenan números, pero a diferencia de los enteros, estos **incluyen decimales**. En JavaScript no se usa una palabra clave diferente para flotantes, pero internamente se maneja como número decimal. Para declarar un `float`, basta con incluir un punto (`.`) entre la parte entera y decimal. Este tipo es muy útil en cálculos que requieren mayor precisión, como porcentajes, precios, promedios, etc.
-const variableTipoFloat = 5.34; //* Variable tipo 'float' que almacena un número con decimales (número no entero).
+let variableTipoFloat = 5.34; //* Variable tipo 'float' que almacena un número con decimales (número no entero).
 
 // &Cadenas de caracteres (String) 
 // &Las variables tipo `string` se utilizan para almacenar **texto**, también conocido como una cadena de caracteres. Este puede ser una sola letra, una palabra, una oración o incluso párrafos completos. A diferencia de los números, los strings **deben ir entre comillas**, ya que de lo contrario el programa los interpretaría como variables o instrucciones. En JavaScript existen tres formas de declarar un string: usando comillas simples (`'...'`), dobles (`"..."`) o backticks (`` `...` ``). Cada una tiene sus ventajas y se usa según la situación.
@@ -168,7 +168,7 @@ const variableTipoArrayMixto = [1, 'Texto1', 2, ['Texto2']]; //* Array que mezcl
 
 // &Fecha (Date)
 // &El tipo de dato `Date` permite trabajar con fechas y horas. Para crear una nueva fecha, se puede utilizar el constructor `new Date()`, pasando como argumento una cadena en formato válido. En JavaScript, el formato más comúnmente aceptado para fechas es el estilo **estadounidense (MM/DD/YYYY)**, donde primero se indica el **mes**, luego el **día** y por último el **año**. Este tipo de dato es útil para manejar cronologías, agendas, cálculos de tiempo, etc.
-const variableTipoDate = new Date('07/25/2025'); //* Fecha creada en formato MM/DD/YYYY. Representa el 25 de julio de 2025.
+let variableTipoDate = new Date('07/25/2025'); //* Fecha creada en formato MM/DD/YYYY. Representa el 25 de julio de 2025.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Operadores en JavaScript
@@ -1400,8 +1400,57 @@ a = new Date(); //* Creamos un objeto de tipo fecha.
 console.log(a instanceof Date); //* Evalúa si 'a' es una instancia de Date. Devuelve true.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// ~Converciones de datos
-// ~
+// ~Conversión de datos
+// ~La **conversión de datos** (o *type casting*) en JavaScript es el proceso de transformar un valor de un tipo de dato a otro. Esto es útil cuando necesitamos que un valor cambie su forma de representarse para poder manipularlo correctamente. Por ejemplo, si tenemos un número en formato texto `"23"`, no podemos sumarlo a otro número directamente sin antes convertirlo a tipo numérico. Existen varias formas de realizar conversiones: las más conocidas son el **parseo** (`parseInt()`, `parseFloat()`), pero también existen constructores como `Number()`, `String()` y `Boolean()`, que permiten transformar valores explícitamente. Su sintaxis general es: TipoDestino(valor)` → Donde **TipoDestino** puede ser `Number`, `String` o `Boolean`, y **valor** es lo que queremos convertir.
+console.log('=========== Conversión de datos. ==========='); //* Indica el inicio de la sección de conversión de datos.
+
+// Todo - Numéricos (Number())
+// Todo - El constructor `Number()` se utiliza para convertir un valor a tipo numérico. Si el valor es una cadena con caracteres válidos de número, se convertirá correctamente. Si no lo es, devolverá `NaN` (Not a Number). También puede convertir fechas a su valor numérico en milisegundos desde el 1 de enero de 1970.
+// &String a Number
+// &En este caso convertimos un valor de tipo string `"23"` a número. Esto nos permitirá operar con él matemáticamente.
+console.log('--- String a Number. ---'); //* Muestra en consola la conversión de string a número.
+let variableTipoString = '23'; //* Variable que almacena un valor de tipo string.
+let variableQueConvierteStringANumber = Number(variableTipoString); //* Convierte el string a número usando Number().
+console.log(variableQueConvierteStringANumber); //* Imprime el valor convertido en formato numérico.
+
+// &Date a Number
+// &Aquí convertimos una fecha (`Date`) a su representación numérica en milisegundos desde la fecha de referencia de Unix (1970-01-01).
+console.log('--- Date a Number. ---'); //* Muestra en consola la conversión de Date a número.
+variableTipoDate = new Date(); //* Creamos una variable con la fecha y hora actual.
+let variableQueConvierteDateANumber = Number(variableTipoDate); //* Convierte la fecha a número (milisegundos desde 1970).
+console.log(variableQueConvierteDateANumber); //* Imprime el valor numérico resultante.
+
+// Todo - Cadenas de texto (String())
+// Todo - El constructor `String()` convierte un valor a su representación textual. Puede transformar números, fechas, booleanos y otros tipos de datos a cadenas.
+// &Number a String
+// &En este ejemplo convertimos un número a cadena de texto. Esto es útil cuando queremos concatenar números con texto o mostrarlos sin operar matemáticamente.
+console.log('--- Number a String. ---'); //* Muestra en consola la conversión de número a string.
+variableTipoNumber = 34; //* Variable con un valor numérico.
+let variableQueConvierteNumberAString = String(variableTipoNumber); //* Convierte el número a string usando String().
+console.log(variableQueConvierteNumberAString); //* Imprime el valor convertido como cadena.
+
+// &Date a String
+// &Convierte una fecha (`Date`) a una cadena en formato legible.
+console.log('--- Date a String. ---'); //* Muestra en consola la conversión de Date a string.
+variableTipoDate = new Date(); //* Creamos una fecha actual.
+let variableQueConvierteDateAString = String(variableTipoDate); //* Convierte la fecha a cadena.
+console.log(variableQueConvierteDateAString); //* Imprime la fecha como texto.
+
+// &Boolean a String
+// &Convierte un valor booleano (`true` o `false`) a cadena de texto.
+console.log('--- Boolean a String. ---'); //* Muestra en consola la conversión de boolean a string.
+let variableTipoBoolean = true; //* Variable booleana con valor true.
+let variableQueConvierteBooleanAString = String(variableTipoBoolean); //* Convierte el boolean a texto.
+console.log(variableQueConvierteBooleanAString); //* Imprime el valor convertido como cadena.
+
+// Todo - Booleanos (Boolean())
+// Todo - El constructor `Boolean()` convierte un valor a tipo booleano (`true` o `false`). En JavaScript, varios valores se consideran **falsy** (equivalentes a false) como `0`, `NaN`, `""` (cadena vacía), `null`, `undefined` y `false` mismo. Cualquier otro valor se considera **truthy** (equivalente a true). Por ejemplo, al convertir un número, el `0` se convertirá en `false` y cualquier número diferente de cero se convertirá en `true`.
+// &Number a Boolean
+// &En este ejemplo, el número `4` es convertido a `true` porque es diferente de cero.
+console.log('--- Number a Boolean. ---'); //* Muestra en consola la conversión de número a boolean.
+variableTipoNumber = 4; //* Variable numérica con valor diferente de cero.
+let variableQueConvierteNumberABoolean = Boolean(variableTipoNumber); //* Convierte el número a booleano.
+console.log(variableQueConvierteNumberABoolean); //* Imprime el valor convertido (true en este caso).
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
@@ -1422,3 +1471,12 @@ console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9.
 // !Algo deprecado en JS: En el contexto de JavaScript, el termino "deprecado" se refiere a una función, método, propiedad o caracteristica de JavaScript que ha sido marcada como obsoleta o desaconsejada. Si se utiliza alguna funcion, método, propiedad o caracteristica de JavaScript que esta marcada como "deprecada", es posible que se recivan adevertencias o mensajes en la consola del navegador.
 
 // !Arrays tipo const: Aunque es posible declarar arrays con `const`, **no se recomienda hacerlo si se tiene la intención de reasignar el array completo más adelante**.`const` impide la **redefinición** de la variable (es decir, no se puede volver a asignar otro array completamente nuevo a esa misma variable), pero **sí permite modificar el contenido del array**, como agregar, eliminar o cambiar elementos. Por lo tanto, si se prevé que se necesitará reasignar el array por completo en algún momento, se recomienda usar `let` en lugar de `const`.
+
+// !Paso de una unica condicional con valor cero: A veces, cuando en un condicional if se pasa un valor de 0, este lo tomará como boolean y por ende lo interpretará como **false**, ya que en lógica booleana el número 0 equivale a false mientras que 1 (o cualquier otro número distinto de 0) equivale a true.
+console.log('--- Paso de una unica condicional con valor cero. ---'); //* Muestra un título que indica el inicio del ejemplo con condicional y valor cero.
+let variableParaPasoCondicionalConValorCero = 0; //* Declara una variable con valor 0, que será evaluado en la condición.
+if (variableParaPasoCondicionalConValorCero) { //* Evalúa la variable; al ser 0, se convierte implícitamente en false y no se ejecuta este bloque.
+    console.log('Se recibio un dato'); //* No se ejecutará porque la condición es false.
+} else { //* Este bloque se ejecuta porque la condición anterior no se cumplió.
+    console.log('No se recibio ningun dato'); //* Muestra el mensaje indicando que el valor se interpretó como falso.
+}
