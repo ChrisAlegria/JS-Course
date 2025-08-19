@@ -1461,11 +1461,13 @@ console.log('=========== Regex: Expresiones Regulares. ==========='); //* Imprim
 // Todo - Existen métodos en JavaScript que trabajan con regex, siendo los más comunes `.search()` y `.test()`. `.search()` devuelve la **posición** de la coincidencia (o -1 si no existe). `.test()` devuelve un **booleano** (true si el patrón coincide, false en caso contrario).
 // &Regex para búsqueda
 // &En este ejemplo, se usa `.search()` para encontrar la palabra "Extendido" en un texto. Si la palabra se encuentra, devuelve la posición inicial de la coincidencia; si no existe, devuelve -1.
+console.log('--- Regex para busqueda. ---'); //* Muestra en consola el uso de regex para busqueda.
 let textoEnVariable = 'Esta es una variable con un texto Extendido.'; //* Se define una variable que contiene un texto.
 console.log(textoEnVariable.search(/Extendido/)); //* Busca el patrón "Extendido" en el texto y muestra la posición donde empieza.
 
 // &Regex para comprobación
 // &Aquí se usa `.test()` para verificar si un patrón existe dentro de un texto. En este caso, el patrón es la palabra "Extendido".
+console.log('--- Regex para comprobacion. ---'); //* Muestra en consola el uso de regex para comprobacion.
 textoEnVariable = 'Esta es una variable con un texto Extendido.'; //* Se redefine la variable con el mismo texto.
 let regexParaComprobacion = /Extendido/; //* Se crea una expresión regular que busca la palabra "Extendido".
 console.log(regexParaComprobacion.test(textoEnVariable)); //* Devuelve true porque "Extendido" sí aparece en el texto.
@@ -1474,16 +1476,19 @@ console.log(regexParaComprobacion.test(textoEnVariable)); //* Devuelve true porq
 // Todo - Los modificadores cambian el comportamiento de las expresiones regulares. Se colocan después de la barra final `/` y permiten cosas como ignorar mayúsculas/minúsculas, buscar en todo el texto o trabajar en múltiples líneas.
 // &Ignorar case sensitive (i)
 // &El modificador `i` indica que la búsqueda no distingue entre mayúsculas y minúsculas.
+console.log('--- Ignorar case sensitive. ---'); //* Muestra en consola el uso de regex sin case sensitive.
 textoEnVariable = 'Un Texto Con MAYÚSCULAS y minúsculas.'; //* Se define un texto con diferentes capitalizaciones.
 console.log(textoEnVariable.search(/texto/i)); //* Encuentra la palabra "Texto" aunque en el patrón se escribió en minúsculas.
 
 // &Buscar en todo el texto (g)
 // &El modificador `g` indica búsqueda global: encuentra **todas** las coincidencias en lugar de solo la primera. Se suele usar junto con `.match()`, que devuelve un arreglo con todas las coincidencias encontradas.
+console.log('--- Busqueda en todo el texto. ---'); //* Muestra en consola el uso de regex con busqueda en todo el texto.
 textoEnVariable = 'Repite, repite y REPITE varias veces.'; //* Se define un texto con la palabra repetida varias veces en diferentes formas.
 console.log(textoEnVariable.match(/repite/gi)); //* Busca todas las ocurrencias de "repite" (ignorando mayúsculas) y devuelve un array con ["Repite","repite","REPITE"].
 
 // &Búsqueda multilínea (m)
 // &El modificador `m` permite que los patrones funcionen en **múltiples líneas**. Por ejemplo, al usar `^`, que normalmente significa "inicio del texto", con `m` también se reconoce el inicio de cada línea.
+console.log('--- Busqueda multilinea. ---'); //* Muestra en consola el uso de regex con Busqueda multilinea.
 textoEnVariable = `Primera línea
 Segunda línea
 Tercera línea`; //* Se define un texto con saltos de línea.
@@ -1491,6 +1496,8 @@ console.log(textoEnVariable.match(/^Segunda/m)); //* Busca la palabra "Segunda" 
 
 // Todo - Ejemplos adicionales de Regex
 // Todo - Aquí se muestran ejemplos prácticos que demuestran cómo se usan regex en situaciones reales, como validación de correos, extracción de números o validación de caracteres.
+console.log('--- Ejemeplos de Regex. ---'); //* Muestra en consola el uso de regex con ejemplos.
+
 // &Validación de correo electrónico simple
 // &Este patrón revisa que el texto tenga la estructura "algo@algo.dominio".  
 let regexCorreo = /\w+@\w+\.\w+/; //* Se define una regex básica para validar correos.
