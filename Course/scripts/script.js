@@ -1457,6 +1457,22 @@ console.log(variableQueConvierteNumberABoolean); //* Imprime el valor convertido
 // ~Las **expresiones regulares** (regex) son patrones que sirven para realizar búsquedas, validaciones o reemplazos de texto dentro de cadenas. Se escriben entre barras `/` y dentro va el patrón a buscar, por ejemplo `/camino/`. Por defecto, las regex son **case sensitive** (distinguen entre mayúsculas y minúsculas). Es decir, `/Hola/` no encontrará "hola".  Se usan para dos tareas principales: **buscar coincidencias** dentro de un texto y **verificar si un texto cumple un patrón concreto**. En la práctica, son muy utilizadas en validaciones (por ejemplo, verificar que un correo sea válido), búsquedas avanzadas y reemplazos en editores de texto.
 console.log('=========== Regex: Expresiones Regulares. ==========='); //* Imprime en consola un título que indica el inicio de la sección de regex.
 
+// Todo - Tipos de datos en Regex
+// Todo - Las **expresiones regulares (Regex)** son patrones que permiten buscar, validar o extraer coincidencias dentro de cadenas de texto. En JavaScript se representan entre diagonales (`/.../`) o usando el constructor `new RegExp()`. Los Regex pueden trabajar con diferentes tipos de datos, principalmente **cadenas de texto** y patrones numéricos, aunque también combinan símbolos, rangos y modificadores. Su uso es fundamental para validar entradas (como correos, contraseñas o números), así como para filtrar o manipular datos de texto.
+// &Cadena de texto
+// &Cuando se utiliza un regex con cadenas de texto, el patrón buscará coincidencias exactas dentro del string. En este caso, el patrón `/historia/` busca la palabra "historia" en la cadena. El método `.exec()` devuelve un objeto con la coincidencia encontrada o `null` si no existe. Este uso es común cuando se necesita identificar palabras clave en párrafos o frases.
+console.log('--- Regex para cadenas de texto. ---'); //* Muestra en consola el tipo de regex aplicado a cadenas de texto.
+let regexConCadenaDeTexto = /historia/; //* Se crea una expresión regular que busca la palabra "historia".
+let variableParaUsoRegexTexto = 'En una historia es importante la narrativa.'; //* Se declara una cadena donde se evaluará la búsqueda.
+console.log(regexConCadenaDeTexto.exec(variableParaUsoRegexTexto)); //* Imprime el resultado de aplicar exec(), mostrando la coincidencia encontrada.
+
+// &Numérico
+// &En expresiones regulares, los corchetes `[ ]` se usan para definir rangos de caracteres aceptados. En este ejemplo, `/[0-9]/` indica que se busca cualquier número del 0 al 9 dentro del texto. El método `.exec()` devolverá el primer número encontrado. Este tipo de regex es útil cuando se necesita validar números dentro de cadenas, como edades, precios o cantidades.
+console.log('--- Regex para números. ---'); //* Muestra en consola el tipo de regex aplicado a números.
+let regexConNumeros = /[0-9]/; //* Se define una expresión regular que busca cualquier dígito del 0 al 9.
+let variableParaUsoRegexNumeros = 'En la vida existen 5 cosas indispensables.'; //* Se declara una cadena con un número incrustado en el texto.
+console.log(regexConNumeros.exec(variableParaUsoRegexNumeros)); //* Imprime la primera coincidencia encontrada: '5'.
+
 // Todo - Función de regex para búsqueda y comprobación
 // Todo - Existen métodos en JavaScript que trabajan con regex, siendo los más comunes `.search()` y `.test()`. `.search()` devuelve la **posición** de la coincidencia (o -1 si no existe). `.test()` devuelve un **booleano** (true si el patrón coincide, false en caso contrario).
 // &Regex para búsqueda
