@@ -1533,26 +1533,55 @@ console.log(regexSoloLetras.test("Hola123")); //* Devuelve false porque contiene
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Manejo de errores
-// ~
+// ~El manejo de errores en JavaScript es una característica que permite controlar situaciones inesperadas que pueden ocurrir durante la ejecución del programa. En lugar de que el programa falle abruptamente, se pueden capturar y tratar los errores de manera más ordenada y segura. Para esto existen las estructuras `try`, `catch`, `finally`, y la instrucción `throw`. Su función es brindar un flujo controlado de lo que ocurre si un bloque de código genera errores, si no ocurre ningún error, y asegurar que cierto código se ejecute siempre sin importar lo anterior.
+console.log('=========== Manejo de errores. ==========='); //* Imprime en consola un título que indica la sección de manejo de errores.
+
 // Todo - Estructura
-// Todo - Aqui le pones que esta conformado por 3 partes las cuales es try, cach y finally, los cuales se escriben con llaves, quedando como "try{}cach{}finally{}"
-try{
-
-}catch{
-
-}finally{
-
-}
+// Todo - La estructura básica del manejo de errores está conformada por tres bloques principales: `try`, `catch` y `finally`. El bloque `try{}` contiene el código que queremos ejecutar y que potencialmente podría fallar. Si ocurre un error dentro de `try`, se interrumpe su ejecución y el control pasa al bloque `catch{}`, que se encarga de manejar el error. Finalmente, el bloque `finally{}` se ejecuta siempre, sin importar si hubo error o no, y se utiliza normalmente para limpiar recursos o cerrar procesos abiertos.
+try { //* Se abre el bloque try: aquí va el código que podría fallar.
+    // ...código propenso a fallar...
+} //* Se cierra el bloque try.
+catch { //* Se abre el bloque catch: se ejecuta sólo si ocurre un error dentro de try.
+    // ...manejo del error...
+} //* Se cierra el bloque catch.
+finally { //* Se abre el bloque finally: este bloque se ejecuta siempre (haya o no error).
+    // ...tareas de limpieza / cierre de recursos...
+} //* Se cierra el bloque finally.
 
 // &Intentar hacer algo (try{})
-// &
+// &El bloque `try{}` se utiliza para envolver el código que queremos ejecutar con la posibilidad de que ocurra un error. Por ejemplo, una llamada a un servidor o backend mediante una API. Si todo dentro de `try` se ejecuta correctamente, el flujo continúa normal y no se activa el `catch`. Sin embargo, si ocurre un fallo dentro de `try`, se detiene en ese punto y pasa directamente a `catch`. Si existe un bloque `finally`, este se ejecuta siempre, tanto si hubo error como si no.
+try { //* Se abre try para ejecutar una operación que podría fallar.
+    console.log('--- Try. ---'); //* Muestra en consola el uso de try.
+    console.log('Llamando al backend.'); //* Simula la ejecución de código que intenta conectarse a un backend.
+} //* Se cierra el bloque try.
 
-// &Capturar (cach)
-// &
+// &Capturar (catch{})
+// &El bloque `catch{}` se ejecuta únicamente si ocurre un error dentro de `try`. Dentro de sus llaves se puede escribir cualquier código que maneje el error, como mostrar un mensaje al usuario, volver a intentar la operación o registrar el error en un log. Además, `catch` puede recibir un parámetro (comúnmente llamado `error`) que contiene información sobre lo que falló. Este parámetro es generado automáticamente si el error ocurre de forma natural, o puede ser lanzado manualmente usando `throw`.
+catch { //* Se abre catch: aquí reaccionamos si algo falló en el try.
+    console.log('--- Catch. ---'); //* Muestra en consola el uso de catch.
+    console.log('Algo salió mal al llamar al backend.'); //* Mensaje informativo de error.
+} //* Se cierra el bloque catch.
 
-// &Finalmente (finally)
-// &
+// &Finalmente (finally{})
+// &El bloque `finally{}` se ejecuta siempre, sin importar si hubo error o no en `try`. Es útil para asegurar que se realicen acciones necesarias, como cerrar conexiones, liberar memoria o mostrar un mensaje final. Es importante recalcar que `finally` nunca se salta: siempre se ejecutará tras un `try` y su respectivo `catch`.
+finally { //* Se abre finally: este bloque se ejecuta siempre.
+    console.log('--- Finally. ---'); //* Muestra en consola el uso de finally.
+    console.log('Se ejecuta siempre.'); //* Confirmación de ejecución incondicional.
+} //* Se cierra el bloque finally.
 
+// Todo - Forzar un fallo en try (throw())
+// Todo - En ocasiones, aunque el código dentro de `try` funcione bien, es necesario forzar un error manualmente para indicar una condición especial, por ejemplo, cuando el backend devuelve que un usuario no está autorizado. Para esto se utiliza la instrucción `throw`, que interrumpe el flujo normal de `try` y envía el error hacia `catch`. Al usar `throw`, el flujo de `try` se detiene justo donde aparece y no ejecutará nada después de él. Además, el mensaje o dato pasado en `throw` se recibe en `catch` dentro de su parámetro `error`, lo que permite trabajar con la información del fallo.
+console.log('--- Throw. ---'); //* Indica que se demostrará el uso de throw.
+try { //* Se abre el bloque try para simular una operación.
+    console.log('Llamando al backend.'); //* Simula el inicio de una llamada al backend.
+    throw('Este usuario no fue autorizado.'); //* Lanza un error manualmente con un mensaje personalizado.
+    console.log('Llamamiento del backend realizado.'); //* Esta línea no se ejecutará por el throw anterior.
+} catch (error) { //* Se abre catch y se recibe el error lanzado por throw en el parámetro `error`.
+    console.log('Hubo un error al llamar al backend.'); //* Informa que ocurrió un error durante el try.
+    console.log(error); //* Muestra el mensaje del error: "Este usuario no fue autorizado."
+} finally { //* Se abre finally: se ejecuta sin importar el resultado anterior.
+    console.log('Ejecutando siempre..'); //* Mensaje que prueba la ejecución incondicional de finally.
+} //* Se cierra el bloque finally.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
