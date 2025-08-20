@@ -1533,7 +1533,7 @@ console.log(regexSoloLetras.test("Hola123")); //* Devuelve false porque contiene
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Manejo de errores
-// ~El manejo de errores en JavaScript es una característica que permite controlar situaciones inesperadas que pueden ocurrir durante la ejecución del programa. En lugar de que el programa falle abruptamente, se pueden capturar y tratar los errores de manera más ordenada y segura. Para esto existen las estructuras `try`, `catch`, `finally`, y la instrucción `throw`. Su función es brindar un flujo controlado de lo que ocurre si un bloque de código genera errores, si no ocurre ningún error, y asegurar que cierto código se ejecute siempre sin importar lo anterior.
+// ~El manejo de errores en JavaScript es una característica que permite controlar situaciones inesperadas que pueden ocurrir durante la ejecución del programa. En lugar de que el programa falle abruptamente, se pueden capturar y tratar los errores de manera más ordenada y segura. Para esto existen las estructuras `try`, `catch`, `finally`, y la instrucción `throw`. Su función es brindar un flujo controlado de lo que ocurre si un bloque de código genera errores, si no ocurre ningún error, y asegurar que cierto código se ejecute siempre sin importar lo anterior. Ademas cabe mencionar que el uso de estos tres siempre tienen que ser sincronaz, jamas usar funciones o cosas como los SetTimeout.
 console.log('=========== Manejo de errores. ==========='); //* Imprime en consola un título que indica la sección de manejo de errores.
 
 // Todo - Estructura
@@ -1589,11 +1589,35 @@ try { //* Se abre el bloque try para simular una operación.
 console.log('=========== Sincronia en JavaScript. ==========='); //* Imprime en consola un título que indica la sección de sincronia en JavaScript.
 
 // Todo - Ejecucion con retraso (SetTimeout)
-// Todo - El 'SetTimeout' es una funcion que permite ejecutar codigo despues de cierto tiempo, un ejemplo de esto es que tenemos un codigo y Javascript ejecutara todo, pero si en el settimeout se especifica este se podra ejecutar por ejemplo 10 minutos despues de que javascript lo ejecuto, es decir se ejecutara el settimeout pero lo de dentro esperara a que el tiempo establecido finalice, normalmente settimeout es una funcion de flecha, y su estructura es setTimeout(() => {}, tiempoAEstablecer);, donde en tiempo a establecer tendremos que poner un numero los cuales esta funcion los toma como milisegundos, por lo que 1000 (mil) equivale a un segundo.
+// Todo - El 'SetTimeout' es una funcion que permite ejecutar codigo despues de cierto tiempo, un ejemplo de esto es que tenemos un codigo y Javascript ejecutara todo, pero si en el settimeout se especifica este se podra ejecutar por ejemplo 10 minutos despues de que javascript lo ejecuto, es decir se ejecutara el settimeout pero lo de dentro esperara a que el tiempo establecido finalice, normalmente settimeout es una funcion de flecha, y su estructura es setTimeout(() => {}, tiempoAEstablecer);, donde en tiempo a establecer tendremos que poner un numero los cuales esta funcion los toma como milisegundos, por lo que 1000 (mil) equivale a un segundo. Ademas cabe mencionar que por ende al ejecutarse todo lo demas primero y esto despues, esto se mostrara hasta abajo en consola o no se ponle algo
 setTimeout(() => {
     console.log('--- SetTimeout. ---'); //* Indica que se demostrará el uso de SetTimeout.
     console.log('Este mensaje se mostrara dentro de 5 segundos que se ejecute el SetTimeout')
 }, 5000);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Callbacks (funciones)
+// ~En JavaScript, las **callbacks** son funciones que se pasan como argumento a otra función para que esta última la ejecute en un momento determinado. Esto permite que una función tenga un comportamiento más flexible y reutilizable, ya que no define directamente lo que hará con un resultado, sino que delega esa acción a otra función proporcionada externamente. Son muy comunes en programación asíncrona, como llamadas a servidores o lectura de archivos, porque permiten que el programa indique qué hacer una vez que cierta operación termine.
+console.log('=========== Callbacks. ==========='); //* Imprime en consola un título que indica la sección de callbacks.
+
+// Todo - Función normal
+// Todo - Esta es una función común llamada `funcionNormal` que recibe un parámetro y lo imprime en consola. Se define con una **función de flecha** y dentro de su cuerpo utiliza `console.log` para mostrar lo que recibe. Por sí sola no tiene nada de especial, pero su importancia surge cuando es utilizada como **callback** dentro de otra función.
+let funcionNormal = (parametroARecibir) => { // *Apertura de funcion sin callback
+    console.log(parametroARecibir); //* Muestra en consola el valor que se le pasa como argumento.
+} // *Cierre de funcion normal sin callback.
+
+// Todo - Función con callback
+// Todo - Aquí se define la función `funcionConCallback`, que recibe tres parámetros: dos números (`numeroARecibir1` y `numeroARecibir2`) y una función (`parametroCallback`). Dentro de esta función se realiza una suma con los dos números recibidos. En lugar de decidir cómo usar esa suma dentro de sí misma, delega esa tarea a la función callback pasada como parámetro. Esto se logra llamando a `parametroCallback(suma)`, lo que significa que la suma se envía a la función callback para que ella decida qué hacer con el resultado. Este patrón hace que `funcionConCallback` sea más flexible y reutilizable.
+let funcionConCallback = (numeroARecibir1, numeroARecibir2, parametroCallback) => {
+    let suma = numeroARecibir1 + numeroARecibir2; //* Suma los dos números recibidos.
+    parametroCallback(suma); //* Llama a la función callback, pasándole como argumento el resultado de la suma.
+    funcionNormal(suma)
+} // *Cierre de funcion con callback
+
+// Todo - Uso de la función con callback
+// Todo - Aquí se llama a `funcionConCallback` pasando tres argumentos: el número `5`, el número `2` y la función `funcionNormal`. Esto significa que `funcionConCallback` sumará `5 + 2` y luego usará `funcionNormal` como callback para manejar el resultado. En este caso, `funcionNormal` simplemente imprimirá en consola el número `7`. Lo importante aquí es que la función que recibe el resultado es decidida desde fuera, no está escrita directamente dentro de `funcionConCallback`.
+funcionConCallback(5, 2, funcionNormal); //* Resultado esperado: imprime "7" en consola porque funcionNormal recibe la suma y la muestra.
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
