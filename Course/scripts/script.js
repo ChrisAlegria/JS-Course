@@ -1584,6 +1584,18 @@ try { //* Se abre el bloque try para simular una operación.
 } //* Se cierra el bloque finally.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Sincronia en JavaScript
+// ~La sincronia en JavaScript es la capacidad que tiene este lenguaje de realizar tareas sin bloquear la ejecucion del programa principal, por lo que en lugar de esperar a que se complete la primera tarea para seguir con la siguiente JavaScript permite hacer muchas tareas en simultaneo e ir manejando a medida que este lista la informacion de las tareas anteriores. Si bien JavaScrip esta basado en un lenguaje de un solo hilo que se ejecuta una tarea a la vez a traves de las funcionaes asincronicaz y los callbacks javascrip es capas de realizar multiples tareas e ir manejando los resultados en medida que esten disponibles 
+console.log('=========== Sincronia en JavaScript. ==========='); //* Imprime en consola un título que indica la sección de sincronia en JavaScript.
+
+// Todo - Ejecucion con retraso (SetTimeout)
+// Todo - El 'SetTimeout' es una funcion que permite ejecutar codigo despues de cierto tiempo, un ejemplo de esto es que tenemos un codigo y Javascript ejecutara todo, pero si en el settimeout se especifica este se podra ejecutar por ejemplo 10 minutos despues de que javascript lo ejecuto, es decir se ejecutara el settimeout pero lo de dentro esperara a que el tiempo establecido finalice, normalmente settimeout es una funcion de flecha, y su estructura es setTimeout(() => {}, tiempoAEstablecer);, donde en tiempo a establecer tendremos que poner un numero los cuales esta funcion los toma como milisegundos, por lo que 1000 (mil) equivale a un segundo.
+setTimeout(() => {
+    console.log('--- SetTimeout. ---'); //* Indica que se demostrará el uso de SetTimeout.
+    console.log('Este mensaje se mostrara dentro de 5 segundos que se ejecute el SetTimeout')
+}, 5000);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
 
