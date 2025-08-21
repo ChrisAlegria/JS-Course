@@ -1618,6 +1618,9 @@ let funcionConCallback = (numeroARecibir1, numeroARecibir2, parametroCallback) =
 // Todo - Aquí se llama a `funcionConCallback` pasando tres argumentos: el número `5`, el número `2` y la función `funcionNormal`. Esto significa que `funcionConCallback` sumará `5 + 2` y luego usará `funcionNormal` como callback para manejar el resultado. En este caso, `funcionNormal` simplemente imprimirá en consola el número `7`. Lo importante aquí es que la función que recibe el resultado es decidida desde fuera, no está escrita directamente dentro de `funcionConCallback`.
 funcionConCallback(5, 2, funcionNormal); //* Resultado esperado: imprime "7" en consola porque funcionNormal recibe la suma y la muestra.
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Promesas
+// ~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
