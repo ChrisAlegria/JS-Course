@@ -1620,7 +1620,39 @@ funcionConCallback(5, 2, funcionNormal); //* Resultado esperado: imprime "7" en 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Promesas
-// ~
+// ~Las **promesas** en JavaScript son objetos especiales que permiten manejar operaciones **asíncronas**, es decir, aquellas que no se ejecutan de manera inmediata y pueden tardar cierto tiempo (como pedir datos a un servidor o leer un archivo). Una promesa puede tener dos posibles resultados: **cumplida** (resuelta con éxito) o **rechazada** (ocurrió un error). Gracias a ellas podemos estructurar nuestro código para que espere el resultado de estas operaciones sin bloquear la ejecución del resto del programa. Su uso más común es en la **consumición de APIs** o llamadas a un **backend**, ya que estas tardan en devolver datos y necesitamos manejar correctamente tanto el éxito como los posibles fallos.
+console.log('=========== Promesas. ==========='); //* Imprime en consola un título que indica la sección de promesas.
+
+// Todo - Estructura de las promesas
+// Todo - Una promesa se crea normalmente asignándola a una variable con la palabra reservada `new Promise()`. Este constructor recibe como parámetro una **función ejecutora**, la cual a su vez recibe dos argumentos: `resolve` (también lo podemos llamar `response`) y `reject`. El argumento `resolve` se usa cuando la operación termina de manera satisfactoria, y lo que se le pase será el resultado de la promesa. El argumento `reject` se utiliza cuando ocurre un error, y lo que se le pase será la razón del fallo. Es importante aclarar que una promesa solo puede devolver un estado, por lo que una vez que se llama a `resolve` o `reject`, la promesa queda definida como "cumplida" o "rechazada".
+let estructuraPromese = new Promise((resolve, reject) => {
+    resolve('Resolve devuelve en caso de que todo se ejecute bien.'); //* Llama a resolve, indicando éxito en la operación.
+    reject('Reject devuelve en caso de que algo salga mal.'); //* Llama a reject, indicando que ocurrió un error.
+})
+
+// Todo - Uso de promesas con los manejos de errores (then, catch y finally)
+// Todo - Para consumir una promesa, es decir, para obtener su resultado o manejar sus errores, se usan tres métodos principales:
+// &then(): se ejecuta cuando la promesa fue resuelta correctamente (resolve). Recibe el valor enviado desde resolve.
+// &catch()**: se ejecuta si la promesa fue rechazada (reject). Recibe el error o la razón del fallo.
+// &finally()**: se ejecuta siempre, sin importar si la promesa fue resuelta o rechazada. Se usa para ejecutar código de limpieza o cierre.
+// Todo - Esto es parecido al manejo de errores con try-catch-finally, pero aplicado en un contexto de promesas asíncronas.
+let promesa = new Promise((resolve, reject) => {
+    resolve('Salió todo bien.'); //* Devuelve un mensaje de éxito.
+    reject('Algo falló.'); //* Devuelve un mensaje de error.
+}) // *Cierre de la promesa.
+
+// &Consumir la promesa con then, catch y finally
+// &Aquí vemos cómo se manejan los diferentes resultados. En este ejemplo, al usar resolve, se ejecutará then y se mostrará el mensaje de éxito. Si en lugar de resolve se ejecutara reject, se saltaría al catch mostrando el error. El finally, de estar presente, se ejecutaría siempre al final sin importar el resultado.
+promesa.then(res => { //* Se ejecuta si la promesa fue resuelta correctamente.
+    console.warn(res); //* Muestra el mensaje de éxito en consola.
+}) // *Cierre del menejador de errores then.
+.catch(error => { //* Se ejecuta si la promesa fue rechazada.
+    console.error(error); //* Muestra el error en consola.
+}) // *Cierre del menejador de errores error.
+.finally(() => { //* Se ejecuta siempre, independientemente de resolve o reject.
+    console.log('Finalización de la promesa.'); //* Indica que el flujo terminó.
+}) // *Cierre del menejador de errores finally.
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
