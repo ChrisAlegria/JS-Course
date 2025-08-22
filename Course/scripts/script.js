@@ -1636,7 +1636,7 @@ let estructuraPromese = new Promise((resolve, reject) => {
 // &catch()**: se ejecuta si la promesa fue rechazada (reject). Recibe el error o la razón del fallo.
 // &finally()**: se ejecuta siempre, sin importar si la promesa fue resuelta o rechazada. Se usa para ejecutar código de limpieza o cierre.
 // Todo - Esto es parecido al manejo de errores con try-catch-finally, pero aplicado en un contexto de promesas asíncronas.
-let promesa = new Promise((resolve, reject) => {
+let promesa = new Promise((resolve, reject) => { // *Se declara una promesa de nombre 'promesa'.
     resolve('Salió todo bien.'); //* Devuelve un mensaje de éxito.
     reject('Algo falló.'); //* Devuelve un mensaje de error.
 }) // *Cierre de la promesa.
@@ -1653,6 +1653,8 @@ promesa.then(res => { //* Se ejecuta si la promesa fue resuelta correctamente.
     console.log('Finalización de la promesa.'); //* Indica que el flujo terminó.
 }) // *Cierre del menejador de errores finally.
 
+// Todo - 
+// Todo -
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
