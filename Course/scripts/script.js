@@ -1630,6 +1630,42 @@ let estructuraPromese = new Promise((resolve, reject) => {
     reject('Reject devuelve en caso de que algo salga mal.'); //* Llama a reject, indicando que ocurrió un error.
 })
 
+// Todo - Manejo de errores con promesas (then/catch/finally)
+// Todo - Las promesas en JavaScript manejan operaciones asincrónicas, por lo que no podemos usar `try/catch` directamente sobre ellas. En su lugar, se utiliza `.then()` para manejar el resultado exitoso de la promesa, `.catch()` para capturar errores que ocurran dentro de la promesa y `.finally()` para ejecutar código que debe correr siempre, independientemente de si la promesa se resolvió correctamente o falló. La estructura sería: promesa.then(respuesta => { ... }).catch(error => { ... }).finally(() => { ... }). Esto permite un flujo controlado en operaciones que ocurren en el futuro (asincronías), como llamadas a servidores, APIs o lectura de archivos, garantizando que los errores se manejen y ciertas acciones siempre se ejecuten.
+console.log('--- Promesa con then, catch y finally. ---'); //* Indica que se demostrará el manejo de errores en promesas.
+
+let promesaEjemplo = new Promise((resolve, reject) => { //* Se crea una promesa nueva que ejecutará un código asincrónico.
+    console.log('Llamando al backend.'); //* Simula el inicio de una llamada al backend.
+    let usuarioAutorizado = false; //* Variable que indica si el usuario está autorizado.
+    if(usuarioAutorizado) { //* Se evalúa la condición: si el usuario está autorizado.
+        resolve('Usuario autorizado.'); //* Resuelve la promesa correctamente con un mensaje de éxito.
+    } else { //* Caso contrario: si el usuario no está autorizado.
+        reject('Este usuario no fue autorizado.'); //* Rechaza la promesa con un mensaje de error.
+    } // *Cierre del else.
+}); //* Fin de la promesa.
+
+// &then()
+// &Se ejecuta cuando la promesa se resuelve correctamente. Recibe como parámetro el valor devuelto por resolve.
+promesaEjemplo.then(respuesta => { //* Se abre el bloque then para manejar la respuesta exitosa de la promesa.
+    console.log('--- Then. ---'); //* Indica que estamos dentro del then.
+    console.log(respuesta); //* Muestra el mensaje devuelto por resolve: "Usuario autorizado."
+}); //* Se cierra el bloque then.
+
+// &catch()
+// &Se ejecuta únicamente si la promesa es rechazada. Recibe como parámetro el error enviado mediante reject.
+promesaEjemplo.catch(error => { //* Se abre el bloque catch para manejar errores de la promesa.
+    console.log('--- Catch. ---'); //* Indica que estamos dentro del catch.
+    console.log('Hubo un error al llamar al backend.'); //* Mensaje informativo indicando que ocurrió un error.
+    console.log(error); //* Muestra el mensaje devuelto por reject: "Este usuario no fue autorizado."
+}); //* Se cierra el bloque catch.
+
+// &finally()
+// &Se ejecuta siempre, sin importar si la promesa fue resuelta o rechazada. Ideal para cerrar conexiones, liberar recursos o mostrar un mensaje final.
+promesaEjemplo.finally(() => { //* Se abre finally: se ejecuta siempre al terminar la promesa.
+    console.log('--- Finally. ---'); //* Indica que estamos dentro del finally.
+    console.log('Se ejecuta siempre, haya habido éxito o error.'); //* Mensaje que se ejecuta incondicionalmente.
+}); //* Se cierra el bloque finally.
+
 // Todo - Uso de promesas con los manejos de errores (then, catch y finally)
 // Todo - Para consumir una promesa, es decir, para obtener su resultado o manejar sus errores, se usan tres métodos principales:
 // &then(): se ejecuta cuando la promesa fue resuelta correctamente (resolve). Recibe el valor enviado desde resolve.
@@ -1653,8 +1689,8 @@ promesa.then(res => { //* Se ejecuta si la promesa fue resuelta correctamente.
     console.log('Finalización de la promesa.'); //* Indica que el flujo terminó.
 }) // *Cierre del menejador de errores finally.
 
-// Todo - 
-// Todo -
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
