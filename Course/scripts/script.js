@@ -1592,7 +1592,7 @@ console.log('=========== Sincronia en JavaScript. ==========='); //* Imprime en 
 // Todo - El 'SetTimeout' es una funcion que permite ejecutar codigo despues de cierto tiempo, un ejemplo de esto es que tenemos un codigo y Javascript ejecutara todo, pero si en el settimeout se especifica este se podra ejecutar por ejemplo 10 minutos despues de que javascript lo ejecuto, es decir se ejecutara el settimeout pero lo de dentro esperara a que el tiempo establecido finalice, normalmente settimeout es una funcion de flecha, y su estructura es setTimeout(() => {}, tiempoAEstablecer);, donde en tiempo a establecer tendremos que poner un numero los cuales esta funcion los toma como milisegundos, por lo que 1000 (mil) equivale a un segundo. Ademas cabe mencionar que por ende al ejecutarse todo lo demas primero y esto despues, esto se mostrara hasta abajo en consola o no se ponle algo
 setTimeout(() => {
     console.log('--- SetTimeout. ---'); //* Indica que se demostrará el uso de SetTimeout.
-    console.log('Este mensaje se mostrara dentro de 5 segundos que se ejecute el SetTimeout')
+    console.warn('Este mensaje se mostrara dentro de 5 segundos que se ejecute el SetTimeout')
 }, 5000);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1688,6 +1688,42 @@ promesa.then(res => { //* Se ejecuta si la promesa fue resuelta correctamente.
 .finally(() => { //* Se ejecuta siempre, independientemente de resolve o reject.
     console.log('Finalización de la promesa.'); //* Indica que el flujo terminó.
 }) // *Cierre del menejador de errores finally.
+
+// Todo - Resolve y Reject
+// Todo - Resolve y Reject son dos funciones internas que se reciben como parámetros en el constructor de una Promesa. **Resolve** se usa para devolver un resultado exitoso cuando la promesa se cumple correctamente, mientras que **Reject** devuelve un error o motivo de fallo si algo salió mal. Lo importante es que estas funciones no se limitan a devolver cadenas de texto o números, sino que también pueden devolver objetos, arreglos, funciones, entre otros tipos de datos. Esto hace que las promesas sean muy flexibles para modelar distintos escenarios en JavaScript.
+// &Objetos
+// &En este ejemplo, la promesa devuelve un objeto a través de `resolve`. Esto demuestra que las promesas no solo están limitadas a valores primitivos, sino que también pueden resolver estructuras más complejas como objetos.
+let promesaDevuleveObjeto = new Promise((resolve, reject) => { //* Se crea una nueva promesa con dos parámetros: resolve y reject.
+    let objetoADevolver = { //* Se declara un objeto que será devuelto como resultado exitoso de la promesa.
+        nombre: 'Christian', //* Propiedad del objeto con un nombre en formato string.
+        edad: 22 //* Propiedad del objeto con un valor numérico.
+    }; //* Fin del objeto.
+    resolve(objetoADevolver); //* Se llama a resolve pasando el objeto definido, cumpliendo así la promesa.
+    reject('Error en la promesa.'); //* Aunque esté definido, esta línea no se ejecutará porque resolve ya se llamó antes.
+}); //* Fin de la promesa.
+
+promesaDevuleveObjeto.then(res => { //* Se maneja la promesa con .then, que recibe el resultado de resolve.
+    console.warn(res); //* Imprime en consola el objeto devuelto por la promesa.
+}).catch(error => { //* Se captura un posible error en caso de que se hubiera ejecutado reject.
+    console.error(error); //* Imprime el mensaje de error si la promesa es rechazada.
+}); //* Fin del manejo de la promesa.
+
+// &Función
+// &En este caso, la promesa devuelve una función. Esto refuerza la idea de que las promesas pueden resolver cualquier tipo de dato, incluyendo funciones que luego se pueden ejecutar o analizar.
+let promesaDevuelveFuncion = new Promise((resolve, reject) => { //* Se crea una nueva promesa que retornará una función.
+    let funcionDevolver = x => 'Hola mundo'; //* Se declara una función flecha que devuelve el texto 'Hola mundo'.
+    resolve(funcionDevolver); //* La promesa se cumple exitosamente devolviendo la función declarada.
+    reject('Error en la promesa'); //* Esta línea no se ejecutará ya que resolve fue llamado antes.
+}); //* Fin de la promesa.
+
+promesaDevuelveFuncion.then(res => { //* Se maneja la promesa con .then, recibiendo la función como resultado.
+    let tipoRespuesta = typeof res; //* Se evalúa el tipo de dato devuelto, que debería ser 'function'.
+    console.warn(tipoRespuesta); //* Imprime 'function' en la consola.
+    console.warn(res); //* Imprime el contenido de la función devuelta.
+}).catch((error) => { //* En caso de fallo, se captura el error con .catch.
+    console.error(error); //* Imprime el error en consola si se hubiera rechazado la promesa.
+}); //* Fin del manejo de la promesa.
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~
