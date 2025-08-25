@@ -1755,7 +1755,7 @@ promesaConReject.then((res) => { //* Se define un .then para manejar un posible 
 }); //* Fin del manejo de la promesa.
 
 // Todo - Declaración de varias promesas dentro de then, catch y finally
-// Todo - En JavaScript es posible encadenar múltiples promesas dentro de los manejadores `.then`, `.catch` y `.finally`. Esto permite que cada promesa se ejecute secuencialmente, esperando que la anterior se resuelva o se rechace. La estructura consiste en llamar a una promesa dentro del `.then` de otra, asegurando que la ejecución respete el orden deseado y permitiendo manejar errores individualmente con `.catch` en cada nivel.
+// Todo - En JavaScript es posible encadenar múltiples promesas dentro de los manejadores `.then`, `.catch` y `.finally`. Esto permite que cada promesa se ejecute secuencialmente, esperando que la anterior se resuelva o se rechace. La estructura consiste en llamar a una promesa dentro del `.then` de otra, asegurando que la ejecución respete el orden deseado y permitiendo manejar errores individualmente con `.catch` en cada nivel. OJO: Cabe mencionar que esta no es la mejor manera pero es bueno recordarla ya que este tipo de estructura es llamada la piramide de la perdicion por su complejidad y desorden.
 let promesa1 = new Promise((response, reject) => { //* Se crea la primera promesa con resolve y reject.
     setTimeout(() => { //* Se usa setTimeout para simular asincronía en la promesa 1.
         response('Este es el response de la promesa numero 1.'); //* Se llama a response para devolver el valor exitoso.
@@ -1790,10 +1790,9 @@ promesa1.then((res) => { //* Se maneja la resolución de la promesa 1.
     console.warn(error); //* Se imprime el error de la promesa 1 en consola.
 }); //* Fin del manejo de promesa 1.
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ~Async & Await
 // ~
-
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
