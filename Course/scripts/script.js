@@ -1586,11 +1586,10 @@ try { //* Se abre el bloque try para simular una operación.
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Sincronia en JavaScript
 // ~La sincronia en JavaScript es la capacidad que tiene este lenguaje de realizar tareas sin bloquear la ejecucion del programa principal, por lo que en lugar de esperar a que se complete la primera tarea para seguir con la siguiente JavaScript permite hacer muchas tareas en simultaneo e ir manejando a medida que este lista la informacion de las tareas anteriores. Si bien JavaScrip esta basado en un lenguaje de un solo hilo que se ejecuta una tarea a la vez a traves de las funcionaes asincronicaz y los callbacks javascrip es capas de realizar multiples tareas e ir manejando los resultados en medida que esten disponibles 
-console.log('=========== Sincronia en JavaScript. ==========='); //* Imprime en consola un título que indica la sección de sincronia en JavaScript.
-
 // Todo - Ejecucion con retraso (SetTimeout)
 // Todo - El 'SetTimeout' es una funcion que permite ejecutar codigo despues de cierto tiempo, un ejemplo de esto es que tenemos un codigo y Javascript ejecutara todo, pero si en el settimeout se especifica este se podra ejecutar por ejemplo 10 minutos despues de que javascript lo ejecuto, es decir se ejecutara el settimeout pero lo de dentro esperara a que el tiempo establecido finalice, normalmente settimeout es una funcion de flecha, y su estructura es setTimeout(() => {}, tiempoAEstablecer);, donde en tiempo a establecer tendremos que poner un numero los cuales esta funcion los toma como milisegundos, por lo que 1000 (mil) equivale a un segundo. Ademas cabe mencionar que por ende al ejecutarse todo lo demas primero y esto despues, esto se mostrara hasta abajo en consola o no se ponle algo
 setTimeout(() => {
+    console.warn('=========== Sincronia en JavaScript. ==========='); //* Imprime en consola un título que indica la sección de sincronia en JavaScript.
     console.log('--- SetTimeout. ---'); //* Indica que se demostrará el uso de SetTimeout.
     console.warn('Este mensaje se mostrara dentro de 5 segundos que se ejecute el SetTimeout')
 }, 5000);
@@ -1621,8 +1620,6 @@ funcionConCallback(5, 2, funcionNormal); //* Resultado esperado: imprime "7" en 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Promesas
 // ~Las **promesas** en JavaScript son objetos especiales que permiten manejar operaciones **asíncronas**, es decir, aquellas que no se ejecutan de manera inmediata y pueden tardar cierto tiempo (como pedir datos a un servidor o leer un archivo). Una promesa puede tener dos posibles resultados: **cumplida** (resuelta con éxito) o **rechazada** (ocurrió un error). Gracias a ellas podemos estructurar nuestro código para que espere el resultado de estas operaciones sin bloquear la ejecución del resto del programa. Su uso más común es en la **consumición de APIs** o llamadas a un **backend**, ya que estas tardan en devolver datos y necesitamos manejar correctamente tanto el éxito como los posibles fallos.
-console.log('=========== Promesas. ==========='); //* Imprime en consola un título que indica la sección de promesas.
-
 // Todo - Estructura de las promesas
 // Todo - Una promesa se crea normalmente asignándola a una variable con la palabra reservada `new Promise()`. Este constructor recibe como parámetro una **función ejecutora**, la cual a su vez recibe dos argumentos: `resolve` (también lo podemos llamar `response`) y `reject`. El argumento `resolve` se usa cuando la operación termina de manera satisfactoria, y lo que se le pase será el resultado de la promesa. El argumento `reject` se utiliza cuando ocurre un error, y lo que se le pase será la razón del fallo. Es importante aclarar que una promesa solo puede devolver un estado, por lo que una vez que se llama a `resolve` o `reject`, la promesa queda definida como "cumplida" o "rechazada".
 let estructuraPromese = new Promise((resolve, reject) => {
@@ -1632,11 +1629,10 @@ let estructuraPromese = new Promise((resolve, reject) => {
 
 // Todo - Manejo de errores con promesas (then/catch/finally)
 // Todo - Las promesas en JavaScript manejan operaciones asincrónicas, por lo que no podemos usar `try/catch` directamente sobre ellas. En su lugar, se utiliza `.then()` para manejar el resultado exitoso de la promesa, `.catch()` para capturar errores que ocurran dentro de la promesa y `.finally()` para ejecutar código que debe correr siempre, independientemente de si la promesa se resolvió correctamente o falló. La estructura sería: promesa.then(respuesta => { ... }).catch(error => { ... }).finally(() => { ... }). Esto permite un flujo controlado en operaciones que ocurren en el futuro (asincronías), como llamadas a servidores, APIs o lectura de archivos, garantizando que los errores se manejen y ciertas acciones siempre se ejecuten.
-console.log('--- Promesa con then, catch y finally. ---'); //* Indica que se demostrará el manejo de errores en promesas.
 
 let promesaEjemplo = new Promise((resolve, reject) => { //* Se crea una promesa nueva que ejecutará un código asincrónico.
-    console.log('Llamando al backend.'); //* Simula el inicio de una llamada al backend.
-    let usuarioAutorizado = false; //* Variable que indica si el usuario está autorizado.
+    console.warn('Llamando al backend.'); //* Simula el inicio de una llamada al backend.
+    let usuarioAutorizado = true; //* Variable que indica si el usuario está autorizado.
     if(usuarioAutorizado) { //* Se evalúa la condición: si el usuario está autorizado.
         resolve('Usuario autorizado.'); //* Resuelve la promesa correctamente con un mensaje de éxito.
     } else { //* Caso contrario: si el usuario no está autorizado.
@@ -1647,23 +1643,25 @@ let promesaEjemplo = new Promise((resolve, reject) => { //* Se crea una promesa 
 // &then()
 // &Se ejecuta cuando la promesa se resuelve correctamente. Recibe como parámetro el valor devuelto por resolve.
 promesaEjemplo.then(respuesta => { //* Se abre el bloque then para manejar la respuesta exitosa de la promesa.
-    console.log('--- Then. ---'); //* Indica que estamos dentro del then.
-    console.log(respuesta); //* Muestra el mensaje devuelto por resolve: "Usuario autorizado."
+     console.warn('=========== Promesas. ==========='); //* Imprime en consola un título que indica la sección de promesas.
+    console.warn('--- Promesa con then, catch y finally. ---'); //* Indica que se demostrará el manejo de errores en promesas.
+    console.warn('--- Then. ---'); //* Indica que estamos dentro del then.
+    console.warn(respuesta); //* Muestra el mensaje devuelto por resolve: "Usuario autorizado."
 }); //* Se cierra el bloque then.
 
 // &catch()
 // &Se ejecuta únicamente si la promesa es rechazada. Recibe como parámetro el error enviado mediante reject.
 promesaEjemplo.catch(error => { //* Se abre el bloque catch para manejar errores de la promesa.
-    console.log('--- Catch. ---'); //* Indica que estamos dentro del catch.
-    console.log('Hubo un error al llamar al backend.'); //* Mensaje informativo indicando que ocurrió un error.
-    console.log(error); //* Muestra el mensaje devuelto por reject: "Este usuario no fue autorizado."
+    console.warn('--- Catch. ---'); //* Indica que estamos dentro del catch.
+    console.error('Hubo un error al llamar al backend.'); //* Mensaje informativo indicando que ocurrió un error.
+    console.error(error); //* Muestra el mensaje devuelto por reject: "Este usuario no fue autorizado."
 }); //* Se cierra el bloque catch.
 
 // &finally()
 // &Se ejecuta siempre, sin importar si la promesa fue resuelta o rechazada. Ideal para cerrar conexiones, liberar recursos o mostrar un mensaje final.
 promesaEjemplo.finally(() => { //* Se abre finally: se ejecuta siempre al terminar la promesa.
-    console.log('--- Finally. ---'); //* Indica que estamos dentro del finally.
-    console.log('Se ejecuta siempre, haya habido éxito o error.'); //* Mensaje que se ejecuta incondicionalmente.
+    console.warn('--- Finally. ---'); //* Indica que estamos dentro del finally.
+    console.warn('Se ejecuta siempre, haya habido éxito o error.'); //* Mensaje que se ejecuta incondicionalmente.
 }); //* Se cierra el bloque finally.
 
 // Todo - Uso de promesas con los manejos de errores (then, catch y finally)
@@ -1686,7 +1684,7 @@ promesa.then(res => { //* Se ejecuta si la promesa fue resuelta correctamente.
     console.error(error); //* Muestra el error en consola.
 }) // *Cierre del menejador de errores error.
 .finally(() => { //* Se ejecuta siempre, independientemente de resolve o reject.
-    console.log('Finalización de la promesa.'); //* Indica que el flujo terminó.
+    console.warn('Finalización de la promesa.'); //* Indica que el flujo terminó.
 }) // *Cierre del menejador de errores finally.
 
 // Todo - Resolve y Reject
@@ -1724,6 +1722,33 @@ promesaDevuelveFuncion.then(res => { //* Se maneja la promesa con .then, recibie
     console.error(error); //* Imprime el error en consola si se hubiera rechazado la promesa.
 }); //* Fin del manejo de la promesa.
 
+// Todo - Las promesas son asincronas
+// Todo - Las promesas en JavaScript son asincrónicas, lo que significa que permiten ejecutar código sin bloquear el flujo principal del programa. Es importante mencionar que no se puede usar `setTimeout` directamente en `then`, `catch` o `finally` porque estos manejadores son síncronos. Sin embargo, sí se puede usar `setTimeout` dentro del cuerpo de la promesa. Esto permite retrasar la ejecución de `resolve` o `reject`, logrando que la promesa devuelva sus valores después de cierto tiempo definido.
+let promesaConAsincronia = new Promise((resolve, reject) => { //* Se crea una promesa con resolve y reject como parámetros.
+    setTimeout(() => { //* Se usa setTimeout para simular un retraso en la ejecución de la promesa.
+        resolve('Este resolve se devolverá a .then después de 3 segundos, ya que dicho resolve se encuentra dentro de un setTimeout.'); //* Resolve devuelve este mensaje tras 3 segundos.
+        reject('Este reject se devolverá a .catch después de 3 segundos, ya que dicho reject se encuentra dentro de un setTimeout.'); //* Reject devolvería este mensaje tras 3 segundos, pero no se ejecutará porque resolve ya fue llamado primero.
+    }, 3000); //* Tiempo de retraso definido en 3 segundos.
+}); //* Fin de la promesa.
+
+promesaConAsincronia.then((res) => { //* Se maneja la respuesta exitosa de la promesa con .then.
+    console.warn(res); //* Imprime el valor devuelto por resolve en la consola después de 3 segundos.
+}).catch((error) => { //* Se maneja un posible error con .catch.
+    console.error(error); //* Imprime el mensaje de error en consola si reject fuera llamado.
+}); //* Fin del manejo de la promesa.
+
+
+// Todo - Función de reject
+// Todo - La función `reject` se usa para indicar que la promesa no se ejecutó correctamente. Al llamarse, hace que la promesa sea rechazada y su contenido es pasado directamente al bloque `catch`. Esto es útil para manejar errores de forma controlada y separar los flujos exitosos (resolve) de los fallidos (reject).
+let promesaConReject = new Promise((resolve, reject) => { //* Se crea una nueva promesa con resolve y reject.
+    reject('Hubo un error en la promesa, por lo que reject se devuelve, haciendo que catch lea su contenido.'); //* Se llama directamente a reject, indicando que la promesa falló.
+}); //* Fin de la promesa.
+
+promesaConReject.then((res) => { //* Se define un .then para manejar un posible resultado exitoso.
+    console.warn(res); //* Imprimiría el valor si resolve hubiera sido ejecutado (no ocurre en este caso).
+}).catch((error) => { //* Se captura el error con .catch porque reject fue ejecutado.
+    console.error(error); //* Imprime el mensaje de error en consola.
+}); //* Fin del manejo de la promesa.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~
