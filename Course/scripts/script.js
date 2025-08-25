@@ -1590,7 +1590,7 @@ try { //* Se abre el bloque try para simular una operación.
 // Todo - El 'SetTimeout' es una funcion que permite ejecutar codigo despues de cierto tiempo, un ejemplo de esto es que tenemos un codigo y Javascript ejecutara todo, pero si en el settimeout se especifica este se podra ejecutar por ejemplo 10 minutos despues de que javascript lo ejecuto, es decir se ejecutara el settimeout pero lo de dentro esperara a que el tiempo establecido finalice, normalmente settimeout es una funcion de flecha, y su estructura es setTimeout(() => {}, tiempoAEstablecer);, donde en tiempo a establecer tendremos que poner un numero los cuales esta funcion los toma como milisegundos, por lo que 1000 (mil) equivale a un segundo. Ademas cabe mencionar que por ende al ejecutarse todo lo demas primero y esto despues, esto se mostrara hasta abajo en consola o no se ponle algo
 setTimeout(() => {
     console.warn('=========== Sincronia en JavaScript. ==========='); //* Imprime en consola un título que indica la sección de sincronia en JavaScript.
-    console.log('--- SetTimeout. ---'); //* Indica que se demostrará el uso de SetTimeout.
+    console.warn('--- SetTimeout. ---'); //* Indica que se demostrará el uso de SetTimeout.
     console.warn('Este mensaje se mostrara dentro de 5 segundos que se ejecute el SetTimeout')
 }, 5000);
 
