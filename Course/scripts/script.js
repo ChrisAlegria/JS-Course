@@ -1678,6 +1678,7 @@ let promesa = new Promise((resolve, reject) => { // *Se declara una promesa de n
 // &Consumir la promesa con then, catch y finally
 // &Aquí vemos cómo se manejan los diferentes resultados. En este ejemplo, al usar resolve, se ejecutará then y se mostrará el mensaje de éxito. Si en lugar de resolve se ejecutara reject, se saltaría al catch mostrando el error. El finally, de estar presente, se ejecutaría siempre al final sin importar el resultado.
 promesa.then(res => { //* Se ejecuta si la promesa fue resuelta correctamente.
+    console.warn('--- Uso de promesas con los manejos de errores. ---'); //* Indica ejemplo de uso de promesas con manejos errores.
     console.warn(res); //* Muestra el mensaje de éxito en consola.
 }) // *Cierre del menejador de errores then.
 .catch(error => { //* Se ejecuta si la promesa fue rechazada.
@@ -1700,7 +1701,8 @@ let promesaDevuleveObjeto = new Promise((resolve, reject) => { //* Se crea una n
     reject('Error en la promesa.'); //* Aunque esté definido, esta línea no se ejecutará porque resolve ya se llamó antes.
 }); //* Fin de la promesa.
 
-promesaDevuleveObjeto.then(res => { //* Se maneja la promesa con .then, que recibe el resultado de resolve.
+promesaDevuleveObjeto.then(res => { //* Se maneja la promesa con .then, que recibe el resultado de resolve.}
+    console.warn('--- Objetos en resolve y reject. ---'); //* Indica ejemplo de paso de objetos en resolve y reject.
     console.warn(res); //* Imprime en consola el objeto devuelto por la promesa.
 }).catch(error => { //* Se captura un posible error en caso de que se hubiera ejecutado reject.
     console.error(error); //* Imprime el mensaje de error si la promesa es rechazada.
@@ -1715,6 +1717,7 @@ let promesaDevuelveFuncion = new Promise((resolve, reject) => { //* Se crea una 
 }); //* Fin de la promesa.
 
 promesaDevuelveFuncion.then(res => { //* Se maneja la promesa con .then, recibiendo la función como resultado.
+    console.warn('--- Funciones en resolve y reject. ---'); //* Indica ejemplo de paso de funciones en resolve y reject.
     let tipoRespuesta = typeof res; //* Se evalúa el tipo de dato devuelto, que debería ser 'function'.
     console.warn(tipoRespuesta); //* Imprime 'function' en la consola.
     console.warn(res); //* Imprime el contenido de la función devuelta.
@@ -1732,11 +1735,11 @@ let promesaConAsincronia = new Promise((resolve, reject) => { //* Se crea una pr
 }); //* Fin de la promesa.
 
 promesaConAsincronia.then((res) => { //* Se maneja la respuesta exitosa de la promesa con .then.
+    console.warn('--- Promesas asincronas. ---'); //* Indica ejemplo de que las promesas son asincronas.
     console.warn(res); //* Imprime el valor devuelto por resolve en la consola después de 3 segundos.
 }).catch((error) => { //* Se maneja un posible error con .catch.
     console.error(error); //* Imprime el mensaje de error en consola si reject fuera llamado.
 }); //* Fin del manejo de la promesa.
-
 
 // Todo - Función de reject
 // Todo - La función `reject` se usa para indicar que la promesa no se ejecutó correctamente. Al llamarse, hace que la promesa sea rechazada y su contenido es pasado directamente al bloque `catch`. Esto es útil para manejar errores de forma controlada y separar los flujos exitosos (resolve) de los fallidos (reject).
@@ -1747,8 +1750,46 @@ let promesaConReject = new Promise((resolve, reject) => { //* Se crea una nueva 
 promesaConReject.then((res) => { //* Se define un .then para manejar un posible resultado exitoso.
     console.warn(res); //* Imprimiría el valor si resolve hubiera sido ejecutado (no ocurre en este caso).
 }).catch((error) => { //* Se captura el error con .catch porque reject fue ejecutado.
+    console.warn('--- Funcion de reject. ---'); //* Indica ejemplo de funcion de reject.
     console.error(error); //* Imprime el mensaje de error en consola.
 }); //* Fin del manejo de la promesa.
+
+// Todo - Declaración de varias promesas dentro de then, catch y finally
+// Todo - En JavaScript es posible encadenar múltiples promesas dentro de los manejadores `.then`, `.catch` y `.finally`. Esto permite que cada promesa se ejecute secuencialmente, esperando que la anterior se resuelva o se rechace. La estructura consiste en llamar a una promesa dentro del `.then` de otra, asegurando que la ejecución respete el orden deseado y permitiendo manejar errores individualmente con `.catch` en cada nivel.
+let promesa1 = new Promise((response, reject) => { //* Se crea la primera promesa con resolve y reject.
+    setTimeout(() => { //* Se usa setTimeout para simular asincronía en la promesa 1.
+        response('Este es el response de la promesa numero 1.'); //* Se llama a response para devolver el valor exitoso.
+        reject('Este es el reject de la promesa numero 1.'); //* Se define reject, pero no se ejecutará porque response ya fue llamado.
+    }, 4000); //* Tiempo de retraso de 4 segundos.
+}); //* Fin de la promesa 1.
+
+let promesa2 = new Promise((response, reject) => { //* Se crea la segunda promesa.
+    response('Este es el response de la promesa numero 2.'); //* Se resuelve inmediatamente con un mensaje.
+    reject('Este es el reject de la promesa numero 2.'); //* Se define reject pero no se ejecutará.
+}); //* Fin de la promesa 2.
+
+let promesa3 = new Promise((response, reject) => { //* Se crea la tercera promesa.
+    response('Este es el response de la promesa numero 3.'); //* Se resuelve inmediatamente con un mensaje.
+    reject('Este es el reject de la promesa numero 3.'); //* Se define reject pero no se ejecutará.
+}); //* Fin de la promesa 3.
+
+promesa1.then((res) => { //* Se maneja la resolución de la promesa 1.
+    console.warn('--- Declaracion de varias promesas dentro de then, catch y finally. ---'); //* Indica ejemplo de declaracion de varias promesas dentro de then, catch y finally.
+    console.warn(res); //* Se imprime el resultado de la promesa 1.
+    promesa2.then((res) => { //* Se maneja la resolución de la promesa 2 dentro del .then de promesa1.
+        console.warn(res); //* Se imprime el resultado de la promesa 2.
+        promesa3.then((res) => { //* Se maneja la resolución de la promesa 3 dentro del .then de promesa2.
+            console.warn(res); //* Se imprime el resultado de la promesa 3.
+        }).catch((error) => { //* Se captura cualquier error que ocurra en la promesa 3.
+            console.error(error); //* Se imprime el error de la promesa 3 en consola.
+        }); //* Fin del manejo de promesa 3.
+    }).catch((error) => { //* Se captura cualquier error que ocurra en la promesa 2.
+        console.error(error); //* Se imprime el error de la promesa 2 en consola.
+    }); //* Fin del manejo de promesa 2.
+}).catch((error) => { //* Se captura cualquier error que ocurra en la promesa 1.
+    console.warn(error); //* Se imprime el error de la promesa 1 en consola.
+}); //* Fin del manejo de promesa 1.
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~
