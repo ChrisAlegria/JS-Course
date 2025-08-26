@@ -1792,7 +1792,7 @@ promesa1.then((res) => { //* Se maneja la resolución de la promesa 1.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Async & Await
-// ~
+// ~Asyn y await nos permiten solucionar el error del uso de varias promesas al usar then, catch y finally la cual es llamada la piramide de la perdicion, por lo que async y await es una forma de trabajar promesas las palabras reservadas con el mismo nombre, donde el async va a hacer que la funcion sepa que es asyncrona mientras que await se usa para esperlar que las promesas ser cumplan 
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
