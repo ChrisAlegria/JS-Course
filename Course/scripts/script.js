@@ -1872,14 +1872,16 @@ funcionConAsyncYAwait(); //* Se invoca la función para ejecutar las promesas co
 console.log('=========== Fetch, APIS y JSON. ==========='); //* Indica el inicio de la sección de Fetch, APIS y JSON.
 
 // Todo - APIS (Aplication Programing Interface)
-// Todo - Las API es una interface de programacion de aplicaciones, el cual es un conjunto de reglas predeterminadas que nos van a permitir que se comuniquen dos sistemas diferentes, por lo que esto es muy utilizado como cuando por ejemplo queremos que un frontend consuma un backend, se comunican entre si mediante una API o si queremos consumir por ejemplo informacion de un tercero necesitamos esa comunicacion a traves de una API. Como todas trabajan atraves de un protocolo todas se van a entender con estas reglas predeterminadas. Por lo que basicamente una API puede ser unicamente una url, o un conjunto de datos como lo es un fetch, con la url y algunos then, los cuales aveces estos asi son como los maneja quien proporciona dia API. Veace a continuacion un ejemplo de una
+// Todo - Las API es una interface de programacion de aplicaciones, el cual es un conjunto de reglas predeterminadas que nos van a permitir que se comuniquen dos sistemas diferentes, por lo que esto es muy utilizado como cuando por ejemplo queremos que un frontend consuma un backend, se comunican entre si mediante una API o si queremos consumir por ejemplo informacion de un tercero necesitamos esa comunicacion a traves de una API. Como todas trabajan atraves de un protocolo todas se van a entender con estas reglas predeterminadas. Por lo que basicamente una API puede ser unicamente una url, o un conjunto de datos como lo es un fetch, con la url y algunos then, los cuales aveces estos asi son como los maneja quien proporciona dia API. Veace a continuacion un ejemplo de una API.
 console.log('--- APIS (Aplication Programing Interface). ---'); //* Muestra en consola un ejemplo de una API.
-fetch('https://jsonplaceholder.typicode.com')
+fetch('https://jsonplaceholder.typicode.com/')
+
+// Todo - JSON (JavaScript Object Notation)
+// Todo - Un JSON es un formato de cambio de datos, sirve para representar datos estructurados, como por ejemplo objetos y arrays y tiene una sintaxis muy parecida a los objetos literales de JavaScript ya que cuenta con 2 llaves que lo encierran y adentro hay pares clave valor separados por los 2 puntos. Se utiliza para intercambiar informacion entre servidor y cliente o distintas partes de la aplicacion web. Por ejemplo tomando de ejemplo la misma API, anterior esta nos devuleve un JSON.
+fetch('https://jsonplaceholder.typicode.com/todos/1')
     .then(response => response.json())
     .then(json => console.log(json))
 
-// Todo - JSON
-// Todo -
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
@@ -1905,7 +1907,7 @@ console.log(resultadoEjecucion);  //* Muestra el resultado de la ejecución: 9.
 console.log('--- Paso de una unica condicional con valor cero. ---'); //* Muestra un título que indica el inicio del ejemplo con condicional y valor cero.
 let variableParaPasoCondicionalConValorCero = 0; //* Declara una variable con valor 0, que será evaluado en la condición.
 if (variableParaPasoCondicionalConValorCero) { //* Evalúa la variable; al ser 0, se convierte implícitamente en false y no se ejecuta este bloque.
-    console.log('Se recibio un dato'); //* No se ejecutará porque la condición es false.
+    console.log('Se recibio un dato.'); //* No se ejecutará porque la condición es false.
 } else { //* Este bloque se ejecuta porque la condición anterior no se cumplió.
-    console.log('No se recibio ningun dato'); //* Muestra el mensaje indicando que el valor se interpretó como falso.
+    console.log('No se recibio ningun dato.'); //* Muestra el mensaje indicando que el valor se interpretó como falso.
 }
