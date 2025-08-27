@@ -1592,7 +1592,7 @@ setTimeout(() => {
     console.warn('=========== Sincronia en JavaScript. ==========='); //* Imprime en consola un título que indica la sección de sincronia en JavaScript.
     console.warn('--- SetTimeout. ---'); //* Indica que se demostrará el uso de SetTimeout.
     console.warn('Este mensaje se mostrara dentro de 5 segundos que se ejecute el SetTimeout')
-}, 5000);
+}, 1000);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Callbacks (funciones)
@@ -1792,8 +1792,79 @@ promesa1.then((res) => { //* Se maneja la resolución de la promesa 1.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Async & Await
-// ~Asyn y await nos permiten solucionar el error del uso de varias promesas al usar then, catch y finally la cual es llamada la piramide de la perdicion, por lo que async y await es una forma de trabajar promesas las palabras reservadas con el mismo nombre, donde el async va a hacer que la funcion sepa que es asyncrona mientras que await se usa para esperlar que las promesas ser cumplan 
+// ~ Async y await son herramientas que permiten trabajar con promesas de una forma más clara y ordenada. Su principal utilidad es evitar la llamada "pirámide de la perdición", que ocurre al anidar múltiples promesas con .then, .catch y .finally. Con estas palabras reservadas se logra un código más legible y estructurado. La palabra clave **async** se usa en una función para indicar que esta funcionará de forma asíncrona y siempre devolverá una promesa. Mientras que la palabra clave **await** se usa dentro de funciones async para pausar la ejecución hasta que la promesa se cumpla (resolve) o falle (reject).
+// Todo - Estructura y uso de async
+// Todo - La palabra clave `async` se coloca antes de la declaración de una función. Esto hace que dicha función siempre devuelva una promesa, incluso si en su interior no hay ninguna. Gracias a `async`, podemos usar `await` dentro de la función para trabajar de manera secuencial con promesas.
+async function funcionConAsync() { //* Declaración de una función asíncrona usando async.
+    console.warn('=========== Async & Await. ==========='); //* Imprime en consola un título que indica la sección de promesas.
+    // *Contenido de la funcion.
+} //* Fin de la función asíncrona.
 
+setTimeout(() => { //* Se declara un setTimeOut para demostrar que se puede usar como cualquier funcion normal.
+    funcionConAsync(); // *Se llama la funcion con async al igual que una funcion ordinaria.
+}, 5000); // *Cierre de setTimeout.
+
+// Todo - Estructura y uso de await
+// Todo - La palabra clave `await` se usa únicamente dentro de funciones declaradas con `async`. Su propósito es pausar la ejecución hasta que la promesa que acompaña sea resuelta o rechazada. Si la promesa se resuelve, se obtiene su valor; si se rechaza, se puede capturar el error con try/catch.
+async function funcionConAwait(){ //* Se declara una función asíncrona con la palabra clave async, lo que permite el uso de await en su interior.
+    let variableQueAlmacenaElAwaitDePromesa = await nombrePromesa; //* `await` espera a que `nombrePromesa` se resuelva. El valor resuelto se almacena en la variable.
+} //* Fin de la función asíncrona.
+
+// Todo - Async & Await con promesas asincronas
+// Todo - A diferencia de usar solo `.then()`, `.catch()` y `.finally()`, `async/await` permite manejar promesas de forma más ordenada y legible. No cambia el funcionamiento de las promesas, ni las hace más rápidas; simplemente permite escribir código que se vea secuencial y limpio, evitando la "pirámide de callbacks" o encadenamiento excesivo de `.then()`. Además, usando `Promise.all()` con `async/await` se pueden ejecutar varias promesas al mismo tiempo y esperar a que todas terminen, manteniendo la estructura clara.
+//* Primera promesa asincrónica.
+let promesaAsincrona1 = new Promise((resolve, reject) => { //* Se crea una promesa con resolve y reject.
+    setTimeout(() => { //* Se retrasa la ejecución con un temporizador de 5 segundos.
+        console.warn('--- Async & Await con promesas asyncronaz. ---'); //* Indica ejemplo de Async & Await con promesas asyncronaz.
+        resolve('Esta es la promesa #1, la cual se ejecutó correctamente y el resultado se devolverá dentro de 5 segundos.'); //* Se resuelve la promesa devolviendo este mensaje.
+        reject('Esta es la promesa #1, la cual tuvo un error en su ejecución y el resultado se devolverá dentro de 5 segundos.'); //* Se rechaza la promesa, pero este código no se ejecutará porque resolve ya fue llamado primero.
+    }, 5000); //* Tiempo definido de 5 segundos.
+}); //* Fin de la promesa #1.
+
+//* Segunda promesa asincrónica.
+let promesaAsincrona2 = new Promise((resolve, reject) => { //* Se crea una promesa con resolve y reject.
+    setTimeout(() => { //* Se retrasa la ejecución con un temporizador de 2 segundos.
+        resolve('Esta es la promesa #2, la cual se ejecutó correctamente y el resultado se devolverá dentro de 2 segundos.'); //* Resolve devuelve este mensaje después de 2 segundos.
+        reject('Esta es la promesa #2, la cual tuvo un error en su ejecución y el resultado se devolverá dentro de 2 segundos.'); //* Reject no se ejecutará porque resolve fue llamado primero.
+    }, 2000); //* Tiempo definido de 2 segundos.
+}); //* Fin de la promesa #2.
+
+//* Tercera promesa asincrónica.
+let promesaAsincrona3 = new Promise((resolve, reject) => { //* Se crea una promesa con resolve y reject.
+    setTimeout(() => { //* Se retrasa la ejecución con un temporizador de 6 segundos.
+        resolve('Esta es la promesa #3, la cual se ejecutó correctamente y el resultado se devolverá dentro de 6 segundos.'); //* Resolve devuelve este mensaje después de 6 segundos.
+        reject('Esta es la promesa #3, la cual tuvo un error en su ejecución y el resultado se devolverá dentro de 6 segundos.'); //* Reject no se ejecutará porque resolve fue llamado primero.
+    }, 6000); //* Tiempo definido de 6 segundos.
+}); //* Fin de la promesa #3.
+
+//* Ejemplo con promesas encadenadas usando then y catch (pirámide de callbacks).
+promesaAsincrona1.then((res) => { //* Se espera la resolución de la promesa #1.
+    console.error(res); //* Imprime el resultado en consola.
+    promesaAsincrona2.then((res) => { //* Dentro del .then de la promesa #1, se espera la promesa #2.
+        console.error(res); //* Imprime el resultado de la promesa #2.
+        promesaAsincrona3.then((res) => { //* Dentro del .then de la promesa #2, se espera la promesa #3.
+            console.error(res); //* Imprime el resultado de la promesa #3.
+        }).catch((error) => { //* Se captura un posible error en la promesa #3.
+            console.error(error); //* Imprime el mensaje de error en consola.
+        }); //* Fin de la promesa #3.
+    }).catch((error) => { //* Se captura un posible error en la promesa #2.
+        console.error(error); //* Imprime el mensaje de error en consola.
+    }); //* Fin de la promesa #2.
+}).catch((error) => { //* Se captura un posible error en la promesa #1.
+    console.error(error); //* Imprime el mensaje de error en consola.
+}); //* Fin de la promesa #1.
+
+//* Ejemplo usando async y await.
+async function funcionConAsyncYAwait(){ //* Se declara una función asíncrona que usará await.
+    let respuestaPromesa1 = await promesaAsincrona1; //* La función espera el resultado de la promesa #1 antes de continuar.
+    let respuestaPromesa2 = await promesaAsincrona2; //* Después espera el resultado de la promesa #2.
+    let respuestaPromesa3 = await promesaAsincrona3; //* Finalmente espera el resultado de la promesa #3.
+    console.warn(respuestaPromesa1); //* Imprime en consola el resultado de la promesa #1.
+    console.warn(respuestaPromesa2); //* Imprime en consola el resultado de la promesa #2.
+    console.warn(respuestaPromesa3); //* Imprime en consola el resultado de la promesa #3.
+} //* Fin de la función asíncrona.
+
+funcionConAsyncYAwait(); //* Se invoca la función para ejecutar las promesas con async/await.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
