@@ -1869,9 +1869,17 @@ funcionConAsyncYAwait(); //* Se invoca la función para ejecutar las promesas co
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Fetch, APIS y JSON
 // ~
-// Todo - APIS(Aplication Programing Interface)
-// Todo -Las API es una interface de programacion de aplicaciones, el cual es un conjunto de reglas predeterminadas que nos van a permitir que se comuniquen dos sistemas diferentes, por lo que esto es muy utilizado como cuando por ejemplo queremos que un frontend consuma un backend, se comunican entre si mediante una API o si queremos consumir por ejemplo informacion de un tercero necesitamos esa comunicacion a traves de una API. Como todas trabajan atraves de un protocolo todas se van a entender con estas reglas predeterminadas.
+console.log('=========== Fetch, APIS y JSON. ==========='); //* Indica el inicio de la sección de Fetch, APIS y JSON.
 
+// Todo - APIS (Aplication Programing Interface)
+// Todo - Las API es una interface de programacion de aplicaciones, el cual es un conjunto de reglas predeterminadas que nos van a permitir que se comuniquen dos sistemas diferentes, por lo que esto es muy utilizado como cuando por ejemplo queremos que un frontend consuma un backend, se comunican entre si mediante una API o si queremos consumir por ejemplo informacion de un tercero necesitamos esa comunicacion a traves de una API. Como todas trabajan atraves de un protocolo todas se van a entender con estas reglas predeterminadas. Por lo que basicamente una API puede ser unicamente una url, o un conjunto de datos como lo es un fetch, con la url y algunos then, los cuales aveces estos asi son como los maneja quien proporciona dia API. Veace a continuacion un ejemplo de una
+console.log('--- APIS (Aplication Programing Interface). ---'); //* Muestra en consola un ejemplo de una API.
+fetch('https://jsonplaceholder.typicode.com')
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+// Todo - JSON
+// Todo -
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
