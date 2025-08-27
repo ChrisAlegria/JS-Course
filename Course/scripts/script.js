@@ -1869,6 +1869,9 @@ funcionConAsyncYAwait(); //* Se invoca la función para ejecutar las promesas co
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Fetch, APIS y JSON
 // ~
+// Todo - APIS(Aplication Programing Interface)
+// Todo -Las API es una interface de programacion de aplicaciones, el cual es un conjunto de reglas predeterminadas que nos van a permitir que se comuniquen dos sistemas diferentes, por lo que esto es muy utilizado como cuando por ejemplo queremos que un frontend consuma un backend, se comunican entre si mediante una API o si queremos consumir por ejemplo informacion de un tercero necesitamos esa comunicacion a traves de una API. Como todas trabajan atraves de un protocolo todas se van a entender con estas reglas predeterminadas.
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
