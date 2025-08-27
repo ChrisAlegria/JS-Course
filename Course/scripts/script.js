@@ -1868,20 +1868,60 @@ funcionConAsyncYAwait(); //* Se invoca la función para ejecutar las promesas co
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Fetch, APIS y JSON
-// ~
+// ~Fetch es una función nativa de JavaScript que permite hacer solicitudes HTTP desde el frontend a un servidor, obtener datos y procesarlos. Las APIS (Application Programming Interface) definen reglas que permiten que distintos sistemas se comuniquen entre sí, y JSON (JavaScript Object Notation) es un formato estándar para intercambiar datos estructurados entre cliente y servidor.
 console.log('=========== Fetch, APIS y JSON. ==========='); //* Indica el inicio de la sección de Fetch, APIS y JSON.
 
-// Todo - APIS (Aplication Programing Interface)
-// Todo - Las API es una interface de programacion de aplicaciones, el cual es un conjunto de reglas predeterminadas que nos van a permitir que se comuniquen dos sistemas diferentes, por lo que esto es muy utilizado como cuando por ejemplo queremos que un frontend consuma un backend, se comunican entre si mediante una API o si queremos consumir por ejemplo informacion de un tercero necesitamos esa comunicacion a traves de una API. Como todas trabajan atraves de un protocolo todas se van a entender con estas reglas predeterminadas. Por lo que basicamente una API puede ser unicamente una url, o un conjunto de datos como lo es un fetch, con la url y algunos then, los cuales aveces estos asi son como los maneja quien proporciona dia API. Veace a continuacion un ejemplo de una API.
-console.log('--- APIS (Aplication Programing Interface). ---'); //* Muestra en consola un ejemplo de una API.
-fetch('https://jsonplaceholder.typicode.com/')
+// Todo - APIS (Application Programming Interface)
+// Todo - Las API son interfaces que permiten la comunicación entre diferentes sistemas, como un frontend que consume datos de un backend o un servicio externo que provee información. Una API generalmente se expone a través de una URL y define un conjunto de reglas y endpoints que permiten solicitar datos o enviar información de manera estructurada y predecible.
+console.log('--- APIS (Application Programming Interface). ---'); //* Muestra en consola un ejemplo de cómo se puede acceder a una API.
+fetch('https://jsonplaceholder.typicode.com/') //* Se realiza una solicitud HTTP a la API proporcionada por JSONPlaceholder.
 
 // Todo - JSON (JavaScript Object Notation)
-// Todo - Un JSON es un formato de cambio de datos, sirve para representar datos estructurados, como por ejemplo objetos y arrays y tiene una sintaxis muy parecida a los objetos literales de JavaScript ya que cuenta con 2 llaves que lo encierran y adentro hay pares clave valor separados por los 2 puntos. Se utiliza para intercambiar informacion entre servidor y cliente o distintas partes de la aplicacion web. Por ejemplo tomando de ejemplo la misma API, anterior esta nos devuleve un JSON.
-fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(response => response.json())
-    .then(json => console.log(json))
+// Todo - JSON es un formato de datos ligero que se utiliza para representar información estructurada, como objetos y arrays, en forma de texto. Su sintaxis es muy similar a la de los objetos literales en JavaScript, con pares clave:valor encerrados entre llaves. Es el formato estándar para intercambiar datos entre servidor y cliente en aplicaciones web modernas.
+console.log('--- JSON (JavaScript Object Notation). ---'); //* Muestra en consola un ejemplo de cómo se procesa la respuesta JSON de una API.
+fetch('https://jsonplaceholder.typicode.com/todos/1') //* Se hace una solicitud HTTP a un endpoint específico de la API para obtener un recurso.
+    .then(response => response.json()) //* Convierte la respuesta HTTP en un objeto JSON usable en JavaScript.
+    .then(json => console.log(json)); //* Imprime en consola el objeto JSON devuelto por la API.
 
+// Todo - Métodos de pedido
+// Todo - En HTTP, los métodos de pedido determinan la acción que queremos realizar sobre un recurso en un servidor. Los más comunes son GET, POST, PUT, PATCH y DELETE, cada uno con un propósito específico para interactuar con datos en una API.
+console.log('=========== Métodos de pedido HTTP. ==========='); //* Indica el inicio de la sección sobre métodos de pedido HTTP.
+
+// &Extraer información (GET)
+// &El método GET se utiliza para **solicitar y obtener información** de un servidor sin modificar los datos existentes. Es seguro y no debe cambiar el estado de los recursos.
+console.log('--- Método GET. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el GET.
+
+// &Enviar información nueva (POST)
+// &El método POST se utiliza para **enviar nuevos datos** al servidor, generalmente para crear un nuevo recurso. Los datos se incluyen en el cuerpo de la solicitud.
+console.log('--- Método POST. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el POST.
+
+// &Editar la información (PUT)
+// &El método PUT se utiliza para **reemplazar por completo un recurso existente** con nuevos datos. Si el recurso no existe, algunos servidores pueden crearlo.
+console.log('--- Método PUT. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el PUT.
+
+// &Editar una parte (PATCH)
+// &El método PATCH se utiliza para **modificar parcialmente un recurso existente**, cambiando solo los campos necesarios sin reemplazar todo el recurso.
+console.log('--- Método PATCH. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el PATCH.
+
+// &Eliminar (DELETE)
+// &El método DELETE se utiliza para **eliminar un recurso existente** en el servidor. Generalmente devuelve un estado indicando si la eliminación fue exitosa o no.
+console.log('--- Método DELETE. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el DELETE.
+
+// Todo - Códigos de estatus (Status Codes)
+// Todo - Los códigos de estatus HTTP son números que indican el resultado de una solicitud realizada a un servidor. Nos ayudan a entender si una petición fue exitosa, si hubo un error del cliente o del servidor, o si se requiere alguna acción adicional. Estos códigos son esenciales al trabajar con APIs y otras comunicaciones cliente-servidor.
+console.log('=========== Códigos de estatus HTTP. ==========='); //* Indica el inicio de la sección sobre códigos de estatus HTTP.
+
+// &Dentro de los 200
+// &Los códigos que comienzan con 2xx indican que la solicitud fue **exitosa**. Por ejemplo, 200 significa que todo salió bien, 201 indica que un recurso se creó correctamente y 204 que la solicitud se completó sin contenido en la respuesta.
+console.log('--- Códigos 200. ---'); //* En este caso se imprime en consola los tipos de códigos 2xx.
+
+// &Dentro de los 400
+// &Los códigos que comienzan con 4xx indican **errores del cliente**, es decir, que la solicitud estaba mal formulada o que no se tiene permiso para acceder al recurso. Por ejemplo, 400 indica mala solicitud, 401 falta de autorización y 404 recurso no encontrado.
+console.log('--- Códigos 400. ---'); //* En este caso se imprime en consola los tipos de códigos 4xx.
+
+// &Dentro de los 500
+// &Los códigos que comienzan con 5xx indican **errores del servidor**, es decir, que la solicitud era válida pero el servidor no pudo completarla correctamente. Por ejemplo, 500 indica error interno del servidor y 503 servicio no disponible.
+console.log('--- Códigos 500. ---'); //* En este caso se imprime en consola los tipos de códigos 5xx.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
