@@ -1885,25 +1885,30 @@ fetch('https://jsonplaceholder.typicode.com/todos/1') //* Se hace una solicitud 
 
 // Todo - Métodos de pedido
 // Todo - En HTTP, los métodos de pedido determinan la acción que queremos realizar sobre un recurso en un servidor. Los más comunes son GET, POST, PUT, PATCH y DELETE, cada uno con un propósito específico para interactuar con datos en una API.
-// &Extraer información (GET)
-// &El método GET se utiliza para **solicitar y obtener información** de un servidor sin modificar los datos existentes. Es seguro y no debe cambiar el estado de los recursos.
+// &Tipos de metodo de pedido que hay
+// &
+// ^Extraer información (GET)
+// ^El método GET se utiliza para **solicitar y obtener información** de un servidor sin modificar los datos existentes. Es seguro y no debe cambiar el estado de los recursos.
 console.log('--- Método GET. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el GET.
 
-// &Enviar información nueva (POST)
-// &El método POST se utiliza para **enviar nuevos datos** al servidor, generalmente para crear un nuevo recurso. Los datos se incluyen en el cuerpo de la solicitud.
+// ^Enviar información nueva (POST)
+// ^El método POST se utiliza para **enviar nuevos datos** al servidor, generalmente para crear un nuevo recurso. Los datos se incluyen en el cuerpo de la solicitud.
 console.log('--- Método POST. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el POST.
 
-// &Editar la información (PUT)
-// &El método PUT se utiliza para **reemplazar por completo un recurso existente** con nuevos datos. Si el recurso no existe, algunos servidores pueden crearlo.
+// ^Editar la información (PUT)
+// ^El método PUT se utiliza para **reemplazar por completo un recurso existente** con nuevos datos. Si el recurso no existe, algunos servidores pueden crearlo.
 console.log('--- Método PUT. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el PUT.
 
-// &Editar una parte (PATCH)
-// &El método PATCH se utiliza para **modificar parcialmente un recurso existente**, cambiando solo los campos necesarios sin reemplazar todo el recurso.
+// ^Editar una parte (PATCH)
+// ^El método PATCH se utiliza para **modificar parcialmente un recurso existente**, cambiando solo los campos necesarios sin reemplazar todo el recurso.
 console.log('--- Método PATCH. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el PATCH.
 
-// &Eliminar (DELETE)
-// &El método DELETE se utiliza para **eliminar un recurso existente** en el servidor. Generalmente devuelve un estado indicando si la eliminación fue exitosa o no.
+// ^Eliminar (DELETE)
+// ^El método DELETE se utiliza para **eliminar un recurso existente** en el servidor. Generalmente devuelve un estado indicando si la eliminación fue exitosa o no.
 console.log('--- Método DELETE. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el DELETE.
+
+// &Metodos de pedido mediante una API
+// &
 
 // Todo - Códigos de estatus (Status Codes)
 // Todo - Los códigos de estatus HTTP son números que indican el resultado de una solicitud realizada a un servidor. Nos ayudan a entender si una petición fue exitosa, si hubo un error del cliente o del servidor, o si se requiere alguna acción adicional. Estos códigos son esenciales al trabajar con APIs y otras comunicaciones cliente-servidor.
@@ -1922,25 +1927,24 @@ console.log('--- Códigos 500. ---'); //* En este caso se imprime en consola los
 // Todo - Extraccion de array con varios JSON mediante API
 // Todo - Las APIs no solo pueden devolver un único JSON, sino que también pueden devolver múltiples objetos JSON agrupados dentro de un array. Esto es útil cuando necesitamos obtener listas de datos, como publicaciones, usuarios o productos, y procesarlos de manera estructurada en JavaScript.
 fetch('https://jsonplaceholder.typicode.com/posts') //* Se realiza una solicitud HTTP al endpoint que devuelve un array de objetos JSON.
-.then(response => {
-    console.log('=========== Fetch, APIS y JSON. ==========='); //* Indica el inicio de la sección de Fetch, APIS y JSON.
-    console.log('--- Extraccion de un array de JSON mediante API. ---'); //* Indica que se demostrará la obtención de múltiples JSON desde una API en forma de array.
-        response.json() //* Convierte la respuesta HTTP en un array de objetos JSON para ser usado en JavaScript.
-    }) //* Cierre del .then
-    .then(json => console.log(json)); //* Imprime en consola el array de JSON devuelto por la API.
+    .then(response => response.json()) //* Convierte la respuesta HTTP en un array de objetos JSON para ser usado en JavaScript.)
+    .then(json => console.log(`--- Extraccion de array con JSON mediante API. ---`, json)); //* Imprime en consola el array de JSON devuelto por la API.
 
 // Todo - Hacer una Query en la URL
 // Todo - Si bien sabemos que podemos extraer toda la informacion de una API, como lo es array de objetos y posteriormente filtrar entre todo lo extraido y extraer un solo dato, tambien podemos mandar pedir a la API un unico valor o informacion especifica, esto mediante una Query la cual basicamente usaremos los metodos (GET, POST, PUT, PATCH, DELETE), segun lo que deseamos hacer.
 // &Query Ordinaria
-// &
+// &Esta es una forma en que aveces se encuentran las apis generales, pero no son exactamente como usan en el dia a dia. Ya que este tipo de fetch asi no se suele usar ya que esta en duro o harcodeado, donde estamos escribiendo lo que queremos. Ya que comunmente se hacen todo este tipo de cosas mas dinamicas.
 fetch('https://jsonplaceholder.typicode.com/comments?postId=1')
-    .then(response => {
-        console.log('--- Hacer un Query en la URL. ---'); //* Indica que se demostrará la obtención de múltiples JSON desde una API en forma de array.
-        response.json()
-    }) 
-    .then(json => console.log(json)); 
+    .then(response => response.json()) 
+    .then(json => console.log(`--- Query ordinaria. --- \n`,json)); 
 
-// &Query en un formato utilizado mas comunmente
+// &Query en un formato utilizado mas dinamica
+// &Comunemnte las APIS con Fect suelen ser muy dinamicas para reutilizar codigo o eso, donde comunmente la direccion url base se declara aparte, asi como lo es la query.
+let url = 'https://jsonplaceholder.typicode.com'
+let query = '/comments?postId=1'
+fetch(`${url}${query}`)
+    .then(response => response.json()) 
+    .then(json => console.log(`--- Query dinamica. --- \n`,json)); 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
