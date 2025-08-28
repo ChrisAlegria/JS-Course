@@ -1885,8 +1885,6 @@ fetch('https://jsonplaceholder.typicode.com/todos/1') //* Se hace una solicitud 
 
 // Todo - Métodos de pedido
 // Todo - En HTTP, los métodos de pedido determinan la acción que queremos realizar sobre un recurso en un servidor. Los más comunes son GET, POST, PUT, PATCH y DELETE, cada uno con un propósito específico para interactuar con datos en una API.
-console.log('=========== Métodos de pedido HTTP. ==========='); //* Indica el inicio de la sección sobre métodos de pedido HTTP.
-
 // &Extraer información (GET)
 // &El método GET se utiliza para **solicitar y obtener información** de un servidor sin modificar los datos existentes. Es seguro y no debe cambiar el estado de los recursos.
 console.log('--- Método GET. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el GET.
@@ -1909,8 +1907,6 @@ console.log('--- Método DELETE. ---'); //* En este caso solo se imprime en cons
 
 // Todo - Códigos de estatus (Status Codes)
 // Todo - Los códigos de estatus HTTP son números que indican el resultado de una solicitud realizada a un servidor. Nos ayudan a entender si una petición fue exitosa, si hubo un error del cliente o del servidor, o si se requiere alguna acción adicional. Estos códigos son esenciales al trabajar con APIs y otras comunicaciones cliente-servidor.
-console.log('=========== Códigos de estatus HTTP. ==========='); //* Indica el inicio de la sección sobre códigos de estatus HTTP.
-
 // &Dentro de los 200
 // &Los códigos que comienzan con 2xx indican que la solicitud fue **exitosa**. Por ejemplo, 200 significa que todo salió bien, 201 indica que un recurso se creó correctamente y 204 que la solicitud se completó sin contenido en la respuesta.
 console.log('--- Códigos 200. ---'); //* En este caso se imprime en consola los tipos de códigos 2xx.
@@ -1922,6 +1918,29 @@ console.log('--- Códigos 400. ---'); //* En este caso se imprime en consola los
 // &Dentro de los 500
 // &Los códigos que comienzan con 5xx indican **errores del servidor**, es decir, que la solicitud era válida pero el servidor no pudo completarla correctamente. Por ejemplo, 500 indica error interno del servidor y 503 servicio no disponible.
 console.log('--- Códigos 500. ---'); //* En este caso se imprime en consola los tipos de códigos 5xx.
+
+// Todo - Extraccion de array con varios JSON mediante API
+// Todo - Las APIs no solo pueden devolver un único JSON, sino que también pueden devolver múltiples objetos JSON agrupados dentro de un array. Esto es útil cuando necesitamos obtener listas de datos, como publicaciones, usuarios o productos, y procesarlos de manera estructurada en JavaScript.
+fetch('https://jsonplaceholder.typicode.com/posts') //* Se realiza una solicitud HTTP al endpoint que devuelve un array de objetos JSON.
+.then(response => {
+    console.log('=========== Fetch, APIS y JSON. ==========='); //* Indica el inicio de la sección de Fetch, APIS y JSON.
+    console.log('--- Extraccion de un array de JSON mediante API. ---'); //* Indica que se demostrará la obtención de múltiples JSON desde una API en forma de array.
+        response.json() //* Convierte la respuesta HTTP en un array de objetos JSON para ser usado en JavaScript.
+    }) //* Cierre del .then
+    .then(json => console.log(json)); //* Imprime en consola el array de JSON devuelto por la API.
+
+// Todo - Hacer una Query en la URL
+// Todo - Si bien sabemos que podemos extraer toda la informacion de una API, como lo es array de objetos y posteriormente filtrar entre todo lo extraido y extraer un solo dato, tambien podemos mandar pedir a la API un unico valor o informacion especifica, esto mediante una Query la cual basicamente usaremos los metodos (GET, POST, PUT, PATCH, DELETE), segun lo que deseamos hacer.
+// &Query Ordinaria
+// &
+fetch('https://jsonplaceholder.typicode.com/comments?postId=1')
+    .then(response => {
+        console.log('--- Hacer un Query en la URL. ---'); //* Indica que se demostrará la obtención de múltiples JSON desde una API en forma de array.
+        response.json()
+    }) 
+    .then(json => console.log(json)); 
+
+// &Query en un formato utilizado mas comunmente
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
