@@ -1907,7 +1907,17 @@ console.log('--- Método PATCH. ---'); //* En este caso solo se imprime en conso
 // ^El método DELETE se utiliza para **eliminar un recurso existente** en el servidor. Generalmente devuelve un estado indicando si la eliminación fue exitosa o no.
 console.log('--- Método DELETE. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el DELETE.
 
-// &Metodos de pedido mediante una API
+//&Realizacion de Metodos en API
+// &Las apis si bien se conforman de la url de la api ademas del Query, que es lo que extrae en la informacion pro defecto al hacer un GET, si se quiere hacer un post, patch, put o delete, es necesario integrarle o realizar modificaciones a la estructura general de la API. Al cual se le llama body
+// ^API que extrae informacion y es la forma base
+// ^
+fetch('https://jsonplaceholder.typicode.com/comments?postId=1') 
+    .then(response => response.json())
+    .then(json => console.log(`--- API sin body. ---`, json)); 
+
+// ^API que utiliza body para realizar ya sea un post, patch, put o delete,
+
+// &Metodos de pedido mediante una API.
 // &
 // ^GET
 // ^Esta API es un get, que aunque no diga por ningun lado al ser por default esta extrae informacion desde la API.
