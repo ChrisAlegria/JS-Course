@@ -1885,70 +1885,25 @@ fetch('https://jsonplaceholder.typicode.com/todos/1') //* Se hace una solicitud 
 
 // Todo - Métodos de pedido
 // Todo - En HTTP, los métodos de pedido determinan la acción que queremos realizar sobre un recurso en un servidor. Los más comunes son GET, POST, PUT, PATCH y DELETE, cada uno con un propósito específico para interactuar con datos en una API.
-// &Tipos de metodo de pedido
-// &
-// ^Extraer información (GET)
-// ^El método GET se utiliza para **solicitar y obtener información** de un servidor sin modificar los datos existentes. Es seguro y no debe cambiar el estado de los recursos.
+// &Extraer información (GET)
+// &El método GET se utiliza para **solicitar y obtener información** de un servidor sin modificar los datos existentes. Es seguro y no debe cambiar el estado de los recursos.
 console.log('--- Método GET. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el GET.
 
-// ^Enviar información nueva (POST)
-// ^El método POST se utiliza para **enviar nuevos datos** al servidor, generalmente para crear un nuevo recurso. Los datos se incluyen en el cuerpo de la solicitud.
+// &Enviar información nueva (POST)
+// &El método POST se utiliza para **enviar nuevos datos** al servidor, generalmente para crear un nuevo recurso. Los datos se incluyen en el cuerpo de la solicitud.
 console.log('--- Método POST. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el POST.
 
-// ^Editar la información (PUT)
-// ^El método PUT se utiliza para **reemplazar por completo un recurso existente** con nuevos datos. Si el recurso no existe, algunos servidores pueden crearlo.
+// &Editar la información (PUT)
+// &El método PUT se utiliza para **reemplazar por completo un recurso existente** con nuevos datos. Si el recurso no existe, algunos servidores pueden crearlo.
 console.log('--- Método PUT. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el PUT.
 
-// ^Editar una parte (PATCH)
-// ^El método PATCH se utiliza para **modificar parcialmente un recurso existente**, cambiando solo los campos necesarios sin reemplazar todo el recurso.
+// &Editar una parte (PATCH)
+// &El método PATCH se utiliza para **modificar parcialmente un recurso existente**, cambiando solo los campos necesarios sin reemplazar todo el recurso.
 console.log('--- Método PATCH. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el PATCH.
 
-// ^Eliminar (DELETE)
-// ^El método DELETE se utiliza para **eliminar un recurso existente** en el servidor. Generalmente devuelve un estado indicando si la eliminación fue exitosa o no.
+// &Eliminar (DELETE)
+// &El método DELETE se utiliza para **eliminar un recurso existente** en el servidor. Generalmente devuelve un estado indicando si la eliminación fue exitosa o no.
 console.log('--- Método DELETE. ---'); //* En este caso solo se imprime en consola los tipos de metodo de pedido, en este caso es el DELETE.
-
-//&Realizacion de Metodos en API
-// &Las apis si bien se conforman de la url de la api ademas del Query, que es lo que extrae en la informacion pro defecto al hacer un GET, si se quiere hacer un post, patch, put o delete, es necesario integrarle o realizar modificaciones a la estructura general de la API. Al cual se le llama body
-// ^API que extrae informacion y es la forma base
-// ^
-fetch('https://jsonplaceholder.typicode.com/comments?postId=1') 
-    .then(response => response.json())
-    .then(json => console.log(`--- API sin body. ---`, json)); 
-
-// ^API que utiliza body para realizar ya sea un post, patch, put o delete,
-
-// &Metodos de pedido mediante una API.
-// &
-// ^GET
-// ^Esta API es un get, que aunque no diga por ningun lado al ser por default esta extrae informacion desde la API.
-fetch('https://jsonplaceholder.typicode.com/comments?postId=1') 
-    .then(response => response.json())
-    .then(json => console.log(`--- API tipo GET. ---`, json)); 
-
-// ^POST
-// ^ Se envia informacion, agregale mas o asi va?
-fetch('https://jsonplaceholder.typicode.com/comments?postId=1') 
-    .then(response => response.json())
-    .then(json => console.log(`--- API tipo POST. ---`, json)); 
-
-// ^PUT
-// ^Se modifica informacion, agregale mas o asi va?
-fetch('https://jsonplaceholder.typicode.com/comments?postId=1') 
-    .then(response => response.json())
-    .then(json => console.log(`--- API tipo PUT. ---`, json)); 
-
-// ^PATCH
-// ^Se modifica solo algo peuqeño de la informacion, agregale mas o asi va?
-fetch('https://jsonplaceholder.typicode.com/comments?postId=1') 
-    .then(response => response.json())
-    .then(json => console.log(`--- API tipo PATCH. ---`, json)); 
-
-// ^DELETE
-// ^Se elimina la informacion, agregale mas o asi va?
-fetch('https://jsonplaceholder.typicode.com/comments?postId=1') 
-    .then(response => response.json())
-    .then(json => console.log(`--- API tipo DELETE. ---`, json)); 
-
 
 // Todo - Códigos de estatus (Status Codes)
 // Todo - Los códigos de estatus HTTP son números que indican el resultado de una solicitud realizada a un servidor. Nos ayudan a entender si una petición fue exitosa, si hubo un error del cliente o del servidor, o si se requiere alguna acción adicional. Estos códigos son esenciales al trabajar con APIs y otras comunicaciones cliente-servidor.
@@ -1985,6 +1940,27 @@ let query = '/comments?postId=1'; //* Se define la query específica que se dese
 fetch(`${url}${query}`) //* Se concatena la URL base con la query para realizar la solicitud HTTP.
     .then(response => response.json()) //* Convierte la respuesta en un objeto JSON usable en JavaScript.
     .then(json => console.log(`--- Query dinámica. ---`,json)); //* Imprime en consola el resultado de la query dinámica.
+
+// Todo - Body en una Query para la eliminacion, modificacion, envio de informacion.
+// Todo - Como ya vimos anteriormente podemos extraer informacion desde una API y podemos consultar de manera general o datos mas precisos, pero la forma antes mostrada es la forma base de la API la cual por defecto nos permite consultar informacion, pero ahora bien, si nosotors queremso enviar informacion, eliminarla o modificarla directamente a la API es necesario integrar la forma base de la API un body.
+// &Forma base de una API, la cual por defecto unicamente consulta informacion y no tiene body
+// &
+url = 'https://jsonplaceholder.typicode.com';
+query = '/comments?postId=1';
+fetch(`${url}${query}`)
+    .then(response => response.json()) 
+    .then(json => console.log(`--- Query sin body. ---`,json));
+
+// &Query con body, para realizar cualquier otra accion a consulta de informacion en la API
+// &Para poder abrir un body es necesario que despues de la url y el query, si estos se encuentran en backsticks fuera de estos se ponga una coma y se abran llaves ya que dentro de estas es donde se define o delcara el body. Dentro de este se declararan elementos como si fueran clave: valor, de un objeto, donde primero y mas importante ingresaremos "mathod: ''" ya que dentro de este definiremos el tipo de metodo a realizar, por ejemplo si queremos subir informacion a la API usaremos POST,
+url = 'https://jsonplaceholder.typicode.com';
+query = '/comments?postId=1';
+fetch(`${url}${query}`,{
+
+})
+    .then(response => response.json()) 
+    .then(json => console.log(`--- Query sin body. ---`,json));
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
