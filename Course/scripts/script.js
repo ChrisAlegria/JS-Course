@@ -1941,8 +1941,8 @@ fetch(`${url}${query}`) //* Se concatena la URL base con la query para realizar 
     .then(response => response.json()) //* Convierte la respuesta en un objeto JSON usable en JavaScript.
     .then(json => console.log(`--- Query dinámica. ---`,json)); //* Imprime en consola el resultado de la query dinámica.
 
-// Todo - Body en una Query para la eliminacion, modificacion, envio de informacion.
-// Todo - Como ya vimos anteriormente podemos extraer informacion desde una API y podemos consultar de manera general o datos mas precisos, pero la forma antes mostrada es la forma base de la API la cual por defecto nos permite consultar informacion, pero ahora bien, si nosotors queremso enviar informacion, eliminarla o modificarla directamente a la API es necesario integrar la forma base de la API un body.
+// Todo - Formato para la eliminacion, modificacion, envio de informacion en API.
+// Todo - Como ya vimos anteriormente podemos extraer informacion desde una API y podemos consultar de manera general o datos mas precisos, pero la forma antes mostrada es la forma base de la API la cual por defecto nos permite consultar informacion, pero ahora bien, si nosotors queremso enviar informacion, eliminarla o modificarla directamente a la API es necesario integrar secciones o informacion adicional en nuestra query o eso.
 // &Forma base de una API, la cual por defecto unicamente consulta informacion y no tiene body
 // &
 url = 'https://jsonplaceholder.typicode.com';
@@ -1951,17 +1951,33 @@ fetch(`${url}${query}`)
     .then(response => response.json()) 
     .then(json => console.log(`--- Query sin body. ---`,json));
 
-// &Query con body, para realizar cualquier otra accion a consulta de informacion en la API
-// &Para poder abrir un body es necesario que despues de la url y el query, si estos se encuentran en backsticks fuera de estos se ponga una coma y se abran llaves ya que dentro de estas es donde se define o delcara el body. Dentro de este se declararan elementos como si fueran clave: valor, de un objeto, donde primero y mas importante ingresaremos "mathod: ''" ya que dentro de este definiremos el tipo de metodo a realizar, por ejemplo si queremos subir informacion a la API usaremos POST,
+// &Query  para realizar cualquier otra accion a consulta de informacion en la API
+// &Para poder realizar cualquier otra opcion ademas de consulta de informacion en la API es necesario que despues de la url y el query, si estos se encuentran en backsticks fuera de estos se ponga una coma y se abran llaves ya que dentro de estas es donde se definira la accion. Dentro de este se declararan elementos como si fueran clave: valor, de un objeto, donde se declaran, el tipo de metodo que realizaremos, los headers los cuales se ingresara..... y el body que sera lo que se enviara. Por lo que a continuacion es la estruictura base de dicho tipos de Querys.
 url = 'https://jsonplaceholder.typicode.com';
 query = '/comments?postId=1';
-fetch(`${url}${query}`,{
 
+fetch(`${url}${query}`,{
+    method: 'POST',
+    headers: {},
+    body: ''
 })
     .then(response => response.json()) 
     .then(json => console.log(`--- Query sin body. ---`,json));
 
+// ^Metodo de envio
+// ^Como vimos dentro va lo que es un "method: ''", el cual  dentro de este se declarara o ingresara el tipo de methodo que queremos realizar, por ejemplo si queremos subir informacion usaremos el Methodo POST quedando como: "method: 'POST'"
+fetch(`${url}${query}`,{
+method: 'POST',
 
+// ^Headers
+// ^ Dentro de los headers el cual es un objeto, se devera de declarar algunas reglas las cuales pueden variar segun cada API, pero comunmente se declara en este apartado que la informacion que enviara la Query sera en formato JSON, ya que asi como recibimos la informacion en dicho formato comunmente se envia en ese formato, por lo que para delcararla es con un clave: valor, donde se pondra 'Content-Type': 'aplication/json' lo cual le decimos a dicho Qeury o a JS que enviara en dicho formato, adicionalmnente segun la tipo de Query que pida la API puede agregarse mas elemento al headers, por ejemplo, si admitira letras con "ñ", se puede integrar charset=UTF-8, por lo que se agrega en la misma linea pero separado por ";"
+headers: {
+    'Content-Type': 'aplication/json; charset=UTF-8'
+}
+
+// ^Body
+// ^Ahora bien
+})
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
