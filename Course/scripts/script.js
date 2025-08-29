@@ -1923,7 +1923,7 @@ console.log('--- Códigos 500. ---'); //* En este caso se imprime en consola los
 // Todo - Las APIs no solo pueden devolver un único JSON, sino que también pueden devolver múltiples objetos JSON agrupados dentro de un array. Esto es útil cuando necesitamos obtener listas de datos, como publicaciones, usuarios o productos, y procesarlos de manera estructurada en JavaScript.
 fetch('https://jsonplaceholder.typicode.com/posts') //* Se realiza una solicitud HTTP al endpoint que devuelve un array de objetos JSON.
     .then(response => response.json()) //* Convierte la respuesta HTTP en un array de objetos JSON para ser usado en JavaScript.)
-    .then(json => console.log(`--- Extraccion de array con JSON mediante API. ---`, json)); //* Imprime en consola el array de JSON devuelto por la API.
+    .then(json => console.log(`--- Extraccion de array con JSON mediante API. --- \n`, json)); //* Imprime en consola el array de JSON devuelto por la API.
 
 // Todo - Hacer una Query en la URL
 // Todo - Además de poder extraer todos los datos de una API y luego filtrarlos manualmente, podemos solicitar a la API un dato específico o un conjunto limitado de información mediante **queries** en la URL. Estas queries funcionan junto con métodos HTTP como GET, POST, PUT, PATCH o DELETE según la operación que deseemos realizar.
@@ -1931,7 +1931,7 @@ fetch('https://jsonplaceholder.typicode.com/posts') //* Se realiza una solicitud
 // &Este tipo de query es estática, donde la URL se escribe directamente con los parámetros que deseamos consultar. No es muy dinámica ni reutilizable, pero sirve para probar cómo se solicita información específica a una API.
 fetch('https://jsonplaceholder.typicode.com/comments?postId=1') //* Se hace la solicitud HTTP a la API con un parámetro fijo en la URL (postId=1).
     .then(response => response.json()) //* Convierte la respuesta HTTP en un objeto JSON.
-    .then(json => console.log(`--- Query ordinaria. ---`,json)); //* Imprime en consola los datos obtenidos de la API según la query.
+    .then(json => console.log(`--- Query ordinaria. --- \n`,json)); //* Imprime en consola los datos obtenidos de la API según la query.
 
 // &Query dinámica
 // &En aplicaciones reales, se suele separar la URL base y los parámetros de consulta para hacer el código más reutilizable y limpio. Esto permite modificar la query fácilmente sin cambiar toda la URL.
@@ -1939,7 +1939,7 @@ let url = 'https://jsonplaceholder.typicode.com'; //* Se define la URL base de l
 let query = '/comments?postId=1'; //* Se define la query específica que se desea ejecutar.
 fetch(`${url}${query}`) //* Se concatena la URL base con la query para realizar la solicitud HTTP.
     .then(response => response.json()) //* Convierte la respuesta en un objeto JSON usable en JavaScript.
-    .then(json => console.log(`--- Query dinámica. ---`,json)); //* Imprime en consola el resultado de la query dinámica.
+    .then(json => console.log(`--- Query dinámica. --- \n`,json)); //* Imprime en consola el resultado de la query dinámica.
 
 // Todo - Formato para la eliminacion, modificacion, envio de informacion en API.
 // Todo - Como ya vimos anteriormente podemos extraer informacion desde una API y podemos consultar de manera general o datos mas precisos, pero la forma antes mostrada es la forma base de la API la cual por defecto nos permite consultar informacion, pero ahora bien, si nosotors queremso enviar informacion, eliminarla o modificarla directamente a la API es necesario integrar secciones o informacion adicional en nuestra query o eso.
@@ -1949,20 +1949,20 @@ url = 'https://jsonplaceholder.typicode.com';
 query = '/comments?postId=1';
 fetch(`${url}${query}`)
     .then(response => response.json()) 
-    .then(json => console.log(`--- Query sin body. ---`,json));
+    .then(json => console.log(`--- Query con estructura base solo para GET. --- \n`,json));
 
-// &Query  para realizar cualquier otra accion a consulta de informacion en la API
+// &Estructura de Query para realizar cualquier otra accion a consulta de informacion en la API
 // &Para poder realizar cualquier otra opcion ademas de consulta de informacion en la API es necesario que despues de la url y el query, si estos se encuentran en backsticks fuera de estos se ponga una coma y se abran llaves ya que dentro de estas es donde se definira la accion. Dentro de este se declararan elementos como si fueran clave: valor, de un objeto, donde se declaran, el tipo de metodo que realizaremos, los headers los cuales se ingresara..... y el body que sera lo que se enviara. Por lo que a continuacion es la estruictura base de dicho tipos de Querys.
 url = 'https://jsonplaceholder.typicode.com';
 query = '/comments?postId=1';
 
 fetch(`${url}${query}`,{
-    method: 'POST',
+    method: '',
     headers: {},
     body: ''
 })
     .then(response => response.json()) 
-    .then(json => console.log(`--- Query sin body. ---`,json));
+    .then(json => console.log(`--- Query con estructura para cualquier accion adicional a GET. --- \n`,json));
 
 // ^Metodo de envio
 // ^Como vimos dentro va lo que es un "method: ''", el cual  dentro de este se declarara o ingresara el tipo de methodo que queremos realizar, por ejemplo si queremos subir informacion usaremos el Methodo POST quedando como: "method: 'POST'"
@@ -1973,11 +1973,48 @@ method: 'POST',
 // ^ Dentro de los headers el cual es un objeto, se devera de declarar algunas reglas las cuales pueden variar segun cada API, pero comunmente se declara en este apartado que la informacion que enviara la Query sera en formato JSON, ya que asi como recibimos la informacion en dicho formato comunmente se envia en ese formato, por lo que para delcararla es con un clave: valor, donde se pondra 'Content-Type': 'aplication/json' lo cual le decimos a dicho Qeury o a JS que enviara en dicho formato, adicionalmnente segun la tipo de Query que pida la API puede agregarse mas elemento al headers, por ejemplo, si admitira letras con "ñ", se puede integrar charset=UTF-8, por lo que se agrega en la misma linea pero separado por ";"
 headers: {
     'Content-Type': 'aplication/json; charset=UTF-8'
-}
+},
 
 // ^Body
-// ^Ahora bien
+// ^Ahora bien dentro del body podemos declararlo de difernetes maneras segun la API lo pida, por ejemplo podremos mandarle dentro del body directamente lo que queremos mandar o bien, declarar en el body que convierte en JSON.stringify para que dicha informacion dentro del body mande el json como si fuera un string
+// ?Body directamente con el cuerpo
+// ?
+body: {
+    title: 'Ricardo comenta sobre tu foto.',
+    body: '¡Que bella foto prima, se te hecha de menos!.',
+    usuarioId: 1
+},
 })
+
+// ?Body mediante json.stringify
+// ?
+let cuerpoBody = {
+    title: 'Ricardo comenta sobre tu foto.',
+    body: '¡Que bella foto prima, se te hecha de menos!.',
+    usuarioId: 1
+}
+
+body: JSON.stringify(cuerpoBody)
+
+// &Query para realizar cualquier otra accion a consulta de informacion en la API
+// &Para poder realizar cualquier otra opcion ademas de consulta de informacion en la API es necesario tender dentro de la estructura de la Query lo anteriormente ya mencionado quedando de la siguiente manera y de esta forma al enviarse la peticion el .then nos devolvera informacion respecto a la accion, en caso de que se hiciera o no o eso
+url = 'https://jsonplaceholder.typicode.com';
+query = '/comments?postId=1';
+cuerpoBody = {
+    title: 'Ricardo comenta sobre tu foto.',
+    body: '¡Que bella foto prima, se te hecha de menos!.',
+    usuarioId: 1
+}
+
+fetch(`${url}${query}`,{
+    method: 'POST',
+    headers: {
+        'Content-Type': 'aplication/json; charset=UTF-8'
+    },
+    body: JSON.stringify(cuerpoBody)
+})
+    .then(response => response.json()) 
+    .then(json => console.log(`--- Query con estructura y ejecucion de un metodo POST, para subir a API informacion. --- \n`,json));
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
