@@ -2017,12 +2017,41 @@ cuerpoBody = { //* Objeto con la información que será enviada a la API.
 fetch(`https://jsonplaceholder.typicode.com/posts`, { //* Se hace la llamada a la API con método POST.
     method: 'POST', //* Se especifica POST como método de envío de información.
     headers: { //* Apertura del objeto headers.
-        'Content-Type': 'application/json; charset=UTF-8' //* Header obligatorio para indicar que se envía JSON.
+        'Content-Type': 'aplication/json; charset=UTF-8' //* Header obligatorio para indicar que se envía JSON.
     }, //* Cierre del objeto header.
     body: JSON.stringify(cuerpoBody) //* Se envía el objeto transformado en JSON string.
 }) //* Cierre del fetch.
     .then(response => response.json()) //* Convierte la respuesta del servidor a JSON.
     .then(json => console.log('--- Query con estructura y ejecución de un método POST, para subir información a la API. --- \n', json)); //* Imprime en consola la confirmación del POST.
+
+// &Formato de Query para cada tipo de metodo
+// &
+// ^GET
+// ^El metodo GET lo que hace es extraer informacion con su url base, ya que por defecto y comunmente las API's su forma base es para extraer informacion
+fetch('https://jsonplaceholder.typicode.com/posts') //* Se realiza una solicitud HTTP al endpoint que devuelve un array de objetos JSON.
+    .then(response => response.json()) //* Convierte la respuesta HTTP en un array de objetos JSON para ser usado en JavaScript.)
+    .then(json => console.log(`--- Uso de GET en API. --- \n`, json)); //* Imprime en consola el array de JSON devuelto por la API.
+
+// ^POST
+// ^El metodo post es para insertar informacion en la API
+fetch('https://jsonplaceholder.typicode.com/posts',{
+    method: 'POST',
+    headers: {
+        'Content-Type': 'aplication/json; charset=UTF-8'
+    },
+    body: JSON.stringify({
+        title: 'Ricardo comenta sobre tu foto.',
+        body: '¡Qué bella foto prima, se te echa de menos!.', 
+        usuarioId: 1 
+    })
+})
+    .then(response => response.json())
+    .then(console.log(`--- Uso de PUT en API. --- \n`,json))
+
+// ?PUT
+// ?
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
