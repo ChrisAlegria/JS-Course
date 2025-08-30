@@ -2051,8 +2051,6 @@ fetch('https://jsonplaceholder.typicode.com/posts',{
 // ?PUT
 // ?
 
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
 console.log('=========== Consejos. ==========='); //* Muestra un mensaje en la consola para indicar el inicio de la sección sobre consejos.
