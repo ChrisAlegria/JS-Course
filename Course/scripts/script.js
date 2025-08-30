@@ -1941,80 +1941,88 @@ fetch(`${url}${query}`) //* Se concatena la URL base con la query para realizar 
     .then(response => response.json()) //* Convierte la respuesta en un objeto JSON usable en JavaScript.
     .then(json => console.log(`--- Query dinámica. --- \n`,json)); //* Imprime en consola el resultado de la query dinámica.
 
-// Todo - Formato para la eliminacion, modificacion, envio de informacion en API.
-// Todo - Como ya vimos anteriormente podemos extraer informacion desde una API y podemos consultar de manera general o datos mas precisos, pero la forma antes mostrada es la forma base de la API la cual por defecto nos permite consultar informacion, pero ahora bien, si nosotors queremso enviar informacion, eliminarla o modificarla directamente a la API es necesario integrar secciones o informacion adicional en nuestra query o eso.
-// &Forma base de una API, la cual por defecto unicamente consulta informacion y no tiene body
-// &
-url = 'https://jsonplaceholder.typicode.com';
-query = '/comments?postId=1';
-fetch(`${url}${query}`)
-    .then(response => response.json()) 
-    .then(json => console.log(`--- Query con estructura base solo para GET. --- \n`,json));
+// Todo - Formato para la eliminación, modificación y envío de información en una API
+// Todo - En una API no solo se puede realizar la acción de consulta (GET), también es posible **enviar nuevos datos (POST)**, **modificar información existente (PUT/PATCH)** o **eliminar información (DELETE)**. Para poder ejecutar estas acciones, la función `fetch` requiere de un segundo parámetro en el cual se especifican las configuraciones necesarias: el método HTTP a utilizar, los headers que indican cómo se envía la información y el body que contiene los datos a transferir. Esto permite que el cliente y el servidor se comuniquen de manera estructurada y bajo reglas bien definidas.
+// &Forma base de una API: consulta de información (GET).
+// &Cuando se usa `fetch` sin parámetros adicionales, el método por defecto es GET. Este tipo de petición se emplea para obtener datos sin necesidad de enviar información adicional al servidor. En este caso, la estructura es simple: solo se necesita la URL de la API y opcionalmente un query string para filtrar resultados, como se muestra a continuación.
+fetch(`https://jsonplaceholder.typicode.com/posts`) //* Se hace la petición GET por defecto, sin parámetros adicionales.
+    .then(response => response.json()) //* Convierte la respuesta de la API en formato JSON.
+    .then(json => console.log('--- Query con estructura base solo para GET. --- \n', json)); //* Imprime en consola la respuesta obtenida mediante GET.
 
-// &Estructura de Query para realizar cualquier otra accion a consulta de informacion en la API
-// &Para poder realizar cualquier otra opcion ademas de consulta de informacion en la API es necesario que despues de la url y el query, si estos se encuentran en backsticks fuera de estos se ponga una coma y se abran llaves ya que dentro de estas es donde se definira la accion. Dentro de este se declararan elementos como si fueran clave: valor, de un objeto, donde se declaran, el tipo de metodo que realizaremos, los headers los cuales se ingresara..... y el body que sera lo que se enviara. Por lo que a continuacion es la estruictura base de dicho tipos de Querys.
-url = 'https://jsonplaceholder.typicode.com';
-query = '/comments?postId=1';
+// &Estructura de Query para otras acciones (POST, PUT, PATCH, DELETE).
+// &Cuando la petición requiere enviar información, modificar o eliminar registros, se debe añadir un objeto como segundo parámetro en el `fetch`. Este objeto de configuración define tres elementos fundamentales: el `method` que indica la acción a realizar, los `headers` que establecen cómo se envían los datos y el `body` que contiene la información a transmitir al servidor.
+fetch(`https://jsonplaceholder.typicode.com/posts`, { //* Se ejecuta la API usando una estructura más completa.
+    method: '', //* Aquí se especifica el método HTTP (ej. POST, PUT, PATCH, DELETE).
+    headers: {}, //* Aquí se definen las reglas de comunicación, como el formato de datos.
+    body: '' //* Aquí se colocan los datos que se desean enviar, si aplica.
+}) // *Cierre del fech.
+    .then(response => response.json()) //* Convierte la respuesta en un objeto JSON utilizable.
+    .then(json => console.log('--- Query con estructura para cualquier acción adicional a GET. --- \n', json)); //* Muestra el resultado de la petición en consola.
 
-fetch(`${url}${query}`,{
-    method: '',
-    headers: {},
-    body: ''
-})
-    .then(response => response.json()) 
-    .then(json => console.log(`--- Query con estructura para cualquier accion adicional a GET. --- \n`,json));
-
-// ^Metodo de envio
-// ^Como vimos dentro va lo que es un "method: ''", el cual  dentro de este se declarara o ingresara el tipo de methodo que queremos realizar, por ejemplo si queremos subir informacion usaremos el Methodo POST quedando como: "method: 'POST'"
-fetch(`${url}${query}`,{
-method: 'POST',
+// ^Método de envío
+// ^La propiedad `method` indica qué tipo de acción se ejecutará sobre los datos de la API. Puede ser GET para consultar información, POST para crear un nuevo recurso en el servidor, PUT o PATCH para actualizar registros existentes y DELETE para eliminar información. Este campo es indispensable cuando se requiere más que una simple lectura de datos.
+fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    method: 'POST', //* Se indica explícitamente que se usará el método POST para enviar información.
+}) //* Cierre del fetch.
 
 // ^Headers
-// ^ Dentro de los headers el cual es un objeto, se devera de declarar algunas reglas las cuales pueden variar segun cada API, pero comunmente se declara en este apartado que la informacion que enviara la Query sera en formato JSON, ya que asi como recibimos la informacion en dicho formato comunmente se envia en ese formato, por lo que para delcararla es con un clave: valor, donde se pondra 'Content-Type': 'aplication/json' lo cual le decimos a dicho Qeury o a JS que enviara en dicho formato, adicionalmnente segun la tipo de Query que pida la API puede agregarse mas elemento al headers, por ejemplo, si admitira letras con "ñ", se puede integrar charset=UTF-8, por lo que se agrega en la misma linea pero separado por ";"
-headers: {
-    'Content-Type': 'aplication/json; charset=UTF-8'
-},
+// ^Los headers funcionan como reglas o instrucciones adicionales que guían la comunicación entre cliente y servidor. Un ejemplo típico es declarar que la información enviada será en formato JSON, utilizando el header `Content-Type`. Esto asegura que el servidor pueda interpretar correctamente los datos recibidos y evitar errores de formato o incompatibilidad.
+fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    method: 'POST', //* Método POST para enviar información nueva al servidor.
+    headers: { //* Apertura del objeto headers.
+        'Content-Type': 'application/json; charset=UTF-8' //* Header que indica que los datos se envían en formato JSON con soporte de caracteres especiales.
+    }, //* Cierre del headers.
+}) //* Cierre del fetch.
 
 // ^Body
-// ^Ahora bien dentro del body podemos declararlo de difernetes maneras segun la API lo pida, por ejemplo podremos mandarle dentro del body directamente lo que queremos mandar o bien, declarar en el body que convierte en JSON.stringify para que dicha informacion dentro del body mande el json como si fuera un string
-// ?Body directamente con el cuerpo
-// ?
-body: {
-    title: 'Ricardo comenta sobre tu foto.',
-    body: '¡Que bella foto prima, se te hecha de menos!.',
-    usuarioId: 1
-},
-})
+// ^El body representa el contenido de la información que se enviará al servidor. Este campo debe contener los datos en formato JSON válido, ya que es el estándar de comunicación más utilizado en las APIs modernas. Aunque es posible escribir el objeto directamente, lo más común es transformarlo con `JSON.stringify` para asegurar que sea recibido como texto JSON válido y evitar errores en la interpretación del servidor.
+// ?Body directamente en el fetch
+// ?En este ejemplo se incluye el objeto directamente en el `body`. Sin embargo, no todas las APIs aceptan este formato, ya que muchas requieren recibir el contenido como un string en formato JSON. Aunque sirve como demostración, lo más seguro es usar `JSON.stringify`.
+fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    method: 'POST', //* Método POST que permite enviar datos al servidor.
+    headers: { //* Apertura del objeto headers.
+        'Content-Type': 'application/json; charset=UTF-8' //* Header que declara el envío de datos como JSON.
+    }, //* Cierre del objeto headers.
+    body: { //* Apertura de objeto body.
+        title: 'Ricardo comenta sobre tu foto.', //* Campo con el título del comentario.
+        body: '¡Qué bella foto prima, se te echa de menos!.', //* Campo con el contenido del comentario.
+        usuarioId: 1 //* ID del usuario que realiza el envío de información.
+    } //* Cierre del objeto body.
+}) //* Cierre del fetch.
 
-// ?Body mediante json.stringify
-// ?
-let cuerpoBody = {
-    title: 'Ricardo comenta sobre tu foto.',
-    body: '¡Que bella foto prima, se te hecha de menos!.',
-    usuarioId: 1
-}
+// ?Body con JSON.stringify
+// ?Aquí se construye un objeto en JavaScript con los datos a enviar y luego se convierte explícitamente a un string JSON mediante `JSON.stringify`. Este es el enfoque correcto y más seguro para garantizar que la API procese adecuadamente la información enviada.
+let cuerpoBody = { //* Objeto que contiene la información a transmitir.
+    title: 'Ricardo comenta sobre tu foto.', //* Campo "title" con el título del mensaje.
+    body: '¡Qué bella foto prima, se te echa de menos!.', //* Campo "body" con el contenido del mensaje.
+    usuarioId: 1 //* Identificador del usuario que envía la información.
+} //* Cieere de variable tipo let con el cuerpo del body.
 
-body: JSON.stringify(cuerpoBody)
+fetch(`https://jsonplaceholder.typicode.com/posts`, {
+    method: 'POST', //* Se usa POST ya que estamos enviando nueva información.
+    headers: { //* Apertura del objeto headers.
+        'Content-Type': 'application/json; charset=UTF-8' //* Se indica que la información se enviará en formato JSON.
+    }, //* Cierre del objeto headers.
+    body: JSON.stringify(cuerpoBody) //* El objeto se convierte en un string JSON antes de enviarlo.
+}) //* Cierre del fetch.
 
-// &Query para realizar cualquier otra accion a consulta de informacion en la API
-// &Para poder realizar cualquier otra opcion ademas de consulta de informacion en la API es necesario tender dentro de la estructura de la Query lo anteriormente ya mencionado quedando de la siguiente manera y de esta forma al enviarse la peticion el .then nos devolvera informacion respecto a la accion, en caso de que se hiciera o no o eso
-url = 'https://jsonplaceholder.typicode.com';
-query = '/comments?postId=1';
-cuerpoBody = {
-    title: 'Ricardo comenta sobre tu foto.',
-    body: '¡Que bella foto prima, se te hecha de menos!.',
-    usuarioId: 1
-}
+// &Query final con POST para enviar datos a la API.
+// &Este ejemplo completo ejecuta la acción de envío de información a la API usando POST. Se construye el objeto, se transforma a JSON string y se envía junto con los headers adecuados. Finalmente, la respuesta del servidor se recibe, se transforma de nuevo en JSON y se imprime en consola para confirmar el éxito de la operación.
+cuerpoBody = { //* Objeto con la información que será enviada a la API.
+    title: 'Ricardo comenta sobre tu foto.', //* Título del comentario.
+    body: '¡Qué bella foto prima, se te echa de menos!.', //* Contenido del comentario.
+    usuarioId: 1 //* Identificador del usuario.
+} //* Se declara en una variable con el cuerpo de lo que se enviara a la API.
 
-fetch(`${url}${query}`,{
-    method: 'POST',
-    headers: {
-        'Content-Type': 'aplication/json; charset=UTF-8'
-    },
-    body: JSON.stringify(cuerpoBody)
-})
-    .then(response => response.json()) 
-    .then(json => console.log(`--- Query con estructura y ejecucion de un metodo POST, para subir a API informacion. --- \n`,json));
+fetch(`https://jsonplaceholder.typicode.com/posts`, { //* Se hace la llamada a la API con método POST.
+    method: 'POST', //* Se especifica POST como método de envío de información.
+    headers: { //* Apertura del objeto headers.
+        'Content-Type': 'application/json; charset=UTF-8' //* Header obligatorio para indicar que se envía JSON.
+    }, //* Cierre del objeto header.
+    body: JSON.stringify(cuerpoBody) //* Se envía el objeto transformado en JSON string.
+}) //* Cierre del fetch.
+    .then(response => response.json()) //* Convierte la respuesta del servidor a JSON.
+    .then(json => console.log('--- Query con estructura y ejecución de un método POST, para subir información a la API. --- \n', json)); //* Imprime en consola la confirmación del POST.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
