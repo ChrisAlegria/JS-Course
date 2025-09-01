@@ -2040,16 +2040,29 @@ fetch('https://jsonplaceholder.typicode.com/posts',{
         'Content-Type': 'aplication/json; charset=UTF-8'
     },
     body: JSON.stringify({
-        title: 'Ricardo comenta sobre tu foto.',
-        body: '¡Qué bella foto prima, se te echa de menos!.', 
+        title: 'Pedro comenta sobre tu foto.',
+        body: '¡Eres la mejor amiga, te mando un saludo!.', 
         usuarioId: 1 
     })
 })
     .then(response => response.json())
-    .then(console.log(`--- Uso de PUT en API. --- \n`,json))
+    .then(console.log(`--- Uso de POST en API. --- \n`,json))
 
-// ?PUT
-// ?
+// ^PUT
+// ^
+fetch('https://jsonplaceholder.typicode.com/posts',{
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'aplication/json; charset=UTF-8'
+    },
+    body: {
+        title: 'Pedro modifico el comentario sobre tu foto.',
+        body: '¡Eres la mejor amiga, te mando un abrazo!.',
+        usuarioId: 1
+    } 
+})
+    .then(response => response.json())
+    .then(console.log(`--- Uso de PUT en API. --- \n`,json))
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
