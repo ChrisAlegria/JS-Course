@@ -2033,7 +2033,7 @@ fetch('https://jsonplaceholder.typicode.com/posts') //* Se realiza una solicitud
     .then(json => console.log(`--- Uso de GET en API. --- \n`, json)); //* Imprime en consola el array de JSON devuelto por la API.
 
 // ^POST
-// ^El metodo post es para insertar informacion en la API
+// ^El metodo post es para insertar informacion en la API, por lo que por al insertar un nuevo registro se generara segun la bd o la API la informacion por defecto, como id o eso, por lo que no se especifica un valor en especifico para subir, mas que el contenido del nuevo registro
 fetch('https://jsonplaceholder.typicode.com/posts',{
     method: 'POST',
     headers: {
@@ -2046,23 +2046,23 @@ fetch('https://jsonplaceholder.typicode.com/posts',{
     })
 })
     .then(response => response.json())
-    .then(console.log(`--- Uso de POST en API. --- \n`,json))
+    .then(json => console.log(`--- Uso de POST en API. --- \n`,json))
 
 // ^PUT
 // ^
-fetch('https://jsonplaceholder.typicode.com/posts',{
+let idUsuario = 101;
+fetch(`https://jsonplaceholder.typicode.com/posts${idUsuario}`,{
     method: 'PUT',
     headers: {
         'Content-Type': 'aplication/json; charset=UTF-8'
     },
     body: {
         title: 'Pedro modifico el comentario sobre tu foto.',
-        body: '¡Eres la mejor amiga, te mando un abrazo!.',
-        usuarioId: 1
+        body: '¡Eres la mejor amiga, te mando un abrazo!.'
     } 
 })
     .then(response => response.json())
-    .then(console.log(`--- Uso de PUT en API. --- \n`,json))
+    .then(json => console.log(`--- Uso de PUT en API. --- \n`,json))
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
