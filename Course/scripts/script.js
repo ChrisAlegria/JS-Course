@@ -2024,49 +2024,69 @@ fetch(`https://jsonplaceholder.typicode.com/posts`, { //* Se hace la llamada a l
     .then(response => response.json()) //* Convierte la respuesta del servidor a JSON.
     .then(json => console.log('--- Query con estructura y ejecución de un método POST, para subir información a la API. --- \n', json)); //* Imprime en consola la confirmación del POST.
 
-// &Formato de Query para cada tipo de metodo
-// &
+// &Formato de Query para cada tipo de método
+// &En el trabajo con APIs existen diferentes métodos HTTP que permiten interactuar con la información almacenada en un backend o servidor. Estos métodos tienen propósitos específicos: GET se utiliza para **obtener datos**, POST para **crear nuevos registros**, PUT y PATCH para **actualizar datos existentes** (la diferencia es que PUT reemplaza el objeto completo y PATCH solo una parte), mientras que DELETE sirve para **eliminar información**. Cada uno de estos métodos puede variar en su estructura dependiendo de la API, pero comparten reglas generales en cuanto a uso de cabeceras (headers), cuerpo de la solicitud (body) y el tipo de respuesta recibida.
 // ^GET
-// ^El metodo GET lo que hace es extraer informacion con su url base, ya que por defecto y comunmente las API's su forma base es para extraer informacion
+// ^El método GET es el más común y su objetivo es recuperar información de una API. No necesita headers ni body, únicamente la URL del recurso que queremos consumir. Generalmente devuelve la información en formato JSON para que el frontend pueda manipularla fácilmente.
 fetch('https://jsonplaceholder.typicode.com/posts') //* Se realiza una solicitud HTTP al endpoint que devuelve un array de objetos JSON.
-    .then(response => response.json()) //* Convierte la respuesta HTTP en un array de objetos JSON para ser usado en JavaScript.)
+    .then(response => response.json()) //* Convierte la respuesta HTTP en un array de objetos JSON para ser usado en JavaScript.
     .then(json => console.log(`--- Uso de GET en API. --- \n`, json)); //* Imprime en consola el array de JSON devuelto por la API.
 
 // ^POST
-// ^El metodo post es para insertar informacion en la API, por lo que por al insertar un nuevo registro se generara segun la bd o la API la informacion por defecto, como id o eso, por lo que no se especifica un valor en especifico para subir, mas que el contenido del nuevo registro
-fetch('https://jsonplaceholder.typicode.com/posts',{
-    method: 'POST',
-    headers: {
+// ^El método POST se utiliza para crear nuevos registros dentro de una API o base de datos. A diferencia de GET, requiere enviar información en el body de la solicitud. Los headers son importantes porque indican en qué formato viaja la información (por ejemplo, JSON). La API se encarga de asignar valores adicionales como el id del registro creado.
+fetch('https://jsonplaceholder.typicode.com/posts',{ //* Se realiza la solicitud POST a la API para crear un nuevo recurso.
+    method: 'POST', //* Se define el método como POST.
+    headers: { //* Se especifican cabeceras para indicar que el contenido será JSON.
         'Content-Type': 'aplication/json; charset=UTF-8'
-    },
-    body: JSON.stringify({
-        title: 'Pedro comenta sobre tu foto.',
-        body: '¡Eres la mejor amiga, te mando un saludo!.', 
-        userId: 1 
-    })
-})
-    .then(response => response.json())
-    .then(json => console.log(`--- Uso de POST en API. --- \n`,json))
+    }, //* Cierre del objeto headers.
+    body: JSON.stringify({ //* Se envía el contenido en el cuerpo de la solicitud convertido a formato JSON.
+        title: 'Pedro comenta sobre tu foto.', //* Se envía un título en el objeto JSON.
+        body: '¡Eres la mejor amiga, te mando un saludo!.', //* Se envía el contenido principal en el objeto JSON.
+        userId: 1 //* Se especifica el usuario que hace el comentario.
+    }) //* Cierre del objeto body.
+}) //* Cierre del fetch del query.
+    .then(response => response.json()) //* Convierte la respuesta en un objeto JSON.
+    .then(json => console.log(`--- Uso de POST en API. --- \n`,json)) //* Imprime en consola el objeto JSON generado por la API con el nuevo registro creado.
 
 // ^PUT
-// ^Aqui le pones que put es solo para modificar algo que ya existe en la API, o algo asi vA!?
-let numeroPosteo = 5;
-fetch(`https://jsonplaceholder.typicode.com/posts/${numeroPosteo}`,{
-    method: 'PUT',
-    headers: {
+// ^El método PUT se utiliza para modificar por completo un recurso existente dentro de la API. Esto significa que se reemplazan todos los valores del objeto en cuestión, incluso si solo cambia uno. Por esa razón, es importante enviar todos los campos necesarios para no perder información.
+let numeroPosteo = 5; //* Se define la variable con el número del recurso a modificar.
+fetch(`https://jsonplaceholder.typicode.com/posts/${numeroPosteo}`,{ //* Se realiza la solicitud PUT a la API indicando el id del recurso a modificar.
+    method: 'PUT', //* Se define el método como PUT.
+    headers: { //* Se especifica el formato de los datos que se enviarán.
         'Content-Type': 'aplication/json; charset=UTF-8'
-    },
-    body: {
-        userId: 1,
-        title: 'Pedro modifico el comentario sobre tu foto.',
-        body: '¡Eres la mejor amiga, te mando un abrazo!.'
-    } 
-})
-    .then(response => response.json())
-    .then(json => console.log(`--- Uso de PUT en API. --- \n`,json))
+    }, //* Cierre del objeto headers.
+    body: JSON.stringify({ //* Se envía en el body toda la nueva información del recurso.
+        title: 'Pedro modificó el comentario sobre tu foto.', //* Se envía un nuevo título reemplazando el anterior.
+        body: '¡Eres la mejor amiga, te mando un abrazo!.' //* Se envía un nuevo cuerpo reemplazando el anterior.
+    }) //* Cierre del objeto body.
+}) //* Cierre del fetch del query.
+    .then(response => response.json()) //* Convierte la respuesta en un objeto JSON.
+    .then(json => console.log(`--- Uso de PUT en API. --- \n`,json)) //* Imprime en consola el recurso modificado con sus nuevos valores.
 
 // ^PATCH
-// ^
+// ^El método PATCH se utiliza para actualizar parcialmente un recurso existente dentro de la API. A diferencia de PUT, no reemplaza todo el objeto, sino únicamente los campos que se envían en el body de la solicitud. Esto lo hace más eficiente en casos donde solo se desea modificar un valor específico.
+numeroPosteo = 5; //* Se asigna nuevamente el id del recurso que se modificará.
+fetch(`https://jsonplaceholder.typicode.com/posts/${numeroPosteo}`,{ //* Se realiza la solicitud PATCH a la API indicando el id del recurso.
+    method: 'PATCH', //* Se define el método como PATCH.
+    headers: { //* Se especifica el formato de los datos enviados.
+        'Content-Type': 'aplication/json; charset=UTF-8'
+    }, //* Cierre del objeto headers.
+    body: JSON.stringify({ //* Se envía únicamente el campo que será modificado.
+        body: '¡Eres la mejor amiga, te mando un abrazo y un saludo!.' //* Se actualiza solo el campo "body".
+    }) //* Cierre del objeto body.
+}) //* Cierre del fetch del query.
+    .then(response => response.json()) //* Convierte la respuesta en un objeto JSON.
+    .then(json => console.log(`--- Uso de PATCH en API. --- \n`,json)) //* Imprime en consola el recurso con la parte modificada.
+
+// ^DELETE
+// ^El método DELETE se utiliza para eliminar un recurso específico dentro de la API. A diferencia de POST, PUT y PATCH, no requiere body porque no se envía información adicional, únicamente se especifica el id del recurso en la URL. El header es opcional, aunque en algunos casos se incluye para autenticación.
+numeroPosteo = 5; //* Se define el id del recurso a eliminar.
+fetch(`https://jsonplaceholder.typicode.com/posts/${numeroPosteo}`,{ //* Se realiza la solicitud DELETE a la API con el id del recurso.
+    method: 'DELETE', //* Se define el método como DELETE.
+}) //* Cierre del fetch del query.
+    .then(response => response.json()) //* Convierte la respuesta en un objeto JSON (generalmente vacío tras eliminar el recurso).
+    .then(json => console.log(`--- Uso de DELETE en API. --- \n`,json)) //* Imprime en consola la confirmación del recurso eliminado.
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
