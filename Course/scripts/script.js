@@ -2042,27 +2042,31 @@ fetch('https://jsonplaceholder.typicode.com/posts',{
     body: JSON.stringify({
         title: 'Pedro comenta sobre tu foto.',
         body: '¡Eres la mejor amiga, te mando un saludo!.', 
-        usuarioId: 1 
+        userId: 1 
     })
 })
     .then(response => response.json())
     .then(json => console.log(`--- Uso de POST en API. --- \n`,json))
 
 // ^PUT
-// ^
-let idUsuario = 101;
-fetch(`https://jsonplaceholder.typicode.com/posts${idUsuario}`,{
+// ^Aqui le pones que put es solo para modificar algo que ya existe en la API, o algo asi vA!?
+let numeroPosteo = 5;
+fetch(`https://jsonplaceholder.typicode.com/posts/${numeroPosteo}`,{
     method: 'PUT',
     headers: {
         'Content-Type': 'aplication/json; charset=UTF-8'
     },
     body: {
+        userId: 1,
         title: 'Pedro modifico el comentario sobre tu foto.',
         body: '¡Eres la mejor amiga, te mando un abrazo!.'
     } 
 })
     .then(response => response.json())
     .then(json => console.log(`--- Uso de PUT en API. --- \n`,json))
+
+// ^PATCH
+// ^
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // ~Consejos    
