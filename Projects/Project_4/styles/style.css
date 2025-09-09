@@ -1,3 +1,14 @@
+body{
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+#formulario{
+    height: 80vh;
+    justify-items: center;
+    align-content: center;
+}
+
 .form-group {
     margin-bottom: 15px;
   }
@@ -5,6 +16,7 @@
   label {
     display: block;
     margin-bottom: 5px;
+    text-align: center;
   }
   
   input[type="text"],
@@ -22,6 +34,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.5s;
+  }
+
+  button[type="submit"]:hover{
+    background-color: #2e8531;
   }
   
   .error-message {
