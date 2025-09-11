@@ -33,14 +33,18 @@ function insercionInformacion(respuestaApi){
     
     const centigradosConvercion = respuestaApi.main.temp - 273.15;
     const ciudadNombre = respuestaApi.name;
-    const centigradosRedondeo = Math.floor(centigradosConvercion)
+    const centigradosRedondeo = Math.floor(centigradosConvercion);
     const descripcionCiudad = respuestaApi.weather[0].description;
+    const icononoClima = respuestaApi.weather[0].icon;
 
     const ciudadTitulo = document.createElement('h1');
     ciudadTitulo.textContent = ciudadNombre;
 
     const temperaturaInfo = document.createElement('p');
-    temperaturaInfo.textContent = `La temperatura es: ${centigradosRedondeo}`;
+    temperaturaInfo.textContent = `La temperatura es de: ${centigradosRedondeo}°`;
+
+    const iconoInfo = document.createElement('img');
+    iconoInfo.src = `https://openweathermap.org/img/wn/${icononoClima}@2x.png`;
 
     const descripcionInfo = document.createElement('p');
     descripcionInfo.textContent = `La descripcion metereologica es: ${descripcionCiudad}`;
@@ -48,4 +52,5 @@ function insercionInformacion(respuestaApi){
     campoDatosClima.appendChild(ciudadTitulo);
     campoDatosClima.appendChild(temperaturaInfo);
     campoDatosClima.appendChild(descripcionInfo);
+    campoDatosClima.appendChild(iconoInfo)
 }
