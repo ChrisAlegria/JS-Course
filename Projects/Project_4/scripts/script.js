@@ -29,7 +29,23 @@ botonBuscar.addEventListener('click', async function() {
 
 function insercionInformacion(respuestaApi){
     const campoDatosClima = document.getElementById('datosClima');
+    campoDatosClima.innerHTML = '';
+    
     const centigradosConvercion = respuestaApi.main.temp - 273.15;
-    const centigradosRedondeo = Math.round(centigradosConvercion)
-    campoDatosClima.innerText = (centigradosRedondeo+`°`);
+    const ciudadNombre = respuestaApi.name;
+    const centigradosRedondeo = Math.floor(centigradosConvercion)
+    const descripcionCiudad = respuestaApi.weather[0].description;
+
+    const ciudadTitulo = document.createElement('h1');
+    ciudadTitulo.textContent = ciudadNombre;
+
+    const temperaturaInfo = document.createElement('p');
+    temperaturaInfo.textContent = `La temperatura es: ${centigradosRedondeo}`;
+
+    const descripcionInfo = document.createElement('p');
+    descripcionInfo.textContent = `La descripcion metereologica es: ${descripcionCiudad}`;
+
+    campoDatosClima.appendChild(ciudadTitulo);
+    campoDatosClima.appendChild(temperaturaInfo);
+    campoDatosClima.appendChild(descripcionInfo);
 }
