@@ -1,49 +1,39 @@
-body{
-  background-color: rgb(20, 20, 20);
-  color: white;
+body {
+  height: 80vh;
+  font-family: Arial, sans-serif;
+  background-color: #181818;
+  align-content: center;
 }
 
-#formulario{
-    height: 80vh;
-    justify-items: center;
-    align-content: center;
+.contenedor {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.form-group {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: center;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  button[type="submit"] {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.5s;
-  }
+h1 {
+  color: #333333;
+}
 
-  button[type="submit"]:hover{
-    background-color: #2e8531;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  width: 70%;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+#datosClima {
+  margin-top: 20px;
+  font-size: 18px;
+}
