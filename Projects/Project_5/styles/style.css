@@ -43,6 +43,8 @@ body{
   
   .error-message {
     color: red;
+    text-align: center;
+    font-weight: bold;
     font-size: 12px;
     margin-top: 5px;
   }
