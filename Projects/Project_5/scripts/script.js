@@ -4,38 +4,42 @@ document.getElementById('formulario').addEventListener('submit', (event) => {
     //*Validar campo de nombre
     let campoNombre = document.getElementById('name').value;
     let errorNombre = document.getElementById('nameError');
-
     if(!campoNombre){
-        errorNombre.textContent = 'Por favor ingresa un nombre.'   
+        errorNombre.textContent = 'Por favor ingresa un nombre.';   
+    }else if(campoNombre.length <= 3){
+        errorNombre.textContent = 'Por favor ingresa un nombre valido.';
     }else{
-        errorNombre.textContent = ''           
+        errorNombre.textContent = '';
     }
 
     //*Validar campo de correo
     let campoCorreo = document.getElementById('email').value;
     let errorCorreo = document.getElementById('emailError');
-    let paterValidacion = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    let correoPatern = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
 
-    if(paterValidacion.test(campoCorreo)){
-        errorCorreo.textContent = '';
-    }else{
+    if(!correoPatern.test(campoCorreo)){
         errorCorreo.textContent = 'Por favor ingresa un correo valido.';   
+    }else{
+        errorCorreo.textContent = '';
     }
 
     //*Validar campo de contraseña
-    let campoContraseña = document.getElementById('password').value;
-    let errorContraseña = document.getElementById('passwordError');
+    let campoContrasena = document.getElementById('password').value;
+    let errorContrasena = document.getElementById('passwordError');
+    let contrasenaPatern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
 
-    if(!campoContraseña){
-        errorContraseña.textContent = 'Por favor ingresa una contraseña.'; 
+    if(!campoContrasena){
+        errorContrasena.textContent = 'Por favor ingresa una contraseña.'; 
+    }else if(campoContrasena.length < 8 || campoContrasena.length > 15){
+        errorContrasena.textContent = 'La contraseña debe ser mayor a 8 caracteres y menor a 16 caracteres.';
+    }else if(!contrasenaPatern.test(campoContrasena)){
+        errorContrasena.textContent = 'La contraseña debe de contener al menos una letra mayúscula, una letra minucula, un dígito, no espacios en blanco y un caracter especial.'
     }else{
-        errorContraseña.textContent = '';      
+        errorContrasena.textContent = '';      
     }
 
-    //*Validar todo
-    if(campoNombre && paterValidacion.test(campoCorreo) && campoContraseña){
-        console.log('Se envio el formulario correctamente.');
-    }else{
-        alert('Hubo un error al enviar el formulario.')
+    //*Envio de formulario si todos los campos son validos
+    if(campoNombre && correoPatern.test(campoCorreo) && contrasenaPatern.test(campoContrasena)){
+        alert('Se envio el formulario correctamente.');
     }
 });
