@@ -42,4 +42,10 @@ document.getElementById('formulario').addEventListener('submit', (event) => {
     if(campoNombre && correoPatern.test(campoCorreo) && contrasenaPatern.test(campoContrasena)){
         alert('Se envio el formulario correctamente.');
     }
+
+    //*Funcion de envio de los datos a Firebase
+    async function envioDatosFirebase(){
+        fetch('')
+        .then
+    }
 });
