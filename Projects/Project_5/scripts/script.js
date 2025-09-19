@@ -78,3 +78,4 @@ document.getElementById('formulario').addEventListener('submit', (event) => {
         });
     }
 })
+
