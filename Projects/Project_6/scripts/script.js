@@ -23,14 +23,14 @@ async function imagesExtraction(movieId){
     }
 }
 
-function insertResults(results){
+async function insertResults(results){
     const resultsField = document.getElementById('results')
     resultsAmount = results.length
     console.log(resultsAmount)
     
-    results.forEach(element => {
+    for (const element of results) {
         const card = document.createElement('div');
-        const imagesUrl = imagesExtraction(element.id)
+        const imagesUrl = await imagesExtraction(element.id)
         console.log(imagesUrl)
         const movieTitle = document.createElement('h1');
         movieTitle.textContent = element.title;
@@ -42,12 +42,16 @@ function insertResults(results){
         movieDescription.textContent = element.overview;
 
         const moviePoster = document.createElement('img');
-        moviePoster.src = `${imagesUrl}`;
+        if(imagesUrl){
+            moviePoster.src = `${imagesUrl}`;
+        }else{
+            moviePoster.src = './assets/no-image-avariable.png'
+        }
 
         resultsField.appendChild(card);
         card.appendChild(movieTitle);
         card.appendChild(movieDate);
         card.appendChild(movieDescription)
         card.appendChild(moviePoster);
-    });
+    }
 }
