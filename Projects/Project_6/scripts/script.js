@@ -13,15 +13,14 @@ function searchMovies(){
 
 async function imagesExtraction(movieId){
     try{
+        const images_Api = 'http://image.tmdb.org/t/p/w780';
         const imagesQuery = await fetch(`${api_Url}movie/${movieId}/images?api_key=${api_Key}`);
         const imagesResultsJson = await imagesQuery.json();
-        return imagesResultsJson;
+        const imagesTermination = imagesResultsJson.posters[0].file_path;
+        const imagesFullUrl = await `${images_Api}${imagesTermination}`;
+        return imagesFullUrl;
     }catch{
-        alert('Hubo un error al extraer las imagenes desde la API.')
     }
-    // fetch(`${api_Url}movie/${movieId}/images?api_key=${api_Key}`)
-    // .then(res => res.json())
-    // .then(json => console.log(json))
 }
 
 function insertResults(results){
@@ -30,10 +29,9 @@ function insertResults(results){
     console.log(resultsAmount)
     
     results.forEach(element => {
-        imagesExtraction(element.id)
-        console.log(element)
         const card = document.createElement('div');
-
+        const imagesUrl = imagesExtraction(element.id)
+        console.log(imagesUrl)
         const movieTitle = document.createElement('h1');
         movieTitle.textContent = element.title;
 
