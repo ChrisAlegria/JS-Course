@@ -1643,7 +1643,7 @@ let promesaEjemplo = new Promise((resolve, reject) => { //* Se crea una promesa 
 // &then()
 // &Se ejecuta cuando la promesa se resuelve correctamente. Recibe como parámetro el valor devuelto por resolve.
 promesaEjemplo.then(respuesta => { //* Se abre el bloque then para manejar la respuesta exitosa de la promesa.
-     console.warn('=========== Promesas. ==========='); //* Imprime en consola un título que indica la sección de promesas.
+    console.warn('=========== Promesas. ==========='); //* Imprime en consola un título que indica la sección de promesas.
     console.warn('--- Promesa con then, catch y finally. ---'); //* Indica que se demostrará el manejo de errores en promesas.
     console.warn('--- Then. ---'); //* Indica que estamos dentro del then.
     console.warn(respuesta); //* Muestra el mensaje devuelto por resolve: "Usuario autorizado."

@@ -1,6 +1,4 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-
+// TODO: Firebase project configuration
 const firebaseConfig = {
     apiKey: "AIzaSyDCRUaLNVg-tE8rgFomfxWF2JVdByRcSS4",
     authDomain: "proyecto---formulario-js-52c33.firebaseapp.com",
@@ -11,15 +9,17 @@ const firebaseConfig = {
     measurementId: "G-WV1XMTGRVN"
 };
 
-// Initialize Firebase
+//  Todo - Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-// Initialize Cloud Firestore and get a reference to the service
+
+// Todo - Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
 
+//*Agregacion de evento listener al formulario cuando se haga submit haciendo que evalue la informacion dentro del mismo. 
 document.getElementById('formulario').addEventListener('submit', (event) => {
     event.preventDefault();
-
+    
     //*Validar campo de nombre
     let campoNombre = document.getElementById('name').value;
     let errorNombre = document.getElementById('nameError');
@@ -65,7 +65,7 @@ document.getElementById('formulario').addEventListener('submit', (event) => {
 
     //*Funcion de envio de los datos a Firebase
     async function envioInformacionFirebase(nombre, correo, contrasena,){
-        db.collection("users").add({
+        db.collection("usuarios").add({
             nombre: nombre,
             email: correo,
             password: contrasena
