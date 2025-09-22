@@ -42,7 +42,7 @@ function insertResults(results){
         movieDescription.textContent = element.overview;
 
         const moviePoster = document.createElement('img');
-        moviePoster.src = `${element.poster_path}`;
+        moviePoster.src = `${imagesUrl}`;
 
         resultsField.appendChild(card);
         card.appendChild(movieTitle);
