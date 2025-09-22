@@ -1610,7 +1610,7 @@ let funcionNormal = (parametroARecibir) => { // *Apertura de funcion sin callbac
 let funcionConCallback = (numeroARecibir1, numeroARecibir2, parametroCallback) => {
     let suma = numeroARecibir1 + numeroARecibir2; //* Suma los dos números recibidos.
     parametroCallback(suma); //* Llama a la función callback, pasándole como argumento el resultado de la suma.
-    funcionNormal(suma)
+    funcionNormal(suma) //*Llama a la funcion desde funcion normal la cual es la misma pasada mendiante el parametro.
 } // *Cierre de funcion con callback
 
 // Todo - Uso de la función con callback

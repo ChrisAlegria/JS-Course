@@ -2,7 +2,7 @@
 let numeroAleatorio = Math.floor(Math.random()*100)+1;
 console.log(numeroAleatorio);
 
-// *Se declarar la vairable que almacenara los intentos.s
+// *Se declarar la variable que almacenara los intentos.
 let contadorIntentos = 0;
 
 // *Esta funcion se ejecutara cuando el usuario haga click en el btn.
