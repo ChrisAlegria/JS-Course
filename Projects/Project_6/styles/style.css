@@ -1,52 +1,58 @@
+body{
+  background-color: #212121;
+  color: white;
+}
+
 .container {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  input[type="text"] {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  #results {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  .movie {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-  }
-  
-  .movie img {
-    width: 100px;
-    float: left;
-    margin-right: 10px;
-  }
-  
-  .movie h2 {
-    font-size: 18px;
-    margin-top: 0;
-  }
-  
-  .movie p {
-    margin: 5px 0;
-  }
-  
+  margin: 0 auto;
+  text-align: center;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4a4a4a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#results{
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+#results div{
+  background-color: rgb(233, 233, 233);
+  color: black;
+  margin: 20px;
+  padding: 0 15px 0 15px;
+  border: 8px outset rgb(255, 255, 255);
+  box-shadow: 7px 7px 7px rgb(49, 49, 49);
+}
+
+#results h1{
+  margin-top: 40px;
+  text-align: center;
+}
+
+#results p{
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+#results .description{
+  text-align: justify;
+}
+
+#results img{
+  width: 80%;
+  margin-bottom: 20px;
+}

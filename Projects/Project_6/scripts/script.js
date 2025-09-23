@@ -25,6 +25,7 @@ async function imagesExtraction(movieId){
 
 async function insertResults(results){
     const resultsField = document.getElementById('results')
+    resultsField.innerHTML = '';
     resultsAmount = results.length
     console.log(resultsAmount)
     
@@ -40,6 +41,7 @@ async function insertResults(results){
 
         const movieDescription = document.createElement('p');
         movieDescription.textContent = element.overview;
+        movieDescription.classList.add('description')
 
         const moviePoster = document.createElement('img');
         if(imagesUrl){
