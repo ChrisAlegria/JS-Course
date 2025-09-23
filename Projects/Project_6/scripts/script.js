@@ -30,6 +30,7 @@ async function insertResults(results){
     resultsField.innerHTML = '';
     const resultsAmount = results.length
     console.log(resultsAmount)
+    console.log(results)
     
     for (const element of results) {
         const card = document.createElement('div');
