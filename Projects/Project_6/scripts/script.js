@@ -1,5 +1,7 @@
-const api_Key = '908b93ff99a9388e160f852ebb35694f';
-const api_Url = 'https://api.themoviedb.org/3/'
+import { api_Credentials } from "./credentials.js";
+
+const api_Key = api_Credentials.api_Key;
+const api_Url = api_Credentials.api_Url;
 
 document.getElementById('searchButton').addEventListener('click', searchMovies);
 
@@ -26,7 +28,7 @@ async function imagesExtraction(movieId){
 async function insertResults(results){
     const resultsField = document.getElementById('results')
     resultsField.innerHTML = '';
-    resultsAmount = results.length
+    const resultsAmount = results.length
     console.log(resultsAmount)
     
     for (const element of results) {

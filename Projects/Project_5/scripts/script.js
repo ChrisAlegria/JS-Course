@@ -1,13 +1,6 @@
 // TODO: Firebase project configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyDCRUaLNVg-tE8rgFomfxWF2JVdByRcSS4",
-    authDomain: "proyecto---formulario-js-52c33.firebaseapp.com",
-    projectId: "proyecto---formulario-js-52c33",
-    storageBucket: "proyecto---formulario-js-52c33.firebasestorage.app",
-    messagingSenderId: "38906877185",
-    appId: "1:38906877185:web:972b07f10d45b270c67700",
-    measurementId: "G-WV1XMTGRVN"
-};
+import { firebaseCredentials } from "./credentials.js";
+const firebaseConfig = firebaseCredentials;
 
 //  Todo - Initialize Firebase
 firebase.initializeApp(firebaseConfig);

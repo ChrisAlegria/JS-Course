@@ -1,4 +1,4 @@
-let api_key = '8192957ca39f8d2de02e594adc059dd0';
+import { api_key } from "./credentials.js";
 
 async function queryRequestApi(nombreCiudad){
     try{
